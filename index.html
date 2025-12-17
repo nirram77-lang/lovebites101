@@ -41,6 +41,17 @@
             overflow-x: hidden;
             line-height: 1.6;
         }
+        
+        /* Force visibility for all sections */
+        section {
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+        
+        h1, h2, h3, h4, h5, h6, p, span, div, blockquote {
+            opacity: 1;
+            visibility: visible;
+        }
 
         /* Language Switch */
         .lang-switch {
@@ -305,6 +316,12 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            color: var(--accent-red);
+        }
+        @supports not (-webkit-background-clip: text) {
+            .hero-title .highlight {
+                color: var(--accent-red);
+            }
         }
         .hero-subtitle-main {
             font-family: 'Playfair Display', serif;
