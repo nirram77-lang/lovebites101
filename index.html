@@ -264,6 +264,8 @@
             transition: color 0.3s ease;
         }
         .toast-close:hover { color: var(--accent-gold); }
+        .toast-link { display: flex; flex-direction: column; text-decoration: none; color: inherit; cursor: pointer; }
+        .toast-link:hover { opacity: 0.9; }
         .toast-header { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
         .toast-icon { font-size: 20px; }
         .toast-title { color: var(--accent-gold); font-weight: 700; font-size: 14px; }
@@ -854,8 +856,8 @@
         .footer-contact a { color: var(--accent-gold); text-decoration: none; }
 
         @media (max-width: 768px) {
-            .notification-toast { left: 10px; right: auto; bottom: 10px; max-width: 200px; }
-            .cta-button { flex-direction: column; padding: 20px 40px; }
+            .notification-toast { left: 10px; right: auto; bottom: 10px; max-width: 180px; padding: 10px 14px; }
+            .cta-button { padding: 14px 28px; font-size: 16px; }
             .about-container { flex-direction: column; text-align: center; }
             .about-signature { border-left: none; padding-left: 0; text-align: center; }
             .social-links { flex-direction: column; align-items: center; }
@@ -1107,12 +1109,14 @@
 
     <!-- Notification Toast -->
     <div class="notification-toast" id="priceToast">
-        <button class="toast-close" onclick="closeToast()" aria-label="Close">✕</button>
-        <div class="toast-header">
-            <span class="toast-icon">🔥</span>
-            <span class="toast-title">Launch Price!</span>
-        </div>
-        <div class="toast-price">$13.90</div>
+        <button class="toast-close" onclick="event.stopPropagation(); closeToast()" aria-label="Close">✕</button>
+        <a href="#buy" class="toast-link" onclick="closeToast()">
+            <div class="toast-header">
+                <span class="toast-icon">🔥</span>
+                <span class="toast-title">Launch Price!</span>
+            </div>
+            <div class="toast-price">$13.90</div>
+        </a>
     </div>
 
     <!-- Main Content -->
@@ -1396,14 +1400,14 @@
                 <span class="footer-divider">|</span>
                 <a href="/accessibility.html">Accessibility</a>
                 <span class="footer-divider">|</span>
-                <a href="mailto:info@funnydates101.com">Contact</a>
+                <a href="/cdn-cgi/l/email-protection#11787f777e5177647f7f6875706574622021203f727e7c">Contact</a>
             </div>
             <p class="footer-text">© 2025 Nir Ram | Love Bites: 101 Dating Disasters</p>
-            <p class="footer-contact">📧 <a href="mailto:info@funnydates101.com">info@funnydates101.com</a></p>
+            <p class="footer-contact">📧 <a href="/cdn-cgi/l/email-protection#fd94939b92bd9b88939384999c89988ecccdccd39e9290"><span class="__cf_email__" data-cfemail="cba2a5ada48badbea5a5b2afaabfaeb8fafbfae5a8a4a6">[email&#160;protected]</span></a></p>
         </footer>
     </div>
 
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         let fontSize = 100;
         function toggleAccessibilityMenu() {
             document.getElementById('accessibility-menu').classList.toggle('active');
@@ -1457,15 +1461,4 @@
                     if (response.ok) {
                         form.style.display = 'none';
                         formSuccess.style.display = 'block';
-                    } else {
-                        alert('Something went wrong. Please try again.');
-                    }
-                } catch (error) {
-                    alert('Connection error. Please try again.');
-                }
-            });
-        }
-
-    </script>
-</body>
-</html>
+      
