@@ -539,6 +539,29 @@
             font-weight: 700;
             font-size: 14px;
             margin-bottom: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+        }
+        .teaser-badge:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(220, 38, 38, 0.4);
+        }
+        .teaser-badge .arrow {
+            transition: transform 0.3s ease;
+        }
+        .teaser-badge.open .arrow {
+            transform: scale(1.2);
+        }
+        .teaser-content {
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transition: max-height 0.5s ease, opacity 0.3s ease;
+        }
+        .teaser-content.open {
+            max-height: 2000px;
+            opacity: 1;
         }
         .teaser-main-title {
             font-family: 'Playfair Display', serif;
@@ -1184,38 +1207,42 @@
 
         <!-- Teaser Section -->
         <section class="teaser-section">
-            <div class="teaser-badge">
+            <button class="teaser-badge" id="teaserToggle" onclick="toggleTeaser()">
                 <span>🎬</span>
                 <span>Want a Sneak Peek?</span>
+                <span class="arrow">👀</span>
+            </button>
+            
+            <div class="teaser-content" id="teaserContent">
+                <h2 class="teaser-main-title">A taste of real dates. No filters.</h2>
+                <p class="teaser-subtitle">Because in dating — it's always funny, until it happens to you.</p>
+                
+                <div class="teaser-quotes-container">
+                    <div class="teaser-quote-card">
+                        <p class="teaser-quote-text">She showed up with three baskets. Only then did I realize — this wasn't a date. It was a delivery.</p>
+                        <p class="teaser-quote-source">— Date with Grandma... and Three Baskets</p>
+                    </div>
+                    
+                    <div class="teaser-quote-card">
+                        <p class="teaser-quote-text">"Obviously we've been together for two months." I met her ten minutes ago.</p>
+                        <p class="teaser-quote-source">— We Met Fifteen Minutes Ago</p>
+                    </div>
+                    
+                    <div class="teaser-quote-card">
+                        <p class="teaser-quote-text">She started talking about kids. I hadn't even finished my drink.</p>
+                        <p class="teaser-quote-source">— Love on the 42nd Floor</p>
+                    </div>
+                    
+                    <div class="teaser-quote-card">
+                        <p class="teaser-quote-text">Some dates end with a kiss. Others end with a resignation letter.</p>
+                        <p class="teaser-quote-source">— You Have Nice Teeth (That's It)</p>
+                    </div>
+                </div>
+                
+                <p class="teaser-footer-text">Yes. This really happened. Because in dating — it's always funny, until it happens to you. 🎬</p>
+                
+                <a href="#buy" class="teaser-cta">😂 I'm Ready to Laugh</a>
             </div>
-            <h2 class="teaser-main-title">A taste of real dates. No filters.</h2>
-            <p class="teaser-subtitle">Because in dating — it's always funny, until it happens to you.</p>
-            
-            <div class="teaser-quotes-container">
-                <div class="teaser-quote-card">
-                    <p class="teaser-quote-text">She showed up with three baskets. Only then did I realize — this wasn't a date. It was a delivery.</p>
-                    <p class="teaser-quote-source">— Date with Grandma... and Three Baskets</p>
-                </div>
-                
-                <div class="teaser-quote-card">
-                    <p class="teaser-quote-text">"Obviously we've been together for two months." I met her ten minutes ago.</p>
-                    <p class="teaser-quote-source">— We Met Fifteen Minutes Ago</p>
-                </div>
-                
-                <div class="teaser-quote-card">
-                    <p class="teaser-quote-text">She started talking about kids. I hadn't even finished my drink.</p>
-                    <p class="teaser-quote-source">— Love on the 42nd Floor</p>
-                </div>
-                
-                <div class="teaser-quote-card">
-                    <p class="teaser-quote-text">Some dates end with a kiss. Others end with a resignation letter.</p>
-                    <p class="teaser-quote-source">— You Have Nice Teeth (That's It)</p>
-                </div>
-            </div>
-            
-            <p class="teaser-footer-text">Yes. This really happened. Because in dating — it's always funny, until it happens to you. 🎬</p>
-            
-            <a href="#buy" class="teaser-cta">😂 I'm Ready to Laugh</a>
         </section>
 
         <!-- Reviews Section - Hollywood -->
@@ -1436,6 +1463,13 @@
         function closeToast() {
             const toast = document.getElementById('priceToast');
             if (toast) toast.classList.add('hidden');
+        }
+        
+        function toggleTeaser() {
+            const toggle = document.getElementById('teaserToggle');
+            const content = document.getElementById('teaserContent');
+            toggle.classList.toggle('open');
+            content.classList.toggle('open');
         }
 
         // Form submission
