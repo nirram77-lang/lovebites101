@@ -524,7 +524,7 @@
 
         /* Teaser Section */
         .teaser-section {
-            padding: 100px 20px;
+            padding: 50px 20px;
             background: linear-gradient(180deg, var(--bg-primary) 0%, #0f0f0f 50%, var(--bg-primary) 100%);
             text-align: center;
         }
@@ -1495,4 +1495,12 @@
                     if (response.ok) {
                         form.style.display = 'none';
                         formSuccess.style.display = 'block';
-      
+                          }
+                } catch (error) {
+                    console.error('Error:', error);
+                }
+            });
+        }
+    </script>
+</body>
+</html>
