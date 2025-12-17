@@ -1,0 +1,1147 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Bites: 101 Dating Disasters | The Funniest Dating Book</title>
+    <meta name="description" content="101 hilarious dating stories that will make you laugh out loud. The book everyone who's been on a date needs to read.">
+    
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💔</text></svg>">
+    <link rel="alternate" hreflang="he" href="https://funnydates101.co.il">
+    <link rel="alternate" hreflang="en" href="https://funnydates101.com">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-primary: #0a0a0a;
+            --bg-secondary: #111111;
+            --bg-card: #1a1a1a;
+            --text-primary: #ffffff;
+            --text-secondary: #b0b0b0;
+            --accent-red: #dc2626;
+            --accent-rose: #f87171;
+            --accent-gold: #d4af37;
+            --accent-cream: #f5f0e1;
+            --gradient-red: linear-gradient(135deg, #b91c1c 0%, #dc2626 50%, #ef4444 100%);
+            --gradient-gold: linear-gradient(135deg, #d4af37 0%, #f4d03f 50%, #d4af37 100%);
+            --shadow-glow: 0 0 40px rgba(220, 38, 38, 0.3);
+            --shadow-gold: 0 0 30px rgba(212, 175, 55, 0.3);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            min-height: 100vh;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Language Switch */
+        .lang-switch {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+        .lang-switch a {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(26, 26, 26, 0.9);
+            border: 1px solid var(--accent-gold);
+            color: var(--text-primary);
+            padding: 10px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+        .lang-switch a:hover {
+            background: var(--accent-gold);
+            color: #000;
+        }
+
+        /* Accessibility Widget */
+        #accessibility-widget {
+            position: fixed;
+            top: 70px;
+            right: 20px;
+            z-index: 9999;
+        }
+        .accessibility-btn {
+            width: 50px; height: 50px;
+            border-radius: 50%;
+            background: var(--accent-gold);
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #000;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+            transition: all 0.3s ease;
+        }
+        .accessibility-btn:hover { transform: scale(1.1); }
+        .accessibility-menu {
+            position: absolute;
+            top: 60px; right: 0;
+            background: #1a1a1a;
+            border: 2px solid var(--accent-gold);
+            border-radius: 12px;
+            padding: 15px;
+            min-width: 200px;
+            display: none;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .accessibility-menu.active { display: flex; }
+        .accessibility-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+            color: var(--accent-gold);
+            font-weight: 700;
+        }
+        .accessibility-header button {
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            cursor: pointer;
+            font-size: 18px;
+        }
+        .accessibility-menu button:not(.accessibility-header button) {
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            text-align: left;
+            transition: all 0.2s ease;
+        }
+        .accessibility-menu button:not(.accessibility-header button):hover {
+            background: var(--accent-gold);
+            color: #000;
+        }
+        body.high-contrast { filter: contrast(1.5); }
+        body.grayscale { filter: grayscale(100%); }
+        body.underline-links a { text-decoration: underline !important; }
+
+        /* Floating Hearts */
+        .floating-hearts {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+        .heart {
+            position: absolute;
+            font-size: 20px;
+            animation: floatHeart 20s linear infinite;
+            opacity: 0;
+        }
+        .heart:nth-child(1) { left: 5%; animation-delay: 0s; }
+        .heart:nth-child(2) { left: 15%; animation-delay: 4s; }
+        .heart:nth-child(3) { left: 25%; animation-delay: 8s; }
+        .heart:nth-child(4) { left: 35%; animation-delay: 12s; }
+        .heart:nth-child(5) { left: 55%; animation-delay: 2s; }
+        .heart:nth-child(6) { left: 65%; animation-delay: 6s; }
+        .heart:nth-child(7) { left: 75%; animation-delay: 10s; }
+        .heart:nth-child(8) { left: 85%; animation-delay: 14s; }
+        .heart:nth-child(9) { left: 95%; animation-delay: 16s; }
+        .heart:nth-child(10) { left: 45%; animation-delay: 18s; }
+
+        @keyframes floatHeart {
+            0% { transform: translateY(100vh) rotate(0deg) scale(0.5); opacity: 0; }
+            10% { opacity: 0.3; }
+            90% { opacity: 0.1; }
+            100% { transform: translateY(-100px) rotate(360deg) scale(1); opacity: 0; }
+        }
+
+        /* Floating Quotes */
+        .floating-quotes {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: 1;
+            overflow: hidden;
+        }
+        .quote-bubble {
+            position: absolute;
+            background: rgba(20, 20, 20, 0.95);
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            border-radius: 16px;
+            padding: 14px 20px;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 280px;
+            opacity: 0;
+            backdrop-filter: blur(10px);
+            animation: thoughtBubble 8s ease-in-out infinite;
+        }
+        .quote-bubble:nth-child(1) { top: 15%; left: 5%; animation-delay: 3s; }
+        .quote-bubble:nth-child(2) { top: 35%; right: 3%; animation-delay: 8s; }
+        .quote-bubble:nth-child(3) { top: 55%; left: 8%; animation-delay: 13s; }
+        .quote-bubble:nth-child(4) { top: 25%; right: 5%; animation-delay: 18s; }
+        .quote-bubble:nth-child(5) { top: 70%; left: 4%; animation-delay: 23s; }
+
+        @keyframes thoughtBubble {
+            0% { opacity: 0; transform: translateY(8px) scale(0.95); }
+            10% { opacity: 0.9; transform: translateY(0) scale(1); }
+            30% { opacity: 0.9; }
+            40% { opacity: 0; transform: translateY(-4px) scale(0.98); }
+            100% { opacity: 0; }
+        }
+
+        @media (max-width: 768px) {
+            .floating-quotes { display: none; }
+        }
+
+        /* Notification Toast */
+        .notification-toast {
+            position: fixed;
+            bottom: 20px; left: 20px;
+            background: var(--bg-card);
+            border: 1px solid var(--accent-gold);
+            border-radius: 12px;
+            padding: 12px 18px;
+            z-index: 1000;
+            animation: slideInLeft 0.5s ease-out;
+            box-shadow: var(--shadow-gold);
+            max-width: 240px;
+        }
+        .notification-toast.hidden { display: none; }
+        .toast-close {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            cursor: pointer;
+            font-size: 16px;
+            padding: 0;
+            line-height: 1;
+            transition: color 0.3s ease;
+        }
+        .toast-close:hover { color: var(--accent-gold); }
+        .toast-header { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+        .toast-icon { font-size: 20px; }
+        .toast-title { color: var(--accent-gold); font-weight: 700; font-size: 14px; }
+        .toast-price { color: var(--accent-red); font-weight: 900; font-size: 22px; }
+
+        @keyframes slideInLeft {
+            from { transform: translateX(-100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        /* Main Content */
+        .main-content {
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px;
+            position: relative;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(ellipse at center top, rgba(220, 38, 38, 0.15) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(212, 175, 55, 0.15);
+            border: 2px solid var(--accent-gold);
+            border-radius: 50px;
+            padding: 10px 24px;
+            font-size: 14px;
+            color: var(--accent-gold);
+            margin-bottom: 30px;
+            box-shadow: var(--shadow-gold);
+        }
+        .badge-dot {
+            width: 8px; height: 8px;
+            background: var(--accent-gold);
+            border-radius: 50%;
+            animation: blink 1.5s ease-in-out infinite;
+        }
+        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(48px, 10vw, 90px);
+            line-height: 1.1;
+            margin-bottom: 10px;
+            font-style: italic;
+        }
+        .hero-title .highlight {
+            background: var(--gradient-red);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero-subtitle-main {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(32px, 6vw, 60px);
+            font-weight: 900;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
+        .hero-subtitle {
+            font-size: clamp(18px, 3vw, 24px);
+            color: var(--text-secondary);
+            margin-bottom: 10px;
+        }
+        .hero-tagline-bold {
+            font-size: clamp(16px, 2.5vw, 20px);
+            color: var(--text-primary);
+            font-weight: 600;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+        .hero-tagline {
+            font-size: 16px;
+            color: var(--accent-rose);
+            margin-bottom: 40px;
+            max-width: 500px;
+        }
+
+        /* CTA Button */
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--gradient-red);
+            color: #fff;
+            font-size: 20px;
+            font-weight: 700;
+            padding: 20px 50px;
+            border-radius: 60px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 40px rgba(220, 38, 38, 0.4);
+        }
+        .cta-button:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 15px 50px rgba(220, 38, 38, 0.5);
+        }
+        .cta-subtext {
+            margin-top: 15px;
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+
+        /* Launch Offer */
+        .launch-offer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        .offer-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(212, 175, 55, 0.2);
+            border: 2px solid var(--accent-gold);
+            border-radius: 50px;
+            padding: 12px 28px;
+        }
+        .offer-icon { font-size: 24px; }
+        .offer-text { font-size: 18px; font-weight: 700; color: var(--accent-gold); }
+        .offer-date {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--bg-card);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 15px 30px;
+        }
+        .date-label { color: var(--text-secondary); font-size: 14px; }
+        .date-value { font-family: 'Playfair Display', serif; font-size: 28px; color: var(--accent-rose); }
+        .offer-urgency {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-secondary);
+            font-size: 13px;
+        }
+        .urgency-dot {
+            width: 8px; height: 8px;
+            background: var(--accent-red);
+            border-radius: 50%;
+            animation: blink 1.5s ease-in-out infinite;
+        }
+
+        /* Why Grid - HOLLYWOOD EDITION */
+        .why-section-hollywood {
+            padding: 120px 20px;
+            background: linear-gradient(180deg, #0a0a0a 0%, #111 50%, #0a0a0a 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .why-section-hollywood::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.05) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .why-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        .why-main-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(32px, 6vw, 50px);
+            color: var(--text-primary);
+            margin-bottom: 15px;
+        }
+        .why-subtitle {
+            color: var(--accent-gold);
+            font-size: 18px;
+        }
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .why-card {
+            background: linear-gradient(145deg, #1a1a1a 0%, #222 50%, #1a1a1a 100%);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 24px;
+            padding: 40px 30px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+        .why-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .why-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            border-color: rgba(212, 175, 55, 0.4);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4), 0 0 40px rgba(212, 175, 55, 0.15);
+        }
+        .why-card:hover::before { opacity: 1; }
+        .why-icon {
+            font-size: 55px;
+            margin-bottom: 20px;
+            display: block;
+            filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.2));
+            transition: transform 0.3s ease;
+        }
+        .why-card:hover .why-icon {
+            transform: scale(1.15) rotate(-5deg);
+        }
+        .why-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: var(--accent-gold);
+        }
+        .why-text {
+            color: var(--text-secondary);
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        /* Teaser Section */
+        .teaser-section {
+            padding: 100px 20px;
+            background: linear-gradient(180deg, var(--bg-primary) 0%, #0f0f0f 50%, var(--bg-primary) 100%);
+            text-align: center;
+        }
+        .teaser-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--gradient-red);
+            color: white;
+            padding: 10px 25px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        .teaser-main-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(28px, 5vw, 40px);
+            margin-bottom: 15px;
+            color: var(--text-primary);
+        }
+        .teaser-subtitle {
+            font-size: 18px;
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+        }
+        .teaser-quotes-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .teaser-quote-card {
+            background: linear-gradient(135deg, var(--bg-card) 0%, #222 100%);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 20px;
+            padding: 25px 30px;
+            margin: 15px 0;
+            position: relative;
+            text-align: left;
+            transition: all 0.3s ease;
+        }
+        .teaser-quote-card:hover {
+            border-color: var(--accent-gold);
+            transform: translateX(5px);
+        }
+        .teaser-quote-card::before {
+            content: '"';
+            position: absolute;
+            top: 10px; left: 15px;
+            font-size: 50px;
+            color: var(--accent-gold);
+            opacity: 0.2;
+            font-family: Georgia, serif;
+        }
+        .teaser-quote-text {
+            font-size: 18px;
+            color: var(--text-primary);
+            margin-bottom: 10px;
+            line-height: 1.6;
+            padding-left: 30px;
+        }
+        .teaser-quote-source {
+            color: var(--accent-gold);
+            font-size: 14px;
+            font-weight: 500;
+            padding-left: 30px;
+        }
+        .teaser-footer-text {
+            margin-top: 40px;
+            font-size: 18px;
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+        .teaser-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--gradient-gold);
+            color: #000;
+            font-size: 18px;
+            font-weight: 700;
+            padding: 18px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            margin-top: 30px;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-gold);
+        }
+        .teaser-cta:hover {
+            transform: translateY(-3px) scale(1.05);
+        }
+
+        /* Reviews Section - Hollywood */
+        .reviews-hollywood {
+            padding: 100px 20px;
+            background: var(--bg-secondary);
+            text-align: center;
+        }
+        .reviews-header { margin-bottom: 50px; }
+        .reviews-star { font-size: 40px; display: block; margin-bottom: 15px; }
+        .reviews-main-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(28px, 5vw, 42px);
+            color: var(--accent-gold);
+        }
+        .reviews-showcase {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .review-hollywood-card {
+            background: linear-gradient(135deg, var(--bg-card) 0%, #222 100%);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 20px;
+            padding: 35px 30px;
+            transition: all 0.3s ease;
+        }
+        .review-hollywood-card:hover {
+            border-color: var(--accent-gold);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.15);
+        }
+        .review-rating {
+            margin-bottom: 20px;
+            font-size: 20px;
+            letter-spacing: 3px;
+        }
+        .review-quote {
+            font-size: 18px;
+            color: var(--text-primary);
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+        .review-author-line {
+            color: var(--accent-gold);
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        /* About Author */
+        .about-section {
+            padding: 100px 20px;
+            background: var(--bg-primary);
+        }
+        .about-container {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            gap: 40px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .about-image {
+            flex: 1;
+            min-width: 250px;
+            text-align: center;
+        }
+        .about-image img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: top;
+            border: 4px solid var(--accent-gold);
+            box-shadow: var(--shadow-gold);
+        }
+        .about-content { flex: 2; min-width: 300px; }
+        .about-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid var(--accent-gold);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 13px;
+            color: var(--accent-gold);
+            margin-bottom: 15px;
+        }
+        .about-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+        .about-text {
+            color: var(--text-secondary);
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+        .about-signature {
+            color: var(--accent-rose);
+            font-style: italic;
+            font-size: 18px;
+            border-left: 3px solid var(--accent-gold);
+            padding-left: 15px;
+            margin-top: 20px;
+        }
+
+        /* Social */
+        .social-section {
+            padding: 80px 20px;
+            background: var(--bg-secondary);
+        }
+        .social-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .social-link {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--bg-card);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50px;
+            padding: 15px 30px;
+            text-decoration: none;
+            color: var(--text-primary);
+            transition: all 0.3s ease;
+        }
+        .social-link:hover {
+            border-color: var(--accent-gold);
+            transform: translateY(-3px);
+        }
+        .social-link .icon { font-size: 24px; }
+        .social-link .label { font-weight: 500; }
+        .social-link .handle { color: var(--text-secondary); font-size: 14px; }
+
+        /* Buy Section */
+        .buy-section {
+            padding: 100px 20px;
+            background: var(--bg-primary);
+        }
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(32px, 6vw, 48px);
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .buy-subtitle {
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 18px;
+            margin-bottom: 50px;
+        }
+        .buy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .buy-card {
+            background: var(--bg-card);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 35px 30px;
+            text-align: center;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        .buy-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-gold);
+        }
+        .buy-card.featured {
+            border-color: var(--accent-red);
+            background: linear-gradient(180deg, rgba(220, 38, 38, 0.1) 0%, var(--bg-card) 100%);
+        }
+        .buy-card-badge {
+            position: absolute;
+            top: -12px; left: 50%;
+            transform: translateX(-50%);
+            background: var(--gradient-red);
+            color: white;
+            padding: 6px 20px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+        }
+        .buy-icon { font-size: 50px; margin-bottom: 15px; }
+        .buy-title { font-size: 24px; font-weight: 700; margin-bottom: 8px; }
+        .buy-desc { color: var(--text-secondary); font-size: 14px; margin-bottom: 20px; }
+        .buy-price { font-size: 36px; font-weight: 900; color: var(--accent-red); margin-bottom: 5px; }
+        .buy-note { font-size: 13px; color: var(--accent-gold); margin-bottom: 20px; }
+        .buy-button {
+            display: block;
+            background: var(--gradient-red);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            margin-bottom: 15px;
+        }
+        .buy-button:hover { transform: scale(1.05); }
+        .buy-button.amazon { background: #ff9900; color: #000; }
+        .buy-delivery { font-size: 13px; color: var(--text-secondary); }
+
+        /* Footer */
+        .footer {
+            padding: 40px 20px;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            background: var(--bg-secondary);
+        }
+        .footer-links { margin-bottom: 20px; }
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            margin: 0 15px;
+            transition: color 0.3s ease;
+        }
+        .footer-links a:hover { color: var(--accent-gold); }
+        .footer-divider { color: rgba(255,255,255,0.2); }
+        .footer-text { color: var(--text-secondary); font-size: 14px; }
+        .footer-author { color: var(--accent-red); margin-top: 10px; }
+        .footer-contact { margin-top: 10px; }
+        .footer-contact a { color: var(--accent-gold); text-decoration: none; }
+
+        @media (max-width: 768px) {
+            .notification-toast { left: 10px; right: auto; bottom: 10px; max-width: 200px; }
+            .cta-button { flex-direction: column; padding: 20px 40px; }
+            .about-container { flex-direction: column; text-align: center; }
+            .about-signature { border-left: none; padding-left: 0; text-align: center; }
+            .social-links { flex-direction: column; align-items: center; }
+            #accessibility-widget { top: 60px; right: 10px; }
+            .lang-switch { top: 10px; right: 10px; }
+            .lang-switch a { padding: 8px 15px; font-size: 12px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Language Switch -->
+    <div class="lang-switch">
+        <a href="https://funnydates101.co.il">🇮🇱 עברית</a>
+    </div>
+
+    <!-- Accessibility Widget -->
+    <div id="accessibility-widget">
+        <button class="accessibility-btn" onclick="toggleAccessibilityMenu()" aria-label="Accessibility Menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9H15V22H13V16H11V22H9V9H3V7H21V9Z"/>
+            </svg>
+        </button>
+        <div class="accessibility-menu" id="accessibility-menu">
+            <div class="accessibility-header">
+                <span>Accessibility</span>
+                <button onclick="toggleAccessibilityMenu()">✕</button>
+            </div>
+            <button onclick="changeFontSize(1)">Increase Text +</button>
+            <button onclick="changeFontSize(-1)">Decrease Text -</button>
+            <button onclick="toggleHighContrast()">High Contrast</button>
+            <button onclick="toggleGrayscale()">Grayscale</button>
+            <button onclick="toggleUnderlineLinks()">Underline Links</button>
+            <button onclick="resetAccessibility()">Reset</button>
+        </div>
+    </div>
+
+    <!-- Floating Hearts -->
+    <div class="floating-hearts">
+        <span class="heart">💔</span>
+        <span class="heart">❤️</span>
+        <span class="heart">💕</span>
+        <span class="heart">💔</span>
+        <span class="heart">❤️</span>
+        <span class="heart">💕</span>
+        <span class="heart">💔</span>
+        <span class="heart">❤️</span>
+        <span class="heart">💕</span>
+        <span class="heart">💔</span>
+    </div>
+
+    <!-- Quote Bubbles -->
+    <div class="floating-quotes">
+        <div class="quote-bubble">"She showed up with three baskets. That's when I knew — this wasn't a date, it was a delivery." 🧺</div>
+        <div class="quote-bubble">"Seven glasses of wine later, we were basically married." 🍷</div>
+        <div class="quote-bubble">"You have nice teeth. That's all that survived from the date." 😬</div>
+        <div class="quote-bubble">"She started talking about kids. I hadn't finished my drink yet." 🍸</div>
+        <div class="quote-bubble">"In dating, like in apps — there's always a bug they didn't tell you about." 🐛</div>
+    </div>
+
+    <!-- Notification Toast -->
+    <div class="notification-toast" id="priceToast">
+        <button class="toast-close" onclick="closeToast()" aria-label="Close">✕</button>
+        <div class="toast-header">
+            <span class="toast-icon">🔥</span>
+            <span class="toast-title">Launch Price!</span>
+        </div>
+        <div class="toast-price">$13.90</div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Hero -->
+        <section class="hero">
+            <div class="hero-badge">
+                <span class="badge-dot"></span>
+                The book everyone's talking about
+            </div>
+            <h1 class="hero-title">
+                <span class="highlight">Love Bites</span>
+            </h1>
+            <p class="hero-subtitle-main">101 DATING DISASTERS</p>
+            <p class="hero-subtitle">Based on real dates.</p>
+            <p class="hero-tagline-bold">Some survived. The relationship didn't.</p>
+            <p class="hero-tagline">
+                Sometimes the best way to deal with a bad date<br>
+                is to read about someone else's and feel better about yourself
+            </p>
+            <div class="cta-container">
+                <a href="#buy" class="cta-button">🎁 Get Launch Price</a>
+                <p class="cta-subtext">🌍 Amazon | 📚 Paperback | 📱 Digital</p>
+            </div>
+            <div class="launch-offer">
+                <div class="offer-badge">
+                    <span class="offer-icon">🎁</span>
+                    <span class="offer-text">Special Launch Price</span>
+                </div>
+                <div class="offer-date">
+                    <span class="date-label">Valid until</span>
+                    <span class="date-value">01.31.2026</span>
+                </div>
+                <div class="offer-urgency">
+                    <span class="urgency-dot"></span>
+                    <span>Limited Edition</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Section - Hollywood -->
+        <section class="why-section-hollywood">
+            <div class="why-header">
+                <h2 class="why-main-title">Why Read This Book?</h2>
+                <p class="why-subtitle">Three reasons to start reading tonight</p>
+            </div>
+            <div class="why-grid">
+                <div class="why-card">
+                    <span class="why-icon">🎭</span>
+                    <h3 class="why-title">Laugh Till You Cry</h3>
+                    <p class="why-text">101 stories that'll have you rolling. You'll laugh, cringe, and thank God it wasn't you.</p>
+                </div>
+                <div class="why-card">
+                    <span class="why-icon">💔</span>
+                    <h3 class="why-title">You're Not Alone</h3>
+                    <p class="why-text">We all feel lonely in the crazy world of dating. This book shows you that you're definitely not the only one.</p>
+                </div>
+                <div class="why-card">
+                    <span class="why-icon">🍷</span>
+                    <h3 class="why-title">No Filters</h3>
+                    <p class="why-text">Real stories with unapologetic humor that will take you places you never knew existed.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Teaser Section -->
+        <section class="teaser-section">
+            <div class="teaser-badge">
+                <span>🎬</span>
+                <span>Want a Sneak Peek?</span>
+            </div>
+            <h2 class="teaser-main-title">A taste of real dates. No filters.</h2>
+            <p class="teaser-subtitle">Because in dating — it's always funny, until it happens to you.</p>
+            
+            <div class="teaser-quotes-container">
+                <div class="teaser-quote-card">
+                    <p class="teaser-quote-text">She showed up with three baskets. Only then did I realize — this wasn't a date. It was a delivery.</p>
+                    <p class="teaser-quote-source">— Date with Grandma... and Three Baskets</p>
+                </div>
+                
+                <div class="teaser-quote-card">
+                    <p class="teaser-quote-text">"Obviously we've been together for two months." I met her ten minutes ago.</p>
+                    <p class="teaser-quote-source">— We Met Fifteen Minutes Ago</p>
+                </div>
+                
+                <div class="teaser-quote-card">
+                    <p class="teaser-quote-text">She started talking about kids. I hadn't even finished my drink.</p>
+                    <p class="teaser-quote-source">— Love on the 42nd Floor</p>
+                </div>
+                
+                <div class="teaser-quote-card">
+                    <p class="teaser-quote-text">Some dates end with a kiss. Others end with a resignation letter.</p>
+                    <p class="teaser-quote-source">— You Have Nice Teeth (That's It)</p>
+                </div>
+            </div>
+            
+            <p class="teaser-footer-text">Yes. This really happened. Because in dating — it's always funny, until it happens to you. 🎬</p>
+            
+            <a href="#buy" class="teaser-cta">😂 I'm Ready to Laugh</a>
+        </section>
+
+        <!-- Reviews Section - Hollywood -->
+        <section class="reviews-hollywood">
+            <div class="reviews-header">
+                <span class="reviews-star">⭐</span>
+                <h2 class="reviews-main-title">Readers Who Couldn't Look Away</h2>
+            </div>
+            
+            <div class="reviews-showcase">
+                <div class="review-hollywood-card">
+                    <div class="review-rating">⭐⭐⭐⭐⭐</div>
+                    <blockquote class="review-quote">
+                        "The problem with this book —<br>you recognize yourself in it."
+                    </blockquote>
+                    <div class="review-author-line">— Sarah</div>
+                </div>
+                
+                <div class="review-hollywood-card">
+                    <div class="review-rating">⭐⭐⭐⭐⭐</div>
+                    <blockquote class="review-quote">
+                        "Someone had to write this.<br>Glad he did it before me."
+                    </blockquote>
+                    <div class="review-author-line">— Joe</div>
+                </div>
+                
+                <div class="review-hollywood-card">
+                    <div class="review-rating">⭐⭐⭐⭐⭐</div>
+                    <blockquote class="review-quote">
+                        "Finished it.<br>Then texted my ex."
+                    </blockquote>
+                    <div class="review-author-line">— Michelle</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Author -->
+        <section class="about-section">
+            <div class="about-container">
+                <div class="about-image">
+                    <img src="N4829.png" alt="Nir Ram - Author">
+                </div>
+                <div class="about-content">
+                    <div class="about-badge">✍️ About the Author</div>
+                    <h2 class="about-title">Nir Ram</h2>
+                    <p class="about-text">
+                        An IT executive with a rich professional background, whose personal life turned him into a <strong>curious researcher of the dating world</strong>.
+                    </p>
+                    <p class="about-text">
+                        Divorced father of three grown children — Alon, Don, and Michaela — he brings a unique combination of <strong>sharp thinking, human curiosity, and a rare ability to find the funny side</strong> even in the most embarrassing moments.
+                    </p>
+                    <p class="about-signature">
+                        "Bottom line: if I already went through it — at least let a good story come out of it."
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Social -->
+        <section class="social-section">
+            <h2 class="social-title">📱 More Funny Content</h2>
+            <div class="social-links">
+                <a href="https://www.youtube.com/@funnydates101" class="social-link" target="_blank">
+                    <span class="icon">▶️</span>
+                    <div><div class="label">YouTube</div><div class="handle">@funnydates101</div></div>
+                </a>
+                <a href="https://www.tiktok.com/@funnydates101" class="social-link" target="_blank">
+                    <span class="icon">🎵</span>
+                    <div><div class="label">TikTok</div><div class="handle">@funnydates101</div></div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Buy Section -->
+        <section class="buy-section" id="buy">
+            <h2 class="section-title">Where to Buy</h2>
+            <p class="buy-subtitle">Choose your preferred format</p>
+            <div class="buy-grid">
+                <div class="buy-card featured">
+                    <div class="buy-card-badge">🌍 Worldwide</div>
+                    <div class="buy-icon">📦</div>
+                    <h3 class="buy-title">Amazon</h3>
+                    <p class="buy-desc">Paperback in Hebrew</p>
+                    <div class="buy-price">$13.90</div>
+                    <div class="buy-note">Special Launch Price!</div>
+                    <a href="https://www.amazon.com/dp/B0FY7DJFJ9" class="buy-button amazon" target="_blank">Buy on Amazon</a>
+                    <p class="buy-delivery">🌐 International Shipping</p>
+                </div>
+                <div class="buy-card">
+                    <div class="buy-icon">📚</div>
+                    <h3 class="buy-title">Paperback</h3>
+                    <p class="buy-desc">Delivery in Israel</p>
+                    <div class="buy-price">₪75</div>
+                    <div class="buy-note">Launch Price!</div>
+                    <a href="https://bookpod.co.il/product/101-%d7%93%d7%99%d7%99%d7%98%d7%99%d7%9d-%d7%95%d7%90%d7%a3-%d7%a0%d7%a9%d7%99%d7%9b%d7%94/" class="buy-button" target="_blank">Order at BookPod</a>
+                    <p class="buy-delivery">🇮🇱 Israel Only</p>
+                </div>
+                <div class="buy-card">
+                    <div class="buy-icon">📱</div>
+                    <h3 class="buy-title">Digital</h3>
+                    <p class="buy-desc">Instant download</p>
+                    <div class="buy-price">₪44</div>
+                    <div class="buy-note">Instant Access!</div>
+                    <a href="https://www.e-vrit.co.il/Product/37846" class="buy-button" target="_blank">Download at E-Vrit</a>
+                    <p class="buy-delivery">⚡ Immediate</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-links">
+                <a href="/terms.html">Terms & Policy</a>
+                <span class="footer-divider">|</span>
+                <a href="/accessibility.html">Accessibility</a>
+                <span class="footer-divider">|</span>
+                <a href="mailto:info@funnydates101.com">Contact</a>
+            </div>
+            <p class="footer-text">© 2025 Nir Ram | Love Bites: 101 Dating Disasters</p>
+            <p class="footer-contact">📧 <a href="mailto:info@funnydates101.com">info@funnydates101.com</a></p>
+        </footer>
+    </div>
+
+    <script>
+        let fontSize = 100;
+        function toggleAccessibilityMenu() {
+            document.getElementById('accessibility-menu').classList.toggle('active');
+        }
+        function changeFontSize(delta) {
+            fontSize += delta * 10;
+            fontSize = Math.max(80, Math.min(150, fontSize));
+            document.body.style.fontSize = fontSize + '%';
+        }
+        function toggleHighContrast() {
+            document.body.classList.toggle('high-contrast');
+            document.body.classList.remove('grayscale');
+        }
+        function toggleGrayscale() {
+            document.body.classList.toggle('grayscale');
+            document.body.classList.remove('high-contrast');
+        }
+        function toggleUnderlineLinks() {
+            document.body.classList.toggle('underline-links');
+        }
+        function resetAccessibility() {
+            fontSize = 100;
+            document.body.style.fontSize = '100%';
+            document.body.classList.remove('high-contrast', 'grayscale', 'underline-links');
+        }
+        function closeToast() {
+            const toast = document.getElementById('priceToast');
+            if (toast) toast.classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
