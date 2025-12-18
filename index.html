@@ -1459,14 +1459,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <span class="footer-divider">|</span>
                 <a href="/accessibility.html">Accessibility</a>
                 <span class="footer-divider">|</span>
-                <a href="/cdn-cgi/l/email-protection#1c75727a735c7a69727265787d68796f2d2c2d327f7371">Contact</a>
+                <a href="#contact-section" onclick="document.getElementById('contact-section')?.scrollIntoView({behavior:'smooth'});return false;">Contact</a>
             </div>
             <p class="footer-text">© 2025 Nir Ram | Love Bites: 101 Dating Disasters</p>
-            <p class="footer-contact">📧 <a href="/cdn-cgi/l/email-protection#3b52555d547b5d4e5555425f5a4f5e480a0b0a15585456"><span class="__cf_email__" data-cfemail="8fe6e1e9e0cfe9fae1e1f6ebeefbeafcbebfbea1ece0e2">[email&#160;protected]</span></a></p>
+            <p class="footer-contact">📧 <a id="footer-email-link" href="#"></a></p>
+            <script>
+                (function(){
+                    var u='nir.ram77';var d='gmail.com';
+                    var e=u+'@'+d;
+                    var a=document.getElementById('footer-email-link');
+                    if(a){a.href='mai'+'lto:'+e;a.textContent=e;}
+                })();
+            </script>
         </footer>
     </div>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    <script>
         let fontSize = 100;
         function toggleAccessibilityMenu() {
             document.getElementById('accessibility-menu').classList.toggle('active');
