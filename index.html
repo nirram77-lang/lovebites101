@@ -261,6 +261,13 @@
         .review-rating { margin-bottom: 20px; font-size: 20px; letter-spacing: 3px; }
         .review-quote { font-size: 18px; color: var(--text-primary); line-height: 1.7; margin-bottom: 20px; }
         .review-author-line { color: var(--accent-gold); font-size: 16px; font-weight: 500; }
+        
+        /* E-VRIT AUTHENTIC REVIEW STYLE */
+        .evrit-review { border-color: rgba(212, 175, 55, 0.4) !important; background: linear-gradient(135deg, #1a1a1a 0%, #252518 50%, #1a1a1a 100%) !important; }
+        .review-platform { display: flex; align-items: center; gap: 10px; margin-bottom: 15px; padding-bottom: 12px; border-bottom: 1px solid rgba(212, 175, 55, 0.2); flex-wrap: wrap; }
+        .evrit-logo { font-size: 24px; }
+        .evrit-text { font-size: 14px; font-weight: 600; color: var(--accent-gold); }
+        .evrit-badge { font-size: 11px; background: rgba(34, 197, 94, 0.2); color: #22c55e; padding: 4px 10px; border-radius: 20px; font-weight: 600; }
 
         .about-section { padding: 100px 20px; background: var(--bg-secondary); }
         .about-container { max-width: 900px; margin: 0 auto; display: flex; gap: 40px; align-items: center; flex-wrap: wrap; }
@@ -488,7 +495,16 @@
         <section class="reviews-hollywood">
             <div class="reviews-header"><span class="reviews-star">⭐</span><h2 class="reviews-main-title">Readers Who Couldn't Look Away</h2></div>
             <div class="reviews-showcase">
-                <div class="review-hollywood-card"><div class="review-rating">⭐⭐⭐⭐⭐</div><blockquote class="review-quote">"The problem with this book —<br>you recognize yourself."</blockquote><div class="review-author-line">— Sarah</div></div>
+                <div class="review-hollywood-card evrit-review">
+                    <div class="review-platform">
+                        <span class="evrit-logo">📱</span>
+                        <span class="evrit-text">E-Vrit Digital Books</span>
+                        <span class="evrit-badge">✓ Verified Purchase</span>
+                    </div>
+                    <div class="review-rating">⭐⭐⭐⭐⭐</div>
+                    <blockquote class="review-quote">"This book made me laugh out loud in public and I'm not ashamed.<br>This guy went through it all — and came out with a sense of humor."</blockquote>
+                    <div class="review-author-line">— Ronit</div>
+                </div>
                 <div class="review-hollywood-card"><div class="review-rating">⭐⭐⭐⭐⭐</div><blockquote class="review-quote">"Someone had to write this.<br>Good thing he did it before me."</blockquote><div class="review-author-line">— Josh</div></div>
                 <div class="review-hollywood-card"><div class="review-rating">⭐⭐⭐⭐⭐</div><blockquote class="review-quote">"Finished it.<br>Then texted my ex."</blockquote><div class="review-author-line">— Michelle</div></div>
             </div>
