@@ -86,6 +86,7 @@
         .heart:nth-child(10) { left: 45%; animation-delay: 18s; }
         @keyframes floatHeart { 0% { transform: translateY(100vh) rotate(0deg) scale(0.5); opacity: 0; } 10% { opacity: 0.3; } 90% { opacity: 0.1; } 100% { transform: translateY(-100px) rotate(360deg) scale(1); opacity: 0; } }
 
+        /* FLOATING QUOTES - OPEN LOOPS EDITION */
         .floating-quotes { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1; overflow: hidden; }
         .quote-bubble { position: absolute; background: rgba(20, 20, 20, 0.95); border: 1px solid rgba(212, 175, 55, 0.4); border-radius: 16px; padding: 14px 20px; font-size: 14px; color: rgba(255, 255, 255, 0.9); max-width: 280px; opacity: 0; backdrop-filter: blur(10px); animation: thoughtBubble 8s ease-in-out infinite; }
         .quote-bubble:nth-child(1) { top: 15%; left: 5%; animation-delay: 3s; }
@@ -95,26 +96,21 @@
         .quote-bubble:nth-child(5) { top: 70%; left: 4%; animation-delay: 23s; }
         .quote-bubble:nth-child(6) { top: 45%; right: 4%; animation-delay: 28s; }
         .quote-bubble:nth-child(7) { top: 60%; right: 6%; animation-delay: 33s; }
-        .quote-bubble:nth-child(8) { top: 20%; left: 6%; animation-delay: 38s; }
-        .quote-bubble:nth-child(9) { top: 80%; left: 10%; animation-delay: 43s; }
         @keyframes thoughtBubble { 0% { opacity: 0; transform: translateY(8px) scale(0.95); } 10% { opacity: 0.9; transform: translateY(0) scale(1); } 30% { opacity: 0.9; } 40% { opacity: 0; transform: translateY(-4px) scale(0.98); } 100% { opacity: 0; } }
         @media (max-width: 768px) { .floating-quotes { display: none; } }
 
         /* ═══════════════════════════════════════════════════════════════════════════ */
-        /* 🔥 PRICE TICKER - Yellow/Gold (Left Side) */
+        /* 🔥 PRICE TICKER - Yellow/Gold (Bottom Left) */
         /* ═══════════════════════════════════════════════════════════════════════════ */
         
         .price-ticker {
             position: fixed;
-            bottom: 20px;
-            left: 20px;
+            bottom: 25px;
+            left: 25px;
             z-index: 999;
             background: linear-gradient(145deg, #fbbf24, #f59e0b);
             border: 3px solid #fcd34d;
-            box-shadow: 
-                0 0 0 1px rgba(0,0,0,0.1),
-                0 10px 40px rgba(251, 191, 36, 0.4),
-                0 0 30px rgba(251, 191, 36, 0.2);
+            box-shadow: 0 0 0 1px rgba(0,0,0,0.1), 0 10px 40px rgba(251, 191, 36, 0.4), 0 0 30px rgba(251, 191, 36, 0.2);
             padding: 20px 25px;
             min-width: 160px;
             text-align: center;
@@ -123,598 +119,77 @@
             user-select: none;
             transition: transform 0.2s ease, box-shadow 0.3s ease;
         }
-        
-        .price-ticker:hover {
-            transform: scale(1.03);
-            box-shadow: 
-                0 0 0 1px rgba(0,0,0,0.1),
-                0 15px 50px rgba(251, 191, 36, 0.5),
-                0 0 40px rgba(251, 191, 36, 0.3);
-        }
-        
+        .price-ticker:hover { transform: scale(1.03); box-shadow: 0 0 0 1px rgba(0,0,0,0.1), 0 15px 50px rgba(251, 191, 36, 0.5), 0 0 40px rgba(251, 191, 36, 0.3); }
         .price-ticker.hidden { display: none; }
-        
-        .price-ticker-close {
-            position: absolute;
-            top: 8px;
-            right: 8px;
-            width: 22px;
-            height: 22px;
-            border-radius: 50%;
-            border: none;
-            background: rgba(0, 0, 0, 0.2);
-            color: rgba(0, 0, 0, 0.5);
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 12px;
-            transition: all 0.3s ease;
-            z-index: 10;
-        }
-        
-        .price-ticker-close:hover {
-            background: rgba(0, 0, 0, 0.4);
-            color: #fff;
-        }
-        
-        .price-ticker-link {
-            text-decoration: none;
-            color: inherit;
-            display: block;
-        }
-        
-        .price-ticker-header {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            margin-bottom: 8px;
-        }
-        
+        .price-ticker-close { position: absolute; top: 8px; right: 8px; width: 22px; height: 22px; border-radius: 50%; border: none; background: rgba(0, 0, 0, 0.2); color: rgba(0, 0, 0, 0.5); cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 12px; transition: all 0.3s ease; z-index: 10; }
+        .price-ticker-close:hover { background: rgba(0, 0, 0, 0.4); color: #fff; }
+        .price-ticker-link { text-decoration: none; color: inherit; display: block; }
+        .price-ticker-header { display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 8px; }
         .price-ticker-icon { font-size: 22px; }
         .price-ticker-title { font-weight: 800; font-size: 16px; color: #1a1a1a; }
-        
-        .price-ticker-price {
-            font-family: 'Playfair Display', serif;
-            font-size: 42px;
-            color: #dc2626;
-            font-weight: 900;
-            line-height: 1;
-            margin-bottom: 12px;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
-        }
-        
-        .price-ticker-btn {
-            background: #1a1a1a;
-            color: #fff;
-            border: none;
-            padding: 10px 24px;
-            border-radius: 25px;
-            font-size: 14px;
-            font-weight: 700;
-            font-family: 'Poppins', sans-serif;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .price-ticker-btn:hover {
-            background: #333;
-            transform: scale(1.05);
-        }
-        
-        @media (max-width: 768px) {
-            .price-ticker {
-                bottom: 10px;
-                left: 10px;
-                transform: scale(0.9);
-                transform-origin: bottom left;
-            }
-        }
+        .price-ticker-price { font-family: 'Playfair Display', serif; font-size: 42px; color: #dc2626; font-weight: 900; line-height: 1; margin-bottom: 12px; text-shadow: 1px 1px 2px rgba(0,0,0,0.1); }
+        .price-ticker-btn { background: #1a1a1a; color: #fff; border: none; padding: 10px 24px; border-radius: 25px; font-size: 14px; font-weight: 700; font-family: 'Poppins', sans-serif; cursor: pointer; transition: all 0.3s ease; }
+        .price-ticker-btn:hover { background: #333; transform: scale(1.05); }
+        @media (max-width: 768px) { .price-ticker { bottom: 15px; left: 15px; transform: scale(0.9); transform-origin: bottom left; } }
 
         /* ═══════════════════════════════════════════════════════════════════════════ */
-        /* 🎁 CHRISTMAS GIFT TICKER - Elegant Holiday Edition (Right Bottom) */
-        /* ═══════════════════════════════════════════════════════════════════════════ */
-        
-        .christmas-ticker {
-            position: fixed;
-            bottom: 25px;
-            right: 25px;
-            z-index: 999;
-            background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%);
-            border: 2px solid #c41e3a;
-            box-shadow: 
-                0 8px 30px rgba(196, 30, 58, 0.25),
-                0 0 20px rgba(196, 30, 58, 0.1);
-            border-radius: 12px;
-            overflow: hidden;
-            cursor: grab;
-            user-select: none;
-            transition: all 0.3s ease;
-        }
-        
-        .christmas-ticker:hover {
-            transform: translateY(-3px);
-            box-shadow: 
-                0 12px 40px rgba(196, 30, 58, 0.35),
-                0 0 30px rgba(196, 30, 58, 0.15);
-        }
-        
-        .christmas-ticker.hidden { display: none; }
-        
-        .christmas-ticker-close {
-            position: absolute;
-            top: 8px;
-            right: 8px;
-            width: 18px;
-            height: 18px;
-            border-radius: 50%;
-            border: none;
-            background: rgba(0, 0, 0, 0.4);
-            color: rgba(255, 255, 255, 0.6);
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 10px;
-            transition: all 0.3s ease;
-            z-index: 10;
-        }
-        
-        .christmas-ticker-close:hover {
-            background: #c41e3a;
-            color: #fff;
-        }
-        
-        .christmas-ticker-content {
-            display: flex;
-            align-items: center;
-            gap: 0;
-        }
-        
-        /* Left side - Holiday Icon */
-        .christmas-left {
-            background: linear-gradient(135deg, #c41e3a, #165b33);
-            padding: 14px 18px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 4px;
-            border-right: 2px dashed rgba(255,255,255,0.2);
-        }
-        
-        .christmas-icon {
-            font-size: 28px;
-            animation: gentleFloat 3s ease-in-out infinite;
-        }
-        
-        @keyframes gentleFloat {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-3px); }
-        }
-        
-        .christmas-badge {
-            font-size: 9px;
-            font-weight: 800;
-            color: #fff;
-            background: rgba(0,0,0,0.3);
-            padding: 2px 8px;
-            border-radius: 10px;
-            letter-spacing: 0.5px;
-        }
-        
-        /* Right side - Info */
-        .christmas-right {
-            padding: 12px 16px 12px 14px;
-            display: flex;
-            flex-direction: column;
-            gap: 6px;
-        }
-        
-        .christmas-title {
-            font-size: 13px;
-            font-weight: 700;
-            color: #fff;
-            line-height: 1.2;
-        }
-        
-        .christmas-title span {
-            color: #c41e3a;
-        }
-        
-        .christmas-subtitle {
-            font-size: 11px;
-            color: #888;
-        }
-        
-        .christmas-cta {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 6px;
-            background: linear-gradient(135deg, #c41e3a, #a01830);
-            padding: 8px 14px;
-            border-radius: 8px;
-            text-decoration: none;
-            color: #fff;
-            font-size: 11px;
-            font-weight: 700;
-            transition: all 0.3s ease;
-            margin-top: 4px;
-        }
-        
-        .christmas-cta:hover {
-            background: linear-gradient(135deg, #d62548, #b31e3a);
-            transform: scale(1.02);
-        }
-        
-        @media (max-width: 768px) {
-            .christmas-ticker {
-                bottom: 15px;
-                right: 15px;
-            }
-        }
-
-        /* ═══════════════════════════════════════════════════════════════════════════ */
-        /* 🎬 HOLLYWOOD COSMIC TV TICKER (Right Side) */
+        /* 🎬 HOLLYWOOD COSMIC TV TICKER - OPEN LOOPS (Bottom Right) */
         /* ═══════════════════════════════════════════════════════════════════════════ */
         
         .cosmic-ticker-container {
             position: fixed;
-            top: 50%;
+            bottom: 25px;
             right: 25px;
-            transform: translateY(-50%);
             z-index: 998;
             perspective: 1000px;
             transition: transform 0.5s ease, opacity 0.5s ease;
         }
-        
-        .cosmic-ticker-container.hidden {
-            transform: translateY(-50%) translateX(400px);
-            opacity: 0;
-            pointer-events: none;
-        }
-        
-        .cosmic-ticker {
-            position: relative;
-            width: 320px;
-            background: linear-gradient(145deg, #0a0a0a 0%, #1a0a0a 50%, #0a0a0a 100%);
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 
-                0 0 0 3px rgba(220, 38, 38, 0.6),
-                0 0 40px rgba(220, 38, 38, 0.4),
-                0 0 80px rgba(220, 38, 38, 0.2),
-                inset 0 0 80px rgba(220, 38, 38, 0.08);
-            transform-style: preserve-3d;
-            animation: cosmicFloat 6s ease-in-out infinite;
-        }
-        
-        @keyframes cosmicFloat {
-            0%, 100% { transform: translateY(0) rotateX(0deg); }
-            50% { transform: translateY(-8px) rotateX(2deg); }
-        }
-        
-        .cosmic-ticker::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            border-radius: 20px;
-            padding: 3px;
-            background: linear-gradient(45deg, #dc2626, #ff6b6b, #dc2626, #991b1b, #dc2626);
-            background-size: 400% 400%;
-            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            -webkit-mask-composite: xor;
-            mask-composite: exclude;
-            animation: borderAnimation 4s ease infinite;
-        }
-        
-        @keyframes borderAnimation {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-        
-        .cosmic-ticker::after {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0, 0, 0, 0.15) 2px, rgba(0, 0, 0, 0.15) 4px);
-            pointer-events: none;
-            z-index: 10;
-            animation: scanlines 0.1s linear infinite;
-        }
-        
-        @keyframes scanlines {
-            0% { transform: translateY(0); }
-            100% { transform: translateY(4px); }
-        }
-        
-        .ticker-header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 12px 16px;
-            background: linear-gradient(90deg, #1a0505, #2a0808, #1a0505);
-            border-bottom: 2px solid rgba(220, 38, 38, 0.4);
-        }
-        
-        .ticker-logo {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        
-        .ticker-logo-icon {
-            font-size: 22px;
-            animation: heartBeat 1.5s ease-in-out infinite;
-            filter: drop-shadow(0 0 8px rgba(220, 38, 38, 0.6));
-        }
-        
-        @keyframes heartBeat {
-            0%, 100% { transform: scale(1); }
-            25% { transform: scale(1.15); }
-            50% { transform: scale(1); }
-            75% { transform: scale(1.15); }
-        }
-        
-        .ticker-logo-text {
-            font-family: 'Playfair Display', serif;
-            font-size: 14px;
-            background: linear-gradient(90deg, #dc2626, #ff6b6b, #dc2626);
-            background-size: 200% auto;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: textShine 2s linear infinite;
-        }
-        
-        @keyframes textShine {
-            to { background-position: 200% center; }
-        }
-        
-        .ticker-live-badge {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            background: linear-gradient(135deg, #dc2626, #b91c1c);
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 10px;
-            font-weight: 800;
-            color: white;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            box-shadow: 0 0 20px rgba(220, 38, 38, 0.6);
-            animation: badgePulse 2s ease-in-out infinite;
-        }
-        
-        @keyframes badgePulse {
-            0%, 100% { box-shadow: 0 0 20px rgba(220, 38, 38, 0.6); }
-            50% { box-shadow: 0 0 30px rgba(220, 38, 38, 0.9), 0 0 40px rgba(220, 38, 38, 0.4); }
-        }
-        
-        .ticker-live-dot {
-            width: 7px;
-            height: 7px;
-            background: #fff;
-            border-radius: 50%;
-            animation: liveDot 1s ease-in-out infinite;
-        }
-        
-        @keyframes liveDot {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.4; transform: scale(0.7); }
-        }
-        
-        .ticker-screen {
-            position: relative;
-            padding: 20px 18px;
-            min-height: 120px;
-            background: radial-gradient(ellipse at center, #1a0808 0%, #0a0303 100%);
-            overflow: hidden;
-        }
-        
-        .ticker-screen::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,0.5) 100%);
-            pointer-events: none;
-            z-index: 5;
-        }
-        
-        .ticker-particles {
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            overflow: hidden;
-            pointer-events: none;
-        }
-        
-        .particle {
-            position: absolute;
-            width: 4px;
-            height: 4px;
-            background: rgba(220, 38, 38, 0.7);
-            border-radius: 50%;
-            box-shadow: 0 0 10px rgba(220, 38, 38, 0.5);
-            animation: particleFloat 10s linear infinite;
-        }
-        
+        .cosmic-ticker-container.hidden { transform: translateX(400px); opacity: 0; pointer-events: none; }
+        .cosmic-ticker { position: relative; width: 320px; background: linear-gradient(145deg, #0a0a0a 0%, #1a0a0a 50%, #0a0a0a 100%); border-radius: 20px; overflow: hidden; box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.6), 0 0 40px rgba(220, 38, 38, 0.4), 0 0 80px rgba(220, 38, 38, 0.2), inset 0 0 80px rgba(220, 38, 38, 0.08); transform-style: preserve-3d; animation: cosmicFloat 6s ease-in-out infinite; }
+        @keyframes cosmicFloat { 0%, 100% { transform: translateY(0) rotateX(0deg); } 50% { transform: translateY(-8px) rotateX(2deg); } }
+        .cosmic-ticker::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; border-radius: 20px; padding: 3px; background: linear-gradient(45deg, #dc2626, #ff6b6b, #dc2626, #991b1b, #dc2626); background-size: 400% 400%; -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude; animation: borderAnimation 4s ease infinite; }
+        @keyframes borderAnimation { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+        .cosmic-ticker::after { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0, 0, 0, 0.15) 2px, rgba(0, 0, 0, 0.15) 4px); pointer-events: none; z-index: 10; animation: scanlines 0.1s linear infinite; }
+        @keyframes scanlines { 0% { transform: translateY(0); } 100% { transform: translateY(4px); } }
+        .ticker-header { display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; background: linear-gradient(90deg, #1a0505, #2a0808, #1a0505); border-bottom: 2px solid rgba(220, 38, 38, 0.4); }
+        .ticker-logo { display: flex; align-items: center; gap: 8px; }
+        .ticker-logo-icon { font-size: 22px; animation: heartBeat 1.5s ease-in-out infinite; filter: drop-shadow(0 0 8px rgba(220, 38, 38, 0.6)); }
+        @keyframes heartBeat { 0%, 100% { transform: scale(1); } 25% { transform: scale(1.15); } 50% { transform: scale(1); } 75% { transform: scale(1.15); } }
+        .ticker-logo-text { font-family: 'Playfair Display', serif; font-size: 14px; background: linear-gradient(90deg, #dc2626, #ff6b6b, #dc2626); background-size: 200% auto; -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: textShine 2s linear infinite; }
+        @keyframes textShine { to { background-position: 200% center; } }
+        .ticker-live-badge { display: flex; align-items: center; gap: 5px; background: linear-gradient(135deg, #dc2626, #b91c1c); padding: 5px 12px; border-radius: 20px; font-size: 10px; font-weight: 800; color: white; text-transform: uppercase; letter-spacing: 1px; box-shadow: 0 0 20px rgba(220, 38, 38, 0.6); animation: badgePulse 2s ease-in-out infinite; }
+        @keyframes badgePulse { 0%, 100% { box-shadow: 0 0 20px rgba(220, 38, 38, 0.6); } 50% { box-shadow: 0 0 30px rgba(220, 38, 38, 0.9), 0 0 40px rgba(220, 38, 38, 0.4); } }
+        .ticker-live-dot { width: 7px; height: 7px; background: #fff; border-radius: 50%; animation: liveDot 1s ease-in-out infinite; }
+        @keyframes liveDot { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.4; transform: scale(0.7); } }
+        .ticker-screen { position: relative; padding: 20px 18px; min-height: 120px; background: radial-gradient(ellipse at center, #1a0808 0%, #0a0303 100%); overflow: hidden; }
+        .ticker-screen::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,0.5) 100%); pointer-events: none; z-index: 5; }
+        .ticker-particles { position: absolute; top: 0; left: 0; right: 0; bottom: 0; overflow: hidden; pointer-events: none; }
+        .particle { position: absolute; width: 4px; height: 4px; background: rgba(220, 38, 38, 0.7); border-radius: 50%; box-shadow: 0 0 10px rgba(220, 38, 38, 0.5); animation: particleFloat 10s linear infinite; }
         .particle:nth-child(1) { left: 10%; animation-delay: 0s; }
         .particle:nth-child(2) { left: 25%; animation-delay: 2.5s; }
         .particle:nth-child(3) { left: 45%; animation-delay: 5s; }
         .particle:nth-child(4) { left: 65%; animation-delay: 7.5s; }
         .particle:nth-child(5) { left: 85%; animation-delay: 1s; }
-        
-        @keyframes particleFloat {
-            0% { transform: translateY(150%) scale(0); opacity: 0; }
-            10% { opacity: 1; }
-            90% { opacity: 0.3; }
-            100% { transform: translateY(-150%) scale(1.2); opacity: 0; }
-        }
-        
-        .ticker-quote-container {
-            position: relative;
-            z-index: 2;
-            transition: opacity 0.4s ease, transform 0.4s ease;
-        }
-        
-        .ticker-emoji {
-            font-size: 32px;
-            display: block;
-            margin-bottom: 10px;
-            filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.3));
-        }
-        
-        .ticker-quote-text {
-            font-size: 14px;
-            line-height: 1.5;
-            color: #fff;
-            text-align: left;
-            margin-bottom: 8px;
-            text-shadow: 0 0 15px rgba(220, 38, 38, 0.4);
-            font-weight: 500;
-        }
-        
-        .ticker-quote-source {
-            font-size: 12px;
-            color: var(--accent-rose);
-            text-align: left;
-            opacity: 0.9;
-            font-style: italic;
-        }
-        
-        .ticker-nav {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 12px 16px;
-            background: linear-gradient(90deg, #1a0505, #2a0808, #1a0505);
-            border-top: 2px solid rgba(220, 38, 38, 0.4);
-        }
-        
-        .ticker-dots {
-            display: flex;
-            gap: 6px;
-        }
-        
-        .ticker-dot {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: rgba(220, 38, 38, 0.3);
-            cursor: pointer;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(220, 38, 38, 0.2);
-        }
-        
-        .ticker-dot.active {
-            background: #dc2626;
-            box-shadow: 0 0 15px rgba(220, 38, 38, 0.9);
-            width: 24px;
-            border-radius: 4px;
-        }
-        
-        .ticker-dot:hover:not(.active) {
-            background: rgba(220, 38, 38, 0.6);
-            transform: scale(1.2);
-        }
-        
-        .ticker-arrows {
-            display: flex;
-            gap: 8px;
-        }
-        
-        .ticker-arrow {
-            width: 28px;
-            height: 28px;
-            border-radius: 50%;
-            border: 2px solid rgba(220, 38, 38, 0.5);
-            background: transparent;
-            color: rgba(255, 255, 255, 0.7);
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 14px;
-            transition: all 0.3s ease;
-        }
-        
-        .ticker-arrow:hover {
-            background: rgba(220, 38, 38, 0.3);
-            border-color: #dc2626;
-            color: #fff;
-            box-shadow: 0 0 20px rgba(220, 38, 38, 0.5);
-            transform: scale(1.1);
-        }
-        
-        .ticker-close {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            width: 24px;
-            height: 24px;
-            border-radius: 50%;
-            border: none;
-            background: rgba(0, 0, 0, 0.6);
-            color: rgba(255, 255, 255, 0.5);
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 12px;
-            z-index: 20;
-            transition: all 0.3s ease;
-        }
-        
-        .ticker-close:hover {
-            background: #dc2626;
-            color: #fff;
-            transform: rotate(90deg);
-        }
-        
-        .ticker-cta {
-            display: block;
-            text-align: center;
-            padding: 12px 18px;
-            background: linear-gradient(135deg, #dc2626, #b91c1c);
-            color: white;
-            text-decoration: none;
-            font-weight: 800;
-            font-size: 13px;
-            letter-spacing: 0.5px;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .ticker-cta::before {
-            content: '';
-            position: absolute;
-            top: 0; left: -100%;
-            width: 100%; height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-            animation: ctaShimmer 3s ease-in-out infinite;
-        }
-        
-        @keyframes ctaShimmer {
-            0% { left: -100%; }
-            50% { left: 100%; }
-            100% { left: 100%; }
-        }
-        
-        .ticker-cta:hover {
-            background: linear-gradient(135deg, #ef4444, #dc2626);
-            letter-spacing: 1px;
-        }
-        
-        @media (max-width: 768px) {
-            .cosmic-ticker-container {
-                display: none;
-            }
-        }
+        @keyframes particleFloat { 0% { transform: translateY(150%) scale(0); opacity: 0; } 10% { opacity: 1; } 90% { opacity: 0.3; } 100% { transform: translateY(-150%) scale(1.2); opacity: 0; } }
+        .ticker-quote-container { position: relative; z-index: 2; transition: opacity 0.4s ease, transform 0.4s ease; }
+        .ticker-emoji { font-size: 32px; display: block; margin-bottom: 10px; filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.3)); }
+        .ticker-quote-text { font-size: 14px; line-height: 1.5; color: #fff; text-align: left; margin-bottom: 8px; text-shadow: 0 0 15px rgba(220, 38, 38, 0.4); font-weight: 500; }
+        .ticker-quote-source { font-size: 12px; color: var(--accent-rose); text-align: left; opacity: 0.9; font-style: italic; }
+        .ticker-nav { display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; background: linear-gradient(90deg, #1a0505, #2a0808, #1a0505); border-top: 2px solid rgba(220, 38, 38, 0.4); }
+        .ticker-dots { display: flex; gap: 6px; }
+        .ticker-dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(220, 38, 38, 0.3); cursor: pointer; transition: all 0.3s ease; border: 1px solid rgba(220, 38, 38, 0.2); }
+        .ticker-dot.active { background: #dc2626; box-shadow: 0 0 15px rgba(220, 38, 38, 0.9); width: 24px; border-radius: 4px; }
+        .ticker-dot:hover:not(.active) { background: rgba(220, 38, 38, 0.6); transform: scale(1.2); }
+        .ticker-arrows { display: flex; gap: 8px; }
+        .ticker-arrow { width: 28px; height: 28px; border-radius: 50%; border: 2px solid rgba(220, 38, 38, 0.5); background: transparent; color: rgba(255, 255, 255, 0.7); cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 14px; transition: all 0.3s ease; }
+        .ticker-arrow:hover { background: rgba(220, 38, 38, 0.3); border-color: #dc2626; color: #fff; box-shadow: 0 0 20px rgba(220, 38, 38, 0.5); transform: scale(1.1); }
+        .ticker-close { position: absolute; top: 10px; right: 10px; width: 24px; height: 24px; border-radius: 50%; border: none; background: rgba(0, 0, 0, 0.6); color: rgba(255, 255, 255, 0.5); cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 12px; z-index: 20; transition: all 0.3s ease; }
+        .ticker-close:hover { background: #dc2626; color: #fff; transform: rotate(90deg); }
+        .ticker-cta { display: block; text-align: center; padding: 12px 18px; background: linear-gradient(135deg, #dc2626, #b91c1c); color: white; text-decoration: none; font-weight: 800; font-size: 13px; letter-spacing: 0.5px; transition: all 0.3s ease; position: relative; overflow: hidden; }
+        .ticker-cta::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent); animation: ctaShimmer 3s ease-in-out infinite; }
+        @keyframes ctaShimmer { 0% { left: -100%; } 50% { left: 100%; } 100% { left: 100%; } }
+        .ticker-cta:hover { background: linear-gradient(135deg, #ef4444, #dc2626); letter-spacing: 1px; }
+        @media (max-width: 768px) { .cosmic-ticker-container { bottom: 15px; right: 15px; left: 15px; } .cosmic-ticker { width: 100%; } }
 
         .main-content { position: relative; z-index: 10; }
 
@@ -726,7 +201,7 @@
         .hero-title { font-family: 'Playfair Display', serif; font-size: clamp(48px, 10vw, 90px); line-height: 1.1; margin-bottom: 10px; }
         .hero-title .highlight { background: var(--gradient-red); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
         .hero-subtitle { font-size: clamp(18px, 3vw, 28px); color: var(--text-secondary); margin-bottom: 20px; }
-        .hero-tagline { font-size: 18px; color: var(--accent-rose); margin-bottom: 40px; max-width: 500px; }
+        .hero-tagline { font-size: 18px; color: var(--accent-rose); margin-bottom: 40px; max-width: 550px; }
 
         .cta-button { display: inline-flex; align-items: center; gap: 12px; background: var(--gradient-red); color: #fff; font-size: 20px; font-weight: 700; padding: 20px 50px; border-radius: 60px; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 10px 40px rgba(220, 38, 38, 0.4); }
         .cta-button:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 15px 50px rgba(220, 38, 38, 0.5); }
@@ -758,6 +233,7 @@
         .why-title { font-family: 'Playfair Display', serif; font-size: 22px; margin-bottom: 15px; color: var(--accent-gold); }
         .why-text { color: var(--text-secondary); font-size: 16px; line-height: 1.7; }
 
+        /* TEASER SECTION - OPEN LOOPS */
         .teaser-section { padding: 50px 20px; background: linear-gradient(180deg, var(--bg-primary) 0%, #0f0f0f 50%, var(--bg-primary) 100%); text-align: center; }
         .teaser-badge { display: inline-flex; align-items: center; gap: 10px; background: var(--gradient-red); color: white; padding: 10px 25px; border-radius: 50px; font-weight: 700; font-size: 14px; margin-bottom: 20px; cursor: pointer; transition: all 0.3s ease; border: none; }
         .teaser-badge:hover { transform: scale(1.05); box-shadow: 0 5px 20px rgba(220, 38, 38, 0.4); }
@@ -830,7 +306,6 @@
         .buy-card:hover { transform: translateY(-5px); border-color: var(--accent-gold); }
         .buy-card.featured { border-color: var(--accent-red); background: linear-gradient(180deg, rgba(220, 38, 38, 0.1) 0%, var(--bg-card) 100%); }
         .buy-card-badge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--gradient-red); color: white; padding: 6px 20px; border-radius: 20px; font-size: 12px; font-weight: 700; }
-        .buy-card-badge.intl { background: var(--gradient-gold); color: #000; }
         .buy-icon { font-size: 50px; margin-bottom: 15px; }
         .buy-title { font-size: 24px; font-weight: 700; margin-bottom: 8px; }
         .buy-desc { color: var(--text-secondary); font-size: 14px; margin-bottom: 20px; }
@@ -874,177 +349,11 @@
             .lang-switch { top: 10px; right: 10px; }
             .lang-switch a { padding: 8px 15px; font-size: 12px; }
         }
-
-        /* ═══════════════════════════════════════════════════════════════════════════ */
-        /* 🔧 ADMIN PANEL */
-        /* ═══════════════════════════════════════════════════════════════════════════ */
-        
-        .admin-panel {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: #1a1a1a;
-            border: 2px solid var(--accent-gold);
-            border-radius: 20px;
-            padding: 30px;
-            z-index: 10000;
-            width: 90%;
-            max-width: 600px;
-            max-height: 80vh;
-            overflow-y: auto;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
-        }
-        
-        .admin-panel.active { display: block; }
-        
-        .admin-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.8);
-            z-index: 9999;
-        }
-        
-        .admin-overlay.active { display: block; }
-        
-        .admin-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 25px;
-            padding-bottom: 15px;
-            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
-        }
-        
-        .admin-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 24px;
-            color: var(--accent-gold);
-        }
-        
-        .admin-close {
-            background: none;
-            border: none;
-            color: var(--text-secondary);
-            font-size: 24px;
-            cursor: pointer;
-            transition: color 0.3s ease;
-        }
-        
-        .admin-close:hover { color: var(--accent-red); }
-        
-        .admin-section {
-            margin-bottom: 25px;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 12px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        .admin-section-title {
-            font-size: 16px;
-            font-weight: 700;
-            color: var(--accent-gold);
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .admin-field {
-            margin-bottom: 15px;
-        }
-        
-        .admin-label {
-            display: block;
-            font-size: 13px;
-            color: var(--text-secondary);
-            margin-bottom: 6px;
-        }
-        
-        .admin-input {
-            width: 100%;
-            padding: 12px 15px;
-            background: rgba(0, 0, 0, 0.3);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 8px;
-            color: var(--text-primary);
-            font-family: 'Poppins', sans-serif;
-            font-size: 14px;
-            transition: all 0.3s ease;
-        }
-        
-        .admin-input:focus {
-            outline: none;
-            border-color: var(--accent-gold);
-        }
-        
-        .admin-toggle {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            cursor: pointer;
-        }
-        
-        .admin-toggle input {
-            width: 50px;
-            height: 26px;
-            appearance: none;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 13px;
-            position: relative;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .admin-toggle input::before {
-            content: '';
-            position: absolute;
-            top: 3px;
-            left: 3px;
-            width: 20px;
-            height: 20px;
-            background: var(--text-secondary);
-            border-radius: 50%;
-            transition: all 0.3s ease;
-        }
-        
-        .admin-toggle input:checked {
-            background: var(--accent-gold);
-        }
-        
-        .admin-toggle input:checked::before {
-            transform: translateX(24px);
-            background: #000;
-        }
-        
-        .admin-save {
-            width: 100%;
-            padding: 15px;
-            background: var(--gradient-gold);
-            color: #000;
-            border: none;
-            border-radius: 50px;
-            font-size: 16px;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .admin-save:hover {
-            transform: scale(1.02);
-            box-shadow: var(--shadow-gold);
-        }
     </style>
 </head>
 <body>
 
-    <!-- 🔥 PRICE TICKER (Yellow - Left) -->
+    <!-- 🔥 PRICE TICKER (Yellow - Bottom Left) -->
     <div class="price-ticker" id="priceTicker">
         <button class="price-ticker-close" onclick="event.stopPropagation(); closePriceTicker()">✕</button>
         <a href="#buy" class="price-ticker-link" onclick="closePriceTicker()">
@@ -1052,46 +361,25 @@
                 <span class="price-ticker-icon">🔥</span>
                 <span class="price-ticker-title">Launch Price!</span>
             </div>
-            <div class="price-ticker-price" id="priceTickerPrice">$13.90</div>
+            <div class="price-ticker-price">$13.90</div>
             <button class="price-ticker-btn">Buy Now →</button>
         </a>
     </div>
 
-    <!-- 🎁 CHRISTMAS GIFT TICKER (Right Bottom) -->
-    <div class="christmas-ticker" id="christmasTicker">
-        <button class="christmas-ticker-close" onclick="event.stopPropagation(); closeChristmasTicker()">✕</button>
-        <div class="christmas-ticker-content">
-            <div class="christmas-left">
-                <span class="christmas-icon">🎁</span>
-                <span class="christmas-badge">PERFECT GIFT</span>
-            </div>
-            <div class="christmas-right">
-                <div class="christmas-title" id="christmasTitle">The <span>ultimate</span> gift<br>for your single friend</div>
-                <div class="christmas-subtitle" id="christmasSubtitle">They'll laugh. They'll cry. They'll relate.</div>
-                <a href="#buy" class="christmas-cta" onclick="closeChristmasTicker()">
-                    <span>🎄</span>
-                    <span id="christmasCta">Gift It Now</span>
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <!-- 🎬 COSMIC TV TICKER (Right Side) -->
+    <!-- 🎬 COSMIC TV TICKER - OPEN LOOPS EDITION (Bottom Right) -->
     <div class="cosmic-ticker-container" id="cosmicTicker">
         <div class="cosmic-ticker">
             <button class="ticker-close" onclick="closeCosmicTicker()">✕</button>
-            
             <div class="ticker-header">
                 <div class="ticker-logo">
                     <span class="ticker-logo-icon">💔</span>
-                    <span class="ticker-logo-text">Sneak Peek</span>
+                    <span class="ticker-logo-text">Just Before It Happened...</span>
                 </div>
                 <div class="ticker-live-badge">
                     <span class="ticker-live-dot"></span>
                     <span>LIVE</span>
                 </div>
             </div>
-            
             <div class="ticker-screen">
                 <div class="ticker-particles">
                     <div class="particle"></div>
@@ -1100,14 +388,12 @@
                     <div class="particle"></div>
                     <div class="particle"></div>
                 </div>
-                
                 <div class="ticker-quote-container" id="tickerQuoteContainer">
                     <span class="ticker-emoji" id="tickerEmoji">🧺</span>
-                    <p class="ticker-quote-text" id="tickerQuoteText">"She got in my car with three shopping bags — that's when I realized this wasn't a date. It was a delivery."</p>
-                    <p class="ticker-quote-source" id="tickerQuoteSource">— A Date with Grandma... and Three Bags</p>
+                    <p class="ticker-quote-text" id="tickerQuoteText">"She got in my car with three bags. Only then I understood why I was really there."</p>
+                    <p class="ticker-quote-source" id="tickerQuoteSource">— What was in the bags? In the book.</p>
                 </div>
             </div>
-            
             <div class="ticker-nav">
                 <div class="ticker-dots" id="tickerDots"></div>
                 <div class="ticker-arrows">
@@ -1115,71 +401,8 @@
                     <button class="ticker-arrow" onclick="nextQuote()">→</button>
                 </div>
             </div>
-            
-            <a href="#buy" class="ticker-cta" onclick="closeCosmicTicker()">
-                🎁 Want more? Get the book
-            </a>
+            <a href="#buy" class="ticker-cta" onclick="closeCosmicTicker()">🔓 Want to know what happened? Get the book</a>
         </div>
-    </div>
-
-    <!-- 🔧 ADMIN PANEL -->
-    <div class="admin-overlay" id="adminOverlay" onclick="closeAdminPanel()"></div>
-    <div class="admin-panel" id="adminPanel">
-        <div class="admin-header">
-            <h2 class="admin-title">🎛️ Ticker Settings</h2>
-            <button class="admin-close" onclick="closeAdminPanel()">✕</button>
-        </div>
-        
-        <!-- Price Ticker Settings -->
-        <div class="admin-section">
-            <div class="admin-section-title">🔥 Price Ticker</div>
-            <div class="admin-field">
-                <label class="admin-toggle">
-                    <input type="checkbox" id="priceTickerEnabled" checked>
-                    <span>Show Price Ticker</span>
-                </label>
-            </div>
-            <div class="admin-field">
-                <label class="admin-label">Price</label>
-                <input type="text" class="admin-input" id="adminPrice" value="$13.90">
-            </div>
-        </div>
-        
-        <!-- Christmas Ticker Settings -->
-        <div class="admin-section">
-            <div class="admin-section-title">🎁 Christmas Ticker</div>
-            <div class="admin-field">
-                <label class="admin-toggle">
-                    <input type="checkbox" id="christmasTickerEnabled" checked>
-                    <span>Show Christmas Ticker</span>
-                </label>
-            </div>
-            <div class="admin-field">
-                <label class="admin-label">Title (use &lt;span&gt; for red highlight)</label>
-                <input type="text" class="admin-input" id="adminChristmasTitle" value="The <span>ultimate</span> gift<br>for your single friend">
-            </div>
-            <div class="admin-field">
-                <label class="admin-label">Subtitle</label>
-                <input type="text" class="admin-input" id="adminChristmasSubtitle" value="They'll laugh. They'll cry. They'll relate.">
-            </div>
-            <div class="admin-field">
-                <label class="admin-label">CTA Button Text</label>
-                <input type="text" class="admin-input" id="adminChristmasCta" value="Gift It Now">
-            </div>
-        </div>
-        
-        <!-- Cosmic Ticker Settings -->
-        <div class="admin-section">
-            <div class="admin-section-title">🎬 Cosmic TV Ticker</div>
-            <div class="admin-field">
-                <label class="admin-toggle">
-                    <input type="checkbox" id="cosmicTickerEnabled" checked>
-                    <span>Show Cosmic Ticker</span>
-                </label>
-            </div>
-        </div>
-        
-        <button class="admin-save" onclick="saveAdminSettings()">💾 Save Settings</button>
     </div>
 
     <div class="lang-switch"><a href="https://funnydates101.co.il"><img src="https://flagcdn.com/w40/il.png" alt="Israel" class="flag-icon"><span>עברית</span></a></div>
@@ -1204,16 +427,15 @@
         </div>
     </div>
 
+    <!-- 🔥 FLOATING QUOTES - OPEN LOOPS EDITION! -->
     <div class="floating-quotes">
-        <div class="quote-bubble">"She got in my car with three shopping bags — that's when I realized this wasn't a date. It was a delivery." 🧺</div>
-        <div class="quote-bubble">"Seven glasses of wine and suddenly we're a long-term couple" 🍷</div>
-        <div class="quote-bubble">"You have nice teeth. That's it. That's all that's left from the date." 😬</div>
-        <div class="quote-bubble">"She started talking about kids — a bit much for someone who just woke up" 🏢</div>
-        <div class="quote-bubble">"We agreed on a movie — arrived when the next one started" 🎬</div>
-        <div class="quote-bubble">"Just as My Heart Will Go On started playing — she got in the car. Not Rose." 🚢</div>
-        <div class="quote-bubble">"She vanished like cigarette smoke — strong smell, no trace" 💨</div>
-        <div class="quote-bubble">"In dating, like in apps — there's always a bug they didn't tell you about" 🐛</div>
-        <div class="quote-bubble">"Sometimes you have to swallow the frog — I replied: I only swallow steaks" 🐸</div>
+        <div class="quote-bubble">"She got in my car with three bags. Only then I understood why I was really there." 🧺</div>
+        <div class="quote-bubble">"After the seventh glass, she said something that changed everything." 🍷</div>
+        <div class="quote-bubble">"She looked at me and said one sentence. I should have remembered it." 👀</div>
+        <div class="quote-bubble">"After 10 minutes she asked a question. I wasn't ready for the answer." ⏱️</div>
+        <div class="quote-bubble">"The waiter brought the check. What happened next — I didn't expect." 💳</div>
+        <div class="quote-bubble">"When we got to the car, she said one sentence. Still thinking about it." 🚗</div>
+        <div class="quote-bubble">"The date ended after 7 minutes. The reason? You won't believe it." ⚡</div>
     </div>
 
     <div class="main-content">
@@ -1221,7 +443,7 @@
             <div class="hero-badge"><span class="badge-dot"></span>The Book Everyone's Talking About</div>
             <h1 class="hero-title"><span class="highlight">101 Dating</span><br>Disasters</h1>
             <p class="hero-subtitle">Based on real dates.<br>Some survived. The relationship didn't.</p>
-            <p class="hero-tagline">Because sometimes the best way to deal with a terrible date<br>is to read about someone else's and feel better about yourself</p>
+            <p class="hero-tagline">If you've ever been on a date and said "what the hell just happened?" —<br>this book was written for you.</p>
             <div class="cta-container">
                 <a href="#buy" class="cta-button">👀 What Happened on That Date?</a>
                 <p class="cta-subtext">📚 Paperback | 🌍 Worldwide Shipping</p>
@@ -1245,19 +467,21 @@
             </div>
         </section>
 
+        <!-- 🔥 TEASER SECTION - OPEN LOOPS EDITION! -->
         <section class="teaser-section">
             <button class="teaser-badge" id="teaserToggle" onclick="toggleTeaser()"><span>🎬</span><span>Want a Sneak Peek?</span><span class="arrow">👀</span></button>
             <div class="teaser-content" id="teaserContent">
-                <h2 class="teaser-main-title">A Taste of Real Dates. No Filters.</h2>
-                <p class="teaser-subtitle">Because in dating — it's always funny, until it happens to you.</p>
+                <h2 class="teaser-main-title">Just Before It Happened...</h2>
+                <p class="teaser-subtitle">Every date started normal. And then...</p>
                 <div class="teaser-quotes-container">
-                    <div class="teaser-quote-card"><p class="teaser-quote-text">She got in my car with three shopping bags. Only then I realized — this isn't a date. It's a delivery.</p><p class="teaser-quote-source">— A Date with Grandma... and Three Bags</p></div>
-                    <div class="teaser-quote-card"><p class="teaser-quote-text">"Obviously we've been together for two months." I met her ten minutes ago.</p><p class="teaser-quote-source">— We Met Fifteen Minutes Ago</p></div>
-                    <div class="teaser-quote-card"><p class="teaser-quote-text">She started talking about kids. I hadn't even finished my drink.</p><p class="teaser-quote-source">— Love on the 42nd Floor</p></div>
-                    <div class="teaser-quote-card"><p class="teaser-quote-text">Some dates end with a kiss. Others end with a goodbye text.</p><p class="teaser-quote-source">— You Have Nice Teeth (And That's It)</p></div>
+                    <div class="teaser-quote-card"><p class="teaser-quote-text">She got in my car with three bags. Only then I understood why I was really there.</p><p class="teaser-quote-source">— What was in the bags? Page 47</p></div>
+                    <div class="teaser-quote-card"><p class="teaser-quote-text">After the seventh glass, she said something that changed everything.</p><p class="teaser-quote-source">— What did she say? Page 23</p></div>
+                    <div class="teaser-quote-card"><p class="teaser-quote-text">She looked at me and said one sentence. I should have remembered it.</p><p class="teaser-quote-source">— The sentence that changed it all. Page 89</p></div>
+                    <div class="teaser-quote-card"><p class="teaser-quote-text">After 10 minutes she asked a question. I wasn't ready for the answer.</p><p class="teaser-quote-source">— The question I didn't expect. Page 112</p></div>
+                    <div class="teaser-quote-card"><p class="teaser-quote-text">The date ended after 7 minutes. The reason? You won't believe it.</p><p class="teaser-quote-source">— The shortest date ever. Page 156</p></div>
                 </div>
-                <p class="teaser-footer-text">And yes. This is a true story. Because in dating — it's always funny, until it happens to you. 🎬</p>
-                <a href="#buy" class="teaser-cta">😂 I'm Ready to Laugh About This</a>
+                <p class="teaser-footer-text">All stories are real. The answers — only in the book. 🔓</p>
+                <a href="#buy" class="teaser-cta">🔓 Want to know what happened?</a>
             </div>
         </section>
 
@@ -1354,331 +578,46 @@
     </div>
 
     <script>
-        // ═══════════════════════════════════════════════════════════════════════════
-        // 🎬 COSMIC TV TICKER - Quote Management
-        // ═══════════════════════════════════════════════════════════════════════════
-        
+        // 🎬 COSMIC TV TICKER - OPEN LOOPS Quote Management
         const tickerQuotes = [
-            {
-                emoji: '🧺',
-                text: '"She got in my car with three shopping bags — that\'s when I realized this wasn\'t a date. It was a delivery."',
-                source: '— A Date with Grandma... and Three Bags'
-            },
-            {
-                emoji: '🍷',
-                text: '"Seven glasses of wine and suddenly we\'re a long-term couple"',
-                source: '— We Met Fifteen Minutes Ago'
-            },
-            {
-                emoji: '🐸',
-                text: '"Sometimes you have to swallow the frog — I replied: I only swallow steaks"',
-                source: '— The Frog, The Keys, and Marina'
-            },
-            {
-                emoji: '😬',
-                text: '"You have nice teeth. That\'s it. That\'s all that\'s left from the date."',
-                source: '— You Have Nice Teeth (And That\'s It)'
-            },
-            {
-                emoji: '🏢',
-                text: '"She started talking about kids — a bit much for someone who just woke up"',
-                source: '— Love on the 42nd Floor'
-            },
-            {
-                emoji: '🎬',
-                text: '"We agreed on a movie — arrived when the next one started"',
-                source: '— An Hour and a Half Late'
-            },
-            {
-                emoji: '🚢',
-                text: '"Just as My Heart Will Go On started playing — she got in the car. Not Rose."',
-                source: '— Titanic, The Wrong Rose'
-            },
-            {
-                emoji: '💨',
-                text: '"She vanished like cigarette smoke — strong smell, no trace"',
-                source: '— Vanished Like Smoke'
-            },
-            {
-                emoji: '🐛',
-                text: '"In dating, like in apps — there\'s always a bug they didn\'t tell you about"',
-                source: '— There\'s Always a Bug'
-            }
+            { emoji: '🧺', text: '"She got in my car with three bags. Only then I understood why I was really there."', source: '— What was in the bags? In the book.' },
+            { emoji: '🍷', text: '"After the seventh glass, she said something that changed everything."', source: '— What did she say? In the book.' },
+            { emoji: '👀', text: '"She looked at me and said one sentence. I should have remembered it."', source: '— What did she say? In the book.' },
+            { emoji: '⏱️', text: '"After 10 minutes she asked a question. I wasn\'t ready for the answer."', source: '— That question? In the book.' },
+            { emoji: '💳', text: '"The waiter brought the check. What happened next — I didn\'t expect."', source: '— What happened? In the book.' },
+            { emoji: '🚗', text: '"When we got to the car, she said one sentence. Still thinking about it."', source: '— The sentence? In the book.' },
+            { emoji: '⚡', text: '"The date ended after 7 minutes. The reason? You won\'t believe it."', source: '— The real reason? In the book.' }
         ];
         
         let currentQuoteIndex = 0;
         let tickerInterval;
         
-        function initTicker() {
-            generateDots();
-            updateQuote(0);
-            startAutoRotation();
-        }
-        
-        function generateDots() {
-            const dotsContainer = document.getElementById('tickerDots');
-            dotsContainer.innerHTML = '';
-            tickerQuotes.forEach((_, index) => {
-                const dot = document.createElement('div');
-                dot.className = 'ticker-dot' + (index === 0 ? ' active' : '');
-                dot.onclick = () => goToQuote(index);
-                dotsContainer.appendChild(dot);
-            });
-        }
-        
-        function updateQuote(index) {
-            const quote = tickerQuotes[index];
-            const container = document.getElementById('tickerQuoteContainer');
-            
-            container.style.opacity = '0';
-            container.style.transform = 'translateX(-20px)';
-            
-            setTimeout(() => {
-                document.getElementById('tickerEmoji').textContent = quote.emoji;
-                document.getElementById('tickerQuoteText').textContent = quote.text;
-                document.getElementById('tickerQuoteSource').textContent = quote.source;
-                
-                container.style.opacity = '1';
-                container.style.transform = 'translateX(0)';
-                
-                document.querySelectorAll('.ticker-dot').forEach((dot, i) => {
-                    dot.classList.toggle('active', i === index);
-                });
-            }, 300);
-            
-            currentQuoteIndex = index;
-        }
-        
-        function nextQuote() {
-            const next = (currentQuoteIndex + 1) % tickerQuotes.length;
-            updateQuote(next);
-            resetAutoRotation();
-        }
-        
-        function prevQuote() {
-            const prev = (currentQuoteIndex - 1 + tickerQuotes.length) % tickerQuotes.length;
-            updateQuote(prev);
-            resetAutoRotation();
-        }
-        
-        function goToQuote(index) {
-            updateQuote(index);
-            resetAutoRotation();
-        }
-        
-        function startAutoRotation() {
-            tickerInterval = setInterval(() => {
-                nextQuote();
-            }, 6000);
-        }
-        
-        function resetAutoRotation() {
-            clearInterval(tickerInterval);
-            startAutoRotation();
-        }
-        
-        function closeCosmicTicker() {
-            document.getElementById('cosmicTicker').classList.add('hidden');
-            clearInterval(tickerInterval);
-        }
-        
+        function initTicker() { generateDots(); updateQuote(0); startAutoRotation(); }
+        function generateDots() { const d = document.getElementById('tickerDots'); d.innerHTML = ''; tickerQuotes.forEach((_, i) => { const dot = document.createElement('div'); dot.className = 'ticker-dot' + (i === 0 ? ' active' : ''); dot.onclick = () => goToQuote(i); d.appendChild(dot); }); }
+        function updateQuote(i) { const q = tickerQuotes[i]; const c = document.getElementById('tickerQuoteContainer'); c.style.opacity = '0'; c.style.transform = 'translateX(-20px)'; setTimeout(() => { document.getElementById('tickerEmoji').textContent = q.emoji; document.getElementById('tickerQuoteText').textContent = q.text; document.getElementById('tickerQuoteSource').textContent = q.source; c.style.opacity = '1'; c.style.transform = 'translateX(0)'; document.querySelectorAll('.ticker-dot').forEach((d, j) => { d.classList.toggle('active', j === i); }); }, 300); currentQuoteIndex = i; }
+        function nextQuote() { updateQuote((currentQuoteIndex + 1) % tickerQuotes.length); resetAutoRotation(); }
+        function prevQuote() { updateQuote((currentQuoteIndex - 1 + tickerQuotes.length) % tickerQuotes.length); resetAutoRotation(); }
+        function goToQuote(i) { updateQuote(i); resetAutoRotation(); }
+        function startAutoRotation() { tickerInterval = setInterval(nextQuote, 6000); }
+        function resetAutoRotation() { clearInterval(tickerInterval); startAutoRotation(); }
+        function closeCosmicTicker() { document.getElementById('cosmicTicker').classList.add('hidden'); clearInterval(tickerInterval); }
         document.addEventListener('DOMContentLoaded', initTicker);
         
-        // ═══════════════════════════════════════════════════════════════════════════
-        // Other Ticker Functions
-        // ═══════════════════════════════════════════════════════════════════════════
+        function closePriceTicker() { document.getElementById('priceTicker').classList.add('hidden'); }
         
-        function closePriceTicker() {
-            document.getElementById('priceTicker').classList.add('hidden');
-        }
-        
-        function closeChristmasTicker() {
-            document.getElementById('christmasTicker').classList.add('hidden');
-        }
-        
-        // Make tickers draggable
-        function makeDraggable(element) {
-            if (!element) return;
-            let isDragging = false;
-            let startX, startY, initialX, initialY;
-            
-            element.addEventListener('mousedown', startDrag);
-            document.addEventListener('mousemove', drag);
-            document.addEventListener('mouseup', stopDrag);
-            element.addEventListener('touchstart', startDrag, { passive: false });
-            document.addEventListener('touchmove', drag, { passive: false });
-            document.addEventListener('touchend', stopDrag);
-            
-            function startDrag(e) {
-                if (e.target.tagName === 'BUTTON' || e.target.tagName === 'A' || e.target.closest('button') || e.target.closest('a')) return;
-                isDragging = true;
-                if (e.type === 'touchstart') {
-                    startX = e.touches[0].clientX;
-                    startY = e.touches[0].clientY;
-                } else {
-                    startX = e.clientX;
-                    startY = e.clientY;
-                }
-                const rect = element.getBoundingClientRect();
-                initialX = rect.left;
-                initialY = rect.top;
-                element.style.bottom = 'auto';
-                element.style.right = 'auto';
-                element.style.left = initialX + 'px';
-                element.style.top = initialY + 'px';
-                e.preventDefault();
-            }
-            
-            function drag(e) {
-                if (!isDragging) return;
-                let currentX, currentY;
-                if (e.type === 'touchmove') {
-                    currentX = e.touches[0].clientX;
-                    currentY = e.touches[0].clientY;
-                } else {
-                    currentX = e.clientX;
-                    currentY = e.clientY;
-                }
-                const deltaX = currentX - startX;
-                const deltaY = currentY - startY;
-                let newX = initialX + deltaX;
-                let newY = initialY + deltaY;
-                const rect = element.getBoundingClientRect();
-                const maxX = window.innerWidth - rect.width;
-                const maxY = window.innerHeight - rect.height;
-                newX = Math.max(0, Math.min(newX, maxX));
-                newY = Math.max(0, Math.min(newY, maxY));
-                element.style.left = newX + 'px';
-                element.style.top = newY + 'px';
-                e.preventDefault();
-            }
-            
-            function stopDrag() {
-                isDragging = false;
-            }
-        }
-        
-        document.addEventListener('DOMContentLoaded', function() {
-            makeDraggable(document.getElementById('priceTicker'));
-            makeDraggable(document.getElementById('christmasTicker'));
-        });
-        
-        // ═══════════════════════════════════════════════════════════════════════════
-        // 🔧 ADMIN PANEL FUNCTIONS
-        // ═══════════════════════════════════════════════════════════════════════════
-        
-        // Secret key combo to open admin: Ctrl+Shift+A
-        document.addEventListener('keydown', function(e) {
-            if (e.ctrlKey && e.shiftKey && e.key === 'A') {
-                e.preventDefault();
-                openAdminPanel();
-            }
-        });
-        
-        function openAdminPanel() {
-            document.getElementById('adminOverlay').classList.add('active');
-            document.getElementById('adminPanel').classList.add('active');
-            loadAdminSettings();
-        }
-        
-        function closeAdminPanel() {
-            document.getElementById('adminOverlay').classList.remove('active');
-            document.getElementById('adminPanel').classList.remove('active');
-        }
-        
-        function loadAdminSettings() {
-            const settings = JSON.parse(localStorage.getItem('tickerSettings') || '{}');
-            
-            document.getElementById('priceTickerEnabled').checked = settings.priceTickerEnabled !== false;
-            document.getElementById('adminPrice').value = settings.price || '$13.90';
-            document.getElementById('christmasTickerEnabled').checked = settings.christmasTickerEnabled !== false;
-            document.getElementById('adminChristmasTitle').value = settings.christmasTitle || 'The <span>ultimate</span> gift<br>for your single friend';
-            document.getElementById('adminChristmasSubtitle').value = settings.christmasSubtitle || "They'll laugh. They'll cry. They'll relate.";
-            document.getElementById('adminChristmasCta').value = settings.christmasCta || 'Gift It Now';
-            document.getElementById('cosmicTickerEnabled').checked = settings.cosmicTickerEnabled !== false;
-        }
-        
-        function saveAdminSettings() {
-            const settings = {
-                priceTickerEnabled: document.getElementById('priceTickerEnabled').checked,
-                price: document.getElementById('adminPrice').value,
-                christmasTickerEnabled: document.getElementById('christmasTickerEnabled').checked,
-                christmasTitle: document.getElementById('adminChristmasTitle').value,
-                christmasSubtitle: document.getElementById('adminChristmasSubtitle').value,
-                christmasCta: document.getElementById('adminChristmasCta').value,
-                cosmicTickerEnabled: document.getElementById('cosmicTickerEnabled').checked
-            };
-            
-            localStorage.setItem('tickerSettings', JSON.stringify(settings));
-            applySettings(settings);
-            closeAdminPanel();
-            
-            // Show save confirmation
-            alert('✅ Settings saved successfully!');
-        }
-        
-        function applySettings(settings) {
-            // Price Ticker
-            const priceTicker = document.getElementById('priceTicker');
-            if (settings.priceTickerEnabled === false) {
-                priceTicker.classList.add('hidden');
-            } else {
-                priceTicker.classList.remove('hidden');
-            }
-            document.getElementById('priceTickerPrice').textContent = settings.price;
-            
-            // Christmas Ticker
-            const christmasTicker = document.getElementById('christmasTicker');
-            if (settings.christmasTickerEnabled === false) {
-                christmasTicker.classList.add('hidden');
-            } else {
-                christmasTicker.classList.remove('hidden');
-            }
-            document.getElementById('christmasTitle').innerHTML = settings.christmasTitle;
-            document.getElementById('christmasSubtitle').textContent = settings.christmasSubtitle;
-            document.getElementById('christmasCta').textContent = settings.christmasCta;
-            
-            // Cosmic Ticker
-            const cosmicTicker = document.getElementById('cosmicTicker');
-            if (settings.cosmicTickerEnabled === false) {
-                cosmicTicker.classList.add('hidden');
-            } else {
-                cosmicTicker.classList.remove('hidden');
-            }
-        }
-        
-        // Load settings on page load
-        document.addEventListener('DOMContentLoaded', function() {
-            const settings = JSON.parse(localStorage.getItem('tickerSettings') || '{}');
-            if (Object.keys(settings).length > 0) {
-                applySettings(settings);
-            }
-        });
-        
-        // ═══════════════════════════════════════════════════════════════════════════
-        // Other Functions
-        // ═══════════════════════════════════════════════════════════════════════════
+        function makeDraggable(el) { if (!el) return; let isDragging = false, startX, startY, initialX, initialY; el.addEventListener('mousedown', start); document.addEventListener('mousemove', drag); document.addEventListener('mouseup', stop); el.addEventListener('touchstart', start, { passive: false }); document.addEventListener('touchmove', drag, { passive: false }); document.addEventListener('touchend', stop); function start(e) { if (e.target.tagName === 'BUTTON' || e.target.tagName === 'A' || e.target.closest('button') || e.target.closest('a')) return; isDragging = true; if (e.type === 'touchstart') { startX = e.touches[0].clientX; startY = e.touches[0].clientY; } else { startX = e.clientX; startY = e.clientY; } const rect = el.getBoundingClientRect(); initialX = rect.left; initialY = rect.top; el.style.bottom = 'auto'; el.style.right = 'auto'; el.style.left = initialX + 'px'; el.style.top = initialY + 'px'; e.preventDefault(); } function drag(e) { if (!isDragging) return; let cX, cY; if (e.type === 'touchmove') { cX = e.touches[0].clientX; cY = e.touches[0].clientY; } else { cX = e.clientX; cY = e.clientY; } let nX = initialX + (cX - startX), nY = initialY + (cY - startY); const rect = el.getBoundingClientRect(); nX = Math.max(0, Math.min(nX, window.innerWidth - rect.width)); nY = Math.max(0, Math.min(nY, window.innerHeight - rect.height)); el.style.left = nX + 'px'; el.style.top = nY + 'px'; e.preventDefault(); } function stop() { isDragging = false; } }
+        document.addEventListener('DOMContentLoaded', function() { makeDraggable(document.getElementById('priceTicker')); });
         
         let fontSize = 100;
         function toggleAccessibilityMenu() { document.getElementById('accessibility-menu').classList.toggle('active'); }
-        function changeFontSize(delta) { fontSize += delta * 10; fontSize = Math.max(80, Math.min(150, fontSize)); document.body.style.fontSize = fontSize + '%'; }
+        function changeFontSize(d) { fontSize += d * 10; fontSize = Math.max(80, Math.min(150, fontSize)); document.body.style.fontSize = fontSize + '%'; }
         function toggleHighContrast() { document.body.classList.toggle('high-contrast'); document.body.classList.remove('grayscale'); }
         function toggleGrayscale() { document.body.classList.toggle('grayscale'); document.body.classList.remove('high-contrast'); }
         function toggleUnderlineLinks() { document.body.classList.toggle('underline-links'); }
         function resetAccessibility() { fontSize = 100; document.body.style.fontSize = '100%'; document.body.classList.remove('high-contrast', 'grayscale', 'underline-links'); }
-        function toggleTeaser() { const toggle = document.getElementById('teaserToggle'); const content = document.getElementById('teaserContent'); toggle.classList.toggle('open'); content.classList.toggle('open'); }
+        function toggleTeaser() { document.getElementById('teaserToggle').classList.toggle('open'); document.getElementById('teaserContent').classList.toggle('open'); }
         
-        document.getElementById('storyForm').addEventListener('submit', async function(e) {
-            e.preventDefault();
-            const formData = new FormData(this);
-            try {
-                await fetch('https://api.web3forms.com/submit', { method: 'POST', body: formData });
-                document.getElementById('storyForm').style.display = 'none';
-                document.getElementById('formSuccess').style.display = 'block';
-            } catch (error) {
-                console.error('Error:', error);
-            }
-        });
+        document.getElementById('storyForm').addEventListener('submit', async function(e) { e.preventDefault(); const fd = new FormData(this); try { await fetch('https://api.web3forms.com/submit', { method: 'POST', body: fd }); document.getElementById('storyForm').style.display = 'none'; document.getElementById('formSuccess').style.display = 'block'; } catch (err) { console.error('Error:', err); } });
     </script>
 </body>
 </html>
