@@ -308,17 +308,21 @@
 
         .buy-section { padding: 100px 20px; background: var(--bg-secondary); }
         .buy-subtitle { text-align: center; color: var(--text-secondary); font-size: 18px; margin-bottom: 50px; margin-top: -40px; }
-        .buy-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; max-width: 700px; margin: 0 auto; }
-        .buy-card { background: var(--bg-card); border: 2px solid rgba(255, 255, 255, 0.1); border-radius: 24px; padding: 35px 30px; text-align: center; position: relative; transition: all 0.3s ease; }
+        .buy-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; max-width: 950px; margin: 0 auto; }
+        .buy-card { background: var(--bg-card); border: 2px solid rgba(255, 255, 255, 0.1); border-radius: 24px; padding: 35px 25px; text-align: center; position: relative; transition: all 0.3s ease; display: flex; flex-direction: column; min-height: 380px; }
         .buy-card:hover { transform: translateY(-5px); border-color: var(--accent-gold); }
         .buy-card.featured { border-color: var(--accent-red); background: linear-gradient(180deg, rgba(220, 38, 38, 0.1) 0%, var(--bg-card) 100%); }
         .buy-card-badge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--gradient-red); color: white; padding: 6px 20px; border-radius: 20px; font-size: 12px; font-weight: 700; }
-        .buy-icon { font-size: 50px; margin-bottom: 15px; }
-        .buy-title { font-size: 24px; font-weight: 700; margin-bottom: 8px; }
-        .buy-desc { color: var(--text-secondary); font-size: 14px; margin-bottom: 20px; }
-        .buy-price { font-size: 36px; font-weight: 900; color: var(--accent-red); margin-bottom: 5px; }
-        .buy-note { font-size: 13px; color: var(--accent-gold); margin-bottom: 20px; }
+        .buy-card-badge.local { background: var(--gradient-gold); color: #000; }
+        .buy-card .buy-icon { font-size: 50px; margin-bottom: 15px; }
+        .buy-card .buy-title { font-size: 22px; font-weight: 700; margin-bottom: 8px; }
+        .buy-card .buy-desc { color: var(--text-secondary); font-size: 14px; margin-bottom: 20px; }
+        .buy-card .buy-price { font-size: 34px; font-weight: 900; color: var(--accent-red); margin-bottom: 5px; }
+        .buy-card .buy-note { font-size: 13px; color: var(--accent-gold); margin-bottom: 20px; }
+        .buy-card .buy-button-wrapper { margin-top: auto; }
         .buy-button { display: block; background: var(--gradient-red); color: white; padding: 15px 30px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 16px; transition: all 0.3s ease; margin-bottom: 15px; }
+        @media (max-width: 900px) { .buy-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 600px) { .buy-grid { grid-template-columns: 1fr; } }
         .buy-button:hover { transform: scale(1.05); box-shadow: var(--shadow-glow); }
         .buy-button.amazon { background: #ff9900; color: #000; }
         .buy-delivery { font-size: 13px; color: var(--text-secondary); }
@@ -355,6 +359,7 @@
             #accessibility-widget { top: 80px; right: 10px; }
             .lang-switch { top: 10px; right: 10px; }
             .lang-switch a { padding: 8px 15px; font-size: 12px; }
+            .buy-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -413,7 +418,7 @@
             <p class="hero-tagline">If you've ever been on a date and said "what the hell just happened?" —<br>this book was written for you.</p>
             <div class="cta-container">
                 <a href="#buy" class="cta-button">👀 What Happened on That Date?</a>
-                <p class="cta-subtext">📚 Paperback | 🌍 Worldwide Shipping</p>
+                <p class="cta-subtext">📚 Paperback | 📱 eBook | 🇮🇱 Israel Delivery</p>
             </div>
             <div class="launch-offer">
                 <div class="offer-badge"><span class="offer-icon">🎁</span><span class="offer-text">Special Launch Price</span></div>
@@ -515,20 +520,36 @@
                     <div class="buy-card-badge">🌍 Worldwide</div>
                     <div class="buy-icon">📚</div>
                     <h3 class="buy-title">Paperback</h3>
-                    <p class="buy-desc">Printed book in Hebrew</p>
+                    <p class="buy-desc">Printed book in English</p>
                     <div class="buy-price">$13.90</div>
                     <div class="buy-note">Special Launch Price!</div>
-                    <a href="https://www.amazon.com/dp/B0FY7DJFJ9" class="buy-button amazon" target="_blank">Buy on Amazon</a>
-                    <p class="buy-delivery">🌐 International Shipping</p>
+                    <div class="buy-button-wrapper">
+                        <a href="https://www.amazon.com/dp/B0FY7DJFJ9" class="buy-button amazon" target="_blank">Buy on Amazon</a>
+                        <p class="buy-delivery">🌐 International Shipping</p>
+                    </div>
                 </div>
                 <div class="buy-card">
                     <div class="buy-icon">📱</div>
                     <h3 class="buy-title">eBook</h3>
-                    <p class="buy-desc">Coming Soon!</p>
-                    <div class="buy-price">TBA</div>
-                    <div class="buy-note">English translation in progress</div>
-                    <a href="#" class="buy-button" style="opacity: 0.5; pointer-events: none;">Coming Soon</a>
-                    <p class="buy-delivery">⏳ Stay tuned!</p>
+                    <p class="buy-desc">Kindle Edition in English</p>
+                    <div class="buy-price">$2.99</div>
+                    <div class="buy-note">Instant Download!</div>
+                    <div class="buy-button-wrapper">
+                        <a href="https://www.amazon.com/dp/B0G528JZGS" class="buy-button" target="_blank">Buy on Kindle</a>
+                        <p class="buy-delivery">⚡ Instant Delivery</p>
+                    </div>
+                </div>
+                <div class="buy-card">
+                    <div class="buy-card-badge local">🇮🇱 In Israel</div>
+                    <div class="buy-icon">📖</div>
+                    <h3 class="buy-title">Paperback</h3>
+                    <p class="buy-desc">English edition for expats in Israel</p>
+                    <div class="buy-price">₪75</div>
+                    <div class="buy-note">Local Delivery!</div>
+                    <div class="buy-button-wrapper">
+                        <a href="https://bookpod.co.il/product/love-bites-101-dating-disasters/" class="buy-button" target="_blank">Buy on BookPod</a>
+                        <p class="buy-delivery">🚚 5 Business Days</p>
+                    </div>
                 </div>
             </div>
         </section>
