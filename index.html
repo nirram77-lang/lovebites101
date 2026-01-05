@@ -130,6 +130,8 @@
         .price-ticker-price { font-family: 'Playfair Display', serif; font-size: 42px; color: #dc2626; font-weight: 900; line-height: 1; margin-bottom: 12px; text-shadow: 1px 1px 2px rgba(0,0,0,0.1); }
         .price-ticker-btn { background: #1a1a1a; color: #fff; border: none; padding: 10px 24px; border-radius: 25px; font-size: 14px; font-weight: 700; font-family: 'Poppins', sans-serif; cursor: pointer; transition: all 0.3s ease; }
         .price-ticker-btn:hover { background: #333; transform: scale(1.05); }
+        .price-ticker-desc { font-size: 12px; color: #333; margin-bottom: 5px; }
+        .price-ticker-coupon { background: #dc2626; color: white; padding: 4px 12px; border-radius: 15px; font-size: 13px; font-weight: 700; display: inline-block; margin-bottom: 10px; }
         @media (max-width: 768px) { .price-ticker { bottom: 15px; left: 15px; transform: scale(0.9); transform-origin: bottom left; } }
 
         /* ═══════════════════════════════════════════════════════════════════════════ */
@@ -308,20 +310,23 @@
 
         .buy-section { padding: 100px 20px; background: var(--bg-secondary); }
         .buy-subtitle { text-align: center; color: var(--text-secondary); font-size: 18px; margin-bottom: 50px; margin-top: -40px; }
-        .buy-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; max-width: 950px; margin: 0 auto; }
-        .buy-card { background: var(--bg-card); border: 2px solid rgba(255, 255, 255, 0.1); border-radius: 24px; padding: 35px 25px; text-align: center; position: relative; transition: all 0.3s ease; display: flex; flex-direction: column; min-height: 380px; }
+        .buy-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; max-width: 1200px; margin: 0 auto; }
+        .buy-card { background: var(--bg-card); border: 2px solid rgba(255, 255, 255, 0.1); border-radius: 24px; padding: 35px 20px; text-align: center; position: relative; transition: all 0.3s ease; display: flex; flex-direction: column; min-height: 380px; }
         .buy-card:hover { transform: translateY(-5px); border-color: var(--accent-gold); }
         .buy-card.featured { border-color: var(--accent-red); background: linear-gradient(180deg, rgba(220, 38, 38, 0.1) 0%, var(--bg-card) 100%); }
+        .buy-card.audiobook-card { border-color: #e94560; background: linear-gradient(180deg, rgba(233, 69, 96, 0.15) 0%, var(--bg-card) 100%); }
         .buy-card-badge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--gradient-red); color: white; padding: 6px 20px; border-radius: 20px; font-size: 12px; font-weight: 700; }
         .buy-card-badge.local { background: var(--gradient-gold); color: #000; }
+        .buy-card-badge.audiobook-badge { background: linear-gradient(135deg, #e94560 0%, #ff6b6b 100%); }
         .buy-card .buy-icon { font-size: 50px; margin-bottom: 15px; }
-        .buy-card .buy-title { font-size: 22px; font-weight: 700; margin-bottom: 8px; }
-        .buy-card .buy-desc { color: var(--text-secondary); font-size: 14px; margin-bottom: 20px; }
-        .buy-card .buy-price { font-size: 34px; font-weight: 900; color: var(--accent-red); margin-bottom: 5px; }
-        .buy-card .buy-note { font-size: 13px; color: var(--accent-gold); margin-bottom: 20px; }
+        .buy-card .buy-title { font-size: 20px; font-weight: 700; margin-bottom: 8px; }
+        .buy-card .buy-desc { color: var(--text-secondary); font-size: 13px; margin-bottom: 15px; }
+        .buy-card .buy-price { font-size: 32px; font-weight: 900; color: var(--accent-red); margin-bottom: 5px; }
+        .buy-card .buy-note { font-size: 12px; color: var(--accent-gold); margin-bottom: 15px; }
         .buy-card .buy-button-wrapper { margin-top: auto; }
-        .buy-button { display: block; background: var(--gradient-red); color: white; padding: 15px 30px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 16px; transition: all 0.3s ease; margin-bottom: 15px; }
-        @media (max-width: 900px) { .buy-grid { grid-template-columns: repeat(2, 1fr); } }
+        .buy-button { display: block; background: var(--gradient-red); color: white; padding: 14px 20px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 15px; transition: all 0.3s ease; margin-bottom: 12px; }
+        .buy-button.coming-soon { background: rgba(255,255,255,0.1); color: #888; pointer-events: none; }
+        @media (max-width: 1100px) { .buy-grid { grid-template-columns: repeat(2, 1fr); } }
         @media (max-width: 600px) { .buy-grid { grid-template-columns: 1fr; } }
         .buy-button:hover { transform: scale(1.05); box-shadow: var(--shadow-glow); }
         .buy-button.amazon { background: #ff9900; color: #000; }
@@ -368,11 +373,13 @@
     <!-- 🔥 PRICE TICKER - CLASSIC -->
     <div class="price-ticker" id="priceTicker">
         <button class="price-ticker-close" onclick="event.stopPropagation(); closePriceTicker()">✕</button>
-        <a href="#buy" class="price-ticker-link" onclick="closePriceTicker()">
+        <a href="https://bookpod.co.il/product/love-bites-101-dating-disasters/" class="price-ticker-link" target="_blank">
             <div class="price-ticker-header">
                 <span class="price-ticker-icon">🔥</span>
-                <span class="price-ticker-title">Special Launch Price</span>
+                <span class="price-ticker-title">10% OFF</span>
             </div>
+            <div class="price-ticker-desc">English book at BookPod 🇮🇱</div>
+            <div class="price-ticker-coupon">TIKTOK10</div>
             <button class="price-ticker-btn">Buy Now →</button>
         </a>
     </div>
@@ -418,7 +425,7 @@
             <p class="hero-tagline">If you've ever been on a date and said "what the hell just happened?" —<br>this book was written for you.</p>
             <div class="cta-container">
                 <a href="#buy" class="cta-button">👀 What Happened on That Date?</a>
-                <p class="cta-subtext">📚 Paperback | 📱 eBook | 🇮🇱 Israel Delivery</p>
+                <p class="cta-subtext">📚 Paperback | 📱 eBook | 🎧 AudioBook | 🇮🇱 Israel</p>
             </div>
             <div class="launch-offer">
                 <div class="offer-badge"><span class="offer-icon">🎁</span><span class="offer-text">Special Launch Price</span></div>
@@ -539,13 +546,25 @@
                         <p class="buy-delivery">⚡ Instant Delivery</p>
                     </div>
                 </div>
+                <div class="buy-card audiobook-card">
+                    <div class="buy-card-badge audiobook-badge">🎧 New!</div>
+                    <div class="buy-icon">🎧</div>
+                    <h3 class="buy-title">AudioBook</h3>
+                    <p class="buy-desc">Listen anytime, anywhere</p>
+                    <div class="buy-price">TBA</div>
+                    <div class="buy-note">4+ Hours of Content!</div>
+                    <div class="buy-button-wrapper">
+                        <span class="buy-button coming-soon">Coming Soon</span>
+                        <p class="buy-delivery">🎧 Stay Tuned!</p>
+                    </div>
+                </div>
                 <div class="buy-card">
                     <div class="buy-card-badge local">🇮🇱 In Israel</div>
                     <div class="buy-icon">📖</div>
                     <h3 class="buy-title">Paperback</h3>
                     <p class="buy-desc">English edition for expats in Israel</p>
                     <div class="buy-price">₪75</div>
-                    <div class="buy-note">Local Delivery!</div>
+                    <div class="buy-note">Local Delivery! 10% OFF</div>
                     <div class="buy-button-wrapper">
                         <a href="https://bookpod.co.il/product/love-bites-101-dating-disasters/" class="buy-button" target="_blank">Buy on BookPod</a>
                         <p class="buy-delivery">🚚 5 Business Days</p>
