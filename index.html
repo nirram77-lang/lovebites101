@@ -19,7 +19,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.funnydates101.com/">
     <meta property="og:title" content="💔 Real Dates. Real Laughs.">
-    <meta property="og:description" content="Based on real dates. Some survived. The relationship didn't. 🎬">
+    <meta property="og:description" content="High expectations. Too many questions. Too many stories. 🎬">
     <meta property="og:image" content="https://www.funnydates101.com/og-image.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -27,7 +27,7 @@
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="💔 Real Dates. Real Laughs.">
-    <meta name="twitter:description" content="Based on real dates. Some survived. The relationship didn't. 🎬">
+    <meta name="twitter:description" content="High expectations. Too many questions. Too many stories. 🎬">
     <meta name="twitter:image" content="https://www.funnydates101.com/og-image.png">
 
     <!-- Favicon -->
@@ -223,7 +223,32 @@
         @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
         .hero-title { font-family: 'Playfair Display', serif; font-size: clamp(48px, 10vw, 90px); line-height: 1.1; margin-bottom: 10px; }
         .hero-title .highlight { background: var(--gradient-red); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-        .hero-subtitle { font-size: clamp(18px, 3vw, 28px); color: var(--text-secondary); margin-bottom: 20px; }
+        .hero-title .title-dot {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            background: var(--accent-red);
+            border-radius: 50%;
+            margin-left: 8px;
+            vertical-align: middle;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.7); }
+            50% { opacity: 0.8; transform: scale(0.9); box-shadow: 0 0 15px 5px rgba(220, 38, 38, 0.3); }
+        }
+        .hero-subtitle { 
+            font-size: clamp(18px, 3vw, 28px); 
+            color: var(--text-secondary); 
+            margin-bottom: 20px;
+            letter-spacing: 0.5px;
+            opacity: 0;
+            animation: fadeInSubtitle 1.5s ease-out 0.5s forwards;
+        }
+        @keyframes fadeInSubtitle {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 0.85; transform: translateY(0); }
+        }
         .hero-tagline { font-size: 18px; color: var(--accent-rose); margin-bottom: 40px; max-width: 550px; }
 
         .cta-button { display: inline-flex; align-items: center; gap: 12px; background: var(--gradient-red); color: #fff; font-size: 20px; font-weight: 700; padding: 20px 50px; border-radius: 60px; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 10px 40px rgba(220, 38, 38, 0.4); }
@@ -394,7 +419,7 @@
     <!-- 🔥 PRICE TICKER - CLASSIC -->
     <div class="price-ticker" id="priceTicker">
         <button class="price-ticker-close" onclick="event.stopPropagation(); closePriceTicker()">✕</button>
-        <a href="https://bookpod.co.il/product/love-bites-101-dating-disasters/" class="price-ticker-link" target="_blank">
+        <a href="#buy" class="price-ticker-link" onclick="closePriceTicker()">
             <div class="price-ticker-header">
                 <span class="price-ticker-icon">🔥</span>
                 <span class="price-ticker-title">10% OFF</span>
@@ -441,9 +466,9 @@
     <div class="main-content">
         <section class="hero">
             <div class="hero-badge"><span class="badge-dot"></span>The Book Everyone's Talking About</div>
-            <h1 class="hero-title"><span class="highlight">101 Dating</span><br>Disasters</h1>
-            <p class="hero-subtitle">Based on real dates.<br>Some survived. The relationship didn't.</p>
-            <p class="hero-tagline">If you've ever been on a date and said "what the hell just happened?" —<br>this book was written for you.</p>
+            <h1 class="hero-title"><span class="highlight">101 Dating</span><br>Disasters<span class="title-dot"></span></h1>
+            <p class="hero-subtitle">High expectations. Too many questions.<br>Too many stories.</p>
+            <p class="hero-tagline">If you've ever been on a date and said "what the hell just happened?" —<br>this book is for you.</p>
             <div class="cta-container">
                 <a href="#buy" class="cta-button">👀 What Happened on That Date?</a>
                 <p class="cta-subtext">📚 Paperback | 📱 eBook | 🎧 AudioBook | 🇮🇱 Israel</p>
