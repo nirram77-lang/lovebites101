@@ -424,19 +424,140 @@
 </head>
 <body>
 
-    <!-- 🔥 PRICE TICKER - CLASSIC -->
+    <!-- 🎧 AUDIOBOOK LAUNCH TICKER - DRAGGABLE! -->
     <div class="price-ticker" id="priceTicker">
         <button class="price-ticker-close" onclick="event.stopPropagation(); closePriceTicker()">✕</button>
-        <a href="#buy" class="price-ticker-link" onclick="closePriceTicker()">
+        <a href="#buy" class="price-ticker-link">
             <div class="price-ticker-header">
                 <span class="price-ticker-icon">🔥</span>
-                <span class="price-ticker-title">10% OFF</span>
+                <span class="price-ticker-title">AUDIOBOOK LAUNCH!</span>
+                <span class="price-ticker-icon">🔥</span>
             </div>
-            <div class="price-ticker-desc">English book at BookPod 🇮🇱</div>
-            <div class="price-ticker-coupon">10110</div>
-            <button class="price-ticker-btn">Buy Now →</button>
+            <div class="price-ticker-desc">🎧 4+ Hours of Dating Disasters!</div>
+            <div class="price-ticker-price" style="font-size: 32px; margin: 8px 0;">$14.90 <span style="font-size: 14px; text-decoration: line-through; color: #888;">$16.90</span></div>
         </a>
+        <div class="price-ticker-coupon-wrapper" style="display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 10px;">
+            <div class="price-ticker-coupon" id="couponCode" style="cursor: pointer; user-select: all;">LAUNCH101</div>
+            <button onclick="event.stopPropagation(); copyCoupon()" class="copy-coupon-btn" style="background: #1a1a1a; color: #fbbf24; border: none; padding: 4px 10px; border-radius: 12px; font-size: 11px; cursor: pointer; transition: all 0.3s;">📋 Copy</button>
+        </div>
+        <a href="order.html" class="price-ticker-link">
+            <button class="price-ticker-btn">🎧 Get It Now →</button>
+        </a>
+        <div style="font-size: 10px; color: #666; margin-top: 8px;">💡 Drag me anywhere!</div>
     </div>
+
+    <style>
+        /* Enhanced Ticker Styles */
+        .price-ticker {
+            cursor: grab;
+            user-select: none;
+        }
+        .price-ticker:active {
+            cursor: grabbing;
+        }
+        .price-ticker-coupon {
+            background: linear-gradient(135deg, #dc2626 0%, #f59e0b 100%);
+            color: white;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 16px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            animation: pulse-coupon 2s ease-in-out infinite;
+            box-shadow: 0 0 20px rgba(245, 158, 11, 0.5);
+        }
+        @keyframes pulse-coupon {
+            0%, 100% { transform: scale(1); box-shadow: 0 0 20px rgba(245, 158, 11, 0.5); }
+            50% { transform: scale(1.05); box-shadow: 0 0 30px rgba(245, 158, 11, 0.8); }
+        }
+        .copy-coupon-btn:hover {
+            background: #333 !important;
+            transform: scale(1.1);
+        }
+        .copy-coupon-btn.copied {
+            background: #22c55e !important;
+            color: white !important;
+        }
+    </style>
+
+    <script>
+        // 📋 Copy Coupon Function
+        function copyCoupon() {
+            const coupon = 'LAUNCH101';
+            navigator.clipboard.writeText(coupon).then(() => {
+                const btn = document.querySelector('.copy-coupon-btn');
+                btn.textContent = '✓ Copied!';
+                btn.classList.add('copied');
+                setTimeout(() => {
+                    btn.textContent = '📋 Copy';
+                    btn.classList.remove('copied');
+                }, 2000);
+            });
+        }
+
+        // 🖱️ Draggable Ticker
+        (function() {
+            const ticker = document.getElementById('priceTicker');
+            if (!ticker) return;
+            
+            let isDragging = false;
+            let startX, startY, initialX, initialY;
+            
+            ticker.addEventListener('mousedown', function(e) {
+                if (e.target.tagName === 'BUTTON' || e.target.tagName === 'A') return;
+                isDragging = true;
+                ticker.style.cursor = 'grabbing';
+                startX = e.clientX;
+                startY = e.clientY;
+                const rect = ticker.getBoundingClientRect();
+                initialX = rect.left;
+                initialY = rect.top;
+                e.preventDefault();
+            });
+            
+            document.addEventListener('mousemove', function(e) {
+                if (!isDragging) return;
+                const dx = e.clientX - startX;
+                const dy = e.clientY - startY;
+                ticker.style.position = 'fixed';
+                ticker.style.left = (initialX + dx) + 'px';
+                ticker.style.top = (initialY + dy) + 'px';
+                ticker.style.bottom = 'auto';
+            });
+            
+            document.addEventListener('mouseup', function() {
+                isDragging = false;
+                ticker.style.cursor = 'grab';
+            });
+            
+            // Touch support for mobile
+            ticker.addEventListener('touchstart', function(e) {
+                if (e.target.tagName === 'BUTTON' || e.target.tagName === 'A') return;
+                isDragging = true;
+                const touch = e.touches[0];
+                startX = touch.clientX;
+                startY = touch.clientY;
+                const rect = ticker.getBoundingClientRect();
+                initialX = rect.left;
+                initialY = rect.top;
+            }, { passive: true });
+            
+            document.addEventListener('touchmove', function(e) {
+                if (!isDragging) return;
+                const touch = e.touches[0];
+                const dx = touch.clientX - startX;
+                const dy = touch.clientY - startY;
+                ticker.style.position = 'fixed';
+                ticker.style.left = (initialX + dx) + 'px';
+                ticker.style.top = (initialY + dy) + 'px';
+                ticker.style.bottom = 'auto';
+            }, { passive: true });
+            
+            document.addEventListener('touchend', function() {
+                isDragging = false;
+            });
+        })();
+    </script>
 
     <div class="lang-switch"><a href="https://funnydates101.co.il"><img src="https://flagcdn.com/w40/il.png" alt="Israel" class="flag-icon"><span>עברית</span></a></div>
 
@@ -605,12 +726,12 @@
                     </div>
                 </div>
                 <div class="buy-card audiobook-card">
-                    <div class="buy-card-badge audiobook-badge">🎧 New!</div>
+                    <div class="buy-card-badge audiobook-badge">🔥 Launch!</div>
                     <div class="buy-icon">🎧</div>
                     <h3 class="buy-title">AudioBook</h3>
                     <p class="buy-desc">Listen anytime, anywhere</p>
-                    <div class="buy-price">$19.90</div>
-                    <div class="buy-note">4+ Hours of Content!</div>
+                    <div class="buy-price">$14.90 <span style="font-size: 14px; text-decoration: line-through; color: #666;">$16.90</span></div>
+                    <div class="buy-note">🔥 Code: LAUNCH101</div>
                     <div class="buy-button-wrapper">
                         <a href="order.html" class="buy-button">Pre-Order Now</a>
                         <p class="buy-delivery">📧 Instant Delivery!</p>
