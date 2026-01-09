@@ -639,6 +639,195 @@
             </div>
         </section>
 
+        <!-- 🎧 AUDIOBOOK TEASER SECTION - HOLLYWOOD EDITION -->
+        <style>
+        /* Audiobook Teaser Styles */
+        .audiobook-teaser-section {
+            padding: 60px 20px;
+            background: linear-gradient(180deg, 
+                rgba(20, 10, 10, 0.95) 0%, 
+                rgba(40, 15, 15, 0.98) 50%,
+                rgba(20, 10, 10, 0.95) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .audiobook-teaser-section::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(255, 215, 0, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(220, 53, 69, 0.1) 0%, transparent 50%);
+            animation: pulseGlowAudio 8s ease-in-out infinite;
+        }
+        @keyframes pulseGlowAudio { 0%, 100% { opacity: 0.5; } 50% { opacity: 1; } }
+        .teaser-container { max-width: 800px; margin: 0 auto; position: relative; z-index: 2; }
+        .teaser-header-audio { text-align: center; margin-bottom: 40px; }
+        .teaser-badge-audio {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(255, 215, 0, 0.05));
+            border: 1px solid rgba(255, 215, 0, 0.4);
+            padding: 8px 20px; border-radius: 50px; font-size: 14px; color: #FFD700; margin-bottom: 20px;
+            animation: shimmerAudio 3s ease-in-out infinite;
+        }
+        @keyframes shimmerAudio { 0%, 100% { box-shadow: 0 0 10px rgba(255, 215, 0, 0.2); } 50% { box-shadow: 0 0 25px rgba(255, 215, 0, 0.4); } }
+        .teaser-title-audio { font-size: 2.5rem; font-weight: 900; color: #fff; margin: 0 0 10px 0; text-shadow: 0 0 30px rgba(220, 53, 69, 0.5); }
+        .teaser-title-audio span { color: #DC3545; }
+        .teaser-subtitle-audio { font-size: 1.1rem; color: rgba(255, 255, 255, 0.7); font-weight: 300; }
+        .chapter-tabs { display: flex; justify-content: center; gap: 10px; margin-bottom: 25px; flex-wrap: wrap; }
+        .chapter-tab {
+            background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.6); padding: 12px 24px; border-radius: 50px; cursor: pointer;
+            transition: all 0.3s ease; font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 500;
+        }
+        .chapter-tab:hover { background: rgba(255, 255, 255, 0.1); color: #fff; }
+        .chapter-tab.active {
+            background: linear-gradient(135deg, #DC3545, #ff4757); border-color: transparent;
+            color: #fff; box-shadow: 0 5px 20px rgba(220, 53, 69, 0.4);
+        }
+        .chapter-tab-icon { margin-right: 6px; }
+        .player-card {
+            background: linear-gradient(145deg, rgba(30, 20, 20, 0.95) 0%, rgba(50, 25, 25, 0.9) 100%);
+            border-radius: 24px; padding: 30px; border: 1px solid rgba(255, 215, 0, 0.15);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), 0 0 40px rgba(220, 53, 69, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+            position: relative; overflow: hidden;
+        }
+        .player-card::before {
+            content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
+            background: linear-gradient(45deg, transparent 40%, rgba(255, 215, 0, 0.03) 50%, transparent 60%);
+            animation: cardShineAudio 8s ease-in-out infinite;
+        }
+        @keyframes cardShineAudio { 0% { transform: translateX(-100%) rotate(45deg); } 100% { transform: translateX(100%) rotate(45deg); } }
+        .chapter-content { display: none; position: relative; z-index: 1; }
+        .chapter-content.active { display: block; animation: fadeInAudio 0.4s ease; }
+        @keyframes fadeInAudio { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .chapter-info { display: flex; align-items: center; gap: 20px; margin-bottom: 25px; }
+        .chapter-icon {
+            width: 70px; height: 70px; background: linear-gradient(135deg, #DC3545, #ff6b7a);
+            border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 32px;
+            box-shadow: 0 10px 30px rgba(220, 53, 69, 0.4); animation: iconPulseAudio 2s ease-in-out infinite; flex-shrink: 0;
+        }
+        .chapter-icon.iguana { background: linear-gradient(135deg, #15803d, #22c55e); box-shadow: 0 10px 30px rgba(34, 197, 94, 0.4); }
+        @keyframes iconPulseAudio { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+        .chapter-details { flex: 1; }
+        .chapter-label { font-size: 12px; color: #FFD700; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 5px; }
+        .chapter-name { font-size: 1.4rem; font-weight: 700; color: #fff; margin: 0 0 5px 0; }
+        .chapter-quote { font-size: 0.95rem; color: rgba(255, 255, 255, 0.6); font-style: italic; }
+        .iguana-promo {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: linear-gradient(135deg, rgba(34, 197, 94, 0.2), rgba(34, 197, 94, 0.05));
+            border: 1px solid rgba(34, 197, 94, 0.4); padding: 8px 16px; border-radius: 50px;
+            font-size: 13px; color: #4ade80; margin-top: 10px; text-decoration: none; transition: all 0.3s ease;
+        }
+        .iguana-promo:hover { background: linear-gradient(135deg, rgba(34, 197, 94, 0.3), rgba(34, 197, 94, 0.1)); transform: translateY(-2px); box-shadow: 0 5px 20px rgba(34, 197, 94, 0.3); }
+        .audio-player { background: rgba(0, 0, 0, 0.3); border-radius: 16px; padding: 20px; }
+        .player-controls { display: flex; align-items: center; gap: 15px; }
+        .play-button {
+            width: 60px; height: 60px; background: linear-gradient(135deg, #DC3545, #ff4757);
+            border: none; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center;
+            transition: all 0.3s ease; box-shadow: 0 8px 25px rgba(220, 53, 69, 0.5); flex-shrink: 0;
+        }
+        .play-button:hover { transform: scale(1.1); box-shadow: 0 12px 35px rgba(220, 53, 69, 0.6); }
+        .play-button svg { width: 24px; height: 24px; fill: white; margin-left: 3px; }
+        .play-button.playing svg { margin-left: 0; }
+        .progress-container { flex: 1; }
+        .time-display { display: flex; justify-content: space-between; font-size: 12px; color: rgba(255, 255, 255, 0.5); margin-bottom: 8px; }
+        .progress-bar { width: 100%; height: 6px; background: rgba(255, 255, 255, 0.1); border-radius: 3px; cursor: pointer; position: relative; overflow: hidden; }
+        .progress-fill { height: 100%; background: linear-gradient(90deg, #DC3545, #FFD700); border-radius: 3px; width: 0%; transition: width 0.1s linear; position: relative; }
+        .progress-fill::after { content: ''; position: absolute; right: -7px; top: 50%; transform: translateY(-50%); width: 14px; height: 14px; background: #FFD700; border-radius: 50%; box-shadow: 0 0 10px rgba(255, 215, 0, 0.5); }
+        .volume-control { display: flex; align-items: center; gap: 10px; }
+        .volume-icon { font-size: 18px; cursor: pointer; }
+        .volume-slider { width: 80px; height: 4px; background: rgba(255, 255, 255, 0.2); border-radius: 2px; appearance: none; cursor: pointer; }
+        .volume-slider::-webkit-slider-thumb { appearance: none; width: 12px; height: 12px; background: #FFD700; border-radius: 50%; cursor: pointer; }
+        .teaser-cta-audio { margin-top: 30px; text-align: center; }
+        .cta-text-audio { font-size: 1.1rem; color: rgba(255, 255, 255, 0.8); margin-bottom: 15px; }
+        .cta-text-audio span { color: #FFD700; font-weight: 700; }
+        .cta-button-audio {
+            display: inline-flex; align-items: center; gap: 10px;
+            background: linear-gradient(135deg, #DC3545, #ff4757); color: white; font-size: 1.1rem; font-weight: 700;
+            padding: 16px 40px; border: none; border-radius: 50px; cursor: pointer; transition: all 0.3s ease; text-decoration: none;
+            box-shadow: 0 10px 30px rgba(220, 53, 69, 0.4); animation: ctaPulseAudio 2s ease-in-out infinite;
+        }
+        @keyframes ctaPulseAudio { 0%, 100% { box-shadow: 0 10px 30px rgba(220, 53, 69, 0.4); } 50% { box-shadow: 0 15px 40px rgba(220, 53, 69, 0.5), 0 0 0 10px rgba(220, 53, 69, 0); } }
+        .cta-button-audio:hover { transform: translateY(-3px) scale(1.02); }
+        .teaser-features-audio { display: flex; justify-content: center; gap: 30px; margin-top: 25px; flex-wrap: wrap; }
+        .teaser-feature-audio { display: flex; align-items: center; gap: 8px; font-size: 13px; color: rgba(255, 255, 255, 0.6); }
+        @media (max-width: 600px) {
+            .teaser-title-audio { font-size: 1.8rem; }
+            .chapter-tabs { flex-direction: column; gap: 8px; }
+            .chapter-tab { width: 100%; text-align: center; }
+            .chapter-info { flex-direction: column; text-align: center; }
+            .player-controls { flex-wrap: wrap; justify-content: center; }
+            .progress-container { width: 100%; order: 2; margin-top: 15px; }
+            .volume-control { order: 3; margin-top: 10px; }
+            .teaser-features-audio { flex-direction: column; align-items: center; gap: 15px; }
+        }
+        </style>
+
+        <section class="audiobook-teaser-section">
+            <div class="teaser-container">
+                <div class="teaser-header-audio">
+                    <div class="teaser-badge-audio"><span>🎧</span><span>Exclusive Preview</span></div>
+                    <h2 class="teaser-title-audio">Want to <span>Listen</span> Before You Fall in Love?</h2>
+                    <p class="teaser-subtitle-audio">Two chapters. Two disasters. Pick one and see if you survive.</p>
+                </div>
+                <div class="chapter-tabs">
+                    <button class="chapter-tab active" onclick="switchChapter(0)"><span class="chapter-tab-icon">🔥</span>Too Hot to Handle</button>
+                    <button class="chapter-tab" onclick="switchChapter(1)"><span class="chapter-tab-icon">🦎</span>Here 4 Iguana</button>
+                </div>
+                <div class="player-card">
+                    <div class="chapter-content active" id="chapter0">
+                        <div class="chapter-info">
+                            <div class="chapter-icon">🔥</div>
+                            <div class="chapter-details">
+                                <div class="chapter-label">Chapter 15</div>
+                                <h3 class="chapter-name">Too Hot to Handle</h3>
+                                <p class="chapter-quote">A date that started innocent and ended with "Why did I say THAT?!"</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chapter-content" id="chapter1">
+                        <div class="chapter-info">
+                            <div class="chapter-icon iguana">🦎</div>
+                            <div class="chapter-details">
+                                <div class="chapter-label">Chapter 94</div>
+                                <h3 class="chapter-name">Here 4 Iguana</h3>
+                                <p class="chapter-quote">One wrong word, one exotic creature, and a realization that came way too late.</p>
+                                <a href="https://i4iguana.com" target="_blank" class="iguana-promo"><span>🦎</span><span>Discover the app born from this story →</span></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="audio-player">
+                        <div class="player-controls">
+                            <button class="play-button" id="playBtn" onclick="togglePlay()">
+                                <svg viewBox="0 0 24 24" id="playIcon"><path d="M8 5v14l11-7z"/></svg>
+                            </button>
+                            <div class="progress-container">
+                                <div class="time-display"><span id="currentTime">0:00</span><span id="duration">2:24</span></div>
+                                <div class="progress-bar" onclick="seekAudio(event)"><div class="progress-fill" id="progressFill"></div></div>
+                            </div>
+                            <div class="volume-control">
+                                <span class="volume-icon">🔊</span>
+                                <input type="range" class="volume-slider" min="0" max="100" value="80" onchange="setVolume(this.value)">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="teaser-cta-audio">
+                        <p class="cta-text-audio">🔥 That was just 2 out of <span>101 stories</span>. If this hit you — wait for the rest.</p>
+                        <a href="#buy" class="cta-button-audio">Give Me All 4 Hours 🎧 <span>$14.90</span></a>
+                        <div class="teaser-features-audio">
+                            <div class="teaser-feature-audio"><span>⏱️</span><span>Over 4 hours of chaos</span></div>
+                            <div class="teaser-feature-audio"><span>📱</span><span>Listen anywhere</span></div>
+                            <div class="teaser-feature-audio"><span>♾️</span><span>Yours forever</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <audio id="audio0" preload="metadata"><source src="audio/chapter15_teaser.mp3" type="audio/mpeg"></audio>
+        <audio id="audio1" preload="metadata"><source src="audio/chapter94_teaser.mp3" type="audio/mpeg"></audio>
+
         <section class="reviews-hollywood">
             <div class="reviews-header"><span class="reviews-star">⭐</span><h2 class="reviews-main-title">Readers Who Couldn't Look Away</h2></div>
             <div class="reviews-showcase">
@@ -813,6 +1002,42 @@
         function toggleTeaser() { document.getElementById('teaserToggle').classList.toggle('open'); document.getElementById('teaserContent').classList.toggle('open'); }
         
         document.getElementById('storyForm').addEventListener('submit', async function(e) { e.preventDefault(); const fd = new FormData(this); try { await fetch('https://api.web3forms.com/submit', { method: 'POST', body: fd }); document.getElementById('storyForm').style.display = 'none'; document.getElementById('formSuccess').style.display = 'block'; } catch (err) { console.error('Error:', err); } });
+        
+        // 🎧 AUDIOBOOK PLAYER
+        let currentChapter = 0;
+        const audios = [document.getElementById('audio0'), document.getElementById('audio1')];
+        const durations = ['2:24', '2:46'];
+        const playBtn = document.getElementById('playBtn');
+        const playIcon = document.getElementById('playIcon');
+        const progressFill = document.getElementById('progressFill');
+        const currentTimeEl = document.getElementById('currentTime');
+        const durationEl = document.getElementById('duration');
+        let isPlaying = false;
+
+        function switchChapter(index) {
+            if (isPlaying) { audios[currentChapter].pause(); isPlaying = false; playIcon.innerHTML = '<path d="M8 5v14l11-7z"/>'; playBtn.classList.remove('playing'); }
+            document.querySelectorAll('.chapter-tab').forEach((tab, i) => { tab.classList.toggle('active', i === index); });
+            document.querySelectorAll('.chapter-content').forEach((content, i) => { content.classList.toggle('active', i === index); });
+            progressFill.style.width = '0%'; currentTimeEl.textContent = '0:00'; durationEl.textContent = durations[index]; currentChapter = index;
+        }
+
+        function togglePlay() {
+            const audio = audios[currentChapter];
+            if (isPlaying) { audio.pause(); playIcon.innerHTML = '<path d="M8 5v14l11-7z"/>'; playBtn.classList.remove('playing'); }
+            else { audio.play(); playIcon.innerHTML = '<path d="M6 4h4v16H6zm8 0h4v16h-4z"/>'; playBtn.classList.add('playing'); }
+            isPlaying = !isPlaying;
+        }
+
+        function formatTimeAudio(seconds) { const mins = Math.floor(seconds / 60); const secs = Math.floor(seconds % 60); return mins + ':' + secs.toString().padStart(2, '0'); }
+
+        audios.forEach((audio, index) => {
+            audio.addEventListener('loadedmetadata', () => { if (index === currentChapter) { durationEl.textContent = formatTimeAudio(audio.duration); } });
+            audio.addEventListener('timeupdate', () => { if (index === currentChapter) { const progress = (audio.currentTime / audio.duration) * 100; progressFill.style.width = progress + '%'; currentTimeEl.textContent = formatTimeAudio(audio.currentTime); } });
+            audio.addEventListener('ended', () => { if (index === currentChapter) { isPlaying = false; playIcon.innerHTML = '<path d="M8 5v14l11-7z"/>'; playBtn.classList.remove('playing'); progressFill.style.width = '0%'; } });
+        });
+
+        function seekAudio(e) { const audio = audios[currentChapter]; const rect = e.target.getBoundingClientRect(); const percent = (e.clientX - rect.left) / rect.width; audio.currentTime = percent * audio.duration; }
+        function setVolume(value) { audios.forEach(audio => { audio.volume = value / 100; }); }
     </script>
 </body>
 </html>
