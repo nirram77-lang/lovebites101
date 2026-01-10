@@ -136,17 +136,12 @@
             align-items: center;
             justify-content: center;
             z-index: 100;
-            pointer-events: auto;
         }
 
         .close-order-btn:hover {
             background: rgba(220, 38, 38, 0.5);
             border-color: rgba(220, 38, 38, 0.8);
             transform: scale(1.1);
-        }
-        
-        .close-order-btn:active {
-            transform: scale(0.95);
         }
 
         /* Header */
@@ -757,7 +752,7 @@
 
     <!-- Main Container -->
     <div class="order-container">
-        <button class="close-order-btn" onclick="goBack()" title="Back to site">✕</button>
+        <button class="close-order-btn" onclick="window.location.href='https://funnydates101.com'" title="Back to site">✕</button>
 
         <!-- Header -->
         <div class="order-header">
@@ -865,7 +860,7 @@
                 <div class="manual-payment" style="background: rgba(0, 102, 204, 0.1); border: 1px solid rgba(0, 102, 204, 0.3); border-radius: 12px; padding: 20px; margin-bottom: 20px;">
                     <h4 style="color: #0066cc; margin-bottom: 10px; font-size: 14px;">📱 Manual PayPal Payment</h4>
                     <ol style="color: var(--text-muted); font-size: 13px; padding-left: 20px; line-height: 1.8;">
-                        <li>Send <strong style="color: white;">$<span id="manualPayAmount">16.90</span></strong> to: <strong style="color: #0066cc;"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="e7898e95a7819289899e8386938294d6d7d6c984888a">[email&#160;protected]</a></strong></li>
+                        <li>Send <strong style="color: white;">$<span id="manualPayAmount">16.90</span></strong> to: <strong style="color: #0066cc;"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="e08e8992a086958e8e998481948593d1d0d1ce838f8d">[email&#160;protected]</a></strong></li>
                         <li>Include your name in the payment note</li>
                         <li>Fill the form above and click "Complete Order"</li>
                     </ol>
@@ -934,7 +929,7 @@
                     </div>
                     <div class="success-info-item">
                         <span class="icon">💬</span>
-                        <span class="text">Questions? Contact us at: <strong><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="204e49526046554e4e5944415445531110110e434f4d">[email&#160;protected]</a></strong></span>
+                        <span class="text">Questions? Contact us at: <strong><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="f29c9b80b294879c9c8b9693869781c3c2c3dc919d9f">[email&#160;protected]</a></strong></span>
                     </div>
                 </div>
                 
@@ -1161,13 +1156,7 @@
                     clearTimeout(timeoutId);
                     document.getElementById('loadingOverlay').classList.remove('show');
                     document.getElementById('orderIdDisplay').textContent = '🎫 Order #: ' + orderId;
-                    document.getElementById('orderForm').style.display = 'none';
-                    document.getElementById('successScreen').classList.add('show');
-                })
-                .catch((error) => {
-                    clearTimeout(timeoutId);
-                    document.getElementById('loadingOverlay').classList.remove('show');
-                    alert('Error saving order: ' + error.message + '\n\nPlease contact: nir@funnydates101.com');
+                    document.getElementById('orderFor.message + '\n\nPlease contact: nir@funnydates101.com');
                 });
         }
 
@@ -1205,4 +1194,15 @@
             },
             onApprove: function(data, actions) {
                 return actions.order.capture().then(function(details) {
-                    const name = document.getElementById('customerN
+                    const name = document.getElementById('customerName').value.trim();
+                    const email = document.getElementById('customerEmail').value.trim();
+                    processOrder(name, email, details.payer.email_address);
+                });
+            }
+        }).render('#paypal-button-container');
+        */
+
+        console.log('📜 Order page loaded!');
+    </script>
+</body>
+</html>
