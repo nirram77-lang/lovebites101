@@ -850,7 +850,7 @@
                 <div class="manual-payment" style="background: rgba(0, 102, 204, 0.1); border: 1px solid rgba(0, 102, 204, 0.3); border-radius: 12px; padding: 20px; margin-bottom: 20px;">
                     <h4 style="color: #0066cc; margin-bottom: 10px; font-size: 14px;">📱 Manual PayPal Payment</h4>
                     <ol style="color: var(--text-muted); font-size: 13px; padding-left: 20px; line-height: 1.8;">
-                        <li>Send <strong style="color: white;">$<span id="manualPayAmount">16.90</span></strong> to: <strong style="color: #0066cc;">nir@funnydates101.com</strong></li>
+                        <li>Send <strong style="color: white;">$<span id="manualPayAmount">16.90</span></strong> to: <strong style="color: #0066cc;"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="e7898e95a7819289899e8386938294d6d7d6c984888a">[email&#160;protected]</a></strong></li>
                         <li>Include your name in the payment note</li>
                         <li>Fill the form above and click "Complete Order"</li>
                     </ol>
@@ -919,7 +919,7 @@
                     </div>
                     <div class="success-info-item">
                         <span class="icon">💬</span>
-                        <span class="text">Questions? Contact us at: <strong>nir@funnydates101.com</strong></span>
+                        <span class="text">Questions? Contact us at: <strong><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="204e49526046554e4e5944415445531110110e434f4d">[email&#160;protected]</a></strong></span>
                     </div>
                 </div>
                 
@@ -932,7 +932,7 @@
         </div>
     </div>
 
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         // ═══════════════════════════════════════════════════════════════
         // Firebase Configuration
         // ═══════════════════════════════════════════════════════════════
@@ -953,8 +953,8 @@
         // ═══════════════════════════════════════════════════════════════
         const BASE_PRICE = 16.90;
         const COUPONS = {
-            'LAUNCH101': 12,  // 🔥 Launch Special! $16.90 → $14.90
-            'LAUNCH20': 12,
+            'LAUNCH101': 15,  // 🔥 Launch Special! $16.90 → $14.40 (15% OFF!)
+            'LAUNCH20': 15,
             'TIKTOK10': 10,
             'YOUTUBE10': 10,
             'PODCAST15': 15,
@@ -1190,15 +1190,4 @@
             },
             onApprove: function(data, actions) {
                 return actions.order.capture().then(function(details) {
-                    const name = document.getElementById('customerName').value.trim();
-                    const email = document.getElementById('customerEmail').value.trim();
-                    processOrder(name, email, details.payer.email_address);
-                });
-            }
-        }).render('#paypal-button-container');
-        */
-
-        console.log('📜 Order page loaded!');
-    </script>
-</body>
-</html>
+                    const name = document.getElementById('customerN
