@@ -125,8 +125,8 @@
             right: 15px;
             width: 40px;
             height: 40px;
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.15);
+            border: 2px solid rgba(255, 255, 255, 0.3);
             border-radius: 50%;
             color: white;
             font-size: 20px;
@@ -135,13 +135,18 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            z-index: 10;
+            z-index: 100;
+            pointer-events: auto;
         }
 
         .close-order-btn:hover {
-            background: rgba(220, 38, 38, 0.3);
-            border-color: rgba(220, 38, 38, 0.5);
+            background: rgba(220, 38, 38, 0.5);
+            border-color: rgba(220, 38, 38, 0.8);
             transform: scale(1.1);
+        }
+        
+        .close-order-btn:active {
+            transform: scale(0.95);
         }
 
         /* Header */
@@ -760,6 +765,16 @@
                 <span class="brand-icon">🎬</span>
                 <span class="brand-name">NO-ART GALLERY</span>
             </div>
+
+            <!-- 🔥 LAUNCH DISCOUNT BANNER -->
+            <div style="background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%); color: white; padding: 10px 20px; border-radius: 12px; margin-bottom: 15px; display: inline-flex; align-items: center; gap: 10px; font-weight: 700; font-size: 15px; box-shadow: 0 4px 15px rgba(220, 38, 38, 0.4); animation: pulse-banner 2s ease-in-out infinite;">
+                <span style="font-size: 20px;">⚡</span>
+                <span>15% OFF Launch Special!</span>
+                <span style="font-size: 20px;">🎉</span>
+            </div>
+            <style>
+                @keyframes pulse-banner { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.02); } }
+            </style>
 
             <div class="product-info">
                 <div class="product-icon">🎧</div>
