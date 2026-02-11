@@ -1134,6 +1134,7 @@
     <div id="orderModal" class="order-modal-overlay" style="display:none;">
         <div class="order-modal-container">
             <button class="order-modal-close" onclick="closeOrderModal()">✕</button>
+            <div class="order-iframe-x-cover" onclick="closeOrderModal()"></div>
             <iframe id="orderIframe" class="order-modal-iframe" src="" frameborder="0"></iframe>
         </div>
     </div>
@@ -1195,6 +1196,16 @@
             height: 100%;
             border: none;
             background: var(--bg-primary);
+        }
+        .order-iframe-x-cover {
+            position: absolute;
+            top: 0;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            z-index: 10000;
+            cursor: pointer;
+            background: transparent;
         }
     </style>
 
