@@ -365,7 +365,7 @@
         .buy-hook-question { font-size: 22px; color: var(--accent-gold); font-weight: 600; margin: 0; }
         .buy-subtitle { text-align: center; color: var(--text-secondary); font-size: 18px; margin-bottom: 50px; margin-top: -40px; }
         .buy-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; max-width: 1200px; margin: 0 auto; }
-        .buy-card { background: var(--bg-card); border: 2px solid rgba(255, 255, 255, 0.1); border-radius: 24px; padding: 35px 20px; text-align: center; position: relative; transition: all 0.3s ease; display: flex; flex-direction: column; min-height: 380px; }
+        .buy-card { background: var(--bg-card); border: 2px solid rgba(255, 255, 255, 0.1); border-radius: 24px; padding: 35px 20px; text-align: center; position: relative; transition: all 0.3s ease; display: flex; flex-direction: column; min-height: 380px; overflow: visible; }
         .buy-card:hover { transform: translateY(-5px); border-color: var(--accent-gold); }
         .buy-card.featured { border-color: var(--accent-red); background: linear-gradient(180deg, rgba(220, 38, 38, 0.1) 0%, var(--bg-card) 100%); }
         .buy-card.audiobook-card { border-color: #e94560; background: linear-gradient(180deg, rgba(233, 69, 96, 0.15) 0%, var(--bg-card) 100%); }
@@ -383,8 +383,8 @@
         .buy-button.platforms-btn { background: linear-gradient(135deg, #e94560, #ff6b6b); cursor: default; position: relative; }
         .buy-button.platforms-btn:hover { transform: none; }
         .platforms-tooltip-wrapper { position: relative; display: inline-block; width: 100%; }
-        .platforms-tooltip { position: absolute; bottom: calc(100% + 14px); left: 50%; transform: translateX(-50%) translateY(8px); background: #1e1e28; border: 1px solid rgba(233, 69, 96, 0.3); border-radius: 16px; padding: 18px 20px; width: 280px; opacity: 0; visibility: hidden; transition: all 0.3s ease; z-index: 50; box-shadow: 0 16px 48px rgba(0,0,0,0.5); pointer-events: none; }
-        .platforms-tooltip::after { content: ''; position: absolute; bottom: -7px; left: 50%; transform: translateX(-50%) rotate(45deg); width: 14px; height: 14px; background: #1e1e28; border-right: 1px solid rgba(233, 69, 96, 0.3); border-bottom: 1px solid rgba(233, 69, 96, 0.3); }
+        .platforms-tooltip { position: absolute; top: calc(100% + 14px); left: 50%; transform: translateX(-50%) translateY(-8px); background: #1e1e28; border: 1px solid rgba(233, 69, 96, 0.3); border-radius: 16px; padding: 18px 20px; width: 280px; opacity: 0; visibility: hidden; transition: all 0.3s ease; z-index: 50; box-shadow: 0 16px 48px rgba(0,0,0,0.5); pointer-events: none; }
+        .platforms-tooltip::after { content: ''; position: absolute; top: -7px; left: 50%; transform: translateX(-50%) rotate(45deg); width: 14px; height: 14px; background: #1e1e28; border-left: 1px solid rgba(233, 69, 96, 0.3); border-top: 1px solid rgba(233, 69, 96, 0.3); }
         .platforms-tooltip-wrapper:hover .platforms-tooltip { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); pointer-events: auto; }
         .platforms-tooltip-title { font-size: 12px; font-weight: 700; color: #e94560; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 12px; text-align: center; }
         .platform-row { display: flex; align-items: center; gap: 10px; padding: 8px 10px; border-radius: 10px; transition: background 0.2s; }
@@ -452,19 +452,20 @@
         <button class="price-ticker-close" onclick="event.stopPropagation(); closePriceTicker()">✕</button>
         <a href="#buy" class="price-ticker-link">
             <div class="price-ticker-header">
-                <span class="price-ticker-icon">🎧</span>
-                <span class="price-ticker-title">AUDIOBOOK COMING!</span>
-                <span class="price-ticker-icon">🎧</span>
+                <span class="price-ticker-icon">🔥</span>
+                <span class="price-ticker-title">AUDIOBOOK LAUNCH!</span>
+                <span class="price-ticker-icon">🔥</span>
             </div>
-            <div class="price-ticker-desc">🎬 4+ Hours of Dating Disasters!</div>
-            <div class="price-ticker-discount-badge" style="display: inline-block; background: linear-gradient(135deg, #e94560 0%, #ff6b6b 100%); color: white; padding: 4px 12px; border-radius: 20px; font-size: 11px; font-weight: 800; margin-bottom: 6px; letter-spacing: 0.5px; box-shadow: 0 2px 8px rgba(233, 69, 96, 0.4);">🌍 40+ Platforms</div>
-            <div class="price-ticker-price" style="font-size: 22px; margin: 8px 0;">Spotify · Audible · Apple</div>
+            <div class="price-ticker-desc">🎧 4+ Hours of Dating Disasters!</div>
+            <div class="price-ticker-discount-badge" style="display: inline-block; background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%); color: white; padding: 4px 12px; border-radius: 20px; font-size: 11px; font-weight: 800; margin-bottom: 6px; letter-spacing: 0.5px; box-shadow: 0 2px 8px rgba(220, 38, 38, 0.4);">⚡ 15% OFF</div>
+            <div class="price-ticker-price" style="font-size: 32px; margin: 8px 0;">$14.40 <span style="font-size: 14px; text-decoration: line-through; color: #888;">$16.90</span></div>
         </a>
-        <div style="display: flex; align-items: center; justify-content: center; gap: 6px; margin-bottom: 10px;">
-            <span style="font-size: 12px; color: #4ade80; font-weight: 700;">📅 March 2026</span>
+        <div class="price-ticker-coupon-wrapper" style="display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 10px;">
+            <div class="price-ticker-coupon" id="couponCode" style="cursor: pointer; user-select: all;">LAUNCH101</div>
+            <button onclick="event.stopPropagation(); copyCoupon()" class="copy-coupon-btn" style="background: #1a1a1a; color: #fbbf24; border: none; padding: 4px 10px; border-radius: 12px; font-size: 11px; cursor: pointer; transition: all 0.3s;">📋 Copy</button>
         </div>
         <a href="#buy" class="price-ticker-link">
-            <button class="price-ticker-btn">See All Platforms →</button>
+            <button class="price-ticker-btn">🎧 Get It Now →</button>
         </a>
         <div style="font-size: 10px; color: #666; margin-top: 8px;">💡 Drag me anywhere!</div>
     </div>
@@ -973,14 +974,16 @@
                     </div>
                 </div>
                 <div class="buy-card audiobook-card">
-                    <div class="buy-card-badge audiobook-badge">🎧 Launching Soon!</div>
+                    <div class="buy-card-badge audiobook-badge">🎧 Available!</div>
                     <div class="buy-icon">🎧</div>
                     <h3 class="buy-title">AudioBook</h3>
                     <p class="buy-desc">4+ Hours of Dating Disasters!</p>
-                    <div class="buy-price">$14.99</div>
-                    <div class="buy-note">🌍 Coming to 40+ platforms worldwide</div>
+                    <div class="buy-price">$14.40 <span style="font-size: 14px; text-decoration: line-through; color: #666;">$16.90</span></div>
+                    <div class="buy-note">⚡ 15% OFF - Code: LAUNCH101</div>
                     <div class="buy-button-wrapper">
-                        <div class="platforms-tooltip-wrapper">
+                        <a href="order.html" class="buy-button">Buy Now</a>
+                        <p class="buy-delivery">📧 Instant Delivery!</p>
+                        <div class="platforms-tooltip-wrapper" style="margin-top: 12px;">
                             <div class="platforms-tooltip">
                                 <div class="platforms-tooltip-title">Available Soon On</div>
                                 <div class="platform-row">
@@ -1003,9 +1006,8 @@
                                 </div>
                                 <span class="platforms-more">+ Amazon, Kobo, B&N, Deezer & 30 more</span>
                             </div>
-                            <span class="buy-button platforms-btn">Coming to All Platforms ✨</span>
+                            <span class="buy-button platforms-btn" style="font-size: 13px; padding: 10px 16px;">Coming to All Platforms ✨</span>
                         </div>
-                        <p class="buy-delivery">📅 Available March 2026</p>
                     </div>
                 </div>
                 <div class="buy-card">
