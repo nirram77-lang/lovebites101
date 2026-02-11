@@ -829,69 +829,6 @@
         }
         </style>
 
-        <section class="audiobook-teaser-section">
-            <div class="teaser-container">
-                <div class="teaser-header-audio">
-                    <div class="teaser-badge-audio"><span>🎧</span><span>Exclusive Preview</span></div>
-                    <h2 class="teaser-title-audio">Want to <span>Listen</span> Before You Fall in Love?</h2>
-                    <p class="teaser-subtitle-audio">Two chapters. Two disasters. Pick one and see if you survive.</p>
-                </div>
-                <div class="chapter-tabs">
-                    <button class="chapter-tab active" onclick="switchChapter(0)"><span class="chapter-tab-icon">🔥</span>Too Hot to Handle</button>
-                    <button class="chapter-tab" onclick="switchChapter(1)"><span class="chapter-tab-icon">🦎</span>Here 4 Iguana</button>
-                </div>
-                <div class="player-card">
-                    <div class="chapter-content active" id="chapter0">
-                        <div class="chapter-info">
-                            <div class="chapter-icon">🔥</div>
-                            <div class="chapter-details">
-                                <div class="chapter-label">Chapter 15</div>
-                                <h3 class="chapter-name">Too Hot to Handle</h3>
-                                <p class="chapter-quote">A date that started innocent and ended with "Why did I say THAT?!"</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="chapter-content" id="chapter1">
-                        <div class="chapter-info">
-                            <div class="chapter-icon iguana">🦎</div>
-                            <div class="chapter-details">
-                                <div class="chapter-label">Chapter 94</div>
-                                <h3 class="chapter-name">Here 4 Iguana</h3>
-                                <p class="chapter-quote">One wrong word, one exotic creature, and a realization that came way too late.</p>
-                                <a href="https://i4iguana.com" target="_blank" class="iguana-promo"><span>🦎</span><span>Discover the app born from this story →</span></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="audio-player">
-                        <div class="player-controls">
-                            <button class="play-button" id="playBtn" onclick="togglePlay()">
-                                <svg viewBox="0 0 24 24" id="playIcon"><path d="M8 5v14l11-7z"/></svg>
-                            </button>
-                            <div class="progress-container">
-                                <div class="time-display"><span id="currentTime">0:00</span><span id="duration">2:24</span></div>
-                                <div class="progress-bar" onclick="seekAudio(event)"><div class="progress-fill" id="progressFill"></div></div>
-                            </div>
-                            <div class="volume-control">
-                                <span class="volume-icon">🔊</span>
-                                <input type="range" class="volume-slider" min="0" max="100" value="80" onchange="setVolume(this.value)">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="teaser-cta-audio">
-                        <p class="cta-text-audio">🔥 That was just 2 out of <span>101 stories</span>. If this hit you — wait for the rest.</p>
-                        <a href="#buy" class="cta-button-audio">Give Me All 4 Hours 🎧 <span>$14.90</span></a>
-                        <div class="teaser-features-audio">
-                            <div class="teaser-feature-audio"><span>⏱️</span><span>Over 4 hours of chaos</span></div>
-                            <div class="teaser-feature-audio"><span>📱</span><span>Listen anywhere</span></div>
-                            <div class="teaser-feature-audio"><span>♾️</span><span>Yours forever</span></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <audio id="audio0" preload="metadata"><source src="audio/chapter15_teaser.mp3" type="audio/mpeg"></audio>
-        <audio id="audio1" preload="metadata"><source src="audio/chapter94_teaser.mp3" type="audio/mpeg"></audio>
 
         <section class="reviews-hollywood">
             <div class="reviews-header"><span class="reviews-star">⭐</span><h2 class="reviews-main-title">Readers Who Couldn't Look Away</h2></div>
@@ -1032,6 +969,70 @@
                 </div>
             </div>
         </section>
+
+        <section class="audiobook-teaser-section">
+            <div class="teaser-container">
+                <div class="teaser-header-audio">
+                    <div class="teaser-badge-audio"><span>🎧</span><span>Exclusive Preview</span></div>
+                    <h2 class="teaser-title-audio">Want to <span>Listen</span> Before You Fall in Love?</h2>
+                    <p class="teaser-subtitle-audio">Two chapters. Two disasters. Pick one and see if you survive.</p>
+                </div>
+                <div class="chapter-tabs">
+                    <button class="chapter-tab active" onclick="switchChapter(0)"><span class="chapter-tab-icon">🔥</span>Too Hot to Handle</button>
+                    <button class="chapter-tab" onclick="switchChapter(1)"><span class="chapter-tab-icon">🦎</span>Here 4 Iguana</button>
+                </div>
+                <div class="player-card">
+                    <div class="chapter-content active" id="chapter0">
+                        <div class="chapter-info">
+                            <div class="chapter-icon">🔥</div>
+                            <div class="chapter-details">
+                                <div class="chapter-label">Chapter 15</div>
+                                <h3 class="chapter-name">Too Hot to Handle</h3>
+                                <p class="chapter-quote">A date that started innocent and ended with "Why did I say THAT?!"</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chapter-content" id="chapter1">
+                        <div class="chapter-info">
+                            <div class="chapter-icon iguana">🦎</div>
+                            <div class="chapter-details">
+                                <div class="chapter-label">Chapter 94</div>
+                                <h3 class="chapter-name">Here 4 Iguana</h3>
+                                <p class="chapter-quote">One wrong word, one exotic creature, and a realization that came way too late.</p>
+                                <a href="https://i4iguana.com" target="_blank" class="iguana-promo"><span>🦎</span><span>Discover the app born from this story →</span></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="audio-player">
+                        <div class="player-controls">
+                            <button class="play-button" id="playBtn" onclick="togglePlay()">
+                                <svg viewBox="0 0 24 24" id="playIcon"><path d="M8 5v14l11-7z"/></svg>
+                            </button>
+                            <div class="progress-container">
+                                <div class="time-display"><span id="currentTime">0:00</span><span id="duration">2:24</span></div>
+                                <div class="progress-bar" onclick="seekAudio(event)"><div class="progress-fill" id="progressFill"></div></div>
+                            </div>
+                            <div class="volume-control">
+                                <span class="volume-icon">🔊</span>
+                                <input type="range" class="volume-slider" min="0" max="100" value="80" onchange="setVolume(this.value)">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="teaser-cta-audio">
+                        <p class="cta-text-audio">🔥 That was just 2 out of <span>101 stories</span>. If this hit you — wait for the rest.</p>
+                        <a href="#buy" class="cta-button-audio">Give Me All 4 Hours 🎧 <span>$14.90</span></a>
+                        <div class="teaser-features-audio">
+                            <div class="teaser-feature-audio"><span>⏱️</span><span>Over 4 hours of chaos</span></div>
+                            <div class="teaser-feature-audio"><span>📱</span><span>Listen anywhere</span></div>
+                            <div class="teaser-feature-audio"><span>♾️</span><span>Yours forever</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <audio id="audio0" preload="metadata"><source src="audio/chapter15_teaser.mp3" type="audio/mpeg"></audio>
+        <audio id="audio1" preload="metadata"><source src="audio/chapter94_teaser.mp3" type="audio/mpeg"></audio>
 
         <footer class="footer">
             <div class="footer-links">
