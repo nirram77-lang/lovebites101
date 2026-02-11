@@ -341,8 +341,14 @@
         .social-link .label { font-weight: 500; }
         .social-link .handle { color: var(--text-secondary); font-size: 14px; }
 
-        .story-section { padding: 100px 20px; background: transparent; text-align: center; }
+        .story-section { padding: 100px 20px 40px; background: transparent; text-align: center; }
         .story-badge { display: inline-flex; align-items: center; gap: 10px; background: var(--gradient-red); color: white; padding: 10px 25px; border-radius: 50px; font-weight: 700; font-size: 14px; margin-bottom: 30px; }
+        .story-toggle { cursor: pointer; transition: all 0.3s; }
+        .story-toggle:hover { transform: scale(1.05); box-shadow: var(--shadow-glow); }
+        .story-toggle-arrow { font-size: 12px; transition: transform 0.3s; }
+        .story-toggle-arrow.open { transform: rotate(180deg); }
+        .story-collapsible { max-height: 0; overflow: hidden; opacity: 0; transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease, padding 0.4s ease; padding: 0; }
+        .story-collapsible.open { max-height: 1200px; opacity: 1; padding-top: 10px; }
         .story-title { font-family: 'Playfair Display', serif; font-size: clamp(28px, 5vw, 40px); margin-bottom: 15px; }
         .story-subtitle { font-size: 18px; color: var(--text-secondary); margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto; }
         .story-reward { display: inline-flex; align-items: center; gap: 10px; background: rgba(212, 175, 55, 0.1); border: 1px solid var(--accent-gold); padding: 12px 24px; border-radius: 12px; margin-bottom: 40px; color: var(--accent-gold); font-size: 15px; }
@@ -927,19 +933,21 @@
         </section>
 
         <section class="story-section" id="share">
-            <div class="story-badge"><span>🎬</span><span>Got a Story?</span></div>
-            <h2 class="story-title">Your Story Could Become a Video!</h2>
-            <p class="story-subtitle">Had a crazy date? Bizarre? Hilariously bad?<br>Send it to us and your story might go on our channel!</p>
-            <div class="story-reward"><span>🌟</span><span>Your story will be featured with a shoutout</span></div>
-            <form class="story-form" id="storyForm">
-                <input type="hidden" name="access_key" value="c3307ded-69c5-4654-9615-0be668c334d4">
-                <div class="form-group"><label class="form-label">Your Name (or nickname)</label><input type="text" name="name" class="form-input" placeholder="What should we call you?" required></div>
-                <div class="form-group"><label class="form-label">Email</label><input type="email" name="email" class="form-input" placeholder="So we can update you" required></div>
-                <div class="form-group"><label class="form-label">Your Story</label><textarea name="story" class="form-input form-textarea" placeholder="Tell us what happened..." required></textarea></div>
-                <button type="submit" class="form-submit">🚀 Send Your Story</button>
-                <p class="form-note">* Your story will be kept confidential and only published with your permission</p>
-            </form>
-            <div class="form-success" id="formSuccess"><h3>✅ Thank You!</h3><p>Your story was received successfully.<br>If it's selected, we'll be in touch!</p></div>
+            <div class="story-badge story-toggle" onclick="toggleStorySection()"><span>🎬</span><span>Got a Story?</span><span class="story-toggle-arrow" id="storyArrow">▼</span></div>
+            <div class="story-collapsible" id="storyCollapsible">
+                <h2 class="story-title">Your Story Could Become a Video!</h2>
+                <p class="story-subtitle">Had a crazy date? Bizarre? Hilariously bad?<br>Send it to us and your story might go on our channel!</p>
+                <div class="story-reward"><span>🌟</span><span>Your story will be featured with a shoutout</span></div>
+                <form class="story-form" id="storyForm">
+                    <input type="hidden" name="access_key" value="c3307ded-69c5-4654-9615-0be668c334d4">
+                    <div class="form-group"><label class="form-label">Your Name (or nickname)</label><input type="text" name="name" class="form-input" placeholder="What should we call you?" required></div>
+                    <div class="form-group"><label class="form-label">Email</label><input type="email" name="email" class="form-input" placeholder="So we can update you" required></div>
+                    <div class="form-group"><label class="form-label">Your Story</label><textarea name="story" class="form-input form-textarea" placeholder="Tell us what happened..." required></textarea></div>
+                    <button type="submit" class="form-submit">🚀 Send Your Story</button>
+                    <p class="form-note">* Your story will be kept confidential and only published with your permission</p>
+                </form>
+                <div class="form-success" id="formSuccess"><h3>✅ Thank You!</h3><p>Your story was received successfully.<br>If it's selected, we'll be in touch!</p></div>
+            </div>
         </section>
 
         <section class="buy-section" id="buy">
@@ -1090,6 +1098,7 @@
         function toggleUnderlineLinks() { document.body.classList.toggle('underline-links'); }
         function resetAccessibility() { fontSize = 100; document.body.style.fontSize = '100%'; document.body.classList.remove('high-contrast', 'grayscale', 'underline-links'); }
         function toggleTeaser() { document.getElementById('teaserToggle').classList.toggle('open'); document.getElementById('teaserContent').classList.toggle('open'); }
+        function toggleStorySection() { document.getElementById('storyCollapsible').classList.toggle('open'); document.getElementById('storyArrow').classList.toggle('open'); }
         
         document.getElementById('storyForm').addEventListener('submit', async function(e) { e.preventDefault(); const fd = new FormData(this); try { await fetch('https://api.web3forms.com/submit', { method: 'POST', body: fd }); document.getElementById('storyForm').style.display = 'none'; document.getElementById('formSuccess').style.display = 'block'; } catch (err) { console.error('Error:', err); } });
         
