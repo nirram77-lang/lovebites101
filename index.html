@@ -35,6 +35,7 @@
     
     <link rel="alternate" hreflang="en" href="https://funnydates101.com">
     <link rel="alternate" hreflang="he" href="https://funnydates101.co.il">
+    <link rel="alternate" hreflang="fr" href="https://funnydates101.com/fr">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -341,14 +342,8 @@
         .social-link .label { font-weight: 500; }
         .social-link .handle { color: var(--text-secondary); font-size: 14px; }
 
-        .story-section { padding: 100px 20px 40px; background: transparent; text-align: center; }
+        .story-section { padding: 100px 20px; background: transparent; text-align: center; }
         .story-badge { display: inline-flex; align-items: center; gap: 10px; background: var(--gradient-red); color: white; padding: 10px 25px; border-radius: 50px; font-weight: 700; font-size: 14px; margin-bottom: 30px; }
-        .story-toggle { cursor: pointer; transition: all 0.3s; }
-        .story-toggle:hover { transform: scale(1.05); box-shadow: var(--shadow-glow); }
-        .story-toggle-arrow { font-size: 12px; transition: transform 0.3s; }
-        .story-toggle-arrow.open { transform: rotate(180deg); }
-        .story-collapsible { max-height: 0; overflow: hidden; opacity: 0; transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease, padding 0.4s ease; padding: 0; }
-        .story-collapsible.open { max-height: 1200px; opacity: 1; padding-top: 10px; }
         .story-title { font-family: 'Playfair Display', serif; font-size: clamp(28px, 5vw, 40px); margin-bottom: 15px; }
         .story-subtitle { font-size: 18px; color: var(--text-secondary); margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto; }
         .story-reward { display: inline-flex; align-items: center; gap: 10px; background: rgba(212, 175, 55, 0.1); border: 1px solid var(--accent-gold); padding: 12px 24px; border-radius: 12px; margin-bottom: 40px; color: var(--accent-gold); font-size: 15px; }
@@ -371,7 +366,7 @@
         .buy-hook-question { font-size: 22px; color: var(--accent-gold); font-weight: 600; margin: 0; }
         .buy-subtitle { text-align: center; color: var(--text-secondary); font-size: 18px; margin-bottom: 50px; margin-top: -40px; }
         .buy-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; max-width: 1200px; margin: 0 auto; }
-        .buy-card { background: var(--bg-card); border: 2px solid rgba(255, 255, 255, 0.1); border-radius: 24px; padding: 35px 20px; text-align: center; position: relative; transition: all 0.3s ease; display: flex; flex-direction: column; min-height: 380px; overflow: visible; }
+        .buy-card { background: var(--bg-card); border: 2px solid rgba(255, 255, 255, 0.1); border-radius: 24px; padding: 35px 20px; text-align: center; position: relative; transition: all 0.3s ease; display: flex; flex-direction: column; min-height: 380px; }
         .buy-card:hover { transform: translateY(-5px); border-color: var(--accent-gold); }
         .buy-card.featured { border-color: var(--accent-red); background: linear-gradient(180deg, rgba(220, 38, 38, 0.1) 0%, var(--bg-card) 100%); }
         .buy-card.audiobook-card { border-color: #e94560; background: linear-gradient(180deg, rgba(233, 69, 96, 0.15) 0%, var(--bg-card) 100%); }
@@ -386,23 +381,6 @@
         .buy-card .buy-button-wrapper { margin-top: auto; }
         .buy-button { display: block; background: var(--gradient-red); color: white; padding: 14px 20px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 15px; transition: all 0.3s ease; margin-bottom: 12px; }
         .buy-button.coming-soon { background: rgba(255,255,255,0.1); color: #888; pointer-events: none; }
-        .buy-button.platforms-btn { background: linear-gradient(135deg, #e94560, #ff6b6b); cursor: default; position: relative; }
-        .buy-button.platforms-btn:hover { transform: none; }
-        .platforms-tooltip-wrapper { position: relative; display: inline-block; width: 100%; }
-        .platforms-tooltip { position: absolute; top: calc(100% + 14px); left: 50%; transform: translateX(-50%) translateY(-8px); background: #1e1e28; border: 1px solid rgba(233, 69, 96, 0.3); border-radius: 16px; padding: 18px 20px; width: 280px; opacity: 0; visibility: hidden; transition: all 0.3s ease; z-index: 50; box-shadow: 0 16px 48px rgba(0,0,0,0.5); pointer-events: none; }
-        .platforms-tooltip::after { content: ''; position: absolute; top: -7px; left: 50%; transform: translateX(-50%) rotate(45deg); width: 14px; height: 14px; background: #1e1e28; border-left: 1px solid rgba(233, 69, 96, 0.3); border-top: 1px solid rgba(233, 69, 96, 0.3); }
-        .platforms-tooltip-wrapper:hover .platforms-tooltip { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); pointer-events: auto; }
-        .platforms-tooltip-title { font-size: 12px; font-weight: 700; color: #e94560; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 12px; text-align: center; }
-        .platform-row { display: flex; align-items: center; gap: 10px; padding: 8px 10px; border-radius: 10px; transition: background 0.2s; }
-        .platform-row:hover { background: rgba(255,255,255,0.05); }
-        .platform-row-icon { font-size: 22px; width: 32px; text-align: center; flex-shrink: 0; }
-        .platform-row-name { font-size: 14px; font-weight: 600; color: #fff; }
-        .platform-row-note { font-size: 11px; color: #888; }
-        .platform-row-tag { font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 10px; margin-left: auto; flex-shrink: 0; }
-        .tag-free { background: rgba(34, 197, 94, 0.15); color: #4ade80; }
-        .tag-popular { background: rgba(233, 69, 96, 0.15); color: #ff6b6b; }
-        .platforms-more { display: block; text-align: center; font-size: 11px; color: #888; margin-top: 10px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.06); }
-        @media (max-width: 768px) { .platforms-tooltip { width: 250px; padding: 14px 16px; } }
         @media (max-width: 1100px) { .buy-grid { grid-template-columns: repeat(2, 1fr); } }
         @media (max-width: 600px) { .buy-grid { grid-template-columns: 1fr; } }
         .buy-button:hover { transform: scale(1.05); box-shadow: var(--shadow-glow); }
@@ -589,7 +567,10 @@
         })();
     </script>
 
-    <div class="lang-switch"><a href="https://funnydates101.co.il"><img src="https://flagcdn.com/w40/il.png" alt="Israel" class="flag-icon"><span>עברית</span></a></div>
+    <div class="lang-switch" style="display:flex;gap:8px;">
+        <a href="https://funnydates101.co.il"><img src="https://flagcdn.com/w40/il.png" alt="Israel" class="flag-icon"><span>עברית</span></a>
+        <a href="/fr.html"><img src="https://flagcdn.com/w40/fr.png" alt="France" class="flag-icon"><span>FR</span></a>
+    </div>
 
     <div class="floating-hearts">
         <span class="heart">💔</span><span class="heart">❤️</span><span class="heart">💕</span><span class="heart">💔</span><span class="heart">❤️</span>
@@ -829,152 +810,11 @@
         }
         </style>
 
-
-        <section class="reviews-hollywood">
-            <div class="reviews-header"><span class="reviews-star">⭐</span><h2 class="reviews-main-title">Readers Who Couldn't Look Away</h2></div>
-            <div class="reviews-showcase">
-                <div class="review-hollywood-card evrit-review">
-                    <div class="review-platform">
-                        <span class="evrit-logo">📱</span>
-                        <span class="evrit-text">E-Vrit Digital Books</span>
-                        <span class="evrit-badge">✓ Verified Purchase</span>
-                    </div>
-                    <div class="review-rating">⭐⭐⭐⭐⭐</div>
-                    <blockquote class="review-quote">"Hilarious. Full of flashbacks. Thanks."</blockquote>
-                    <div class="review-author-line">— Ronit</div>
-                </div>
-                <div class="review-hollywood-card"><div class="review-rating">⭐⭐⭐⭐⭐</div><blockquote class="review-quote">"Someone had to write this.<br>Good thing he did it before me."</blockquote><div class="review-author-line">— Josh</div></div>
-                <div class="review-hollywood-card"><div class="review-rating">⭐⭐⭐⭐⭐</div><blockquote class="review-quote">"Finished it.<br>Then texted my ex."</blockquote><div class="review-author-line">— Michelle</div></div>
-            </div>
-        </section>
-
-        <section class="about-section">
-            <div class="about-container">
-                <div class="about-image"><img src="N4829.png" alt="Nir Ram - Author"></div>
-                <div class="about-content">
-                    <div class="about-badge">✍️ About Me</div>
-                    <h2 class="about-title">Nir Ram</h2>
-                    <p class="about-text">An IT executive with a rich professional background, whose personal life also made him a <strong>curious researcher of the dating world</strong>.</p>
-                    <p class="about-text">Divorced and father of three grown children — Alon, Don, and Michaela — he brings a unique combination of <strong>sharp thinking, human curiosity, and a rare ability to find the funny side</strong> even in the most awkward moments.</p>
-                    <p class="about-signature">"In short: if I already went through it — at least let there be a good story to tell."</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="social-section">
-            <h2 class="social-title">📱 More Funny Content on Our Channels</h2>
-            <div class="social-links">
-                <a href="https://www.youtube.com/@funnydates101US" class="social-link" target="_blank"><span class="icon">▶️</span><div><div class="label">YouTube</div><div class="handle">@funnydates101US</div></div></a>
-                <a href="https://www.tiktok.com/@no_art_gallery" class="social-link" target="_blank"><span class="icon">🎵</span><div><div class="label">TikTok</div><div class="handle">@no_art_gallery</div></div></a>
-            </div>
-        </section>
-
-        <section class="story-section" id="share">
-            <div class="story-badge story-toggle" onclick="toggleStorySection()"><span>🎬</span><span>Got a Story?</span><span class="story-toggle-arrow" id="storyArrow">▼</span></div>
-            <div class="story-collapsible" id="storyCollapsible">
-                <h2 class="story-title">Your Story Could Become a Video!</h2>
-                <p class="story-subtitle">Had a crazy date? Bizarre? Hilariously bad?<br>Send it to us and your story might go on our channel!</p>
-                <div class="story-reward"><span>🌟</span><span>Your story will be featured with a shoutout</span></div>
-                <form class="story-form" id="storyForm">
-                    <input type="hidden" name="access_key" value="c3307ded-69c5-4654-9615-0be668c334d4">
-                    <div class="form-group"><label class="form-label">Your Name (or nickname)</label><input type="text" name="name" class="form-input" placeholder="What should we call you?" required></div>
-                    <div class="form-group"><label class="form-label">Email</label><input type="email" name="email" class="form-input" placeholder="So we can update you" required></div>
-                    <div class="form-group"><label class="form-label">Your Story</label><textarea name="story" class="form-input form-textarea" placeholder="Tell us what happened..." required></textarea></div>
-                    <button type="submit" class="form-submit">🚀 Send Your Story</button>
-                    <p class="form-note">* Your story will be kept confidential and only published with your permission</p>
-                </form>
-                <div class="form-success" id="formSuccess"><h3>✅ Thank You!</h3><p>Your story was received successfully.<br>If it's selected, we'll be in touch!</p></div>
-            </div>
-        </section>
-
-        <section class="buy-section" id="buy">
-            <div class="buy-hook">
-                <p class="buy-hook-text">If you've read this far —<br>you already know this isn't just another book.</p>
-                <p class="buy-hook-question">The only question: Are you ready to find out what happened on the next date?</p>
-            </div>
-            <h2 class="section-title">Where to Buy?</h2>
-            <p class="buy-subtitle">Choose your format</p>
-            <div class="buy-grid">
-                <div class="buy-card featured">
-                    <div class="buy-card-badge">🌍 Worldwide</div>
-                    <div class="buy-icon">📚</div>
-                    <h3 class="buy-title">Paperback</h3>
-                    <p class="buy-desc">Printed book in English</p>
-                    <div class="buy-price">$13.90</div>
-                    <div class="buy-note">Special Launch Price!</div>
-                    <div class="buy-button-wrapper">
-                        <a href="https://www.amazon.com/dp/B0FY7DJFJ9" class="buy-button amazon" target="_blank">Buy on Amazon</a>
-                        <p class="buy-delivery">🌐 International Shipping</p>
-                    </div>
-                </div>
-                <div class="buy-card">
-                    <div class="buy-icon">📱</div>
-                    <h3 class="buy-title">eBook</h3>
-                    <p class="buy-desc">Kindle Edition in English</p>
-                    <div class="buy-price">$2.99</div>
-                    <div class="buy-note">Instant Download!</div>
-                    <div class="buy-button-wrapper">
-                        <a href="https://www.amazon.com/dp/B0G528JZGS" class="buy-button" target="_blank">Buy on Kindle</a>
-                        <p class="buy-delivery">⚡ Instant Delivery</p>
-                    </div>
-                </div>
-                <div class="buy-card audiobook-card">
-                    <div class="buy-card-badge audiobook-badge">🎧 Available!</div>
-                    <div class="buy-icon">🎧</div>
-                    <h3 class="buy-title">AudioBook</h3>
-                    <p class="buy-desc">4+ Hours of Dating Disasters!</p>
-                    <div class="buy-price">$14.40 <span style="font-size: 14px; text-decoration: line-through; color: #666;">$16.90</span></div>
-                    <div class="buy-note">⚡ 15% OFF - Code: LAUNCH101</div>
-                    <div class="buy-button-wrapper">
-                        <a href="javascript:void(0)" onclick="openOrderModal()" class="buy-button">Buy Now</a>
-                        <p class="buy-delivery">📧 Instant Delivery!</p>
-                        <div class="platforms-tooltip-wrapper" style="margin-top: 12px;">
-                            <div class="platforms-tooltip">
-                                <div class="platforms-tooltip-title">Available Soon On</div>
-                                <div class="platform-row">
-                                    <span class="platform-row-icon">🟢</span>
-                                    <div><div class="platform-row-name">Spotify</div><div class="platform-row-note">Free with Premium</div></div>
-                                    <span class="platform-row-tag tag-free">FREE</span>
-                                </div>
-                                <div class="platform-row">
-                                    <span class="platform-row-icon">🟠</span>
-                                    <div><div class="platform-row-name">Audible</div><div class="platform-row-note">Buy or use 1 credit</div></div>
-                                    <span class="platform-row-tag tag-popular">#1</span>
-                                </div>
-                                <div class="platform-row">
-                                    <span class="platform-row-icon">🍎</span>
-                                    <div><div class="platform-row-name">Apple Books</div><div class="platform-row-note">Audiobook</div></div>
-                                </div>
-                                <div class="platform-row">
-                                    <span class="platform-row-icon">▶️</span>
-                                    <div><div class="platform-row-name">Google Play</div><div class="platform-row-note">Audiobook</div></div>
-                                </div>
-                                <span class="platforms-more">+ Amazon, Kobo, B&N, Deezer & 30 more</span>
-                            </div>
-                            <span class="buy-button platforms-btn" style="font-size: 13px; padding: 10px 16px;">Coming to All Platforms ✨</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="buy-card">
-                    <div class="buy-card-badge local">🇮🇱 In Israel</div>
-                    <div class="buy-icon">📖</div>
-                    <h3 class="buy-title">Paperback</h3>
-                    <p class="buy-desc">English edition for expats in Israel</p>
-                    <div class="buy-price">₪75</div>
-                    <div class="buy-note">🎟️ Code: 10110 → 10% OFF</div>
-                    <div class="buy-button-wrapper">
-                        <a href="https://bookpod.co.il/product/love-bites-101-dating-disasters/" class="buy-button" target="_blank">Buy on BookPod</a>
-                        <p class="buy-delivery">🚚 5 Business Days</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <section class="audiobook-teaser-section">
             <div class="teaser-container">
                 <div class="teaser-header-audio">
                     <div class="teaser-badge-audio"><span>🎧</span><span>Exclusive Preview</span></div>
-                    <h2 class="teaser-title-audio">Want to <span>Listen</span> Before You Swipe Again?</h2>
+                    <h2 class="teaser-title-audio">Want to <span>Listen</span> Before You Fall in Love?</h2>
                     <p class="teaser-subtitle-audio">Two chapters. Two disasters. Pick one and see if you survive.</p>
                 </div>
                 <div class="chapter-tabs">
@@ -1033,6 +873,119 @@
 
         <audio id="audio0" preload="metadata"><source src="audio/chapter15_teaser.mp3" type="audio/mpeg"></audio>
         <audio id="audio1" preload="metadata"><source src="audio/chapter94_teaser.mp3" type="audio/mpeg"></audio>
+
+        <section class="reviews-hollywood">
+            <div class="reviews-header"><span class="reviews-star">⭐</span><h2 class="reviews-main-title">Readers Who Couldn't Look Away</h2></div>
+            <div class="reviews-showcase">
+                <div class="review-hollywood-card evrit-review">
+                    <div class="review-platform">
+                        <span class="evrit-logo">📱</span>
+                        <span class="evrit-text">E-Vrit Digital Books</span>
+                        <span class="evrit-badge">✓ Verified Purchase</span>
+                    </div>
+                    <div class="review-rating">⭐⭐⭐⭐⭐</div>
+                    <blockquote class="review-quote">"Hilarious. Full of flashbacks. Thanks."</blockquote>
+                    <div class="review-author-line">— Ronit</div>
+                </div>
+                <div class="review-hollywood-card"><div class="review-rating">⭐⭐⭐⭐⭐</div><blockquote class="review-quote">"Someone had to write this.<br>Good thing he did it before me."</blockquote><div class="review-author-line">— Josh</div></div>
+                <div class="review-hollywood-card"><div class="review-rating">⭐⭐⭐⭐⭐</div><blockquote class="review-quote">"Finished it.<br>Then texted my ex."</blockquote><div class="review-author-line">— Michelle</div></div>
+            </div>
+        </section>
+
+        <section class="about-section">
+            <div class="about-container">
+                <div class="about-image"><img src="N4829.png" alt="Nir Ram - Author"></div>
+                <div class="about-content">
+                    <div class="about-badge">✍️ About Me</div>
+                    <h2 class="about-title">Nir Ram</h2>
+                    <p class="about-text">An IT executive with a rich professional background, whose personal life also made him a <strong>curious researcher of the dating world</strong>.</p>
+                    <p class="about-text">Divorced and father of three grown children — Alon, Don, and Michaela — he brings a unique combination of <strong>sharp thinking, human curiosity, and a rare ability to find the funny side</strong> even in the most awkward moments.</p>
+                    <p class="about-signature">"In short: if I already went through it — at least let there be a good story to tell."</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="social-section">
+            <h2 class="social-title">📱 More Funny Content on Our Channels</h2>
+            <div class="social-links">
+                <a href="https://www.youtube.com/@funnydates101US" class="social-link" target="_blank"><span class="icon">▶️</span><div><div class="label">YouTube</div><div class="handle">@funnydates101US</div></div></a>
+                <a href="https://www.tiktok.com/@no_art_gallery" class="social-link" target="_blank"><span class="icon">🎵</span><div><div class="label">TikTok</div><div class="handle">@no_art_gallery</div></div></a>
+            </div>
+        </section>
+
+        <section class="story-section" id="share">
+            <div class="story-badge"><span>🎬</span><span>Got a Story?</span></div>
+            <h2 class="story-title">Your Story Could Become a Video!</h2>
+            <p class="story-subtitle">Had a crazy date? Bizarre? Hilariously bad?<br>Send it to us and your story might go on our channel!</p>
+            <div class="story-reward"><span>🌟</span><span>Your story will be featured with a shoutout</span></div>
+            <form class="story-form" id="storyForm">
+                <input type="hidden" name="access_key" value="c3307ded-69c5-4654-9615-0be668c334d4">
+                <div class="form-group"><label class="form-label">Your Name (or nickname)</label><input type="text" name="name" class="form-input" placeholder="What should we call you?" required></div>
+                <div class="form-group"><label class="form-label">Email</label><input type="email" name="email" class="form-input" placeholder="So we can update you" required></div>
+                <div class="form-group"><label class="form-label">Your Story</label><textarea name="story" class="form-input form-textarea" placeholder="Tell us what happened..." required></textarea></div>
+                <button type="submit" class="form-submit">🚀 Send Your Story</button>
+                <p class="form-note">* Your story will be kept confidential and only published with your permission</p>
+            </form>
+            <div class="form-success" id="formSuccess"><h3>✅ Thank You!</h3><p>Your story was received successfully.<br>If it's selected, we'll be in touch!</p></div>
+        </section>
+
+        <section class="buy-section" id="buy">
+            <div class="buy-hook">
+                <p class="buy-hook-text">If you've read this far —<br>you already know this isn't just another book.</p>
+                <p class="buy-hook-question">The only question: Are you ready to find out what happened on the next date?</p>
+            </div>
+            <h2 class="section-title">Where to Buy?</h2>
+            <p class="buy-subtitle">Choose your format</p>
+            <div class="buy-grid">
+                <div class="buy-card featured">
+                    <div class="buy-card-badge">🌍 Worldwide</div>
+                    <div class="buy-icon">📚</div>
+                    <h3 class="buy-title">Paperback</h3>
+                    <p class="buy-desc">Printed book in English</p>
+                    <div class="buy-price">$13.90</div>
+                    <div class="buy-note">Special Launch Price!</div>
+                    <div class="buy-button-wrapper">
+                        <a href="https://www.amazon.com/dp/B0FY7DJFJ9" class="buy-button amazon" target="_blank">Buy on Amazon</a>
+                        <p class="buy-delivery">🌐 International Shipping</p>
+                    </div>
+                </div>
+                <div class="buy-card">
+                    <div class="buy-icon">📱</div>
+                    <h3 class="buy-title">eBook</h3>
+                    <p class="buy-desc">Kindle Edition in English</p>
+                    <div class="buy-price">$2.99</div>
+                    <div class="buy-note">Instant Download!</div>
+                    <div class="buy-button-wrapper">
+                        <a href="https://www.amazon.com/dp/B0G528JZGS" class="buy-button" target="_blank">Buy on Kindle</a>
+                        <p class="buy-delivery">⚡ Instant Delivery</p>
+                    </div>
+                </div>
+                <div class="buy-card audiobook-card">
+                    <div class="buy-card-badge audiobook-badge">🎧 Available!</div>
+                    <div class="buy-icon">🎧</div>
+                    <h3 class="buy-title">AudioBook</h3>
+                    <p class="buy-desc">4+ Hours of Dating Disasters!</p>
+                    <div class="buy-price">$14.40 <span style="font-size: 14px; text-decoration: line-through; color: #666;">$16.90</span></div>
+                    <div class="buy-note">⚡ 15% OFF - Code: LAUNCH101</div>
+                    <div class="buy-button-wrapper">
+                        <a href="order.html" class="buy-button">Buy Now</a>
+                        <p class="buy-delivery">📧 Instant Delivery!</p>
+                    </div>
+                </div>
+                <div class="buy-card">
+                    <div class="buy-card-badge local">🇮🇱 In Israel</div>
+                    <div class="buy-icon">📖</div>
+                    <h3 class="buy-title">Paperback</h3>
+                    <p class="buy-desc">English edition for expats in Israel</p>
+                    <div class="buy-price">₪75</div>
+                    <div class="buy-note">🎟️ Code: 10110 → 10% OFF</div>
+                    <div class="buy-button-wrapper">
+                        <a href="https://bookpod.co.il/product/love-bites-101-dating-disasters/" class="buy-button" target="_blank">Buy on BookPod</a>
+                        <p class="buy-delivery">🚚 5 Business Days</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <footer class="footer">
             <div class="footer-links">
@@ -1099,7 +1052,6 @@
         function toggleUnderlineLinks() { document.body.classList.toggle('underline-links'); }
         function resetAccessibility() { fontSize = 100; document.body.style.fontSize = '100%'; document.body.classList.remove('high-contrast', 'grayscale', 'underline-links'); }
         function toggleTeaser() { document.getElementById('teaserToggle').classList.toggle('open'); document.getElementById('teaserContent').classList.toggle('open'); }
-        function toggleStorySection() { document.getElementById('storyCollapsible').classList.toggle('open'); document.getElementById('storyArrow').classList.toggle('open'); }
         
         document.getElementById('storyForm').addEventListener('submit', async function(e) { e.preventDefault(); const fd = new FormData(this); try { await fetch('https://api.web3forms.com/submit', { method: 'POST', body: fd }); document.getElementById('storyForm').style.display = 'none'; document.getElementById('formSuccess').style.display = 'block'; } catch (err) { console.error('Error:', err); } });
         
@@ -1138,127 +1090,6 @@
 
         function seekAudio(e) { const audio = audios[currentChapter]; const rect = e.target.getBoundingClientRect(); const percent = (e.clientX - rect.left) / rect.width; audio.currentTime = percent * audio.duration; }
         function setVolume(value) { audios.forEach(audio => { audio.volume = value / 100; }); }
-    </script>
-
-    <!-- 🛒 ORDER MODAL OVERLAY -->
-    <div id="orderModal" class="order-modal-overlay" style="display:none;">
-        <div class="order-modal-container">
-            <button class="order-modal-close" onclick="closeOrderModal()">✕</button>
-            <div class="order-iframe-x-cover" onclick="closeOrderModal()"></div>
-            <iframe id="orderIframe" class="order-modal-iframe" src="" frameborder="0"></iframe>
-        </div>
-    </div>
-
-    <style>
-        .order-modal-overlay {
-            position: fixed;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(0, 0, 0, 0.85);
-            backdrop-filter: blur(8px);
-            z-index: 10000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            animation: modalFadeIn 0.3s ease;
-        }
-        @keyframes modalFadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        .order-modal-container {
-            position: relative;
-            width: 95%;
-            max-width: 560px;
-            height: 90vh;
-            max-height: 800px;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.6), 0 0 40px rgba(220, 38, 38, 0.15);
-            animation: modalSlideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        @keyframes modalSlideUp {
-            from { opacity: 0; transform: translateY(40px) scale(0.97); }
-            to { opacity: 1; transform: translateY(0) scale(1); }
-        }
-        .order-modal-close {
-            position: absolute;
-            top: 12px; right: 12px;
-            width: 36px; height: 36px;
-            background: rgba(0, 0, 0, 0.7);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            color: #fff;
-            font-size: 18px;
-            border-radius: 50%;
-            cursor: pointer;
-            z-index: 10001;
-            transition: all 0.2s;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .order-modal-close:hover {
-            background: var(--accent-red);
-            border-color: var(--accent-red);
-            transform: scale(1.1);
-        }
-        .order-modal-iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-            background: var(--bg-primary);
-        }
-        .order-iframe-x-cover {
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 80px;
-            height: 80px;
-            z-index: 10000;
-            cursor: pointer;
-            background: transparent;
-        }
-    </style>
-
-    <script>
-        function openOrderModal() {
-            const modal = document.getElementById('orderModal');
-            const iframe = document.getElementById('orderIframe');
-            iframe.src = 'order.html';
-            modal.style.display = 'flex';
-            document.body.style.overflow = 'hidden';
-            // Hide the internal X button once iframe loads
-            iframe.onload = function() {
-                try {
-                    const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
-                    // Find and hide close buttons inside order.html
-                    const closeBtns = iframeDoc.querySelectorAll('.close-btn, .close-button, .modal-close, [onclick*="close"], button.close, .order-close');
-                    closeBtns.forEach(btn => btn.style.display = 'none');
-                    // Also try hiding any X button in top-right area
-                    const allBtns = iframeDoc.querySelectorAll('button, a');
-                    allBtns.forEach(btn => {
-                        const text = btn.textContent.trim();
-                        if (text === '✕' || text === '×' || text === 'X' || text === '✖') {
-                            btn.style.display = 'none';
-                        }
-                    });
-                } catch(e) { /* cross-origin fallback - cover div handles it */ }
-            };
-        }
-        function closeOrderModal() {
-            const modal = document.getElementById('orderModal');
-            const iframe = document.getElementById('orderIframe');
-            modal.style.display = 'none';
-            iframe.src = '';
-            document.body.style.overflow = '';
-        }
-        // Close on ESC key
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') closeOrderModal();
-        });
-        // Close on backdrop click
-        document.getElementById('orderModal').addEventListener('click', function(e) {
-            if (e.target === this) closeOrderModal();
-        });
     </script>
 </body>
 </html>

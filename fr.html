@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Bites : 101 Désastres Amoureux | Le Livre de Rencontres le Plus Drôle</title>
+    <meta name="description" content="101 histoires de rendez-vous hilarantes qui vous feront rire aux larmes. Le livre que tous ceux qui ont déjà eu un rendez-vous doivent lire.">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+    
+    <!-- Open Graph / Social -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.funnydates101.com/fr">
+    <meta property="og:title" content="💔 Vrais Rendez-vous. Vrais Fous Rires.">
+    <meta property="og:description" content="De grandes attentes. Trop de questions. Trop d'histoires. 🎬">
+    <meta property="og:image" content="https://www.funnydates101.com/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="💔 Vrais Rendez-vous. Vrais Fous Rires.">
+    <meta name="twitter:description" content="De grandes attentes. Trop de questions. Trop d'histoires. 🎬">
+    <meta name="twitter:image" content="https://www.funnydates101.com/og-image.png">
+
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💔</text></svg>">
+    
+    <link rel="alternate" hreflang="en" href="https://funnydates101.com">
+    <link rel="alternate" hreflang="he" href="https://funnydates101.co.il">
+    <link rel="alternate" hreflang="fr" href="https://funnydates101.com/fr">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-primary: #0a0a0a;
+            --bg-secondary: #111111;
+            --bg-card: #1a1a1a;
+            --text-primary: #ffffff;
+            --text-secondary: #b0b0b0;
+            --accent-red: #dc2626;
+            --accent-rose: #f87171;
+            --accent-gold: #d4af37;
+            --gradient-red: linear-gradient(135deg, #b91c1c 0%, #dc2626 50%, #ef4444 100%);
+            --gradient-gold: linear-gradient(135deg, #d4af37 0%, #f4d03f 50%, #d4af37 100%);
+            --shadow-glow: 0 0 40px rgba(220, 38, 38, 0.3);
+            --shadow-gold: 0 0 30px rgba(212, 175, 55, 0.3);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: #1a1a1a; }
+        ::-webkit-scrollbar-thumb { background: linear-gradient(180deg, #dc2626 0%, #b91c1c 100%); border-radius: 5px; }
+        ::-webkit-scrollbar-thumb:hover { background: linear-gradient(180deg, #ef4444 0%, #dc2626 100%); }
+        html { scrollbar-width: thin; scrollbar-color: #dc2626 #1a1a1a; }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--bg-primary);
+            background-image: url('bg-hollywood.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            color: var(--text-primary);
+            min-height: 100vh;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Language Switcher - Multiple Languages */
+        .lang-switch { position: fixed; top: 20px; right: 20px; z-index: 1000; display: flex; gap: 8px; }
+        .lang-switch a { display: flex; align-items: center; gap: 8px; background: rgba(26, 26, 26, 0.95); border: 1px solid var(--accent-gold); color: var(--text-primary); padding: 10px 18px; border-radius: 50px; text-decoration: none; font-size: 14px; font-weight: 500; transition: all 0.3s ease; backdrop-filter: blur(10px); }
+        .lang-switch a:hover { background: var(--accent-gold); color: #000; }
+        .lang-switch a.active { background: var(--accent-gold); color: #000; }
+        .lang-switch .flag-icon { width: 20px; height: 15px; border-radius: 2px; object-fit: cover; }
+
+        .hero { text-align: center; padding: 140px 20px 80px; position: relative; }
+        .hero-badge { display: inline-flex; align-items: center; gap: 10px; background: rgba(26, 26, 26, 0.8); border: 1px solid var(--accent-gold); padding: 12px 24px; border-radius: 50px; font-size: 14px; color: var(--accent-gold); margin-bottom: 30px; backdrop-filter: blur(10px); }
+        .badge-dot { width: 8px; height: 8px; background: #22c55e; border-radius: 50%; animation: pulse 2s infinite; }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+        .hero-title { font-family: 'Playfair Display', serif; font-size: clamp(40px, 8vw, 80px); font-weight: 900; line-height: 1.1; margin-bottom: 20px; }
+        .highlight { color: var(--accent-red); font-style: italic; }
+        .title-dot { display: inline-block; width: 12px; height: 12px; background: var(--accent-red); border-radius: 50%; margin-left: 5px; vertical-align: super; }
+        .hero-subtitle { font-size: clamp(16px, 3vw, 22px); color: var(--text-secondary); margin-bottom: 15px; }
+        .hero-tagline { font-size: clamp(14px, 2.5vw, 18px); color: var(--accent-rose); font-style: italic; margin-bottom: 40px; }
+        .cta-container { margin-top: 30px; }
+        .cta-button { display: inline-flex; align-items: center; gap: 10px; background: var(--gradient-red); color: white; font-size: 18px; font-weight: 700; padding: 18px 40px; border: none; border-radius: 50px; cursor: pointer; transition: all 0.3s ease; text-decoration: none; box-shadow: var(--shadow-glow); }
+        .cta-button:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 15px 40px rgba(220, 38, 38, 0.5); }
+        .cta-subtext { margin-top: 15px; color: var(--text-secondary); font-size: 14px; }
+        .launch-offer { display: flex; flex-direction: column; align-items: center; gap: 15px; margin-top: 30px; }
+        .offer-badge { display: inline-flex; align-items: center; gap: 8px; background: var(--gradient-red); padding: 12px 30px; border-radius: 50px; font-weight: 700; font-size: 16px; box-shadow: var(--shadow-glow); }
+        .offer-date { font-size: 16px; color: var(--text-secondary); }
+        .date-value { font-family: 'Playfair Display', serif; font-size: 24px; color: var(--accent-gold); margin-left: 10px; }
+        .offer-urgency { display: flex; align-items: center; gap: 8px; font-size: 14px; color: var(--accent-red); }
+        .urgency-dot { width: 8px; height: 8px; background: var(--accent-red); border-radius: 50%; animation: pulse 1s infinite; }
+
+        /* Coming Soon Badge */
+        .coming-soon-badge { display: inline-flex; align-items: center; gap: 10px; background: linear-gradient(135deg, rgba(212, 175, 55, 0.2), rgba(212, 175, 55, 0.05)); border: 2px solid var(--accent-gold); padding: 20px 40px; border-radius: 16px; margin-top: 30px; }
+        .coming-soon-badge .icon { font-size: 28px; }
+        .coming-soon-badge .text { font-size: 18px; font-weight: 700; color: var(--accent-gold); }
+        .coming-soon-badge .subtext { font-size: 13px; color: var(--text-secondary); margin-top: 4px; }
+
+        .section { padding: 100px 20px; position: relative; }
+        .section.alt-bg { background: transparent; }
+        .section::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, var(--accent-gold), transparent); }
+        .section-title { font-family: 'Playfair Display', serif; font-size: clamp(32px, 6vw, 48px); text-align: center; margin-bottom: 60px; }
+
+        .why-section-hollywood { padding: 120px 20px; background: transparent; position: relative; overflow: hidden; }
+        .why-header { text-align: center; margin-bottom: 60px; position: relative; z-index: 2; }
+        .why-main-title { font-family: 'Playfair Display', serif; font-size: clamp(32px, 6vw, 52px); font-weight: 900; margin-bottom: 15px; }
+        .why-subtitle { font-size: 20px; color: var(--text-secondary); font-style: italic; }
+        .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1100px; margin: 0 auto; position: relative; z-index: 2; }
+        .why-card { background: linear-gradient(135deg, var(--bg-card) 0%, #222 100%); border: 1px solid rgba(212, 175, 55, 0.2); border-radius: 20px; padding: 40px; transition: all 0.4s ease; }
+        .why-card:hover { transform: translateY(-10px); border-color: var(--accent-gold); box-shadow: var(--shadow-gold); }
+        .why-icon { font-size: 48px; display: block; margin-bottom: 20px; }
+        .why-title { font-size: 20px; font-weight: 700; margin-bottom: 12px; color: var(--accent-rose); }
+        .why-text { color: var(--text-secondary); font-size: 15px; }
+
+        .teaser-section { padding: 50px 20px; background: transparent; text-align: center; }
+        .teaser-badge { display: inline-flex; align-items: center; gap: 10px; background: rgba(26, 26, 26, 0.8); border: 2px solid var(--accent-gold); padding: 15px 30px; border-radius: 50px; font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: 600; color: var(--accent-gold); cursor: pointer; transition: all 0.3s ease; }
+        .teaser-badge:hover { background: rgba(212, 175, 55, 0.1); }
+        .teaser-content { max-width: 700px; margin: 30px auto 0; display: none; animation: fadeIn 0.5s ease; }
+        .teaser-content.open { display: block; }
+        .teaser-badge.open .arrow { transform: rotate(90deg); }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .teaser-main-title { font-family: 'Playfair Display', serif; font-size: clamp(24px, 5vw, 36px); margin-bottom: 10px; }
+        .teaser-subtitle { color: var(--text-secondary); font-size: 18px; margin-bottom: 30px; }
+        .teaser-quote-card { background: linear-gradient(135deg, var(--bg-card) 0%, #222 100%); border: 1px solid rgba(212, 175, 55, 0.3); border-radius: 20px; padding: 25px 30px; margin: 15px 0; position: relative; text-align: left; transition: all 0.3s ease; }
+        .teaser-quote-card:hover { border-color: var(--accent-gold); transform: translateX(5px); }
+        .teaser-quote-card::before { content: '"'; position: absolute; top: 10px; left: 15px; font-size: 50px; color: var(--accent-gold); opacity: 0.2; font-family: Georgia, serif; }
+        .teaser-quote-text { font-size: 16px; padding-left: 30px; color: var(--text-secondary); line-height: 1.7; }
+        .teaser-footer-text { margin-top: 40px; font-size: 18px; color: var(--text-secondary); font-style: italic; }
+        .teaser-cta { display: inline-flex; margin-top: 20px; background: var(--gradient-red); color: white; padding: 15px 35px; border-radius: 50px; text-decoration: none; font-weight: 700; transition: all 0.3s ease; box-shadow: var(--shadow-glow); }
+        .teaser-cta:hover { transform: translateY(-3px); }
+
+        /* Reviews */
+        .reviews-hollywood { padding: 100px 20px; background: transparent; }
+        .reviews-header { text-align: center; margin-bottom: 60px; }
+        .reviews-star { font-size: 32px; display: block; margin-bottom: 15px; }
+        .reviews-main-title { font-family: 'Playfair Display', serif; font-size: clamp(28px, 5vw, 42px); }
+        .reviews-showcase { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; max-width: 1100px; margin: 0 auto; }
+        .review-hollywood-card { background: linear-gradient(135deg, var(--bg-card) 0%, #222 100%); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 20px; padding: 35px; transition: all 0.4s ease; }
+        .review-hollywood-card:hover { border-color: var(--accent-gold); transform: translateY(-5px); }
+        .evrit-review { border-color: rgba(212, 175, 55, 0.3); }
+        .review-platform { display: flex; align-items: center; gap: 8px; margin-bottom: 15px; flex-wrap: wrap; }
+        .evrit-text { font-size: 13px; color: var(--accent-gold); font-weight: 600; }
+        .evrit-badge { font-size: 11px; color: #22c55e; background: rgba(34, 197, 94, 0.1); padding: 3px 10px; border-radius: 20px; }
+        .review-rating { margin-bottom: 15px; font-size: 14px; }
+        .review-quote { font-size: 18px; font-style: italic; line-height: 1.6; color: var(--text-primary); border: none; padding: 0; margin: 0; }
+        .review-author-line { margin-top: 15px; font-size: 14px; color: var(--accent-gold); }
+
+        /* About */
+        .about-section { padding: 100px 20px; background: transparent; }
+        .about-container { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: 1fr 2fr; gap: 50px; align-items: center; }
+        .about-image img { width: 100%; border-radius: 20px; border: 2px solid rgba(212, 175, 55, 0.3); }
+        .about-badge { display: inline-block; background: rgba(212, 175, 55, 0.1); border: 1px solid var(--accent-gold); padding: 8px 20px; border-radius: 50px; font-size: 14px; color: var(--accent-gold); margin-bottom: 15px; }
+        .about-title { font-family: 'Playfair Display', serif; font-size: 36px; margin-bottom: 20px; }
+        .about-text { color: var(--text-secondary); margin-bottom: 15px; font-size: 15px; }
+        .about-signature { font-style: italic; color: var(--accent-rose); margin-top: 20px; font-size: 16px; }
+
+        /* Social */
+        .social-section { padding: 80px 20px; }
+        .social-title { font-family: 'Playfair Display', serif; font-size: clamp(24px, 4vw, 36px); text-align: center; margin-bottom: 40px; }
+        .social-links { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+        .social-link { display: flex; align-items: center; gap: 12px; background: var(--bg-card); border: 1px solid rgba(255, 255, 255, 0.1); padding: 15px 25px; border-radius: 16px; text-decoration: none; color: white; transition: all 0.3s ease; }
+        .social-link:hover { border-color: var(--accent-gold); transform: translateY(-3px); }
+        .social-link .icon { font-size: 24px; }
+        .social-link .label { font-weight: 600; }
+        .social-link .handle { font-size: 12px; color: var(--text-secondary); }
+
+        /* Story Section */
+        .story-section { padding: 100px 20px; background: transparent; text-align: center; }
+        .story-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(26, 26, 26, 0.8); border: 1px solid var(--accent-gold); padding: 10px 20px; border-radius: 50px; font-size: 14px; color: var(--accent-gold); margin-bottom: 20px; }
+        .story-title { font-family: 'Playfair Display', serif; font-size: clamp(28px, 5vw, 42px); margin-bottom: 15px; }
+        .story-subtitle { color: var(--text-secondary); font-size: 16px; margin-bottom: 30px; }
+        .story-reward { display: inline-flex; align-items: center; gap: 8px; background: rgba(212, 175, 55, 0.1); border: 1px solid var(--accent-gold); padding: 12px 25px; border-radius: 50px; color: var(--accent-gold); font-size: 14px; margin-bottom: 40px; }
+        .story-form { max-width: 500px; margin: 0 auto; text-align: left; }
+        .form-group { margin-bottom: 20px; }
+        .form-label { display: block; font-size: 14px; color: var(--accent-gold); margin-bottom: 8px; }
+        .form-input { width: 100%; padding: 14px 18px; background: var(--bg-card); border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 12px; color: white; font-size: 15px; font-family: 'Poppins', sans-serif; transition: border-color 0.3s ease; }
+        .form-input:focus { outline: none; border-color: var(--accent-gold); }
+        .form-textarea { min-height: 120px; resize: vertical; }
+        .form-submit { width: 100%; padding: 16px; background: var(--gradient-red); color: white; border: none; border-radius: 12px; font-size: 16px; font-weight: 700; cursor: pointer; transition: all 0.3s ease; font-family: 'Poppins', sans-serif; }
+        .form-submit:hover { transform: translateY(-2px); box-shadow: var(--shadow-glow); }
+        .form-note { text-align: center; font-size: 12px; color: var(--text-secondary); margin-top: 15px; }
+        .form-success { display: none; text-align: center; padding: 30px; background: rgba(34, 197, 94, 0.1); border: 1px solid #22c55e; border-radius: 16px; }
+
+        /* Buy Section - Coming Soon */
+        .buy-section { padding: 100px 20px; background: rgba(17, 17, 17, 0.7); }
+        .buy-subtitle { text-align: center; color: var(--text-secondary); font-size: 18px; margin-top: -40px; margin-bottom: 40px; }
+        .buy-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; max-width: 1100px; margin: 0 auto; }
+        .buy-card { background: linear-gradient(135deg, var(--bg-card) 0%, #222 100%); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 24px; padding: 35px; text-align: center; position: relative; transition: all 0.4s ease; }
+        .buy-card:hover { border-color: var(--accent-gold); transform: translateY(-5px); }
+        .buy-card.featured { border-color: var(--accent-gold); box-shadow: var(--shadow-gold); }
+        .buy-card-badge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--gradient-gold); color: #000; padding: 6px 20px; border-radius: 20px; font-size: 12px; font-weight: 700; white-space: nowrap; }
+        .buy-icon { font-size: 48px; margin-bottom: 15px; }
+        .buy-title { font-size: 20px; font-weight: 700; margin-bottom: 8px; }
+        .buy-desc { color: var(--text-secondary); font-size: 14px; margin-bottom: 15px; }
+        .buy-price { font-size: 28px; font-weight: 900; color: var(--accent-gold); margin-bottom: 5px; }
+        .buy-note { font-size: 13px; color: var(--accent-rose); margin-bottom: 20px; }
+        .buy-button { display: inline-block; width: 100%; padding: 14px; background: var(--gradient-red); color: white; text-decoration: none; border-radius: 12px; font-weight: 700; font-size: 15px; transition: all 0.3s ease; }
+        .buy-button:hover { transform: translateY(-2px); box-shadow: var(--shadow-glow); }
+        .buy-button.coming-soon { background: rgba(255,255,255,0.1); color: #888; pointer-events: none; border: 1px solid rgba(255,255,255,0.15); }
+        .buy-delivery { font-size: 12px; color: var(--text-secondary); margin-top: 8px; }
+
+        /* Footer */
+        .footer { padding: 40px 20px; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1); background: rgba(10, 10, 10, 0.8); }
+        .footer-links { margin-bottom: 20px; }
+        .footer-links a { color: var(--text-secondary); text-decoration: none; margin: 0 15px; transition: color 0.3s ease; }
+        .footer-links a:hover { color: var(--accent-gold); }
+        .footer-divider { color: rgba(255,255,255,0.2); }
+        .footer-text { color: var(--text-secondary); font-size: 14px; }
+        .footer-author { color: var(--accent-red); margin-top: 10px; }
+        .footer-contact { margin-top: 10px; }
+        .footer-contact a { color: var(--accent-gold); text-decoration: none; }
+        .noartgallery-link { display: inline-block; margin: 15px 0; opacity: 0.7; transition: opacity 0.3s; }
+        .noartgallery-link:hover { opacity: 1; }
+        .noartgallery-logo { height: 30px; }
+
+        /* Accessibility */
+        #accessibility-widget { position: fixed; top: 90px; right: 20px; z-index: 9999; }
+        .accessibility-btn { width: 50px; height: 50px; border-radius: 50%; background: var(--accent-gold); border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; color: #000; box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4); transition: all 0.3s ease; }
+        .accessibility-btn:hover { transform: scale(1.1); }
+        .accessibility-menu { position: absolute; top: 60px; right: 0; background: #1a1a1a; border: 2px solid var(--accent-gold); border-radius: 12px; padding: 15px; min-width: 220px; display: none; flex-direction: column; gap: 8px; }
+        .accessibility-menu.active { display: flex; }
+        .accessibility-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; padding-bottom: 10px; border-bottom: 1px solid rgba(212, 175, 55, 0.3); color: var(--accent-gold); font-weight: 700; }
+        .accessibility-header button { background: none; border: none; color: var(--text-secondary); cursor: pointer; font-size: 18px; }
+        .accessibility-menu button:not(.accessibility-header button) { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: white; padding: 10px 15px; border-radius: 8px; cursor: pointer; text-align: left; transition: all 0.2s ease; }
+        .accessibility-menu button:not(.accessibility-header button):hover { background: var(--accent-gold); color: #000; }
+
+        /* Floating Hearts */
+        .floating-hearts { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; overflow: hidden; }
+        .heart { position: absolute; font-size: 20px; animation: floatHeart 15s linear infinite; opacity: 0.1; }
+        .heart:nth-child(1) { left: 10%; animation-delay: 0s; animation-duration: 20s; }
+        .heart:nth-child(2) { left: 20%; animation-delay: 2s; animation-duration: 18s; }
+        .heart:nth-child(3) { left: 35%; animation-delay: 4s; animation-duration: 22s; }
+        .heart:nth-child(4) { left: 50%; animation-delay: 1s; animation-duration: 17s; }
+        .heart:nth-child(5) { left: 65%; animation-delay: 3s; animation-duration: 21s; }
+        .heart:nth-child(6) { left: 75%; animation-delay: 5s; animation-duration: 19s; }
+        .heart:nth-child(7) { left: 85%; animation-delay: 2.5s; animation-duration: 23s; }
+        .heart:nth-child(8) { left: 42%; animation-delay: 6s; animation-duration: 16s; }
+        .heart:nth-child(9) { left: 58%; animation-delay: 3.5s; animation-duration: 20s; }
+        .heart:nth-child(10) { left: 90%; animation-delay: 7s; animation-duration: 18s; }
+        @keyframes floatHeart { 0% { transform: translateY(100vh) rotate(0deg); opacity: 0; } 10% { opacity: 0.1; } 90% { opacity: 0.1; } 100% { transform: translateY(-100vh) rotate(720deg); opacity: 0; } }
+
+        /* Floating Quote */
+        .floating-quotes { position: fixed; top: 30%; right: 20px; z-index: 100; display: flex; flex-direction: column; gap: 15px; max-width: 220px; }
+        .quote-bubble { background: rgba(26, 26, 26, 0.95); border: 1px solid rgba(212, 175, 55, 0.2); border-radius: 16px; padding: 15px; font-size: 13px; color: var(--text-secondary); line-height: 1.5; backdrop-filter: blur(10px); display: none; animation: slideInQuote 0.5s ease; }
+        .quote-bubble:first-child { display: block; }
+        @keyframes slideInQuote { from { opacity: 0; transform: translateX(30px); } to { opacity: 1; transform: translateX(0); } }
+
+        /* High Contrast & Grayscale */
+        body.high-contrast { filter: contrast(1.5); }
+        body.grayscale { filter: grayscale(1); }
+        body.underline-links a { text-decoration: underline !important; }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .about-container { grid-template-columns: 1fr; text-align: center; }
+            .floating-quotes { display: none; }
+            .lang-switch { top: 10px; right: 10px; }
+            .lang-switch a { padding: 8px 12px; font-size: 11px; }
+            #accessibility-widget { top: 80px; right: 10px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- 🌐 LANGUAGE SWITCHER - EN / FR / HE -->
+    <div class="lang-switch">
+        <a href="https://funnydates101.com" title="English"><img src="https://flagcdn.com/w40/gb.png" alt="EN" class="flag-icon"><span>EN</span></a>
+        <a href="https://funnydates101.co.il" title="עברית"><img src="https://flagcdn.com/w40/il.png" alt="IL" class="flag-icon"><span>עברית</span></a>
+        <a href="#" class="active" title="Français"><img src="https://flagcdn.com/w40/fr.png" alt="FR" class="flag-icon"><span>FR</span></a>
+    </div>
+
+    <div class="floating-hearts">
+        <span class="heart">💔</span><span class="heart">❤️</span><span class="heart">💕</span><span class="heart">💔</span><span class="heart">❤️</span>
+        <span class="heart">💕</span><span class="heart">💔</span><span class="heart">❤️</span><span class="heart">💕</span><span class="heart">💔</span>
+    </div>
+
+    <!-- ♿ ACCESSIBILITY WIDGET - FRENCH -->
+    <div id="accessibility-widget">
+        <button class="accessibility-btn" onclick="toggleAccessibilityMenu()" aria-label="Menu d'accessibilité">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9H15V22H13V16H11V22H9V9H3V7H21V9Z"/></svg>
+        </button>
+        <div class="accessibility-menu" id="accessibility-menu">
+            <div class="accessibility-header"><span>Accessibilité</span><button onclick="toggleAccessibilityMenu()">✕</button></div>
+            <button onclick="changeFontSize(1)">Agrandir le texte +</button>
+            <button onclick="changeFontSize(-1)">Réduire le texte -</button>
+            <button onclick="toggleHighContrast()">Contraste élevé</button>
+            <button onclick="toggleGrayscale()">Niveaux de gris</button>
+            <button onclick="toggleUnderlineLinks()">Souligner les liens</button>
+            <button onclick="resetAccessibility()">Réinitialiser</button>
+        </div>
+    </div>
+
+    <!-- 🔥 FLOATING QUOTE - FRENCH -->
+    <div class="floating-quotes">
+        <div class="quote-bubble">🍷 Dix minutes. Sept verres de vin. Puis je l'entends dire à son amie : « On est ensemble depuis deux mois. » Mec, j'étais JUSTE LÀ.</div>
+    </div>
+
+    <div class="main-content">
+        <!-- 🎬 HERO SECTION -->
+        <section class="hero">
+            <div class="hero-badge"><span class="badge-dot"></span>Le Livre Dont Tout le Monde Parle</div>
+            <h1 class="hero-title"><span class="highlight">Love Bites</span><br>101 Désastres Amoureux<span class="title-dot"></span></h1>
+            <p class="hero-subtitle">De grandes attentes. Trop de questions.<br>Trop d'histoires.</p>
+            <p class="hero-tagline">Si vous êtes déjà sorti d'un rendez-vous en disant « mais qu'est-ce qui vient de se passer ? » —<br>ce livre est pour vous.</p>
+            <div class="cta-container">
+                <a href="#why" class="cta-button">👀 Que S'est-il Passé à Ce Rendez-vous ?</a>
+                <p class="cta-subtext">📚 Livre | 📱 eBook | 🎧 Livre Audio | 🇫🇷 Édition Française</p>
+            </div>
+            <div class="coming-soon-badge">
+                <span class="icon">🚀</span>
+                <div>
+                    <div class="text">Bientôt Disponible en Français !</div>
+                    <div class="subtext">Livre imprimé · eBook · Livre audio — Arrivée prochaine</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 🎭 WHY SECTION -->
+        <section class="why-section-hollywood" id="why">
+            <div class="why-header">
+                <h2 class="why-main-title">Toutes les histoires sont vraies.</h2>
+                <p class="why-subtitle">Et c'est exactement le problème.</p>
+            </div>
+            <div class="why-grid">
+                <div class="why-card"><span class="why-icon">🎭</span><h3 class="why-title">J'ai ri. Puis j'ai réalisé que ça m'était arrivé aussi.</h3><p class="why-text">Des situations que si vous les voyiez dans une série — vous diriez que c'est exagéré. Malheureusement, c'était pas un scénario.</p></div>
+                <div class="why-card"><span class="why-icon">💔</span><h3 class="why-title">J'étais sûr que c'était la bonne. Elle était sûre que c'était juste mardi.</h3><p class="why-text">Des coups de foudre éphémères, de longues illusions, et ce moment où vous réalisez que l'autre est déjà passé à autre chose.</p></div>
+                <div class="why-card"><span class="why-icon">🍷</span><h3 class="why-title">Des choses que les gens font en rendez-vous — puis prient pour que personne ne les raconte.</h3><p class="why-text">Des histoires vraies. Sans filtre. Les moments qui m'ont fait penser : « Surtout, n'écris pas un livre là-dessus. »</p></div>
+            </div>
+        </section>
+
+        <!-- 🎬 TEASER SECTION -->
+        <section class="teaser-section">
+            <button class="teaser-badge" id="teaserToggle" onclick="toggleTeaser()"><span>🎬</span><span>Un Petit Avant-goût ?</span><span class="arrow">👀</span></button>
+            <div class="teaser-content" id="teaserContent">
+                <h2 class="teaser-main-title">Jusqu'ici c'était des rendez-vous.</h2>
+                <p class="teaser-subtitle">À partir de maintenant — c'est à propos de vous.</p>
+                <div class="teaser-quotes-container">
+                    <div class="teaser-quote-card"><p class="teaser-quote-text">🔁 Ce n'est pas un livre sur les rendez-vous. C'est un livre sur le moment où vous réalisez que quelque chose en vous se répète.</p></div>
+                    <div class="teaser-quote-card"><p class="teaser-quote-text">🎯 Chaque histoire commence par « Wow, ça a l'air prometteur » et finit par « Comment j'ai atterri ici encore ? »</p></div>
+                    <div class="teaser-quote-card"><p class="teaser-quote-text">😂 Certains chapitres vous feront rire. D'autres vous feront réfléchir. Et certains — vous vous y reconnaîtrez trop vite et préférerez continuer à lire comme si c'était pas vous.</p></div>
+                    <div class="teaser-quote-card"><p class="teaser-quote-text">⏱️ Certains rendez-vous ont duré 8 minutes. D'autres 9 heures. Et il y en a un… après lequel plus rien n'a été pareil.</p></div>
+                    <div class="teaser-quote-card"><p class="teaser-quote-text">📓 Ce n'est pas un guide. C'est un journal de documentation des erreurs que nous faisons tous — on ne les admet juste pas à voix haute.</p></div>
+                </div>
+                <p class="teaser-footer-text">Si vous avez lu jusqu'ici — vous avez probablement vécu au moins un de ces rendez-vous. 🎯</p>
+                <a href="#buy" class="teaser-cta">🔓 Vous voulez savoir ce qui s'est passé ?</a>
+            </div>
+        </section>
+
+        <!-- ⭐ REVIEWS -->
+        <section class="reviews-hollywood">
+            <div class="reviews-header"><span class="reviews-star">⭐</span><h2 class="reviews-main-title">Des Lecteurs Qui N'ont Pas Pu S'arrêter</h2></div>
+            <div class="reviews-showcase">
+                <div class="review-hollywood-card evrit-review">
+                    <div class="review-platform">
+                        <span class="evrit-logo">📱</span>
+                        <span class="evrit-text">E-Vrit Livres Numériques</span>
+                        <span class="evrit-badge">✓ Achat vérifié</span>
+                    </div>
+                    <div class="review-rating">⭐⭐⭐⭐⭐</div>
+                    <blockquote class="review-quote">« Hilarant. Plein de flashbacks. Merci. »</blockquote>
+                    <div class="review-author-line">— Ronit</div>
+                </div>
+                <div class="review-hollywood-card"><div class="review-rating">⭐⭐⭐⭐⭐</div><blockquote class="review-quote">« Il fallait que quelqu'un écrive ça.<br>Heureusement qu'il l'a fait avant moi. »</blockquote><div class="review-author-line">— Josh</div></div>
+                <div class="review-hollywood-card"><div class="review-rating">⭐⭐⭐⭐⭐</div><blockquote class="review-quote">« Fini.<br>Puis j'ai textoté mon ex. »</blockquote><div class="review-author-line">— Michelle</div></div>
+            </div>
+        </section>
+
+        <!-- ✍️ ABOUT -->
+        <section class="about-section">
+            <div class="about-container">
+                <div class="about-image"><img src="N4829.png" alt="Nir Ram - Auteur"></div>
+                <div class="about-content">
+                    <div class="about-badge">✍️ À Propos de Moi</div>
+                    <h2 class="about-title">Nir Ram</h2>
+                    <p class="about-text">Un directeur informatique avec un parcours professionnel riche, dont la vie personnelle a aussi fait de lui un <strong>chercheur curieux du monde des rendez-vous</strong>.</p>
+                    <p class="about-text">Divorcé et père de trois grands enfants — Alon, Don et Michaela — il apporte une combinaison unique de <strong>pensée aiguisée, de curiosité humaine, et d'une capacité rare à trouver le côté drôle</strong> même dans les moments les plus gênants.</p>
+                    <p class="about-signature">« En bref : si j'ai déjà vécu ça — au moins qu'il y ait une bonne histoire à raconter. »</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 📱 SOCIAL -->
+        <section class="social-section">
+            <h2 class="social-title">📱 Plus de Contenu Drôle sur Nos Chaînes</h2>
+            <div class="social-links">
+                <a href="https://www.youtube.com/@funnydates101US" class="social-link" target="_blank"><span class="icon">▶️</span><div><div class="label">YouTube</div><div class="handle">@funnydates101US</div></div></a>
+                <a href="https://www.tiktok.com/@no_art_gallery" class="social-link" target="_blank"><span class="icon">🎵</span><div><div class="label">TikTok</div><div class="handle">@no_art_gallery</div></div></a>
+            </div>
+        </section>
+
+        <!-- 🎬 STORY SECTION -->
+        <section class="story-section" id="share">
+            <div class="story-badge"><span>🎬</span><span>Une Histoire à Raconter ?</span></div>
+            <h2 class="story-title">Votre Histoire Pourrait Devenir une Vidéo !</h2>
+            <p class="story-subtitle">Vous avez eu un rendez-vous dingue ? Bizarre ? Hilarant ?<br>Envoyez-le nous et votre histoire pourrait passer sur notre chaîne !</p>
+            <div class="story-reward"><span>🌟</span><span>Votre histoire sera mise en avant avec un shoutout</span></div>
+            <form class="story-form" id="storyForm">
+                <input type="hidden" name="access_key" value="c3307ded-69c5-4654-9615-0be668c334d4">
+                <input type="hidden" name="subject" value="🇫🇷 Nouvelle histoire FR - FunnyDates101">
+                <div class="form-group"><label class="form-label">Votre Nom (ou pseudo)</label><input type="text" name="name" class="form-input" placeholder="Comment doit-on vous appeler ?" required></div>
+                <div class="form-group"><label class="form-label">Email</label><input type="email" name="email" class="form-input" placeholder="Pour vous tenir au courant" required></div>
+                <div class="form-group"><label class="form-label">Votre Histoire</label><textarea name="story" class="form-input form-textarea" placeholder="Racontez-nous ce qui s'est passé..." required></textarea></div>
+                <button type="submit" class="form-submit">🚀 Envoyer Votre Histoire</button>
+                <p class="form-note">* Votre histoire restera confidentielle et ne sera publiée qu'avec votre permission</p>
+            </form>
+            <div class="form-success" id="formSuccess"><h3>✅ Merci !</h3><p>Votre histoire a bien été reçue.<br>Si elle est sélectionnée, nous vous contacterons !</p></div>
+        </section>
+
+        <!-- 🛒 BUY SECTION - ALL COMING SOON -->
+        <section class="buy-section" id="buy">
+            <div class="buy-hook">
+                <p class="buy-hook-text" style="text-align:center; font-size:20px; color:var(--text-secondary); margin-bottom:15px;">Si vous avez lu jusqu'ici —<br>vous savez déjà que ce n'est pas qu'un simple livre.</p>
+                <p class="buy-hook-question" style="text-align:center; font-size:18px; color:var(--accent-rose); font-style:italic; margin-bottom:40px;">La seule question : êtes-vous prêt à découvrir ce qui s'est passé au prochain rendez-vous ?</p>
+            </div>
+            <h2 class="section-title">Où Acheter ?</h2>
+            <p class="buy-subtitle">Édition française — Bientôt disponible</p>
+            <div class="buy-grid">
+                <div class="buy-card">
+                    <div class="buy-card-badge" style="background:rgba(212,175,55,0.3); color:var(--accent-gold);">🚀 Bientôt</div>
+                    <div class="buy-icon">📚</div>
+                    <h3 class="buy-title">Livre Imprimé</h3>
+                    <p class="buy-desc">Édition française brochée</p>
+                    <div class="buy-price" style="color:var(--text-secondary);">—</div>
+                    <div class="buy-note">Bientôt disponible !</div>
+                    <div class="buy-button-wrapper">
+                        <span class="buy-button coming-soon">Bientôt Disponible</span>
+                    </div>
+                </div>
+                <div class="buy-card">
+                    <div class="buy-card-badge" style="background:rgba(212,175,55,0.3); color:var(--accent-gold);">🚀 Bientôt</div>
+                    <div class="buy-icon">📱</div>
+                    <h3 class="buy-title">eBook</h3>
+                    <p class="buy-desc">Édition numérique en français</p>
+                    <div class="buy-price" style="color:var(--text-secondary);">—</div>
+                    <div class="buy-note">Bientôt disponible !</div>
+                    <div class="buy-button-wrapper">
+                        <span class="buy-button coming-soon">Bientôt Disponible</span>
+                    </div>
+                </div>
+                <div class="buy-card">
+                    <div class="buy-card-badge" style="background:rgba(212,175,55,0.3); color:var(--accent-gold);">🚀 Bientôt</div>
+                    <div class="buy-icon">🎧</div>
+                    <h3 class="buy-title">Livre Audio</h3>
+                    <p class="buy-desc">+4 heures de désastres amoureux !</p>
+                    <div class="buy-price" style="color:var(--text-secondary);">—</div>
+                    <div class="buy-note">En production...</div>
+                    <div class="buy-button-wrapper">
+                        <span class="buy-button coming-soon">Bientôt Disponible</span>
+                    </div>
+                </div>
+                <div class="buy-card featured">
+                    <div class="buy-card-badge">🌍 Disponible Maintenant</div>
+                    <div class="buy-icon">🇬🇧</div>
+                    <h3 class="buy-title">Version Anglaise</h3>
+                    <p class="buy-desc">Livre, eBook & Audio disponibles</p>
+                    <div class="buy-price">$2.99 - $14.90</div>
+                    <div class="buy-note">Tous formats disponibles !</div>
+                    <div class="buy-button-wrapper">
+                        <a href="https://funnydates101.com" class="buy-button" target="_blank">Voir la Version Anglaise</a>
+                        <p class="buy-delivery">📚 Paperback · 📱 Kindle · 🎧 Audio</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 📋 FOOTER -->
+        <footer class="footer">
+            <div class="footer-links">
+                <a href="/terms.html">Conditions & Confidentialité</a><span class="footer-divider">|</span>
+                <a href="/accessibility.html">Accessibilité</a><span class="footer-divider">|</span>
+                <a href="#share">Contact</a>
+            </div>
+            
+            <a href="https://noartgallery.com" target="_blank" rel="noopener noreferrer" class="noartgallery-link">
+                <img src="noartgallery-logo.png" alt="No Art Gallery" class="noartgallery-logo">
+            </a>
+            
+            <p class="footer-text">© Tous Droits Réservés à Nir Ram 2025</p>
+            <p class="footer-author">📚 Love Bites : 101 Désastres Amoureux</p>
+            <p class="footer-contact">📧 <a id="footer-email-link" href="#"></a></p>
+            <script>
+                (function(){
+                    var u='nir';var d='funnydates101.com';
+                    var e=u+'@'+d;
+                    var a=document.getElementById('footer-email-link');
+                    if(a){a.href='mai'+'lto:'+e;a.textContent=e;}
+                })();
+            </script>
+        </footer>
+    </div>
+
+    <script>
+        // Accessibility
+        let fontSize = 100;
+        function toggleAccessibilityMenu() { document.getElementById('accessibility-menu').classList.toggle('active'); }
+        function changeFontSize(d) { fontSize += d * 10; fontSize = Math.max(80, Math.min(150, fontSize)); document.body.style.fontSize = fontSize + '%'; }
+        function toggleHighContrast() { document.body.classList.toggle('high-contrast'); document.body.classList.remove('grayscale'); }
+        function toggleGrayscale() { document.body.classList.toggle('grayscale'); document.body.classList.remove('high-contrast'); }
+        function toggleUnderlineLinks() { document.body.classList.toggle('underline-links'); }
+        function resetAccessibility() { fontSize = 100; document.body.style.fontSize = '100%'; document.body.classList.remove('high-contrast', 'grayscale', 'underline-links'); }
+        
+        // Teaser toggle
+        function toggleTeaser() { document.getElementById('teaserToggle').classList.toggle('open'); document.getElementById('teaserContent').classList.toggle('open'); }
+        
+        // Story form
+        document.getElementById('storyForm').addEventListener('submit', async function(e) { 
+            e.preventDefault(); 
+            const fd = new FormData(this); 
+            try { 
+                await fetch('https://api.web3forms.com/submit', { method: 'POST', body: fd }); 
+                document.getElementById('storyForm').style.display = 'none'; 
+                document.getElementById('formSuccess').style.display = 'block'; 
+            } catch (err) { console.error('Erreur:', err); } 
+        });
+
+        // Rotating floating quotes
+        const frQuotes = [
+            "🍷 Dix minutes. Sept verres de vin. Puis je l'entends dire à son amie : « On est ensemble depuis deux mois. » Mec, j'étais JUSTE LÀ.",
+            "🚗 En plein milieu de l'autoroute elle sort : « C'est les Tesla des mecs de la tech ? » J'ai fait demi-tour. Et c'était pas à cause du trafic.",
+            "💬 Rendez-vous parfait. Chimie. Rires. Étincelles. Son texto le lendemain matin ? Deux mots. Un seul était gentil.",
+            "🔥 Au club elle était du FEU. Passion. Regards intenses. Le lendemain sur sa Harley ? Glaciale. Même femme.",
+            "🧺 Premier rendez-vous. Elle arrive avec trois sacs de courses. « Je passe juste vite chez mamie. » Personne m'avait préparé à ce qui s'est passé sur le retour."
+        ];
+        let quoteIndex = 0;
+        setInterval(() => {
+            quoteIndex = (quoteIndex + 1) % frQuotes.length;
+            const bubble = document.querySelector('.quote-bubble');
+            if (bubble) {
+                bubble.style.opacity = '0';
+                setTimeout(() => {
+                    bubble.textContent = frQuotes[quoteIndex];
+                    bubble.style.opacity = '1';
+                }, 300);
+            }
+        }, 8000);
+    </script>
+</body>
+</html>
