@@ -311,6 +311,129 @@
         <div class="quote-bubble">🍷 Dix minutes. Sept verres de vin. Puis je l'entends dire à son amie : « On est ensemble depuis deux mois. » Mec, j'étais JUSTE LÀ.</div>
     </div>
 
+    <!-- 🚀 COMING SOON TICKER - DRAGGABLE -->
+    <div class="price-ticker" id="priceTicker">
+        <button class="price-ticker-close" onclick="event.stopPropagation(); closePriceTicker()">✕</button>
+        <a href="#buy" class="price-ticker-link" style="text-decoration:none; color:inherit; display:block;">
+            <div class="price-ticker-header">
+                <span class="price-ticker-icon">🇫🇷</span>
+                <span class="price-ticker-title">ÉDITION FRANÇAISE</span>
+                <span class="price-ticker-icon">🚀</span>
+            </div>
+            <div style="font-size:13px; color:#333; margin-bottom:8px;">📚 Livre · eBook · Audio</div>
+            <div style="font-family:'Playfair Display',serif; font-size:22px; color:#dc2626; font-weight:900; margin:8px 0;">Bientôt !</div>
+            <div style="font-size:12px; color:#555; margin-bottom:10px;">Soyez les premiers informés</div>
+            <button class="price-ticker-btn" style="background:#1a1a1a; color:#fff; border:none; padding:10px 24px; border-radius:25px; font-size:14px; font-weight:700; cursor:pointer;">📩 Me Prévenir →</button>
+        </a>
+        <div style="font-size:10px; color:#666; margin-top:8px;">💡 Glissez-moi n'importe où !</div>
+    </div>
+
+    <style>
+        .price-ticker { position: fixed; bottom: 20px; left: 20px; z-index: 9998; background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 50%, #fde68a 100%); border-radius: 20px; padding: 20px; box-shadow: 0 0 0 1px rgba(0,0,0,0.05), 0 10px 40px rgba(251,191,36,0.4), 0 0 30px rgba(251,191,36,0.2); text-align: center; max-width: 240px; cursor: grab; user-select: none; transition: transform 0.3s, box-shadow 0.3s; }
+        .price-ticker:hover { transform: scale(1.03); box-shadow: 0 0 0 1px rgba(0,0,0,0.1), 0 15px 50px rgba(251,191,36,0.5); }
+        .price-ticker:active { cursor: grabbing; }
+        .price-ticker.hidden { display: none; }
+        .price-ticker-close { position: absolute; top: 8px; right: 8px; width: 22px; height: 22px; border-radius: 50%; border: none; background: rgba(0,0,0,0.2); color: rgba(0,0,0,0.5); cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 12px; transition: all 0.3s; z-index: 10; }
+        .price-ticker-close:hover { background: rgba(0,0,0,0.4); color: #fff; }
+        .price-ticker-header { display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 8px; }
+        .price-ticker-icon { font-size: 22px; }
+        .price-ticker-title { font-weight: 800; font-size: 14px; color: #1a1a1a; }
+        @media (max-width: 768px) { .price-ticker { bottom: 15px; left: 15px; transform: scale(0.9); transform-origin: bottom left; } }
+    </style>
+
+    <!-- 🎬 COSMIC TICKER - FRENCH QUOTES -->
+    <div class="cosmic-ticker-container" id="cosmicTicker">
+        <div class="cosmic-ticker">
+            <button class="cosmic-close" onclick="closeCosmicTicker()">✕</button>
+            <div class="cosmic-inner">
+                <div class="cosmic-header">
+                    <div class="cosmic-live"><span class="cosmic-live-dot"></span>EXTRAIT</div>
+                    <div class="cosmic-title">📺 Histoires Vraies</div>
+                </div>
+                <div class="cosmic-quote-area">
+                    <div id="tickerQuoteContainer" style="transition: all 0.3s ease;">
+                        <span class="cosmic-emoji" id="tickerEmoji">🍷</span>
+                        <p class="cosmic-text" id="tickerQuoteText">« Après le septième verre, elle a dit un truc qui a tout changé. »</p>
+                        <p class="cosmic-source" id="tickerQuoteSource">— Qu'a-t-elle dit ? Dans le livre.</p>
+                    </div>
+                </div>
+                <div class="cosmic-dots" id="tickerDots"></div>
+                <div class="cosmic-nav">
+                    <button class="cosmic-nav-btn" onclick="prevQuote()">‹</button>
+                    <a href="#why" class="cosmic-cta">Découvrir →</a>
+                    <button class="cosmic-nav-btn" onclick="nextQuote()">›</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .cosmic-ticker-container { position: fixed; bottom: 20px; right: 20px; z-index: 9997; transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
+        .cosmic-ticker-container.hidden { transform: translateX(400px); opacity: 0; pointer-events: none; }
+        .cosmic-ticker { position: relative; width: 320px; background: linear-gradient(145deg, #0a0a0a 0%, #1a0a0a 50%, #0a0a0a 100%); border-radius: 20px; overflow: hidden; box-shadow: 0 0 0 3px rgba(220,38,38,0.6), 0 0 40px rgba(220,38,38,0.4), 0 0 80px rgba(220,38,38,0.2), inset 0 0 80px rgba(220,38,38,0.08); animation: cosmicFloat 6s ease-in-out infinite; }
+        @keyframes cosmicFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+        .cosmic-ticker::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; border-radius: 20px; padding: 3px; background: linear-gradient(45deg, #dc2626, #ff6b6b, #dc2626, #991b1b, #dc2626); background-size: 400% 400%; -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude; animation: borderAnimation 4s ease infinite; }
+        @keyframes borderAnimation { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+        .cosmic-close { position: absolute; top: 10px; right: 10px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: rgba(255,255,255,0.5); width: 28px; height: 28px; border-radius: 50%; cursor: pointer; z-index: 20; font-size: 14px; display: flex; align-items: center; justify-content: center; transition: all 0.3s; }
+        .cosmic-close:hover { background: rgba(220,38,38,0.3); color: #fff; }
+        .cosmic-inner { position: relative; z-index: 5; padding: 25px; }
+        .cosmic-header { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
+        .cosmic-live { display: flex; align-items: center; gap: 6px; background: rgba(220,38,38,0.2); border: 1px solid rgba(220,38,38,0.4); padding: 4px 12px; border-radius: 20px; font-size: 10px; font-weight: 700; color: #f87171; letter-spacing: 1px; }
+        .cosmic-live-dot { width: 6px; height: 6px; background: #ef4444; border-radius: 50%; animation: pulse 1.5s infinite; }
+        .cosmic-title { font-size: 14px; font-weight: 600; color: rgba(255,255,255,0.8); }
+        .cosmic-quote-area { min-height: 100px; display: flex; align-items: center; }
+        .cosmic-emoji { font-size: 28px; display: block; margin-bottom: 10px; }
+        .cosmic-text { font-size: 15px; color: rgba(255,255,255,0.9); line-height: 1.5; font-style: italic; margin: 0 0 8px 0; }
+        .cosmic-source { font-size: 12px; color: var(--accent-gold); margin: 0; }
+        .cosmic-dots { display: flex; justify-content: center; gap: 6px; margin: 15px 0; }
+        .ticker-dot { width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,0.2); cursor: pointer; transition: all 0.3s; }
+        .ticker-dot.active { background: var(--accent-red); width: 20px; border-radius: 3px; }
+        .cosmic-nav { display: flex; justify-content: space-between; align-items: center; }
+        .cosmic-nav-btn { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: rgba(255,255,255,0.5); width: 36px; height: 36px; border-radius: 50%; cursor: pointer; font-size: 18px; transition: all 0.3s; display: flex; align-items: center; justify-content: center; }
+        .cosmic-nav-btn:hover { background: rgba(220,38,38,0.2); color: #fff; border-color: rgba(220,38,38,0.3); }
+        .cosmic-cta { background: var(--gradient-red); color: white; padding: 8px 24px; border-radius: 25px; text-decoration: none; font-size: 13px; font-weight: 700; transition: all 0.3s; box-shadow: 0 0 20px rgba(220,38,38,0.3); }
+        .cosmic-cta:hover { transform: scale(1.05); box-shadow: 0 0 30px rgba(220,38,38,0.5); }
+        @media (max-width: 768px) { .cosmic-ticker-container { bottom: 15px; right: 15px; left: 15px; } .cosmic-ticker { width: 100%; } }
+    </style>
+
+    <script>
+        // Price ticker close + drag
+        function closePriceTicker() { document.getElementById('priceTicker').classList.add('hidden'); }
+        (function() {
+            const ticker = document.getElementById('priceTicker');
+            if (!ticker) return;
+            let isDragging = false, startX, startY, initialX, initialY;
+            ticker.addEventListener('mousedown', function(e) { if (e.target.tagName === 'BUTTON' || e.target.tagName === 'A') return; isDragging = true; startX = e.clientX; startY = e.clientY; const rect = ticker.getBoundingClientRect(); initialX = rect.left; initialY = rect.top; e.preventDefault(); });
+            document.addEventListener('mousemove', function(e) { if (!isDragging) return; ticker.style.left = (initialX + e.clientX - startX) + 'px'; ticker.style.top = (initialY + e.clientY - startY) + 'px'; ticker.style.bottom = 'auto'; });
+            document.addEventListener('mouseup', function() { isDragging = false; });
+            ticker.addEventListener('touchstart', function(e) { if (e.target.tagName === 'BUTTON' || e.target.tagName === 'A') return; isDragging = true; startX = e.touches[0].clientX; startY = e.touches[0].clientY; const rect = ticker.getBoundingClientRect(); initialX = rect.left; initialY = rect.top; }, { passive: true });
+            document.addEventListener('touchmove', function(e) { if (!isDragging) return; ticker.style.left = (initialX + e.touches[0].clientX - startX) + 'px'; ticker.style.top = (initialY + e.touches[0].clientY - startY) + 'px'; ticker.style.bottom = 'auto'; }, { passive: true });
+            document.addEventListener('touchend', function() { isDragging = false; });
+        })();
+
+        // Cosmic ticker quotes
+        const tickerQuotes = [
+            { emoji: '🍷', text: '« Après le septième verre, elle a dit un truc qui a tout changé. »', source: '— Qu\'a-t-elle dit ? Dans le livre.' },
+            { emoji: '👀', text: '« Elle m\'a regardé et a dit une seule phrase. J\'aurais dû m\'en souvenir. »', source: '— Cette phrase ? Dans le livre.' },
+            { emoji: '⏱️', text: '« Au bout de 10 minutes elle a posé une question. J\'étais pas prêt pour la réponse. »', source: '— La question ? Dans le livre.' },
+            { emoji: '🚗', text: '« Quand on est arrivés à la voiture, elle a dit une phrase. J\'y pense encore. »', source: '— La phrase ? Dans le livre.' },
+            { emoji: '⚡', text: '« Le rendez-vous a duré 7 minutes. La raison ? Vous n\'allez pas y croire. »', source: '— La vraie raison ? Dans le livre.' },
+            { emoji: '💳', text: '« Le serveur a apporté l\'addition. Ce qui s\'est passé ensuite — je m\'y attendais pas. »', source: '— La suite ? Dans le livre.' },
+            { emoji: '🧺', text: '« Premier rendez-vous. Elle arrive avec trois sacs. Personne m\'avait préparé. »', source: '— Que s\'est-il passé ? Dans le livre.' }
+        ];
+        let currentQuoteIndex = 0, tickerInterval;
+        function initTicker() { generateDots(); updateQuote(0); startAutoRotation(); }
+        function generateDots() { const d = document.getElementById('tickerDots'); d.innerHTML = ''; tickerQuotes.forEach((_, i) => { const dot = document.createElement('div'); dot.className = 'ticker-dot' + (i === 0 ? ' active' : ''); dot.onclick = () => goToQuote(i); d.appendChild(dot); }); }
+        function updateQuote(i) { const q = tickerQuotes[i]; const c = document.getElementById('tickerQuoteContainer'); c.style.opacity = '0'; c.style.transform = 'translateX(-20px)'; setTimeout(() => { document.getElementById('tickerEmoji').textContent = q.emoji; document.getElementById('tickerQuoteText').textContent = q.text; document.getElementById('tickerQuoteSource').textContent = q.source; c.style.opacity = '1'; c.style.transform = 'translateX(0)'; document.querySelectorAll('.ticker-dot').forEach((d, j) => d.classList.toggle('active', j === i)); }, 300); currentQuoteIndex = i; }
+        function nextQuote() { updateQuote((currentQuoteIndex + 1) % tickerQuotes.length); resetAuto(); }
+        function prevQuote() { updateQuote((currentQuoteIndex - 1 + tickerQuotes.length) % tickerQuotes.length); resetAuto(); }
+        function goToQuote(i) { updateQuote(i); resetAuto(); }
+        function startAutoRotation() { tickerInterval = setInterval(nextQuote, 6000); }
+        function resetAuto() { clearInterval(tickerInterval); startAutoRotation(); }
+        function closeCosmicTicker() { document.getElementById('cosmicTicker').classList.add('hidden'); clearInterval(tickerInterval); }
+        document.addEventListener('DOMContentLoaded', initTicker);
+    </script>
+
     <div class="main-content">
         <!-- 🎬 HERO SECTION -->
         <section class="hero">
@@ -422,7 +545,7 @@
             <div class="form-success" id="formSuccess"><h3>✅ Merci !</h3><p>Votre histoire a bien été reçue.<br>Si elle est sélectionnée, nous vous contacterons !</p></div>
         </section>
 
-        <!-- 🛒 BUY SECTION - ALL COMING SOON -->
+        <!-- 🛒 BUY SECTION - COMING SOON + NOTIFY ME -->
         <section class="buy-section" id="buy">
             <div class="buy-hook">
                 <p class="buy-hook-text" style="text-align:center; font-size:20px; color:var(--text-secondary); margin-bottom:15px;">Si vous avez lu jusqu'ici —<br>vous savez déjà que ce n'est pas qu'un simple livre.</p>
@@ -477,6 +600,26 @@
                     </div>
                 </div>
             </div>
+
+            <!-- 📩 NOTIFY ME - EMAIL SIGNUP -->
+            <div class="notify-section" style="max-width:550px; margin:50px auto 0; text-align:center; background:linear-gradient(135deg, var(--bg-card) 0%, #222 100%); border:2px solid var(--accent-gold); border-radius:24px; padding:40px 30px; position:relative; overflow:hidden;">
+                <div style="position:absolute; top:0; left:0; right:0; height:3px; background:var(--gradient-gold);"></div>
+                <div style="font-size:40px; margin-bottom:15px;">🔔</div>
+                <h3 style="font-family:'Playfair Display',serif; font-size:24px; margin-bottom:10px;">Ne Ratez Pas la Sortie !</h3>
+                <p style="color:var(--text-secondary); font-size:15px; margin-bottom:25px;">Soyez les premiers informés quand l'édition française sera disponible.<br>Inscrivez-vous pour recevoir une notification.</p>
+                <form id="notifyForm" style="display:flex; gap:10px; flex-wrap:wrap; justify-content:center;">
+                    <input type="hidden" name="access_key" value="c3307ded-69c5-4654-9615-0be668c334d4">
+                    <input type="hidden" name="subject" value="🇫🇷 Notify Me - French Edition">
+                    <input type="email" name="email" placeholder="votre@email.com" required style="flex:1; min-width:220px; padding:14px 18px; background:rgba(0,0,0,0.3); border:1px solid rgba(255,255,255,0.15); border-radius:12px; color:white; font-size:15px; font-family:'Poppins',sans-serif;">
+                    <button type="submit" style="background:var(--gradient-gold); color:#000; border:none; padding:14px 28px; border-radius:12px; font-weight:700; font-size:15px; cursor:pointer; transition:all 0.3s; font-family:'Poppins',sans-serif; white-space:nowrap;">📩 Me Prévenir</button>
+                </form>
+                <div id="notifySuccess" style="display:none; padding:20px; text-align:center;">
+                    <div style="font-size:32px; margin-bottom:10px;">✅</div>
+                    <h4 style="color:var(--accent-gold); margin-bottom:5px;">Merci !</h4>
+                    <p style="color:var(--text-secondary); font-size:14px;">Vous serez prévenu dès la sortie de l'édition française !</p>
+                </div>
+                <p style="font-size:11px; color:rgba(255,255,255,0.3); margin-top:15px;">🔒 Pas de spam. Juste une notification à la sortie.</p>
+            </div>
         </section>
 
         <!-- 📋 FOOTER -->
@@ -527,6 +670,17 @@
                 document.getElementById('storyForm').style.display = 'none'; 
                 document.getElementById('formSuccess').style.display = 'block'; 
             } catch (err) { console.error('Erreur:', err); } 
+        });
+
+        // Notify form
+        document.getElementById('notifyForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const fd = new FormData(this);
+            try {
+                await fetch('https://api.web3forms.com/submit', { method: 'POST', body: fd });
+                this.style.display = 'none';
+                document.getElementById('notifySuccess').style.display = 'block';
+            } catch (err) { console.error('Erreur:', err); }
         });
 
         // Rotating floating quotes
