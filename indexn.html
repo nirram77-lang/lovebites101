@@ -1,0 +1,1100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Bites: 101 Dating Disasters | The Funniest Dating Book Ever</title>
+    <meta name="description" content="101 hilarious dating stories that will make you laugh until you cry. The book everyone who's ever been on a date needs to read.">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+    
+    <!-- Open Graph / Social -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.funnydates101.com/">
+    <meta property="og:title" content="💔 Real Dates. Real Laughs.">
+    <meta property="og:description" content="High expectations. Too many questions. Too many stories. 🎬">
+    <meta property="og:image" content="https://www.funnydates101.com/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="💔 Real Dates. Real Laughs.">
+    <meta name="twitter:description" content="High expectations. Too many questions. Too many stories. 🎬">
+    <meta name="twitter:image" content="https://www.funnydates101.com/og-image.png">
+
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💔</text></svg>">
+    
+    <link rel="alternate" hreflang="en" href="https://funnydates101.com">
+    <link rel="alternate" hreflang="he" href="https://funnydates101.co.il">
+    <link rel="alternate" hreflang="fr" href="https://funnydates101.com/fr">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-primary: #0a0a0a;
+            --bg-secondary: #111111;
+            --bg-card: #1a1a1a;
+            --text-primary: #ffffff;
+            --text-secondary: #b0b0b0;
+            --accent-red: #dc2626;
+            --accent-rose: #f87171;
+            --accent-gold: #d4af37;
+            --gradient-red: linear-gradient(135deg, #b91c1c 0%, #dc2626 50%, #ef4444 100%);
+            --gradient-gold: linear-gradient(135deg, #d4af37 0%, #f4d03f 50%, #d4af37 100%);
+            --shadow-glow: 0 0 40px rgba(220, 38, 38, 0.3);
+            --shadow-gold: 0 0 30px rgba(212, 175, 55, 0.3);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        
+        /* Custom Red Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1a1a1a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, #dc2626 0%, #b91c1c 100%);
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(180deg, #ef4444 0%, #dc2626 100%);
+        }
+        /* Firefox */
+        html {
+            scrollbar-width: thin;
+            scrollbar-color: #dc2626 #1a1a1a;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--bg-primary);
+            background-image: url('bg-hollywood.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            color: var(--text-primary);
+            min-height: 100vh;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        .lang-switch { position: fixed; top: 20px; right: 20px; z-index: 1000; }
+        .lang-switch a { display: flex; align-items: center; gap: 8px; background: rgba(26, 26, 26, 0.95); border: 1px solid var(--accent-gold); color: var(--text-primary); padding: 10px 18px; border-radius: 50px; text-decoration: none; font-size: 14px; font-weight: 500; transition: all 0.3s ease; backdrop-filter: blur(10px); }
+        .lang-switch a:hover { background: var(--accent-gold); color: #000; }
+        .lang-switch .flag-icon { width: 20px; height: 15px; border-radius: 2px; object-fit: cover; }
+
+        .floating-hearts { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; overflow: hidden; }
+        .heart { position: absolute; font-size: 20px; animation: floatHeart 20s linear infinite; opacity: 0; }
+        .heart:nth-child(1) { left: 5%; animation-delay: 0s; }
+        .heart:nth-child(2) { left: 15%; animation-delay: 4s; }
+        .heart:nth-child(3) { left: 25%; animation-delay: 8s; }
+        .heart:nth-child(4) { left: 35%; animation-delay: 12s; }
+        .heart:nth-child(5) { left: 55%; animation-delay: 2s; }
+        .heart:nth-child(6) { left: 65%; animation-delay: 6s; }
+        .heart:nth-child(7) { left: 75%; animation-delay: 10s; }
+        .heart:nth-child(8) { left: 85%; animation-delay: 14s; }
+        .heart:nth-child(9) { left: 95%; animation-delay: 16s; }
+        .heart:nth-child(10) { left: 45%; animation-delay: 18s; }
+        @keyframes floatHeart { 0% { transform: translateY(100vh) rotate(0deg) scale(0.5); opacity: 0; } 10% { opacity: 0.3; } 90% { opacity: 0.1; } 100% { transform: translateY(-100px) rotate(360deg) scale(1); opacity: 0; } }
+
+        /* FLOATING QUOTES - OPEN LOOPS EDITION */
+        .floating-quotes { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1; overflow: hidden; }
+        .quote-bubble { position: absolute; background: rgba(20, 20, 20, 0.95); border: 1px solid rgba(212, 175, 55, 0.4); border-radius: 16px; padding: 14px 20px; font-size: 14px; color: rgba(255, 255, 255, 0.9); max-width: 280px; opacity: 0; backdrop-filter: blur(10px); animation: thoughtBubble 8s ease-in-out infinite; }
+        .quote-bubble:nth-child(1) { top: 15%; left: 5%; animation-delay: 3s; }
+        .quote-bubble:nth-child(2) { top: 35%; right: 3%; animation-delay: 8s; }
+        .quote-bubble:nth-child(3) { top: 55%; left: 8%; animation-delay: 13s; }
+        .quote-bubble:nth-child(4) { top: 25%; right: 5%; animation-delay: 18s; }
+        .quote-bubble:nth-child(5) { top: 70%; left: 4%; animation-delay: 23s; }
+        .quote-bubble:nth-child(6) { top: 45%; right: 4%; animation-delay: 28s; }
+        .quote-bubble:nth-child(7) { top: 60%; right: 6%; animation-delay: 33s; }
+        @keyframes thoughtBubble { 0% { opacity: 0; transform: translateY(8px) scale(0.95); } 10% { opacity: 0.9; transform: translateY(0) scale(1); } 30% { opacity: 0.9; } 40% { opacity: 0; transform: translateY(-4px) scale(0.98); } 100% { opacity: 0; } }
+        @media (max-width: 768px) { .floating-quotes { display: none; } }
+
+        /* ═══════════════════════════════════════════════════════════════════════════ */
+        /* 🔥 PRICE TICKER - Yellow/Gold (Bottom Left) */
+        /* ═══════════════════════════════════════════════════════════════════════════ */
+        
+        .price-ticker {
+            position: fixed;
+            bottom: 25px;
+            left: 25px;
+            z-index: 999;
+            background: linear-gradient(145deg, #fbbf24, #f59e0b);
+            border: 3px solid #fcd34d;
+            box-shadow: 0 0 0 1px rgba(0,0,0,0.1), 0 10px 40px rgba(251, 191, 36, 0.4), 0 0 30px rgba(251, 191, 36, 0.2);
+            padding: 20px 25px;
+            min-width: 160px;
+            text-align: center;
+            border-radius: 16px;
+            cursor: grab;
+            user-select: none;
+            transition: transform 0.2s ease, box-shadow 0.3s ease;
+        }
+        .price-ticker:hover { transform: scale(1.03); box-shadow: 0 0 0 1px rgba(0,0,0,0.1), 0 15px 50px rgba(251, 191, 36, 0.5), 0 0 40px rgba(251, 191, 36, 0.3); }
+        .price-ticker.hidden { display: none; }
+        .price-ticker-close { position: absolute; top: 8px; right: 8px; width: 22px; height: 22px; border-radius: 50%; border: none; background: rgba(0, 0, 0, 0.2); color: rgba(0, 0, 0, 0.5); cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 12px; transition: all 0.3s ease; z-index: 10; }
+        .price-ticker-close:hover { background: rgba(0, 0, 0, 0.4); color: #fff; }
+        .price-ticker-link { text-decoration: none; color: inherit; display: block; }
+        .price-ticker-header { display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 8px; }
+        .price-ticker-icon { font-size: 22px; }
+        .price-ticker-title { font-weight: 800; font-size: 16px; color: #1a1a1a; }
+        .price-ticker-price { font-family: 'Playfair Display', serif; font-size: 42px; color: #dc2626; font-weight: 900; line-height: 1; margin-bottom: 12px; text-shadow: 1px 1px 2px rgba(0,0,0,0.1); }
+        .price-ticker-btn { background: #1a1a1a; color: #fff; border: none; padding: 10px 24px; border-radius: 25px; font-size: 14px; font-weight: 700; font-family: 'Poppins', sans-serif; cursor: pointer; transition: all 0.3s ease; }
+        .price-ticker-btn:hover { background: #333; transform: scale(1.05); }
+        .price-ticker-desc { font-size: 12px; color: #333; margin-bottom: 5px; }
+        .price-ticker-coupon { background: #dc2626; color: white; padding: 4px 12px; border-radius: 15px; font-size: 13px; font-weight: 700; display: inline-block; margin-bottom: 10px; }
+        @media (max-width: 768px) { .price-ticker { bottom: 15px; left: 15px; transform: scale(0.9); transform-origin: bottom left; } }
+
+        /* ═══════════════════════════════════════════════════════════════════════════ */
+        /* 🎬 HOLLYWOOD COSMIC TV TICKER - OPEN LOOPS (Bottom Right) */
+        /* ═══════════════════════════════════════════════════════════════════════════ */
+        
+        .cosmic-ticker-container {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            z-index: 998;
+            perspective: 1000px;
+            transition: transform 0.5s ease, opacity 0.5s ease;
+        }
+        .cosmic-ticker-container.hidden { transform: translateX(400px); opacity: 0; pointer-events: none; }
+        .cosmic-ticker { position: relative; width: 320px; background: linear-gradient(145deg, #0a0a0a 0%, #1a0a0a 50%, #0a0a0a 100%); border-radius: 20px; overflow: hidden; box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.6), 0 0 40px rgba(220, 38, 38, 0.4), 0 0 80px rgba(220, 38, 38, 0.2), inset 0 0 80px rgba(220, 38, 38, 0.08); transform-style: preserve-3d; animation: cosmicFloat 6s ease-in-out infinite; }
+        @keyframes cosmicFloat { 0%, 100% { transform: translateY(0) rotateX(0deg); } 50% { transform: translateY(-8px) rotateX(2deg); } }
+        .cosmic-ticker::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; border-radius: 20px; padding: 3px; background: linear-gradient(45deg, #dc2626, #ff6b6b, #dc2626, #991b1b, #dc2626); background-size: 400% 400%; -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude; animation: borderAnimation 4s ease infinite; }
+        @keyframes borderAnimation { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+        .cosmic-ticker::after { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0, 0, 0, 0.15) 2px, rgba(0, 0, 0, 0.15) 4px); pointer-events: none; z-index: 10; animation: scanlines 0.1s linear infinite; }
+        @keyframes scanlines { 0% { transform: translateY(0); } 100% { transform: translateY(4px); } }
+        .ticker-header { display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; background: linear-gradient(90deg, #1a0505, #2a0808, #1a0505); border-bottom: 2px solid rgba(220, 38, 38, 0.4); }
+        .ticker-logo { display: flex; align-items: center; gap: 8px; }
+        .ticker-logo-icon { font-size: 22px; animation: heartBeat 1.5s ease-in-out infinite; filter: drop-shadow(0 0 8px rgba(220, 38, 38, 0.6)); }
+        @keyframes heartBeat { 0%, 100% { transform: scale(1); } 25% { transform: scale(1.15); } 50% { transform: scale(1); } 75% { transform: scale(1.15); } }
+        .ticker-logo-text { font-family: 'Playfair Display', serif; font-size: 14px; background: linear-gradient(90deg, #dc2626, #ff6b6b, #dc2626); background-size: 200% auto; -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: textShine 2s linear infinite; }
+        @keyframes textShine { to { background-position: 200% center; } }
+        .ticker-live-badge { display: flex; align-items: center; gap: 5px; background: linear-gradient(135deg, #dc2626, #b91c1c); padding: 5px 12px; border-radius: 20px; font-size: 10px; font-weight: 800; color: white; text-transform: uppercase; letter-spacing: 1px; box-shadow: 0 0 20px rgba(220, 38, 38, 0.6); animation: badgePulse 2s ease-in-out infinite; }
+        @keyframes badgePulse { 0%, 100% { box-shadow: 0 0 20px rgba(220, 38, 38, 0.6); } 50% { box-shadow: 0 0 30px rgba(220, 38, 38, 0.9), 0 0 40px rgba(220, 38, 38, 0.4); } }
+        .ticker-live-dot { width: 7px; height: 7px; background: #fff; border-radius: 50%; animation: liveDot 1s ease-in-out infinite; }
+        @keyframes liveDot { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.4; transform: scale(0.7); } }
+        .ticker-screen { position: relative; padding: 20px 18px; min-height: 120px; background: radial-gradient(ellipse at center, #1a0808 0%, #0a0303 100%); overflow: hidden; }
+        .ticker-screen::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,0.5) 100%); pointer-events: none; z-index: 5; }
+        .ticker-particles { position: absolute; top: 0; left: 0; right: 0; bottom: 0; overflow: hidden; pointer-events: none; }
+        .particle { position: absolute; width: 4px; height: 4px; background: rgba(220, 38, 38, 0.7); border-radius: 50%; box-shadow: 0 0 10px rgba(220, 38, 38, 0.5); animation: particleFloat 10s linear infinite; }
+        .particle:nth-child(1) { left: 10%; animation-delay: 0s; }
+        .particle:nth-child(2) { left: 25%; animation-delay: 2.5s; }
+        .particle:nth-child(3) { left: 45%; animation-delay: 5s; }
+        .particle:nth-child(4) { left: 65%; animation-delay: 7.5s; }
+        .particle:nth-child(5) { left: 85%; animation-delay: 1s; }
+        @keyframes particleFloat { 0% { transform: translateY(150%) scale(0); opacity: 0; } 10% { opacity: 1; } 90% { opacity: 0.3; } 100% { transform: translateY(-150%) scale(1.2); opacity: 0; } }
+        .ticker-quote-container { position: relative; z-index: 2; transition: opacity 0.4s ease, transform 0.4s ease; }
+        .ticker-emoji { font-size: 32px; display: block; margin-bottom: 10px; filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.3)); }
+        .ticker-quote-text { font-size: 14px; line-height: 1.5; color: #fff; text-align: left; margin-bottom: 8px; text-shadow: 0 0 15px rgba(220, 38, 38, 0.4); font-weight: 500; }
+        .ticker-quote-source { font-size: 12px; color: var(--accent-rose); text-align: left; opacity: 0.9; font-style: italic; }
+        .ticker-nav { display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; background: linear-gradient(90deg, #1a0505, #2a0808, #1a0505); border-top: 2px solid rgba(220, 38, 38, 0.4); }
+        .ticker-dots { display: flex; gap: 6px; }
+        .ticker-dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(220, 38, 38, 0.3); cursor: pointer; transition: all 0.3s ease; border: 1px solid rgba(220, 38, 38, 0.2); }
+        .ticker-dot.active { background: #dc2626; box-shadow: 0 0 15px rgba(220, 38, 38, 0.9); width: 24px; border-radius: 4px; }
+        .ticker-dot:hover:not(.active) { background: rgba(220, 38, 38, 0.6); transform: scale(1.2); }
+        .ticker-arrows { display: flex; gap: 8px; }
+        .ticker-arrow { width: 28px; height: 28px; border-radius: 50%; border: 2px solid rgba(220, 38, 38, 0.5); background: transparent; color: rgba(255, 255, 255, 0.7); cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 14px; transition: all 0.3s ease; }
+        .ticker-arrow:hover { background: rgba(220, 38, 38, 0.3); border-color: #dc2626; color: #fff; box-shadow: 0 0 20px rgba(220, 38, 38, 0.5); transform: scale(1.1); }
+        .ticker-close { position: absolute; top: 10px; right: 10px; width: 24px; height: 24px; border-radius: 50%; border: none; background: rgba(0, 0, 0, 0.6); color: rgba(255, 255, 255, 0.5); cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 12px; z-index: 20; transition: all 0.3s ease; }
+        .ticker-close:hover { background: #dc2626; color: #fff; transform: rotate(90deg); }
+        .ticker-cta { display: block; text-align: center; padding: 12px 18px; background: linear-gradient(135deg, #dc2626, #b91c1c); color: white; text-decoration: none; font-weight: 800; font-size: 13px; letter-spacing: 0.5px; transition: all 0.3s ease; position: relative; overflow: hidden; }
+        .ticker-cta::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent); animation: ctaShimmer 3s ease-in-out infinite; }
+        @keyframes ctaShimmer { 0% { left: -100%; } 50% { left: 100%; } 100% { left: 100%; } }
+        .ticker-cta:hover { background: linear-gradient(135deg, #ef4444, #dc2626); letter-spacing: 1px; }
+        @media (max-width: 768px) { .cosmic-ticker-container { bottom: 15px; right: 15px; left: 15px; } .cosmic-ticker { width: 100%; } }
+
+        .main-content { position: relative; z-index: 10; }
+
+        .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 40px 20px; position: relative; }
+        .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at center top, rgba(220, 38, 38, 0.15) 0%, transparent 60%); pointer-events: none; }
+        .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(212, 175, 55, 0.15); border: 2px solid var(--accent-gold); border-radius: 50px; padding: 10px 24px; font-size: 14px; color: var(--accent-gold); margin-bottom: 30px; box-shadow: var(--shadow-gold); }
+        .badge-dot { width: 8px; height: 8px; background: var(--accent-gold); border-radius: 50%; animation: blink 1.5s ease-in-out infinite; }
+        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+        .hero-title { font-family: 'Playfair Display', serif; font-size: clamp(48px, 10vw, 90px); line-height: 1.1; margin-bottom: 10px; }
+        .hero-title .highlight { background: var(--gradient-red); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .hero-title .title-dot {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            background: var(--accent-red);
+            border-radius: 50%;
+            margin-left: 8px;
+            vertical-align: middle;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.7); }
+            50% { opacity: 0.8; transform: scale(0.9); box-shadow: 0 0 15px 5px rgba(220, 38, 38, 0.3); }
+        }
+        .hero-subtitle { 
+            font-size: clamp(18px, 3vw, 28px); 
+            color: var(--text-secondary); 
+            margin-bottom: 20px;
+            letter-spacing: 0.5px;
+            opacity: 0;
+            animation: fadeInSubtitle 1.5s ease-out 0.5s forwards;
+        }
+        @keyframes fadeInSubtitle {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 0.85; transform: translateY(0); }
+        }
+        .hero-tagline { font-size: 18px; color: var(--accent-rose); margin-bottom: 40px; max-width: 550px; }
+
+        .cta-button { display: inline-flex; align-items: center; gap: 12px; background: var(--gradient-red); color: #fff; font-size: 20px; font-weight: 700; padding: 20px 50px; border-radius: 60px; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 10px 40px rgba(220, 38, 38, 0.4); }
+        .cta-button:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 15px 50px rgba(220, 38, 38, 0.5); }
+        .cta-subtext { margin-top: 15px; color: var(--text-secondary); font-size: 14px; }
+
+        .launch-offer { display: flex; flex-direction: column; align-items: center; gap: 15px; margin-top: 30px; }
+        .offer-badge { display: inline-flex; align-items: center; gap: 10px; background: rgba(212, 175, 55, 0.2); border: 2px solid var(--accent-gold); border-radius: 50px; padding: 12px 28px; }
+        .offer-icon { font-size: 24px; }
+        .offer-text { font-size: 18px; font-weight: 700; color: var(--accent-gold); }
+        .offer-date { display: flex; align-items: center; gap: 12px; background: var(--bg-card); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 12px; padding: 15px 30px; }
+        .date-label { color: var(--text-secondary); font-size: 14px; }
+        .date-value { font-family: 'Playfair Display', serif; font-size: 28px; color: var(--accent-rose); }
+        .offer-urgency { display: flex; align-items: center; gap: 8px; color: var(--text-secondary); font-size: 13px; }
+        .urgency-dot { width: 8px; height: 8px; background: var(--accent-red); border-radius: 50%; animation: blink 1.5s ease-in-out infinite; }
+
+        .section { padding: 100px 20px; position: relative; }
+        .section.alt-bg { background: transparent; }
+        .section::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, var(--accent-gold), transparent); }
+        .section-title { font-family: 'Playfair Display', serif; font-size: clamp(32px, 6vw, 48px); text-align: center; margin-bottom: 60px; }
+
+        .why-section-hollywood { padding: 120px 20px; background: transparent; position: relative; overflow: hidden; }
+        .why-header { text-align: center; margin-bottom: 60px; }
+        .why-main-title { font-family: 'Playfair Display', serif; font-size: clamp(32px, 6vw, 50px); color: var(--text-primary); margin-bottom: 15px; }
+        .why-subtitle { color: var(--accent-gold); font-size: 18px; }
+        .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; max-width: 1100px; margin: 0 auto; }
+        .why-card { background: linear-gradient(145deg, #1a1a1a 0%, #222 50%, #1a1a1a 100%); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 24px; padding: 40px 30px; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); position: relative; overflow: hidden; }
+        .why-card:hover { transform: translateY(-10px) scale(1.02); border-color: rgba(212, 175, 55, 0.4); box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4), 0 0 40px rgba(212, 175, 55, 0.15); }
+        .why-icon { font-size: 55px; margin-bottom: 20px; display: block; }
+        .why-title { font-family: 'Playfair Display', serif; font-size: 22px; margin-bottom: 15px; color: var(--accent-gold); }
+        .why-text { color: var(--text-secondary); font-size: 16px; line-height: 1.7; }
+
+        /* TEASER SECTION - OPEN LOOPS */
+        .teaser-section { padding: 50px 20px; background: transparent; text-align: center; }
+        .teaser-badge { display: inline-flex; align-items: center; gap: 10px; background: var(--gradient-red); color: white; padding: 10px 25px; border-radius: 50px; font-weight: 700; font-size: 14px; margin-bottom: 20px; cursor: pointer; transition: all 0.3s ease; border: none; }
+        .teaser-badge:hover { transform: scale(1.05); box-shadow: 0 5px 20px rgba(220, 38, 38, 0.4); }
+        .teaser-content { max-height: 0; overflow: hidden; opacity: 0; transition: max-height 0.5s ease, opacity 0.3s ease; }
+        .teaser-content.open { max-height: 2000px; opacity: 1; }
+        .teaser-main-title { font-family: 'Playfair Display', serif; font-size: clamp(28px, 5vw, 40px); margin-bottom: 15px; color: var(--text-primary); }
+        .teaser-subtitle { font-size: 18px; color: var(--text-secondary); margin-bottom: 40px; }
+        .teaser-quotes-container { max-width: 800px; margin: 0 auto; }
+        .teaser-quote-card { background: linear-gradient(135deg, var(--bg-card) 0%, #222 100%); border: 1px solid rgba(212, 175, 55, 0.3); border-radius: 20px; padding: 25px 30px; margin: 15px 0; position: relative; text-align: left; transition: all 0.3s ease; }
+        .teaser-quote-card:hover { border-color: var(--accent-gold); transform: translateX(5px); }
+        .teaser-quote-card::before { content: '"'; position: absolute; top: 10px; left: 15px; font-size: 50px; color: var(--accent-gold); opacity: 0.2; font-family: Georgia, serif; }
+        .teaser-quote-text { font-size: 18px; color: var(--text-primary); margin-bottom: 10px; line-height: 1.6; padding-left: 30px; }
+        .teaser-quote-source { color: var(--accent-gold); font-size: 14px; font-weight: 500; padding-left: 30px; }
+        .teaser-footer-text { margin-top: 40px; font-size: 18px; color: var(--text-secondary); font-style: italic; }
+        .teaser-cta { display: inline-flex; align-items: center; gap: 10px; background: var(--gradient-gold); color: #000; font-size: 18px; font-weight: 700; padding: 18px 40px; border-radius: 50px; text-decoration: none; margin-top: 30px; transition: all 0.3s ease; box-shadow: var(--shadow-gold); }
+        .teaser-cta:hover { transform: translateY(-3px) scale(1.05); }
+
+        .reviews-hollywood { padding: 100px 20px; background: transparent; text-align: center; }
+        .reviews-header { margin-bottom: 50px; }
+        .reviews-star { font-size: 40px; display: block; margin-bottom: 15px; }
+        .reviews-main-title { font-family: 'Playfair Display', serif; font-size: clamp(28px, 5vw, 42px); color: var(--accent-gold); }
+        .reviews-showcase { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; max-width: 1000px; margin: 0 auto; }
+        .review-hollywood-card { background: linear-gradient(135deg, var(--bg-card) 0%, #222 100%); border: 1px solid rgba(212, 175, 55, 0.2); border-radius: 20px; padding: 35px 30px; transition: all 0.3s ease; }
+        .review-hollywood-card:hover { border-color: var(--accent-gold); transform: translateY(-5px); box-shadow: 0 15px 40px rgba(212, 175, 55, 0.15); }
+        .review-rating { margin-bottom: 20px; font-size: 20px; letter-spacing: 3px; }
+        .review-quote { font-size: 18px; color: var(--text-primary); line-height: 1.7; margin-bottom: 20px; }
+        .review-author-line { color: var(--accent-gold); font-size: 16px; font-weight: 500; }
+        
+        /* E-VRIT AUTHENTIC REVIEW STYLE */
+        .evrit-review { border-color: rgba(212, 175, 55, 0.4) !important; background: linear-gradient(135deg, #1a1a1a 0%, #252518 50%, #1a1a1a 100%) !important; }
+        .review-platform { display: flex; align-items: center; gap: 10px; margin-bottom: 15px; padding-bottom: 12px; border-bottom: 1px solid rgba(212, 175, 55, 0.2); flex-wrap: wrap; }
+        .evrit-logo { font-size: 24px; }
+        .evrit-text { font-size: 14px; font-weight: 600; color: var(--accent-gold); }
+        .evrit-badge { font-size: 11px; background: rgba(34, 197, 94, 0.2); color: #22c55e; padding: 4px 10px; border-radius: 20px; font-weight: 600; }
+
+        .about-section { padding: 100px 20px; background: transparent; }
+        .about-container { max-width: 900px; margin: 0 auto; display: flex; gap: 40px; align-items: center; flex-wrap: wrap; }
+        .about-image { flex: 1; min-width: 250px; text-align: center; }
+        .about-image img { width: 200px; height: 200px; border-radius: 50%; object-fit: cover; object-position: top; border: 4px solid var(--accent-gold); box-shadow: var(--shadow-gold); }
+        .about-content { flex: 2; min-width: 300px; }
+        .about-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(212, 175, 55, 0.1); border: 1px solid var(--accent-gold); padding: 8px 16px; border-radius: 50px; font-size: 13px; color: var(--accent-gold); margin-bottom: 15px; }
+        .about-title { font-family: 'Playfair Display', serif; font-size: 32px; margin-bottom: 20px; }
+        .about-text { color: var(--text-secondary); font-size: 16px; line-height: 1.8; margin-bottom: 15px; }
+        .about-signature { color: var(--accent-rose); font-style: italic; font-size: 18px; border-left: 3px solid var(--accent-gold); padding-left: 15px; margin-top: 20px; }
+
+        .social-section { padding: 80px 20px; }
+        .social-title { font-family: 'Playfair Display', serif; font-size: 28px; text-align: center; margin-bottom: 40px; }
+        .social-links { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+        .social-link { display: flex; align-items: center; gap: 12px; background: var(--bg-card); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 50px; padding: 15px 30px; text-decoration: none; color: var(--text-primary); transition: all 0.3s ease; }
+        .social-link:hover { border-color: var(--accent-gold); transform: translateY(-3px); box-shadow: var(--shadow-gold); }
+        .social-link .icon { font-size: 24px; }
+        .social-link .label { font-weight: 500; }
+        .social-link .handle { color: var(--text-secondary); font-size: 14px; }
+
+        .story-section { padding: 100px 20px; background: transparent; text-align: center; }
+        .story-badge { display: inline-flex; align-items: center; gap: 10px; background: var(--gradient-red); color: white; padding: 10px 25px; border-radius: 50px; font-weight: 700; font-size: 14px; margin-bottom: 30px; }
+        .story-title { font-family: 'Playfair Display', serif; font-size: clamp(28px, 5vw, 40px); margin-bottom: 15px; }
+        .story-subtitle { font-size: 18px; color: var(--text-secondary); margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto; }
+        .story-reward { display: inline-flex; align-items: center; gap: 10px; background: rgba(212, 175, 55, 0.1); border: 1px solid var(--accent-gold); padding: 12px 24px; border-radius: 12px; margin-bottom: 40px; color: var(--accent-gold); font-size: 15px; }
+        .story-form { max-width: 500px; margin: 0 auto; text-align: left; }
+        .form-group { margin-bottom: 20px; }
+        .form-label { display: block; margin-bottom: 8px; color: var(--text-secondary); font-size: 14px; }
+        .form-input { width: 100%; padding: 16px 20px; background: rgba(26, 26, 26, 0.8); border: 2px solid rgba(255, 255, 255, 0.1); border-radius: 12px; color: var(--text-primary); font-size: 16px; font-family: 'Poppins', sans-serif; transition: all 0.3s ease; }
+        .form-input:focus { outline: none; border-color: var(--accent-red); box-shadow: 0 0 20px rgba(220, 38, 38, 0.2); }
+        .form-textarea { min-height: 150px; resize: vertical; }
+        .form-submit { width: 100%; padding: 18px 30px; background: var(--gradient-red); border: none; border-radius: 50px; color: white; font-size: 18px; font-weight: 700; font-family: 'Poppins', sans-serif; cursor: pointer; transition: all 0.3s ease; margin-top: 10px; }
+        .form-submit:hover { transform: scale(1.02); box-shadow: var(--shadow-glow); }
+        .form-note { margin-top: 20px; font-size: 13px; color: var(--text-secondary); opacity: 0.7; }
+        .form-success { display: none; background: rgba(34, 197, 94, 0.1); border: 2px solid #22c55e; border-radius: 16px; padding: 30px; text-align: center; }
+        .form-success.show { display: block; }
+        .form-success h3 { color: #22c55e; margin-bottom: 10px; }
+
+        .buy-section { padding: 100px 20px; background: rgba(17, 17, 17, 0.7); }
+        .buy-hook { max-width: 600px; margin: 0 auto 50px; padding: 30px; border: 1px solid rgba(212, 175, 55, 0.3); border-radius: 16px; background: rgba(212, 175, 55, 0.05); }
+        .buy-hook-text { font-size: 20px; color: var(--text-secondary); margin-bottom: 15px; line-height: 1.6; }
+        .buy-hook-question { font-size: 22px; color: var(--accent-gold); font-weight: 600; margin: 0; }
+        .buy-subtitle { text-align: center; color: var(--text-secondary); font-size: 18px; margin-bottom: 50px; margin-top: -40px; }
+        .buy-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; max-width: 1200px; margin: 0 auto; }
+        .buy-card { background: var(--bg-card); border: 2px solid rgba(255, 255, 255, 0.1); border-radius: 24px; padding: 35px 20px; text-align: center; position: relative; transition: all 0.3s ease; display: flex; flex-direction: column; min-height: 380px; }
+        .buy-card:hover { transform: translateY(-5px); border-color: var(--accent-gold); }
+        .buy-card.featured { border-color: var(--accent-red); background: linear-gradient(180deg, rgba(220, 38, 38, 0.1) 0%, var(--bg-card) 100%); }
+        .buy-card.audiobook-card { border-color: #e94560; background: linear-gradient(180deg, rgba(233, 69, 96, 0.15) 0%, var(--bg-card) 100%); }
+        .buy-card-badge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--gradient-red); color: white; padding: 6px 20px; border-radius: 20px; font-size: 12px; font-weight: 700; }
+        .buy-card-badge.local { background: var(--gradient-gold); color: #000; }
+        .buy-card-badge.audiobook-badge { background: linear-gradient(135deg, #e94560 0%, #ff6b6b 100%); }
+        .buy-card .buy-icon { font-size: 50px; margin-bottom: 15px; }
+        .buy-card .buy-title { font-size: 20px; font-weight: 700; margin-bottom: 8px; }
+        .buy-card .buy-desc { color: var(--text-secondary); font-size: 13px; margin-bottom: 15px; }
+        .buy-card .buy-price { font-size: 32px; font-weight: 900; color: var(--accent-red); margin-bottom: 5px; }
+        .buy-card .buy-note { font-size: 12px; color: var(--accent-gold); margin-bottom: 15px; }
+        .buy-card .buy-button-wrapper { margin-top: auto; }
+        .buy-button { display: block; background: var(--gradient-red); color: white; padding: 14px 20px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 15px; transition: all 0.3s ease; margin-bottom: 12px; }
+        .buy-button.coming-soon { background: rgba(255,255,255,0.1); color: #888; pointer-events: none; }
+        @media (max-width: 1100px) { .buy-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 600px) { .buy-grid { grid-template-columns: 1fr; } }
+        .buy-button:hover { transform: scale(1.05); box-shadow: var(--shadow-glow); }
+        .buy-button.amazon { background: #ff9900; color: #000; }
+        .buy-delivery { font-size: 13px; color: var(--text-secondary); }
+
+        .footer { padding: 40px 20px; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1); background: rgba(10, 10, 10, 0.8); }
+        .footer-links { margin-bottom: 20px; }
+        .footer-links a { color: var(--text-secondary); text-decoration: none; margin: 0 15px; transition: color 0.3s ease; }
+        .footer-links a:hover { color: var(--accent-gold); }
+        .footer-divider { color: rgba(255,255,255,0.2); }
+        .footer-text { color: var(--text-secondary); font-size: 14px; }
+        .footer-author { color: var(--accent-red); margin-top: 10px; }
+        .footer-contact { margin-top: 10px; }
+        .footer-contact a { color: var(--accent-gold); text-decoration: none; }
+        
+        /* No Art Gallery - Parent Brand */
+        .noartgallery-link { display: inline-block; margin: 25px 0; opacity: 0.85; transition: all 0.3s ease; }
+        .noartgallery-link:hover { opacity: 1; transform: scale(1.05); }
+        .noartgallery-link:hover .noartgallery-logo { filter: drop-shadow(0 0 12px rgba(212, 175, 55, 0.8)) drop-shadow(0 0 25px rgba(201, 162, 39, 0.5)); }
+        .noartgallery-logo { height: 35px; width: auto; filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.5)) drop-shadow(0 0 15px rgba(201, 162, 39, 0.3)); transition: filter 0.3s ease; }
+
+        #accessibility-widget { position: fixed; top: 90px; right: 20px; z-index: 9999; }
+        .accessibility-btn { width: 50px; height: 50px; border-radius: 50%; background: var(--accent-gold); border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; color: #000; box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4); transition: all 0.3s ease; }
+        .accessibility-btn:hover { transform: scale(1.1); }
+        .accessibility-menu { position: absolute; top: 60px; right: 0; background: #1a1a1a; border: 2px solid var(--accent-gold); border-radius: 12px; padding: 15px; min-width: 200px; display: none; flex-direction: column; gap: 8px; }
+        .accessibility-menu.active { display: flex; }
+        .accessibility-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; padding-bottom: 10px; border-bottom: 1px solid rgba(212, 175, 55, 0.3); color: var(--accent-gold); font-weight: 700; }
+        .accessibility-header button { background: none; border: none; color: var(--text-secondary); cursor: pointer; font-size: 18px; }
+        .accessibility-menu button:not(.accessibility-header button) { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: white; padding: 10px 15px; border-radius: 8px; cursor: pointer; text-align: left; transition: all 0.2s ease; }
+        .accessibility-menu button:not(.accessibility-header button):hover { background: var(--accent-gold); color: #000; }
+        body.high-contrast { filter: contrast(1.5); }
+        body.grayscale { filter: grayscale(100%); }
+        body.underline-links a { text-decoration: underline !important; }
+
+        @media (max-width: 768px) {
+            .cta-button { padding: 14px 28px; font-size: 16px; }
+            .about-container { flex-direction: column; text-align: center; }
+            .about-signature { border-left: none; padding-left: 0; text-align: center; }
+            .social-links { flex-direction: column; align-items: center; }
+            .social-link { width: 100%; max-width: 300px; justify-content: center; }
+            #accessibility-widget { top: 80px; right: 10px; }
+            .lang-switch { top: 10px; right: 10px; }
+            .lang-switch a { padding: 8px 15px; font-size: 12px; }
+            .buy-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 🎧 AUDIOBOOK LAUNCH TICKER - DRAGGABLE! -->
+    <div class="price-ticker" id="priceTicker">
+        <button class="price-ticker-close" onclick="event.stopPropagation(); closePriceTicker()">✕</button>
+        <a href="#buy" class="price-ticker-link">
+            <div class="price-ticker-header">
+                <span class="price-ticker-icon">🔥</span>
+                <span class="price-ticker-title">AUDIOBOOK LAUNCH!</span>
+                <span class="price-ticker-icon">🔥</span>
+            </div>
+            <div class="price-ticker-desc">🎧 4+ Hours of Dating Disasters!</div>
+            <div class="price-ticker-discount-badge" style="display: inline-block; background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%); color: white; padding: 4px 12px; border-radius: 20px; font-size: 11px; font-weight: 800; margin-bottom: 6px; letter-spacing: 0.5px; box-shadow: 0 2px 8px rgba(220, 38, 38, 0.4);">⚡ 15% OFF</div>
+            <div class="price-ticker-price" style="font-size: 32px; margin: 8px 0;">$14.40 <span style="font-size: 14px; text-decoration: line-through; color: #888;">$16.90</span></div>
+        </a>
+        <div class="price-ticker-coupon-wrapper" style="display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 10px;">
+            <div class="price-ticker-coupon" id="couponCode" style="cursor: pointer; user-select: all;">LAUNCH101</div>
+            <button onclick="event.stopPropagation(); copyCoupon()" class="copy-coupon-btn" style="background: #1a1a1a; color: #fbbf24; border: none; padding: 4px 10px; border-radius: 12px; font-size: 11px; cursor: pointer; transition: all 0.3s;">📋 Copy</button>
+        </div>
+        <a href="#buy" class="price-ticker-link">
+            <button class="price-ticker-btn">🎧 Get It Now →</button>
+        </a>
+        <div style="font-size: 10px; color: #666; margin-top: 8px;">💡 Drag me anywhere!</div>
+    </div>
+
+    <style>
+        /* Enhanced Ticker Styles */
+        .price-ticker {
+            cursor: grab;
+            user-select: none;
+        }
+        .price-ticker:active {
+            cursor: grabbing;
+        }
+        .price-ticker-coupon {
+            background: linear-gradient(135deg, #dc2626 0%, #f59e0b 100%);
+            color: white;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 16px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            animation: pulse-coupon 2s ease-in-out infinite;
+            box-shadow: 0 0 20px rgba(245, 158, 11, 0.5);
+        }
+        @keyframes pulse-coupon {
+            0%, 100% { transform: scale(1); box-shadow: 0 0 20px rgba(245, 158, 11, 0.5); }
+            50% { transform: scale(1.05); box-shadow: 0 0 30px rgba(245, 158, 11, 0.8); }
+        }
+        .copy-coupon-btn:hover {
+            background: #333 !important;
+            transform: scale(1.1);
+        }
+        .copy-coupon-btn.copied {
+            background: #22c55e !important;
+            color: white !important;
+        }
+    </style>
+
+    <script>
+        // 📋 Copy Coupon Function
+        function copyCoupon() {
+            const coupon = 'LAUNCH101';
+            navigator.clipboard.writeText(coupon).then(() => {
+                const btn = document.querySelector('.copy-coupon-btn');
+                btn.textContent = '✓ Copied!';
+                btn.classList.add('copied');
+                setTimeout(() => {
+                    btn.textContent = '📋 Copy';
+                    btn.classList.remove('copied');
+                }, 2000);
+            });
+        }
+
+        // 🖱️ Draggable Ticker
+        (function() {
+            const ticker = document.getElementById('priceTicker');
+            if (!ticker) return;
+            
+            let isDragging = false;
+            let startX, startY, initialX, initialY;
+            
+            ticker.addEventListener('mousedown', function(e) {
+                if (e.target.tagName === 'BUTTON' || e.target.tagName === 'A') return;
+                isDragging = true;
+                ticker.style.cursor = 'grabbing';
+                startX = e.clientX;
+                startY = e.clientY;
+                const rect = ticker.getBoundingClientRect();
+                initialX = rect.left;
+                initialY = rect.top;
+                e.preventDefault();
+            });
+            
+            document.addEventListener('mousemove', function(e) {
+                if (!isDragging) return;
+                const dx = e.clientX - startX;
+                const dy = e.clientY - startY;
+                ticker.style.position = 'fixed';
+                ticker.style.left = (initialX + dx) + 'px';
+                ticker.style.top = (initialY + dy) + 'px';
+                ticker.style.bottom = 'auto';
+            });
+            
+            document.addEventListener('mouseup', function() {
+                isDragging = false;
+                ticker.style.cursor = 'grab';
+            });
+            
+            // Touch support for mobile
+            ticker.addEventListener('touchstart', function(e) {
+                if (e.target.tagName === 'BUTTON' || e.target.tagName === 'A') return;
+                isDragging = true;
+                const touch = e.touches[0];
+                startX = touch.clientX;
+                startY = touch.clientY;
+                const rect = ticker.getBoundingClientRect();
+                initialX = rect.left;
+                initialY = rect.top;
+            }, { passive: true });
+            
+            document.addEventListener('touchmove', function(e) {
+                if (!isDragging) return;
+                const touch = e.touches[0];
+                const dx = touch.clientX - startX;
+                const dy = touch.clientY - startY;
+                ticker.style.position = 'fixed';
+                ticker.style.left = (initialX + dx) + 'px';
+                ticker.style.top = (initialY + dy) + 'px';
+                ticker.style.bottom = 'auto';
+            }, { passive: true });
+            
+            document.addEventListener('touchend', function() {
+                isDragging = false;
+            });
+        })();
+    </script>
+
+    <div class="lang-switch" style="display:flex;gap:8px;">
+        <a href="https://funnydates101.co.il"><img src="https://flagcdn.com/w40/il.png" alt="Israel" class="flag-icon"><span>עברית</span></a>
+        <a href="/fr.html"><img src="https://flagcdn.com/w40/fr.png" alt="France" class="flag-icon"><span>FR</span></a>
+    </div>
+
+    <div class="floating-hearts">
+        <span class="heart">💔</span><span class="heart">❤️</span><span class="heart">💕</span><span class="heart">💔</span><span class="heart">❤️</span>
+        <span class="heart">💕</span><span class="heart">💔</span><span class="heart">❤️</span><span class="heart">💕</span><span class="heart">💔</span>
+    </div>
+
+    <div id="accessibility-widget">
+        <button class="accessibility-btn" onclick="toggleAccessibilityMenu()" aria-label="Accessibility Menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9H15V22H13V16H11V22H9V9H3V7H21V9Z"/></svg>
+        </button>
+        <div class="accessibility-menu" id="accessibility-menu">
+            <div class="accessibility-header"><span>Accessibility</span><button onclick="toggleAccessibilityMenu()">✕</button></div>
+            <button onclick="changeFontSize(1)">Increase Text +</button>
+            <button onclick="changeFontSize(-1)">Decrease Text -</button>
+            <button onclick="toggleHighContrast()">High Contrast</button>
+            <button onclick="toggleGrayscale()">Grayscale</button>
+            <button onclick="toggleUnderlineLinks()">Underline Links</button>
+            <button onclick="resetAccessibility()">Reset</button>
+        </div>
+    </div>
+
+    <!-- 🔥 FLOATING QUOTES - STANDUP COMEDY EDITION! -->
+    <div class="floating-quotes">
+        <div class="quote-bubble">🧺 First date. She shows up with three shopping bags. "Just swinging by grandma's real quick." Nobody prepared me for what happened on the ride home.</div>
+        <div class="quote-bubble">🍷 Ten minutes in. Seven glasses of wine later. Then I hear her tell her friend: "We've been together two months now." Bro, I was standing RIGHT there.</div>
+        <div class="quote-bubble">🚗 Middle of the freeway she goes: "Are those the tech bros' Teslas?" I did a U-turn. And it wasn't about the traffic.</div>
+        <div class="quote-bubble">💬 Perfect date. Chemistry. Laughs. Sparks flying. Her text next morning? Two words. Only one was nice.</div>
+        <div class="quote-bubble">🏢 High-end realtor. Penthouse showing. What went down on floor 42 ain't in any floor plan.</div>
+        <div class="quote-bubble">🔥 At the club she was FIRE. Passion. Eyes locked. Next day on her Harley? Ice cold. Same woman.</div>
+        <div class="quote-bubble">🚬 Between cigarettes she drops: "I'm a widow. My husband... in the shower..." That's when I knew — this wasn't a date. This was a crime podcast.</div>
+    </div>
+
+    <div class="main-content">
+        <section class="hero">
+            <div class="hero-badge"><span class="badge-dot"></span>The Book Everyone's Talking About</div>
+            <h1 class="hero-title"><span class="highlight">Love Bites</span><br>101 Dating Disasters<span class="title-dot"></span></h1>
+            <p class="hero-subtitle">High expectations. Too many questions.<br>Too many stories.</p>
+            <p class="hero-tagline">If you've ever been on a date and said "what the hell just happened?" —<br>this book is for you.</p>
+            <div class="cta-container">
+                <a href="#why" class="cta-button">👀 What Happened on That Date?</a>
+                <p class="cta-subtext">📚 Paperback | 📱 eBook | 🎧 AudioBook | 🇮🇱 Israel</p>
+            </div>
+            <div class="launch-offer">
+                <div class="offer-badge"><span class="offer-icon">🎁</span><span class="offer-text">Special Launch Price</span></div>
+                <div class="offer-date"><span class="date-label">Valid Until</span><span class="date-value">Mar 31, 2026</span></div>
+                <div class="offer-urgency"><span class="urgency-dot"></span><span>Limited Edition</span></div>
+            </div>
+        </section>
+
+        <section class="why-section-hollywood" id="why">
+            <div class="why-header">
+                <h2 class="why-main-title">All the stories are true.</h2>
+                <p class="why-subtitle">And that's exactly the problem.</p>
+            </div>
+            <div class="why-grid">
+                <div class="why-card"><span class="why-icon">🎭</span><h3 class="why-title">I laughed. Then I realized it happened to me too.</h3><p class="why-text">Situations that if you saw in a TV show — you'd say it's exaggerated. Unfortunately, it wasn't a script.</p></div>
+                <div class="why-card"><span class="why-icon">💔</span><h3 class="why-title">I was sure this was it. She was sure it was just Tuesday.</h3><p class="why-text">Short crushes, long illusions, and that one moment when you realize the other side has already moved on.</p></div>
+                <div class="why-card"><span class="why-icon">🍷</span><h3 class="why-title">Things people do on dates — then pray no one tells.</h3><p class="why-text">Real stories. No filters. The moments that made me think: "Just don't write a book about this."</p></div>
+            </div>
+        </section>
+
+        <!-- 🔥 TEASER SECTION - OPEN LOOPS EDITION! -->
+        <section class="teaser-section">
+            <button class="teaser-badge" id="teaserToggle" onclick="toggleTeaser()"><span>🎬</span><span>Want a Sneak Peek?</span><span class="arrow">👀</span></button>
+            <div class="teaser-content" id="teaserContent">
+                <h2 class="teaser-main-title">Until here it was dating.</h2>
+                <p class="teaser-subtitle">From here — it's about you.</p>
+                <div class="teaser-quotes-container">
+                    <div class="teaser-quote-card"><p class="teaser-quote-text">🔁 This isn't a book about dating. It's a book about the moment you realized something about you keeps repeating.</p></div>
+                    <div class="teaser-quote-card"><p class="teaser-quote-text">🎯 Every story here starts with "Wow, this looks promising" and ends with "How did I end up here again?"</p></div>
+                    <div class="teaser-quote-card"><p class="teaser-quote-text">😂 Some chapters will make you laugh. Some will make you pause. And some you'll recognize yourself in too quickly — and prefer to keep reading as if it's not you.</p></div>
+                    <div class="teaser-quote-card"><p class="teaser-quote-text">⏱️ Some dates ended after 8 minutes. Some lasted 9 hours. And there's one… after which nothing was ever the same.</p></div>
+                    <div class="teaser-quote-card"><p class="teaser-quote-text">📓 This isn't a guide. It's a documentation journal of mistakes we all make — we just don't admit them out loud.</p></div>
+                </div>
+                <p class="teaser-footer-text">If you've read this far — you've probably been on at least one of these dates. 🎯</p>
+                <a href="#buy" class="teaser-cta">🔓 Want to know what happened?</a>
+            </div>
+        </section>
+
+        <!-- 🎧 AUDIOBOOK TEASER SECTION - HOLLYWOOD EDITION -->
+        <style>
+        /* Audiobook Teaser Styles */
+        .audiobook-teaser-section {
+            padding: 80px 20px;
+            background: transparent;
+            position: relative;
+            overflow: hidden;
+        }
+        .audiobook-teaser-section::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(220, 38, 38, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(212, 175, 55, 0.06) 0%, transparent 50%);
+            animation: pulseGlowAudio 8s ease-in-out infinite;
+            pointer-events: none;
+        }
+        @keyframes pulseGlowAudio { 0%, 100% { opacity: 0.5; } 50% { opacity: 1; } }
+        .teaser-container { max-width: 800px; margin: 0 auto; position: relative; z-index: 2; }
+        .teaser-header-audio { text-align: center; margin-bottom: 40px; }
+        .teaser-badge-audio {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: rgba(26, 26, 26, 0.95); border: 1px solid var(--accent-gold);
+            padding: 10px 20px; border-radius: 50px; font-size: 14px; color: var(--accent-gold); margin-bottom: 20px;
+            backdrop-filter: blur(10px);
+        }
+        .teaser-title-audio { font-size: 2.5rem; font-weight: 900; color: #fff; margin: 0 0 10px 0; text-shadow: 0 0 40px rgba(220, 38, 38, 0.4); }
+        .teaser-title-audio span { color: var(--accent-red); }
+        .teaser-subtitle-audio { font-size: 1.1rem; color: rgba(255, 255, 255, 0.7); font-weight: 300; }
+        .chapter-tabs { display: flex; justify-content: center; gap: 15px; margin-bottom: 30px; flex-wrap: wrap; }
+        .chapter-tab {
+            background: rgba(26, 26, 26, 0.8); border: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7); padding: 14px 28px; border-radius: 50px; cursor: pointer;
+            transition: all 0.3s ease; font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 500;
+            backdrop-filter: blur(10px);
+        }
+        .chapter-tab:hover { background: rgba(220, 38, 38, 0.2); border-color: rgba(220, 38, 38, 0.3); color: #fff; }
+        .chapter-tab.active {
+            background: var(--gradient-red); border-color: transparent;
+            color: #fff; box-shadow: var(--shadow-glow);
+        }
+        .chapter-tab-icon { margin-right: 6px; }
+        .player-card {
+            background: rgba(26, 26, 26, 0.9);
+            border-radius: 24px; padding: 30px; border: 1px solid rgba(220, 38, 38, 0.2);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), 0 0 60px rgba(220, 38, 38, 0.1);
+            position: relative; overflow: hidden; backdrop-filter: blur(10px);
+        }
+        .player-card::before {
+            content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
+            background: linear-gradient(45deg, transparent 40%, rgba(255, 215, 0, 0.03) 50%, transparent 60%);
+            animation: cardShineAudio 8s ease-in-out infinite;
+        }
+        @keyframes cardShineAudio { 0% { transform: translateX(-100%) rotate(45deg); } 100% { transform: translateX(100%) rotate(45deg); } }
+        .chapter-content { display: none; position: relative; z-index: 1; }
+        .chapter-content.active { display: block; animation: fadeInAudio 0.4s ease; }
+        @keyframes fadeInAudio { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .chapter-info { display: flex; align-items: center; gap: 20px; margin-bottom: 25px; }
+        .chapter-icon {
+            width: 70px; height: 70px; background: var(--gradient-red);
+            border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 32px;
+            box-shadow: var(--shadow-glow); flex-shrink: 0;
+        }
+        .chapter-icon.iguana { 
+            background: linear-gradient(135deg, #15803d, #22c55e, #4ade80); 
+            box-shadow: 0 10px 30px rgba(34, 197, 94, 0.4);
+            position: relative;
+            overflow: visible;
+        }
+        .chapter-icon.iguana::before {
+            content: '';
+            position: absolute;
+            top: 50%; left: 50%;
+            width: 100%; height: 100%;
+            border-radius: 16px;
+            border: 2px solid rgba(74, 222, 128, 0.6);
+            transform: translate(-50%, -50%);
+            animation: radarPulse 2s ease-out infinite;
+        }
+        .chapter-icon.iguana::after {
+            content: '';
+            position: absolute;
+            top: 50%; left: 50%;
+            width: 100%; height: 100%;
+            border-radius: 16px;
+            border: 2px solid rgba(74, 222, 128, 0.4);
+            transform: translate(-50%, -50%);
+            animation: radarPulse 2s ease-out infinite 0.5s;
+        }
+        @keyframes radarPulse {
+            0% { width: 100%; height: 100%; opacity: 1; }
+            100% { width: 180%; height: 180%; opacity: 0; }
+        }
+        .chapter-details { flex: 1; }
+        .chapter-label { font-size: 12px; color: var(--accent-gold); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 5px; }
+        .chapter-name { font-size: 1.4rem; font-weight: 700; color: #fff; margin: 0 0 5px 0; }
+        .chapter-quote { font-size: 0.95rem; color: rgba(255, 255, 255, 0.6); font-style: italic; }
+        .iguana-promo {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: linear-gradient(135deg, rgba(34, 197, 94, 0.25), rgba(74, 222, 128, 0.1));
+            border: 1px solid rgba(74, 222, 128, 0.5); padding: 10px 18px; border-radius: 50px;
+            font-size: 13px; color: #4ade80; margin-top: 12px; text-decoration: none; 
+            transition: all 0.3s ease;
+            box-shadow: 0 0 20px rgba(34, 197, 94, 0.2);
+            animation: iguanaGlow 2s ease-in-out infinite;
+        }
+        @keyframes iguanaGlow {
+            0%, 100% { box-shadow: 0 0 20px rgba(34, 197, 94, 0.2); }
+            50% { box-shadow: 0 0 30px rgba(34, 197, 94, 0.4), 0 0 60px rgba(34, 197, 94, 0.2); }
+        }
+        .iguana-promo:hover { 
+            background: linear-gradient(135deg, rgba(34, 197, 94, 0.35), rgba(74, 222, 128, 0.2)); 
+            transform: translateY(-2px); 
+            box-shadow: 0 8px 25px rgba(34, 197, 94, 0.4); 
+        }
+        .audio-player { background: rgba(0, 0, 0, 0.3); border-radius: 16px; padding: 20px; }
+        .player-controls { display: flex; align-items: center; gap: 15px; }
+        .play-button {
+            width: 60px; height: 60px; background: var(--gradient-red);
+            border: none; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center;
+            transition: all 0.3s ease; box-shadow: var(--shadow-glow); flex-shrink: 0;
+        }
+        .play-button:hover { transform: scale(1.1); box-shadow: 0 12px 35px rgba(220, 38, 38, 0.6); }
+        .play-button svg { width: 24px; height: 24px; fill: white; margin-left: 3px; }
+        .play-button.playing svg { margin-left: 0; }
+        .progress-container { flex: 1; }
+        .time-display { display: flex; justify-content: space-between; font-size: 12px; color: rgba(255, 255, 255, 0.5); margin-bottom: 8px; }
+        .progress-bar { width: 100%; height: 6px; background: rgba(255, 255, 255, 0.1); border-radius: 3px; cursor: pointer; position: relative; overflow: hidden; }
+        .progress-fill { height: 100%; background: linear-gradient(90deg, var(--accent-red), var(--accent-gold)); border-radius: 3px; width: 0%; transition: width 0.1s linear; position: relative; }
+        .progress-fill::after { content: ''; position: absolute; right: -7px; top: 50%; transform: translateY(-50%); width: 14px; height: 14px; background: var(--accent-gold); border-radius: 50%; box-shadow: 0 0 10px rgba(212, 175, 55, 0.5); }
+        .volume-control { display: flex; align-items: center; gap: 10px; }
+        .volume-icon { font-size: 18px; cursor: pointer; }
+        .volume-slider { width: 80px; height: 4px; background: rgba(255, 255, 255, 0.2); border-radius: 2px; appearance: none; cursor: pointer; }
+        .volume-slider::-webkit-slider-thumb { appearance: none; width: 12px; height: 12px; background: var(--accent-gold); border-radius: 50%; cursor: pointer; }
+        .teaser-cta-audio { margin-top: 30px; text-align: center; }
+        .cta-text-audio { font-size: 1.1rem; color: rgba(255, 255, 255, 0.8); margin-bottom: 15px; }
+        .cta-text-audio span { color: var(--accent-gold); font-weight: 700; }
+        .cta-button-audio {
+            display: inline-flex; align-items: center; gap: 10px;
+            background: var(--gradient-red); color: white; font-size: 1.1rem; font-weight: 700;
+            padding: 16px 40px; border: none; border-radius: 50px; cursor: pointer; transition: all 0.3s ease; text-decoration: none;
+            box-shadow: var(--shadow-glow);
+        }
+        .cta-button-audio:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 15px 40px rgba(220, 38, 38, 0.5); }
+        .teaser-features-audio { display: flex; justify-content: center; gap: 30px; margin-top: 25px; flex-wrap: wrap; }
+        .teaser-feature-audio { display: flex; align-items: center; gap: 8px; font-size: 13px; color: rgba(255, 255, 255, 0.6); }
+        @media (max-width: 600px) {
+            .teaser-title-audio { font-size: 1.8rem; }
+            .chapter-tabs { flex-direction: column; gap: 8px; }
+            .chapter-tab { width: 100%; text-align: center; }
+            .chapter-info { flex-direction: column; text-align: center; }
+            .player-controls { flex-wrap: wrap; justify-content: center; }
+            .progress-container { width: 100%; order: 2; margin-top: 15px; }
+            .volume-control { order: 3; margin-top: 10px; }
+            .teaser-features-audio { flex-direction: column; align-items: center; gap: 15px; }
+        }
+        </style>
+
+
+
+        <section class="reviews-hollywood">
+            <div class="reviews-header"><span class="reviews-star">⭐</span><h2 class="reviews-main-title">Readers Who Couldn't Look Away</h2></div>
+            <div class="reviews-showcase">
+                <div class="review-hollywood-card evrit-review">
+                    <div class="review-platform">
+                        <span class="evrit-logo">📱</span>
+                        <span class="evrit-text">E-Vrit Digital Books</span>
+                        <span class="evrit-badge">✓ Verified Purchase</span>
+                    </div>
+                    <div class="review-rating">⭐⭐⭐⭐⭐</div>
+                    <blockquote class="review-quote">"Hilarious. Full of flashbacks. Thanks."</blockquote>
+                    <div class="review-author-line">— Ronit</div>
+                </div>
+                <div class="review-hollywood-card"><div class="review-rating">⭐⭐⭐⭐⭐</div><blockquote class="review-quote">"Someone had to write this.<br>Good thing he did it before me."</blockquote><div class="review-author-line">— Josh</div></div>
+                <div class="review-hollywood-card"><div class="review-rating">⭐⭐⭐⭐⭐</div><blockquote class="review-quote">"Finished it.<br>Then texted my ex."</blockquote><div class="review-author-line">— Michelle</div></div>
+            </div>
+        </section>
+
+
+
+
+        <section class="about-section">
+            <div class="about-container">
+                <div class="about-image"><img src="N4829.png" alt="Nir Ram - Author"></div>
+                <div class="about-content">
+                    <div class="about-badge">✍️ About Me</div>
+                    <h2 class="about-title">Nir Ram</h2>
+                    <p class="about-text">An IT executive with a rich professional background, whose personal life also made him a <strong>curious researcher of the dating world</strong>.</p>
+                    <p class="about-text">Divorced and father of three grown children — Alon, Don, and Michaela — he brings a unique combination of <strong>sharp thinking, human curiosity, and a rare ability to find the funny side</strong> even in the most awkward moments.</p>
+                    <p class="about-signature">"In short: if I already went through it — at least let there be a good story to tell."</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="social-section">
+            <h2 class="social-title">📱 More Funny Content on Our Channels</h2>
+            <div class="social-links">
+                <a href="https://www.youtube.com/@funnydates101US" class="social-link" target="_blank"><span class="icon">▶️</span><div><div class="label">YouTube</div><div class="handle">@funnydates101US</div></div></a>
+                <a href="https://www.tiktok.com/@no_art_gallery" class="social-link" target="_blank"><span class="icon">🎵</span><div><div class="label">TikTok</div><div class="handle">@no_art_gallery</div></div></a>
+            </div>
+        </section>
+
+        <section class="story-section" id="share">
+            <div class="story-badge"><span>🎬</span><span>Got a Story?</span></div>
+            <h2 class="story-title">Your Story Could Become a Video!</h2>
+            <p class="story-subtitle">Had a crazy date? Bizarre? Hilariously bad?<br>Send it to us and your story might go on our channel!</p>
+            <div class="story-reward"><span>🌟</span><span>Your story will be featured with a shoutout</span></div>
+            <form class="story-form" id="storyForm">
+                <input type="hidden" name="access_key" value="c3307ded-69c5-4654-9615-0be668c334d4">
+                <div class="form-group"><label class="form-label">Your Name (or nickname)</label><input type="text" name="name" class="form-input" placeholder="What should we call you?" required></div>
+                <div class="form-group"><label class="form-label">Email</label><input type="email" name="email" class="form-input" placeholder="So we can update you" required></div>
+                <div class="form-group"><label class="form-label">Your Story</label><textarea name="story" class="form-input form-textarea" placeholder="Tell us what happened..." required></textarea></div>
+                <button type="submit" class="form-submit">🚀 Send Your Story</button>
+                <p class="form-note">* Your story will be kept confidential and only published with your permission</p>
+            </form>
+            <div class="form-success" id="formSuccess"><h3>✅ Thank You!</h3><p>Your story was received successfully.<br>If it's selected, we'll be in touch!</p></div>
+        </section>
+
+        <section class="buy-section" id="buy">
+            <div class="buy-hook">
+                <p class="buy-hook-text">If you've read this far —<br>you already know this isn't just another book.</p>
+                <p class="buy-hook-question">The only question: Are you ready to find out what happened on the next date?</p>
+            </div>
+            <h2 class="section-title">Where to Buy?</h2>
+            <p class="buy-subtitle">Choose your format</p>
+            <div class="buy-grid">
+                <div class="buy-card featured">
+                    <div class="buy-card-badge">🌍 Worldwide</div>
+                    <div class="buy-icon">📚</div>
+                    <h3 class="buy-title">Paperback</h3>
+                    <p class="buy-desc">Printed book in English</p>
+                    <div class="buy-price">$13.90</div>
+                    <div class="buy-note">Special Launch Price!</div>
+                    <div class="buy-button-wrapper">
+                        <a href="https://www.amazon.com/dp/B0FY7DJFJ9" class="buy-button amazon" target="_blank">Buy on Amazon</a>
+                        <p class="buy-delivery">🌐 International Shipping</p>
+                    </div>
+                </div>
+                <div class="buy-card">
+                    <div class="buy-icon">📱</div>
+                    <h3 class="buy-title">eBook</h3>
+                    <p class="buy-desc">Kindle Edition in English</p>
+                    <div class="buy-price">$2.99</div>
+                    <div class="buy-note">Instant Download!</div>
+                    <div class="buy-button-wrapper">
+                        <a href="https://www.amazon.com/dp/B0G528JZGS" class="buy-button" target="_blank">Buy on Kindle</a>
+                        <p class="buy-delivery">⚡ Instant Delivery</p>
+                    </div>
+                </div>
+                <div class="buy-card audiobook-card">
+                    <div class="buy-card-badge audiobook-badge">🎧 Available!</div>
+                    <div class="buy-icon">🎧</div>
+                    <h3 class="buy-title">AudioBook</h3>
+                    <p class="buy-desc">4+ Hours of Dating Disasters!</p>
+                    <div class="buy-price">$14.40 <span style="font-size: 14px; text-decoration: line-through; color: #666;">$16.90</span></div>
+                    <div class="buy-note">⚡ 15% OFF - Code: LAUNCH101</div>
+                    <div class="buy-button-wrapper">
+                        <a href="order.html" class="buy-button">Buy Now</a>
+                        <p class="buy-delivery">📧 Instant Delivery!</p>
+                    </div>
+                </div>
+                <div class="buy-card">
+                    <div class="buy-card-badge local">🇮🇱 In Israel</div>
+                    <div class="buy-icon">📖</div>
+                    <h3 class="buy-title">Paperback</h3>
+                    <p class="buy-desc">English edition for expats in Israel</p>
+                    <div class="buy-price">₪75</div>
+                    <div class="buy-note">🎟️ Code: 10110 → 10% OFF</div>
+                    <div class="buy-button-wrapper">
+                        <a href="https://bookpod.co.il/product/love-bites-101-dating-disasters/" class="buy-button" target="_blank">Buy on BookPod</a>
+                        <p class="buy-delivery">🚚 5 Business Days</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="audiobook-teaser-section">
+            <div class="teaser-container">
+                <div class="teaser-header-audio">
+                    <div class="teaser-badge-audio"><span>🎧</span><span>Exclusive Preview</span></div>
+                    <h2 class="teaser-title-audio"><span>Listen</span> Before You Swipe Again</h2>
+                    <p class="teaser-subtitle-audio">Two chapters. Two disasters. Pick one and see if you survive.</p>
+                </div>
+                <div class="chapter-tabs">
+                    <button class="chapter-tab active" onclick="switchChapter(0)"><span class="chapter-tab-icon">🔥</span>Too Hot to Handle</button>
+                    <button class="chapter-tab" onclick="switchChapter(1)"><span class="chapter-tab-icon">🦎</span>Here 4 Iguana</button>
+                </div>
+                <div class="player-card">
+                    <div class="chapter-content active" id="chapter0">
+                        <div class="chapter-info">
+                            <div class="chapter-icon">🔥</div>
+                            <div class="chapter-details">
+                                <div class="chapter-label">Chapter 15</div>
+                                <h3 class="chapter-name">Too Hot to Handle</h3>
+                                <p class="chapter-quote">A date that started innocent and ended with "Why did I say THAT?!"</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chapter-content" id="chapter1">
+                        <div class="chapter-info">
+                            <div class="chapter-icon iguana">🦎</div>
+                            <div class="chapter-details">
+                                <div class="chapter-label">Chapter 94</div>
+                                <h3 class="chapter-name">Here 4 Iguana</h3>
+                                <p class="chapter-quote">One wrong word, one exotic creature, and a realization that came way too late.</p>
+                                <a href="https://i4iguana.com" target="_blank" class="iguana-promo"><span>🦎</span><span>Discover the app born from this story →</span></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="audio-player">
+                        <div class="player-controls">
+                            <button class="play-button" id="playBtn" onclick="togglePlay()">
+                                <svg viewBox="0 0 24 24" id="playIcon"><path d="M8 5v14l11-7z"/></svg>
+                            </button>
+                            <div class="progress-container">
+                                <div class="time-display"><span id="currentTime">0:00</span><span id="duration">2:24</span></div>
+                                <div class="progress-bar" onclick="seekAudio(event)"><div class="progress-fill" id="progressFill"></div></div>
+                            </div>
+                            <div class="volume-control">
+                                <span class="volume-icon">🔊</span>
+                                <input type="range" class="volume-slider" min="0" max="100" value="80" onchange="setVolume(this.value)">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="teaser-cta-audio">
+                        <p class="cta-text-audio">🔥 That was just 2 out of <span>101 stories</span>. If this hit you — wait for the rest.</p>
+                        <a href="#buy" class="cta-button-audio">Give Me All 4 Hours 🎧 <span>$14.90</span></a>
+                        <div class="teaser-features-audio">
+                            <div class="teaser-feature-audio"><span>⏱️</span><span>Over 4 hours of chaos</span></div>
+                            <div class="teaser-feature-audio"><span>📱</span><span>Listen anywhere</span></div>
+                            <div class="teaser-feature-audio"><span>♾️</span><span>Yours forever</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <audio id="audio0" preload="metadata"><source src="audio/chapter15_teaser.mp3" type="audio/mpeg"></audio>
+        <audio id="audio1" preload="metadata"><source src="audio/chapter94_teaser.mp3" type="audio/mpeg"></audio>
+
+        <footer class="footer">
+            <div class="footer-links">
+                <a href="/terms.html">Terms & Privacy</a><span class="footer-divider">|</span>
+                <a href="/accessibility.html">Accessibility</a><span class="footer-divider">|</span>
+                <a href="#share">Contact</a>
+            </div>
+            
+            <!-- No Art Gallery - Parent Brand -->
+            <a href="https://noartgallery.com" target="_blank" rel="noopener noreferrer" class="noartgallery-link">
+                <img src="noartgallery-logo.png" alt="No Art Gallery" class="noartgallery-logo">
+            </a>
+            
+            <p class="footer-text">© All Rights Reserved to Nir Ram 2025</p>
+            <p class="footer-author">📚 Love Bites: 101 Dating Disasters</p>
+            <p class="footer-contact">📧 <a id="footer-email-link" href="#"></a></p>
+            <script>
+                (function(){
+                    var u='nir';var d='funnydates101.com';
+                    var e=u+'@'+d;
+                    var a=document.getElementById('footer-email-link');
+                    if(a){a.href='mai'+'lto:'+e;a.textContent=e;}
+                })();
+            </script>
+        </footer>
+    </div>
+
+    <script>
+        // 🎬 COSMIC TV TICKER - OPEN LOOPS Quote Management
+        const tickerQuotes = [
+            { emoji: '🧺', text: '"She got in my car with three bags. Only then I understood why I was really there."', source: '— What was in the bags? In the book.' },
+            { emoji: '🍷', text: '"After the seventh glass, she said something that changed everything."', source: '— What did she say? In the book.' },
+            { emoji: '👀', text: '"She looked at me and said one sentence. I should have remembered it."', source: '— What did she say? In the book.' },
+            { emoji: '⏱️', text: '"After 10 minutes she asked a question. I wasn\'t ready for the answer."', source: '— That question? In the book.' },
+            { emoji: '💳', text: '"The waiter brought the check. What happened next — I didn\'t expect."', source: '— What happened? In the book.' },
+            { emoji: '🚗', text: '"When we got to the car, she said one sentence. Still thinking about it."', source: '— The sentence? In the book.' },
+            { emoji: '⚡', text: '"The date ended after 7 minutes. The reason? You won\'t believe it."', source: '— The real reason? In the book.' }
+        ];
+        
+        let currentQuoteIndex = 0;
+        let tickerInterval;
+        
+        function initTicker() { generateDots(); updateQuote(0); startAutoRotation(); }
+        function generateDots() { const d = document.getElementById('tickerDots'); d.innerHTML = ''; tickerQuotes.forEach((_, i) => { const dot = document.createElement('div'); dot.className = 'ticker-dot' + (i === 0 ? ' active' : ''); dot.onclick = () => goToQuote(i); d.appendChild(dot); }); }
+        function updateQuote(i) { const q = tickerQuotes[i]; const c = document.getElementById('tickerQuoteContainer'); c.style.opacity = '0'; c.style.transform = 'translateX(-20px)'; setTimeout(() => { document.getElementById('tickerEmoji').textContent = q.emoji; document.getElementById('tickerQuoteText').textContent = q.text; document.getElementById('tickerQuoteSource').textContent = q.source; c.style.opacity = '1'; c.style.transform = 'translateX(0)'; document.querySelectorAll('.ticker-dot').forEach((d, j) => { d.classList.toggle('active', j === i); }); }, 300); currentQuoteIndex = i; }
+        function nextQuote() { updateQuote((currentQuoteIndex + 1) % tickerQuotes.length); resetAutoRotation(); }
+        function prevQuote() { updateQuote((currentQuoteIndex - 1 + tickerQuotes.length) % tickerQuotes.length); resetAutoRotation(); }
+        function goToQuote(i) { updateQuote(i); resetAutoRotation(); }
+        function startAutoRotation() { tickerInterval = setInterval(nextQuote, 6000); }
+        function resetAutoRotation() { clearInterval(tickerInterval); startAutoRotation(); }
+        function closeCosmicTicker() { document.getElementById('cosmicTicker').classList.add('hidden'); clearInterval(tickerInterval); }
+        document.addEventListener('DOMContentLoaded', initTicker);
+        
+        function closePriceTicker() { document.getElementById('priceTicker').classList.add('hidden'); }
+        
+        function makeDraggable(el) { if (!el) return; let isDragging = false, startX, startY, initialX, initialY; el.addEventListener('mousedown', start); document.addEventListener('mousemove', drag); document.addEventListener('mouseup', stop); el.addEventListener('touchstart', start, { passive: false }); document.addEventListener('touchmove', drag, { passive: false }); document.addEventListener('touchend', stop); function start(e) { if (e.target.tagName === 'BUTTON' || e.target.tagName === 'A' || e.target.closest('button') || e.target.closest('a')) return; isDragging = true; if (e.type === 'touchstart') { startX = e.touches[0].clientX; startY = e.touches[0].clientY; } else { startX = e.clientX; startY = e.clientY; } const rect = el.getBoundingClientRect(); initialX = rect.left; initialY = rect.top; el.style.bottom = 'auto'; el.style.right = 'auto'; el.style.left = initialX + 'px'; el.style.top = initialY + 'px'; e.preventDefault(); } function drag(e) { if (!isDragging) return; let cX, cY; if (e.type === 'touchmove') { cX = e.touches[0].clientX; cY = e.touches[0].clientY; } else { cX = e.clientX; cY = e.clientY; } let nX = initialX + (cX - startX), nY = initialY + (cY - startY); const rect = el.getBoundingClientRect(); nX = Math.max(0, Math.min(nX, window.innerWidth - rect.width)); nY = Math.max(0, Math.min(nY, window.innerHeight - rect.height)); el.style.left = nX + 'px'; el.style.top = nY + 'px'; e.preventDefault(); } function stop() { isDragging = false; } }
+        document.addEventListener('DOMContentLoaded', function() { makeDraggable(document.getElementById('priceTicker')); });
+        
+        let fontSize = 100;
+        function toggleAccessibilityMenu() { document.getElementById('accessibility-menu').classList.toggle('active'); }
+        function changeFontSize(d) { fontSize += d * 10; fontSize = Math.max(80, Math.min(150, fontSize)); document.body.style.fontSize = fontSize + '%'; }
+        function toggleHighContrast() { document.body.classList.toggle('high-contrast'); document.body.classList.remove('grayscale'); }
+        function toggleGrayscale() { document.body.classList.toggle('grayscale'); document.body.classList.remove('high-contrast'); }
+        function toggleUnderlineLinks() { document.body.classList.toggle('underline-links'); }
+        function resetAccessibility() { fontSize = 100; document.body.style.fontSize = '100%'; document.body.classList.remove('high-contrast', 'grayscale', 'underline-links'); }
+        function toggleTeaser() { document.getElementById('teaserToggle').classList.toggle('open'); document.getElementById('teaserContent').classList.toggle('open'); }
+        
+        document.getElementById('storyForm').addEventListener('submit', async function(e) { e.preventDefault(); const fd = new FormData(this); try { await fetch('https://api.web3forms.com/submit', { method: 'POST', body: fd }); document.getElementById('storyForm').style.display = 'none'; document.getElementById('formSuccess').style.display = 'block'; } catch (err) { console.error('Error:', err); } });
+        
+        // 🎧 AUDIOBOOK PLAYER
+        let currentChapter = 0;
+        const audios = [document.getElementById('audio0'), document.getElementById('audio1')];
+        const durations = ['2:24', '2:46'];
+        const playBtn = document.getElementById('playBtn');
+        const playIcon = document.getElementById('playIcon');
+        const progressFill = document.getElementById('progressFill');
+        const currentTimeEl = document.getElementById('currentTime');
+        const durationEl = document.getElementById('duration');
+        let isPlaying = false;
+
+        function switchChapter(index) {
+            if (isPlaying) { audios[currentChapter].pause(); isPlaying = false; playIcon.innerHTML = '<path d="M8 5v14l11-7z"/>'; playBtn.classList.remove('playing'); }
+            document.querySelectorAll('.chapter-tab').forEach((tab, i) => { tab.classList.toggle('active', i === index); });
+            document.querySelectorAll('.chapter-content').forEach((content, i) => { content.classList.toggle('active', i === index); });
+            progressFill.style.width = '0%'; currentTimeEl.textContent = '0:00'; durationEl.textContent = durations[index]; currentChapter = index;
+        }
+
+        function togglePlay() {
+            const audio = audios[currentChapter];
+            if (isPlaying) { audio.pause(); playIcon.innerHTML = '<path d="M8 5v14l11-7z"/>'; playBtn.classList.remove('playing'); }
+            else { audio.play(); playIcon.innerHTML = '<path d="M6 4h4v16H6zm8 0h4v16h-4z"/>'; playBtn.classList.add('playing'); }
+            isPlaying = !isPlaying;
+        }
+
+        function formatTimeAudio(seconds) { const mins = Math.floor(seconds / 60); const secs = Math.floor(seconds % 60); return mins + ':' + secs.toString().padStart(2, '0'); }
+
+        audios.forEach((audio, index) => {
+            audio.addEventListener('loadedmetadata', () => { if (index === currentChapter) { durationEl.textContent = formatTimeAudio(audio.duration); } });
+            audio.addEventListener('timeupdate', () => { if (index === currentChapter) { const progress = (audio.currentTime / audio.duration) * 100; progressFill.style.width = progress + '%'; currentTimeEl.textContent = formatTimeAudio(audio.currentTime); } });
+            audio.addEventListener('ended', () => { if (index === currentChapter) { isPlaying = false; playIcon.innerHTML = '<path d="M8 5v14l11-7z"/>'; playBtn.classList.remove('playing'); progressFill.style.width = '0%'; } });
+        });
+
+        function seekAudio(e) { const audio = audios[currentChapter]; const rect = e.target.getBoundingClientRect(); const percent = (e.clientX - rect.left) / rect.width; audio.currentTime = percent * audio.duration; }
+        function setVolume(value) { audios.forEach(audio => { audio.volume = value / 100; }); }
+    </script>
+</body>
+</html>
