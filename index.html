@@ -855,7 +855,8 @@
         </section>
 
         <section class="story-section" id="share">
-            <div class="story-badge"><span>🎬</span><span>Got a Story?</span></div>
+            <button class="teaser-badge" id="storyToggle" onclick="toggleStory()" style="cursor:pointer;"><span>🎬</span><span>Got a Story?</span><span class="arrow">👀</span></button>
+            <div id="storyContent" style="max-height:0; opacity:0; overflow:hidden; transition: max-height 0.5s ease, opacity 0.5s ease;">
             <h2 class="story-title">Your Story Could Become a Video!</h2>
             <p class="story-subtitle">Had a crazy date? Bizarre? Hilariously bad?<br>Send it to us and your story might go on our channel!</p>
             <div class="story-reward"><span>🌟</span><span>Your story will be featured with a shoutout</span></div>
@@ -868,6 +869,7 @@
                 <p class="form-note">* Your story will be kept confidential and only published with your permission</p>
             </form>
             <div class="form-success" id="formSuccess"><h3>✅ Thank You!</h3><p>Your story was received successfully.<br>If it's selected, we'll be in touch!</p></div>
+            </div>
         </section>
 
         <section class="buy-section" id="buy">
@@ -1057,6 +1059,13 @@
         function toggleUnderlineLinks() { document.body.classList.toggle('underline-links'); }
         function resetAccessibility() { fontSize = 100; document.body.style.fontSize = '100%'; document.body.classList.remove('high-contrast', 'grayscale', 'underline-links'); }
         function toggleTeaser() { document.getElementById('teaserToggle').classList.toggle('open'); document.getElementById('teaserContent').classList.toggle('open'); }
+        function toggleStory() { 
+            var c = document.getElementById('storyContent'); 
+            var b = document.getElementById('storyToggle');
+            b.classList.toggle('open');
+            if (c.style.maxHeight === '0px' || c.style.maxHeight === '0') { c.style.maxHeight = '2000px'; c.style.opacity = '1'; } 
+            else { c.style.maxHeight = '0'; c.style.opacity = '0'; }
+        }
         
         document.getElementById('storyForm').addEventListener('submit', async function(e) { e.preventDefault(); const fd = new FormData(this); try { await fetch('https://api.web3forms.com/submit', { method: 'POST', body: fd }); document.getElementById('storyForm').style.display = 'none'; document.getElementById('formSuccess').style.display = 'block'; } catch (err) { console.error('Error:', err); } });
         
