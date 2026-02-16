@@ -623,6 +623,136 @@
         </section>
 
         <!-- 📋 FOOTER -->
+
+        <!-- 🎧 AUDIOBOOK TEASER - ÉDITION FRANÇAISE -->
+        <style>
+        .audiobook-teaser-section { padding: 80px 20px; background: transparent; position: relative; overflow: hidden; }
+        .audiobook-teaser-section::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-image: radial-gradient(circle at 20% 30%, rgba(220,38,38,0.08) 0%, transparent 50%), radial-gradient(circle at 80% 70%, rgba(212,175,55,0.06) 0%, transparent 50%); animation: pulseGlowAudio 8s ease-in-out infinite; pointer-events: none; }
+        @keyframes pulseGlowAudio { 0%, 100% { opacity: 0.5; } 50% { opacity: 1; } }
+        .teaser-container-audio { max-width: 800px; margin: 0 auto; position: relative; z-index: 2; }
+        .teaser-header-audio { text-align: center; margin-bottom: 40px; }
+        .teaser-badge-audio { display: inline-flex; align-items: center; gap: 8px; background: rgba(26,26,26,0.95); border: 1px solid var(--accent-gold); padding: 10px 20px; border-radius: 50px; font-size: 14px; color: var(--accent-gold); margin-bottom: 20px; backdrop-filter: blur(10px); }
+        .teaser-title-audio { font-size: 2.5rem; font-weight: 900; color: #fff; margin: 0 0 10px 0; text-shadow: 0 0 40px rgba(220,38,38,0.4); }
+        .teaser-title-audio span { color: var(--accent-red); }
+        .teaser-subtitle-audio { font-size: 1.1rem; color: rgba(255,255,255,0.7); font-weight: 300; }
+        .chapter-tabs { display: flex; justify-content: center; gap: 15px; margin-bottom: 30px; flex-wrap: wrap; }
+        .chapter-tab { background: rgba(26,26,26,0.8); border: 1px solid rgba(255,255,255,0.1); color: rgba(255,255,255,0.7); padding: 14px 28px; border-radius: 50px; cursor: pointer; transition: all 0.3s ease; font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 500; backdrop-filter: blur(10px); }
+        .chapter-tab:hover { background: rgba(220,38,38,0.2); border-color: rgba(220,38,38,0.3); color: #fff; }
+        .chapter-tab.active { background: var(--gradient-red); border-color: transparent; color: #fff; box-shadow: var(--shadow-glow); }
+        .chapter-tab-icon { margin-right: 6px; }
+        .player-card { background: rgba(26,26,26,0.9); border-radius: 24px; padding: 30px; border: 1px solid rgba(220,38,38,0.2); box-shadow: 0 20px 60px rgba(0,0,0,0.4), 0 0 60px rgba(220,38,38,0.1); position: relative; overflow: hidden; backdrop-filter: blur(10px); }
+        .chapter-content { display: none; position: relative; z-index: 1; }
+        .chapter-content.active { display: block; animation: fadeInAudio 0.4s ease; }
+        @keyframes fadeInAudio { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .chapter-info { display: flex; align-items: center; gap: 20px; margin-bottom: 25px; }
+        .chapter-icon { width: 70px; height: 70px; background: var(--gradient-red); border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 32px; box-shadow: var(--shadow-glow); flex-shrink: 0; }
+        .chapter-icon.iguana { background: linear-gradient(135deg, #15803d, #22c55e, #4ade80); box-shadow: 0 10px 30px rgba(34,197,94,0.4); position: relative; overflow: visible; }
+        .chapter-icon.iguana::before { content: ''; position: absolute; top: 50%; left: 50%; width: 100%; height: 100%; border-radius: 16px; border: 2px solid rgba(74,222,128,0.6); transform: translate(-50%, -50%); animation: radarPulse 2s ease-out infinite; }
+        @keyframes radarPulse { 0% { width: 100%; height: 100%; opacity: 1; } 100% { width: 180%; height: 180%; opacity: 0; } }
+        .chapter-details { flex: 1; }
+        .chapter-label { font-size: 12px; color: var(--accent-gold); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 5px; }
+        .chapter-name { font-size: 1.4rem; font-weight: 700; color: #fff; margin: 0 0 5px 0; }
+        .chapter-quote { font-size: 0.95rem; color: rgba(255,255,255,0.6); font-style: italic; }
+        .iguana-promo { display: inline-flex; align-items: center; gap: 8px; background: linear-gradient(135deg, rgba(34,197,94,0.25), rgba(74,222,128,0.1)); border: 1px solid rgba(74,222,128,0.5); padding: 10px 18px; border-radius: 50px; font-size: 13px; color: #4ade80; margin-top: 12px; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 0 20px rgba(34,197,94,0.2); animation: iguanaGlow 2s ease-in-out infinite; }
+        @keyframes iguanaGlow { 0%, 100% { box-shadow: 0 0 20px rgba(34,197,94,0.2); } 50% { box-shadow: 0 0 30px rgba(34,197,94,0.4); } }
+        .iguana-promo:hover { background: linear-gradient(135deg, rgba(34,197,94,0.35), rgba(74,222,128,0.2)); transform: translateY(-2px); }
+        .audio-player { background: rgba(0,0,0,0.3); border-radius: 16px; padding: 20px; }
+        .player-controls { display: flex; align-items: center; gap: 15px; }
+        .play-button { width: 60px; height: 60px; background: var(--gradient-red); border: none; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; box-shadow: var(--shadow-glow); flex-shrink: 0; }
+        .play-button:hover { transform: scale(1.1); box-shadow: 0 12px 35px rgba(220,38,38,0.6); }
+        .play-button svg { width: 24px; height: 24px; fill: white; margin-left: 3px; }
+        .play-button.playing svg { margin-left: 0; }
+        .progress-container { flex: 1; }
+        .time-display { display: flex; justify-content: space-between; font-size: 12px; color: rgba(255,255,255,0.5); margin-bottom: 8px; }
+        .progress-bar { width: 100%; height: 6px; background: rgba(255,255,255,0.1); border-radius: 3px; cursor: pointer; position: relative; overflow: hidden; }
+        .progress-fill { height: 100%; background: linear-gradient(90deg, var(--accent-red), var(--accent-gold)); border-radius: 3px; width: 0%; transition: width 0.1s linear; position: relative; }
+        .progress-fill::after { content: ''; position: absolute; right: -7px; top: 50%; transform: translateY(-50%); width: 14px; height: 14px; background: var(--accent-gold); border-radius: 50%; box-shadow: 0 0 10px rgba(212,175,55,0.5); }
+        .volume-control { display: flex; align-items: center; gap: 10px; }
+        .volume-icon { font-size: 18px; cursor: pointer; }
+        .volume-slider { width: 80px; height: 4px; background: rgba(255,255,255,0.2); border-radius: 2px; appearance: none; cursor: pointer; }
+        .volume-slider::-webkit-slider-thumb { appearance: none; width: 12px; height: 12px; background: var(--accent-gold); border-radius: 50%; cursor: pointer; }
+        .teaser-cta-audio { margin-top: 30px; text-align: center; }
+        .cta-text-audio { font-size: 1.1rem; color: rgba(255,255,255,0.8); margin-bottom: 15px; }
+        .cta-text-audio span { color: var(--accent-gold); font-weight: 700; }
+        .cta-button-audio { display: inline-flex; align-items: center; gap: 10px; background: var(--gradient-red); color: white; font-size: 1.1rem; font-weight: 700; padding: 16px 40px; border: none; border-radius: 50px; cursor: pointer; transition: all 0.3s ease; text-decoration: none; box-shadow: var(--shadow-glow); }
+        .cta-button-audio:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 15px 40px rgba(220,38,38,0.5); }
+        .teaser-features-audio { display: flex; justify-content: center; gap: 30px; margin-top: 25px; flex-wrap: wrap; }
+        .teaser-feature-audio { display: flex; align-items: center; gap: 8px; font-size: 13px; color: rgba(255,255,255,0.6); }
+        @media (max-width: 600px) {
+            .teaser-title-audio { font-size: 1.8rem; }
+            .chapter-tabs { flex-direction: column; gap: 8px; }
+            .chapter-tab { width: 100%; text-align: center; }
+            .chapter-info { flex-direction: column; text-align: center; }
+            .player-controls { flex-wrap: wrap; justify-content: center; }
+            .progress-container { width: 100%; order: 2; margin-top: 15px; }
+            .volume-control { order: 3; margin-top: 10px; }
+            .teaser-features-audio { flex-direction: column; align-items: center; gap: 15px; }
+        }
+        </style>
+
+        <section class="audiobook-teaser-section">
+            <div class="teaser-container-audio">
+                <div class="teaser-header-audio">
+                    <div class="teaser-badge-audio"><span>🎧</span><span>Aperçu Exclusif</span></div>
+                    <h2 class="teaser-title-audio"><span>Écoutez</span> Avant de Swiper</h2>
+                    <p class="teaser-subtitle-audio">Deux chapitres. Deux désastres. Choisissez et voyez si vous survivez.</p>
+                </div>
+                <div class="chapter-tabs">
+                    <button class="chapter-tab active" onclick="switchChapter(0)"><span class="chapter-tab-icon">🔥</span>Trop Chaud</button>
+                    <button class="chapter-tab" onclick="switchChapter(1)"><span class="chapter-tab-icon">🦎</span>Here 4 Iguana</button>
+                </div>
+                <div class="player-card">
+                    <div class="chapter-content active" id="chapter0">
+                        <div class="chapter-info">
+                            <div class="chapter-icon">🔥</div>
+                            <div class="chapter-details">
+                                <div class="chapter-label">Chapitre 15</div>
+                                <h3 class="chapter-name">Trop Chaud</h3>
+                                <p class="chapter-quote">Un rendez-vous qui a commencé innocent et s'est terminé par « Pourquoi j'ai dit ÇA ?! »</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chapter-content" id="chapter1">
+                        <div class="chapter-info">
+                            <div class="chapter-icon iguana">🦎</div>
+                            <div class="chapter-details">
+                                <div class="chapter-label">Chapitre 94</div>
+                                <h3 class="chapter-name">Here 4 Iguana</h3>
+                                <p class="chapter-quote">Un mauvais mot, une créature exotique, et une prise de conscience arrivée bien trop tard.</p>
+                                <a href="https://i4iguana.com" target="_blank" class="iguana-promo"><span>🦎</span><span>Découvrez l'appli née de cette histoire →</span></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="audio-player">
+                        <div class="player-controls">
+                            <button class="play-button" id="playBtn" onclick="togglePlay()">
+                                <svg viewBox="0 0 24 24" id="playIcon"><path d="M8 5v14l11-7z"/></svg>
+                            </button>
+                            <div class="progress-container">
+                                <div class="time-display"><span id="currentTime">0:00</span><span id="duration">0:00</span></div>
+                                <div class="progress-bar" onclick="seekAudio(event)"><div class="progress-fill" id="progressFill"></div></div>
+                            </div>
+                            <div class="volume-control">
+                                <span class="volume-icon">🔊</span>
+                                <input type="range" class="volume-slider" min="0" max="100" value="80" onchange="setVolume(this.value)">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="teaser-cta-audio">
+                        <p class="cta-text-audio">🔥 C'était juste 2 sur <span>101 histoires</span>. Si ça vous a touché — attendez la suite.</p>
+                        <a href="#buy" class="cta-button-audio">Bientôt en Français 🇫🇷</a>
+                        <div class="teaser-features-audio">
+                            <div class="teaser-feature-audio"><span>⏱️</span><span>+4 heures de chaos</span></div>
+                            <div class="teaser-feature-audio"><span>📱</span><span>Écoutez partout</span></div>
+                            <div class="teaser-feature-audio"><span>♾️</span><span>À vous pour toujours</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <audio id="audio0" preload="metadata"><source src="audio/Chapter_015_Trop_Chaud_FR.mp3" type="audio/mpeg"></audio>
+        <audio id="audio1" preload="metadata"><source src="audio/Chapter_094_Here_4_Iguana_FR.mp3" type="audio/mpeg"></audio>
         <footer class="footer">
             <div class="footer-links">
                 <a href="/terms.html">Conditions & Confidentialité</a><span class="footer-divider">|</span>
@@ -703,6 +833,44 @@
                 }, 300);
             }
         }, 8000);
+
+        // 🎧 AUDIOBOOK PLAYER
+        let currentChapter = 0;
+        const audios = [document.getElementById('audio0'), document.getElementById('audio1')];
+        const playBtn = document.getElementById('playBtn');
+        const playIcon = document.getElementById('playIcon');
+        const progressFill = document.getElementById('progressFill');
+        const currentTimeEl = document.getElementById('currentTime');
+        const durationEl = document.getElementById('duration');
+        let isPlaying = false;
+
+        function switchChapter(index) {
+            if (isPlaying) { audios[currentChapter].pause(); isPlaying = false; playIcon.innerHTML = '<path d="M8 5v14l11-7z"/>'; playBtn.classList.remove('playing'); }
+            document.querySelectorAll('.chapter-tab').forEach((tab, i) => tab.classList.toggle('active', i === index));
+            document.querySelectorAll('.chapter-content').forEach((content, i) => content.classList.toggle('active', i === index));
+            progressFill.style.width = '0%'; currentTimeEl.textContent = '0:00'; currentChapter = index;
+            if (audios[index].duration) durationEl.textContent = formatTimeAudio(audios[index].duration);
+        }
+
+        function togglePlay() {
+            const audio = audios[currentChapter];
+            if (isPlaying) { audio.pause(); playIcon.innerHTML = '<path d="M8 5v14l11-7z"/>'; playBtn.classList.remove('playing'); }
+            else { audio.play(); playIcon.innerHTML = '<path d="M6 4h4v16H6zm8 0h4v16h-4z"/>'; playBtn.classList.add('playing'); }
+            isPlaying = !isPlaying;
+        }
+
+        function formatTimeAudio(seconds) { const mins = Math.floor(seconds / 60); const secs = Math.floor(seconds % 60); return mins + ':' + secs.toString().padStart(2, '0'); }
+
+        audios.forEach((audio, index) => {
+            if (audio) {
+                audio.addEventListener('loadedmetadata', () => { if (index === currentChapter) durationEl.textContent = formatTimeAudio(audio.duration); });
+                audio.addEventListener('timeupdate', () => { if (index === currentChapter) { progressFill.style.width = (audio.currentTime / audio.duration * 100) + '%'; currentTimeEl.textContent = formatTimeAudio(audio.currentTime); } });
+                audio.addEventListener('ended', () => { if (index === currentChapter) { isPlaying = false; playIcon.innerHTML = '<path d="M8 5v14l11-7z"/>'; playBtn.classList.remove('playing'); progressFill.style.width = '0%'; } });
+            }
+        });
+
+        function seekAudio(e) { const audio = audios[currentChapter]; const rect = e.target.getBoundingClientRect(); audio.currentTime = ((e.clientX - rect.left) / rect.width) * audio.duration; }
+        function setVolume(value) { audios.forEach(a => { if(a) a.volume = value / 100; }); }
     </script>
 </body>
 </html>
