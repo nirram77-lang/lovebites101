@@ -529,7 +529,8 @@
 
         <!-- 🎬 STORY SECTION -->
         <section class="story-section" id="share">
-            <div class="story-badge"><span>🎬</span><span>Une Histoire à Raconter ?</span></div>
+            <button class="story-badge" id="storyToggle" onclick="toggleStory()" style="cursor:pointer; background:none; border:1px solid var(--accent-gold); padding:10px 20px; border-radius:50px; color:var(--accent-gold); font-family:'Poppins',sans-serif; font-size:14px; display:inline-flex; align-items:center; gap:8px;"><span>🎬</span><span>Une Histoire à Raconter ?</span><span class="arrow" id="storyArrow">👀</span></button>
+            <div id="storyContent" style="max-height:0; opacity:0; overflow:hidden; transition: max-height 0.5s ease, opacity 0.5s ease;">
             <h2 class="story-title">Votre Histoire Pourrait Devenir une Vidéo !</h2>
             <p class="story-subtitle">Vous avez eu un rendez-vous dingue ? Bizarre ? Hilarant ?<br>Envoyez-le nous et votre histoire pourrait passer sur notre chaîne !</p>
             <div class="story-reward"><span>🌟</span><span>Votre histoire sera mise en avant avec un shoutout</span></div>
@@ -543,6 +544,7 @@
                 <p class="form-note">* Votre histoire restera confidentielle et ne sera publiée qu'avec votre permission</p>
             </form>
             <div class="form-success" id="formSuccess"><h3>✅ Merci !</h3><p>Votre histoire a bien été reçue.<br>Si elle est sélectionnée, nous vous contacterons !</p></div>
+            </div>
         </section>
 
         <!-- 🛒 BUY SECTION - COMING SOON + NOTIFY ME -->
@@ -559,7 +561,7 @@
                     <div class="buy-icon">📚</div>
                     <h3 class="buy-title">Livre Imprimé</h3>
                     <p class="buy-desc">Édition française brochée</p>
-                    <div class="buy-price" style="color:var(--text-secondary);">—</div>
+                    <div class="buy-price" style="color:var(--accent-gold);">€12,90</div>
                     <div class="buy-note">Bientôt disponible !</div>
                     <div class="buy-button-wrapper">
                         <span class="buy-button coming-soon">Bientôt Disponible</span>
@@ -593,7 +595,7 @@
                     <div class="buy-icon">🇬🇧</div>
                     <h3 class="buy-title">Version Anglaise</h3>
                     <p class="buy-desc">Livre, eBook & Audio disponibles</p>
-                    <div class="buy-price">$2.99 - $14.90</div>
+                    <div class="buy-price">$4.99 – $14.40</div>
                     <div class="buy-note">Tous formats disponibles !</div>
                     <div class="buy-button-wrapper">
                         <a href="https://funnydates101.com" class="buy-button" target="_blank">Voir la Version Anglaise</a>
@@ -791,6 +793,19 @@
         
         // Teaser toggle
         function toggleTeaser() { document.getElementById('teaserToggle').classList.toggle('open'); document.getElementById('teaserContent').classList.toggle('open'); }
+        
+        // Story toggle
+        function toggleStory() {
+            var c = document.getElementById('storyContent');
+            var arrow = document.getElementById('storyArrow');
+            if (c.style.maxHeight === '0px' || c.style.maxHeight === '0' || c.style.maxHeight === '') {
+                c.style.maxHeight = '2000px'; c.style.opacity = '1';
+                if (arrow) arrow.textContent = '🔼';
+            } else {
+                c.style.maxHeight = '0'; c.style.opacity = '0';
+                if (arrow) arrow.textContent = '👀';
+            }
+        }
         
         // Story form
         document.getElementById('storyForm').addEventListener('submit', async function(e) { 
