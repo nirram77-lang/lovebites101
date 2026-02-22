@@ -211,7 +211,7 @@
         .buy-card.featured { border-color: var(--accent-red); background: linear-gradient(180deg, rgba(220,38,38,0.12) 0%, var(--bg-card) 100%); box-shadow: var(--shadow-glow); }
         .buy-card.gold-card { border: 2px solid #d4af37; background: linear-gradient(180deg, rgba(212,175,55,0.1) 0%, var(--bg-card) 100%); box-shadow: 0 0 30px rgba(212,175,55,0.2); }
         .buy-card.gold-card:hover { border-color: #d4af37; box-shadow: 0 0 40px rgba(212,175,55,0.35); }
-        .buy-card-badge { position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: var(--gradient-red); color: white; padding: 5px 18px; border-radius: 20px; font-size: 12px; font-weight: 700; white-space: nowrap; }
+        .buy-card-badge { position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: var(--gradient-red); color: white; padding: 5px 18px; border-radius: 20px; font-size: 12px; font-weight: 700; white-space: nowrap; z-index: 10; }
         .buy-icon { font-size: 48px; margin-bottom: 15px; margin-top: 10px; }
         .buy-title { font-size: 22px; font-weight: 700; margin-bottom: 8px; }
         .buy-desc { color: var(--text-secondary); font-size: 14px; margin-bottom: 15px; }
@@ -561,8 +561,8 @@
             <div class="buy-grid">
                 <!-- Libro Impreso -->
                 <div class="buy-card gold-card">
-                    <div class="buy-card-badge" style="background:rgba(212,175,55,0.3); color:var(--accent-gold);">🚀 Próximamente</div>
-                    <div class="buy-icon">📚</div>
+                    <div class="buy-card-badge" style="background:var(--gradient-gold); color:#000;">🚀 Próximamente</div>
+
                     <h3 class="buy-title">Libro Impreso</h3>
                     <p class="buy-desc">Edición española en papel</p>
                     <div class="buy-price" style="color:var(--text-secondary);">—</div>
@@ -602,7 +602,7 @@
                     <div class="buy-icon">🇬🇧</div>
                     <h3 class="buy-title">Versión Inglesa</h3>
                     <p class="buy-desc">Libro, eBook & Audio disponibles</p>
-                    <div class="buy-price">$4.99 – $14.40</div>
+                    <div class="buy-price">$4.99 – $12.99</div>
                     <div class="buy-note">¡Todos los formatos disponibles!</div>
                     <div class="buy-button-wrapper">
                         <a href="https://www.amazon.com/dp/B0G46NS5VG" class="buy-button" target="_blank">Ver Versión Inglesa</a>
