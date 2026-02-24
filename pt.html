@@ -198,13 +198,17 @@
         .buy-hook { text-align: center; margin-bottom: 60px; }
         .buy-subtitle { text-align: center; color: var(--text-secondary); font-size: 16px; margin-bottom: 50px; margin-top: -40px; }
         .buy-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; max-width: 1100px; margin: 0 auto; }
-        .buy-card { background: var(--bg-card); border: 2px solid rgba(255,255,255,0.1); border-radius: 20px; padding: 22px 16px; text-align: center; display: flex; flex-direction: column; position: relative; transition: all 0.3s; }
+        .buy-card { background: var(--bg-card); border: 2px solid rgba(255,255,255,0.1); border-radius: 20px; padding: 30px 16px 22px; text-align: center; display: flex; flex-direction: column; position: relative; transition: all 0.3s; overflow: visible; }
         @media (max-width: 900px) { .buy-grid { grid-template-columns: repeat(2, 1fr); } }
         @media (max-width: 500px) { .buy-grid { grid-template-columns: 1fr; } }
         .buy-card:hover { transform: translateY(-5px); }
-        .buy-card.featured { border-color: var(--accent-red); background: linear-gradient(180deg, rgba(220,38,38,0.12) 0%, var(--bg-card) 100%); box-shadow: var(--shadow-glow); }
-        .buy-card.gold-card { border: 2px solid #d4af37; background: linear-gradient(180deg, rgba(212,175,55,0.1) 0%, var(--bg-card) 100%); box-shadow: 0 0 30px rgba(212,175,55,0.2); }
-        .buy-card-badge { position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: var(--gradient-red); color: white; padding: 5px 18px; border-radius: 20px; font-size: 12px; font-weight: 700; white-space: nowrap; z-index: 10; }
+        .buy-card.card-red  { border: 2px solid var(--accent-red);  background: linear-gradient(180deg, rgba(220,38,38,0.12) 0%, var(--bg-card) 100%); box-shadow: 0 0 25px rgba(220,38,38,0.25); }
+        .buy-card.card-red:hover  { box-shadow: var(--shadow-glow); }
+        .buy-card.card-gold { border: 2px solid var(--accent-gold); background: linear-gradient(180deg, rgba(212,175,55,0.1)  0%, var(--bg-card) 100%); box-shadow: 0 0 25px rgba(212,175,55,0.2); }
+        .buy-card.card-gold:hover { box-shadow: var(--shadow-gold); }
+        .buy-card-badge { position: absolute; top: -15px; left: 50%; transform: translateX(-50%); padding: 5px 18px; border-radius: 20px; font-size: 12px; font-weight: 700; white-space: nowrap; z-index: 20; }
+        .badge-red  { background: var(--gradient-red);  color: #fff; }
+        .badge-gold { background: var(--gradient-gold); color: #000; }
         .buy-icon { font-size: 40px; margin-bottom: 10px; margin-top: 8px; }
         .buy-title { font-size: 18px; font-weight: 700; margin-bottom: 6px; }
         .buy-desc { color: var(--text-secondary); font-size: 13px; margin-bottom: 12px; }
@@ -406,7 +410,7 @@
             <div style="font-size:13px; color:#333; margin-bottom:8px;">📱 eBook Kindle</div>
             <div style="font-family:'Playfair Display',serif; font-size:22px; color:#dc2626; font-weight:900; margin:8px 0;">R$19,90</div>
             <div style="font-size:12px; color:#555; margin-bottom:10px;">Disponível no Kindle Unlimited!</div>
-            <a href="https://www.amazon.com.br/dp/B0G528JZGS" target="_blank" style="display:inline-block; background:#1a1a1a; color:#fff; border:none; padding:10px 24px; border-radius:25px; font-size:14px; font-weight:700; cursor:pointer; text-decoration:none;">🛒 Comprar →</a>
+            <a href="https://www.amazon.com.br/dp/B0GPWNDXDW" target="_blank" style="display:inline-block; background:#1a1a1a; color:#fff; border:none; padding:10px 24px; border-radius:25px; font-size:14px; font-weight:700; cursor:pointer; text-decoration:none;">🛒 Comprar →</a>
         </a>
         <div style="font-size:10px; color:#666; margin-top:8px;">💡 Me arraste para onde quiser!</div>
     </div>
@@ -559,22 +563,22 @@
             <h2 class="section-title">Onde Comprar?</h2>
             <p class="buy-subtitle">Edição brasileira — eBook disponível agora!</p>
             <div class="buy-grid">
-                <!-- eBook -->
-                <div class="buy-card featured">
-                    <div class="buy-card-badge">🇧🇷 Brasil</div>
+                <!-- Card 1: eBook — RED -->
+                <div class="buy-card card-red">
+                    <div class="buy-card-badge badge-red">🇧🇷 Brasil</div>
                     <div class="buy-icon">📱</div>
                     <h3 class="buy-title">eBook</h3>
                     <p class="buy-desc">Edição Kindle em Português</p>
                     <div class="buy-price">R$19,90</div>
                     <div class="buy-note">⚡ Download Instantâneo!</div>
                     <div class="buy-button-wrapper">
-                        <a href="https://www.amazon.com.br/dp/B0G528JZGS" class="buy-button amazon" target="_blank">Comprar no Kindle</a>
+                        <a href="https://www.amazon.com.br/dp/B0GPWNDXDW" class="buy-button amazon" target="_blank">Comprar no Kindle</a>
                         <p class="buy-delivery">⚡ Entrega Instantânea</p>
                     </div>
                 </div>
-                <!-- Livro Impresso -->
-                <div class="buy-card gold-card">
-                    <div class="buy-card-badge" style="background:var(--gradient-gold); color:#000;">🚀 Em Breve</div>
+                <!-- Card 2: Livro Impresso — GOLD -->
+                <div class="buy-card card-gold">
+                    <div class="buy-card-badge badge-gold">🚀 Em Breve</div>
                     <div class="buy-icon">📚</div>
                     <h3 class="buy-title">Livro Impresso</h3>
                     <p class="buy-desc">Edição impressa em Português</p>
@@ -585,9 +589,9 @@
                         <p class="buy-delivery">📦 Frete para todo o Brasil</p>
                     </div>
                 </div>
-                <!-- Audiobook -->
-                <div class="buy-card gold-card">
-                    <div class="buy-card-badge" style="background:rgba(212,175,55,0.3); color:var(--accent-gold);">🚀 Em Breve</div>
+                <!-- Card 3: Audiobook — RED -->
+                <div class="buy-card card-red">
+                    <div class="buy-card-badge badge-red">🚀 Em Breve</div>
                     <div class="buy-icon">🎧</div>
                     <h3 class="buy-title">Audiobook</h3>
                     <p class="buy-desc">+4 horas de encontros desastrosos!</p>
@@ -598,9 +602,9 @@
                         <p class="buy-delivery">📱 Ouça em qualquer lugar</p>
                     </div>
                 </div>
-                <!-- Internacional -->
-                <div class="buy-card">
-                    <div class="buy-card-badge">🌍 Internacional</div>
+                <!-- Card 4: Internacional — GOLD -->
+                <div class="buy-card card-gold">
+                    <div class="buy-card-badge badge-gold">🌍 Internacional</div>
                     <div class="buy-icon">📖</div>
                     <h3 class="buy-title">eBook em Inglês</h3>
                     <p class="buy-desc">Edição original em inglês</p>
