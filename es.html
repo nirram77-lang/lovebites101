@@ -37,6 +37,7 @@
     <link rel="alternate" hreflang="he" href="https://funnydates101.co.il">
     <link rel="alternate" hreflang="fr" href="https://funnydates101.com/fr">
     <link rel="alternate" hreflang="es" href="https://funnydates101.com/es">
+    <link rel="alternate" hreflang="pt-BR" href="https://funnydates101.com/pt">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -205,13 +206,21 @@
         .buy-section { padding: 100px 20px; }
         .buy-hook { text-align: center; margin-bottom: 60px; }
         .buy-subtitle { text-align: center; color: var(--text-secondary); font-size: 16px; margin-bottom: 50px; margin-top: -40px; }
-        .buy-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 25px; max-width: 1000px; margin: 0 auto; }
-        .buy-card { background: var(--bg-card); border: 2px solid rgba(255,255,255,0.1); border-radius: 24px; padding: 30px 25px; text-align: center; display: flex; flex-direction: column; position: relative; transition: all 0.3s; }
+        .buy-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; max-width: 1100px; margin: 0 auto; }
+        @media (max-width: 900px) { .buy-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 500px) { .buy-grid { grid-template-columns: 1fr; } }
+        .buy-card { background: var(--bg-card); border: 2px solid rgba(255,255,255,0.1); border-radius: 20px; padding: 30px 16px 22px; text-align: center; display: flex; flex-direction: column; position: relative; transition: all 0.3s; overflow: visible; }
         .buy-card:hover { transform: translateY(-5px); }
         .buy-card.featured { border-color: var(--accent-red); background: linear-gradient(180deg, rgba(220,38,38,0.12) 0%, var(--bg-card) 100%); box-shadow: var(--shadow-glow); }
         .buy-card.gold-card { border: 2px solid #d4af37; background: linear-gradient(180deg, rgba(212,175,55,0.1) 0%, var(--bg-card) 100%); box-shadow: 0 0 30px rgba(212,175,55,0.2); }
         .buy-card.gold-card:hover { border-color: #d4af37; box-shadow: 0 0 40px rgba(212,175,55,0.35); }
-        .buy-card-badge { position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: var(--gradient-red); color: white; padding: 5px 18px; border-radius: 20px; font-size: 12px; font-weight: 700; white-space: nowrap; z-index: 10; }
+        .buy-card-badge { position: absolute; top: -15px; left: 50%; transform: translateX(-50%); padding: 5px 18px; border-radius: 20px; font-size: 12px; font-weight: 700; white-space: nowrap; z-index: 20; }
+        .badge-red  { background: var(--gradient-red);  color: #fff; }
+        .badge-gold { background: var(--gradient-gold); color: #000; }
+        .buy-card.card-red  { border: 2px solid var(--accent-red);  background: linear-gradient(180deg, rgba(220,38,38,0.12) 0%, var(--bg-card) 100%); box-shadow: 0 0 25px rgba(220,38,38,0.25); }
+        .buy-card.card-red:hover  { box-shadow: var(--shadow-glow); }
+        .buy-card.card-gold { border: 2px solid var(--accent-gold); background: linear-gradient(180deg, rgba(212,175,55,0.1)  0%, var(--bg-card) 100%); box-shadow: 0 0 25px rgba(212,175,55,0.2); }
+        .buy-card.card-gold:hover { box-shadow: var(--shadow-gold); }
         .buy-icon { font-size: 48px; margin-bottom: 15px; margin-top: 10px; }
         .buy-title { font-size: 22px; font-weight: 700; margin-bottom: 8px; }
         .buy-desc { color: var(--text-secondary); font-size: 14px; margin-bottom: 15px; }
@@ -362,10 +371,11 @@
 
     <!-- 🌐 LANGUAGE SWITCHER - ES / EN / FR / HE -->
     <div class="lang-switch">
-        <a href="https://funnydates101.com" title="English"><img src="https://flagcdn.com/w40/gb.png" alt="EN" class="flag-icon"><span>EN</span></a>
-        <a href="https://funnydates101.co.il" title="עברית"><img src="https://flagcdn.com/w40/il.png" alt="IL" class="flag-icon"><span>עברית</span></a>
-        <a href="https://funnydates101.com/fr" title="Français"><img src="https://flagcdn.com/w40/fr.png" alt="FR" class="flag-icon"><span>FR</span></a>
-        <a href="#" class="active" title="Español"><img src="https://flagcdn.com/w40/es.png" alt="ES" class="flag-icon"><span>ES</span></a>
+        <a href="https://funnydates101.com" title="English" translate="no"><img src="https://flagcdn.com/w40/gb.png" alt="EN" class="flag-icon"><span translate="no">EN</span></a>
+        <a href="https://funnydates101.co.il" title="עברית" translate="no"><img src="https://flagcdn.com/w40/il.png" alt="IL" class="flag-icon"><span translate="no">עברית</span></a>
+        <a href="https://funnydates101.com/fr" title="Français" translate="no"><img src="https://flagcdn.com/w40/fr.png" alt="FR" class="flag-icon"><span translate="no">FR</span></a>
+        <a href="#" class="active" title="Español" translate="no"><img src="https://flagcdn.com/w40/es.png" alt="ES" class="flag-icon"><span translate="no">ES</span></a>
+        <a href="/pt.html" title="Português" translate="no"><img src="https://flagcdn.com/w40/br.png" alt="BR" class="flag-icon"><span translate="no">PT</span></a>
     </div>
 
     <div class="floating-hearts">
@@ -559,34 +569,35 @@
             <h2 class="section-title">¿Dónde Comprar?</h2>
             <p class="buy-subtitle">Edición española — ¡eBook disponible!</p>
             <div class="buy-grid">
-                <!-- Libro Impreso -->
-                <div class="buy-card gold-card">
-                    <div class="buy-card-badge" style="background:var(--gradient-gold); color:#000;">🚀 Próximamente</div>
-
+                <!-- Card 1: eBook — RED -->
+                <div class="buy-card card-red">
+                    <div class="buy-card-badge badge-red">🔥 Disponible Ahora</div>
+                    <div class="buy-icon">📱</div>
+                    <h3 class="buy-title">eBook</h3>
+                    <p class="buy-desc">Edición digital en español</p>
+                    <div class="buy-price">€4,99</div>
+                    <div class="buy-note">¡Amazon & Kindle Unlimited!</div>
+                    <div class="buy-button-wrapper">
+                        <a href="https://www.amazon.es/dp/B0GPN48NN4" class="buy-button amazon" target="_blank">Comprar en Amazon</a>
+                        <p class="buy-delivery">📱 Kindle · 📖 Kindle Unlimited</p>
+                    </div>
+                </div>
+                <!-- Card 2: Libro Impreso — GOLD -->
+                <div class="buy-card card-gold">
+                    <div class="buy-card-badge badge-gold">🚀 Próximamente</div>
+                    <div class="buy-icon">📚</div>
                     <h3 class="buy-title">Libro Impreso</h3>
                     <p class="buy-desc">Edición española en papel</p>
                     <div class="buy-price" style="color:var(--text-secondary);">—</div>
                     <div class="buy-note">¡Próximamente disponible!</div>
                     <div class="buy-button-wrapper">
                         <span class="buy-button coming-soon">Próximamente</span>
+                        <p class="buy-delivery">📦 Envío a toda España</p>
                     </div>
                 </div>
-                <!-- eBook -->
-                <div class="buy-card featured">
-                    <div class="buy-card-badge">🔥 Disponible Ahora</div>
-                    <div class="buy-icon">📱</div>
-                    <h3 class="buy-title">eBook</h3>
-                    <p class="buy-desc">Edición digital en español</p>
-                    <div class="buy-price">€4,99</div>
-                    <div class="buy-note">¡Disponible en Amazon & Kindle Unlimited!</div>
-                    <div class="buy-button-wrapper">
-                        <a href="https://www.amazon.es/dp/B0GPN48NN4" class="buy-button" target="_blank">Comprar en Amazon</a>
-                        <p class="buy-delivery">📱 Kindle · 📖 Kindle Unlimited</p>
-                    </div>
-                </div>
-                <!-- Audiolibro -->
-                <div class="buy-card gold-card">
-                    <div class="buy-card-badge" style="background:rgba(212,175,55,0.3); color:var(--accent-gold);">🚀 Próximamente</div>
+                <!-- Card 3: Audiolibro — RED -->
+                <div class="buy-card card-red">
+                    <div class="buy-card-badge badge-red">🚀 Próximamente</div>
                     <div class="buy-icon">🎧</div>
                     <h3 class="buy-title">Audiolibro</h3>
                     <p class="buy-desc">+4 horas de desastres amorosos</p>
@@ -594,16 +605,17 @@
                     <div class="buy-note">En producción...</div>
                     <div class="buy-button-wrapper">
                         <span class="buy-button coming-soon">Próximamente</span>
+                        <p class="buy-delivery">📱 Escúchalo en cualquier lugar</p>
                     </div>
                 </div>
-                <!-- Versión Inglesa -->
-                <div class="buy-card featured">
-                    <div class="buy-card-badge">🌍 Disponible Ahora</div>
+                <!-- Card 4: Versión Inglesa — GOLD -->
+                <div class="buy-card card-gold">
+                    <div class="buy-card-badge badge-gold">🌍 Internacional</div>
                     <div class="buy-icon">🇬🇧</div>
                     <h3 class="buy-title">Versión Inglesa</h3>
                     <p class="buy-desc">Libro, eBook & Audio disponibles</p>
                     <div class="buy-price">$4.99 – $12.99</div>
-                    <div class="buy-note">¡Todos los formatos disponibles!</div>
+                    <div class="buy-note">¡Todos los formatos!</div>
                     <div class="buy-button-wrapper">
                         <a href="https://www.amazon.com/dp/B0G46NS5VG" class="buy-button" target="_blank">Ver Versión Inglesa</a>
                         <p class="buy-delivery">📚 Paperback · 📱 Kindle · 🎧 Audio</p>
