@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Bites: 101 Encontros Desastrosos | O Livro de Encontros Mais Divertido</title>
+    <meta name="description" content="101 histórias de encontros que vão fazer você rir até chorar. O livro que todos que já foram a um encontro precisam ler.">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+    
+    <!-- Open Graph / Social -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.funnydates101.com/pt">
+    <meta property="og:title" content="💔 Encontros Reais. Risadas Reais.">
+    <meta property="og:description" content="Grandes expectativas. Muitas perguntas. Muitas histórias. 🎬">
+    <meta property="og:image" content="https://www.funnydates101.com/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="💔 Encontros Reais. Risadas Reais.">
+    <meta name="twitter:description" content="Grandes expectativas. Muitas perguntas. Muitas histórias. 🎬">
+    <meta name="twitter:image" content="https://www.funnydates101.com/og-image.png">
+
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💔</text></svg>">
+    
+    <link rel="alternate" hreflang="en" href="https://funnydates101.com">
+    <link rel="alternate" hreflang="he" href="https://funnydates101.co.il">
+    <link rel="alternate" hreflang="fr" href="https://funnydates101.com/fr">
+    <link rel="alternate" hreflang="es" href="https://funnydates101.com/es">
+    <link rel="alternate" hreflang="pt-BR" href="https://funnydates101.com/pt">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-primary: #0a0a0a;
+            --bg-secondary: #111111;
+            --bg-card: #1a1a1a;
+            --text-primary: #ffffff;
+            --text-secondary: #b0b0b0;
+            --accent-red: #dc2626;
+            --accent-rose: #f87171;
+            --accent-gold: #d4af37;
+            --gradient-red: linear-gradient(135deg, #b91c1c 0%, #dc2626 50%, #ef4444 100%);
+            --gradient-gold: linear-gradient(135deg, #d4af37 0%, #f4d03f 50%, #d4af37 100%);
+            --shadow-glow: 0 0 40px rgba(220, 38, 38, 0.3);
+            --shadow-gold: 0 0 30px rgba(212, 175, 55, 0.3);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: #1a1a1a; }
+        ::-webkit-scrollbar-thumb { background: linear-gradient(180deg, #dc2626 0%, #b91c1c 100%); border-radius: 5px; }
+        ::-webkit-scrollbar-thumb:hover { background: linear-gradient(180deg, #ef4444 0%, #dc2626 100%); }
+        html { scrollbar-width: thin; scrollbar-color: #dc2626 #1a1a1a; }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--bg-primary);
+            background-image: url('bg-hollywood.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            color: var(--text-primary);
+            min-height: 100vh;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        .lang-switch { position: fixed; top: 20px; right: 20px; z-index: 1000; display: flex; gap: 8px; }
+        .lang-switch a { display: flex; align-items: center; gap: 8px; background: rgba(26, 26, 26, 0.95); border: 1px solid var(--accent-gold); color: var(--text-primary); padding: 10px 18px; border-radius: 50px; text-decoration: none; font-size: 14px; font-weight: 500; transition: all 0.3s ease; backdrop-filter: blur(10px); }
+        .lang-switch a:hover { background: var(--accent-gold); color: #000; }
+        .lang-switch a.active { background: var(--accent-gold); color: #000; }
+        .lang-switch .flag-icon { width: 20px; height: 15px; border-radius: 2px; object-fit: cover; }
+
+        .hero { text-align: center; padding: 140px 20px 80px; position: relative; }
+        .hero-badge { display: inline-flex; align-items: center; gap: 10px; background: rgba(26, 26, 26, 0.8); border: 1px solid var(--accent-gold); padding: 12px 24px; border-radius: 50px; font-size: 14px; color: var(--accent-gold); margin-bottom: 30px; backdrop-filter: blur(10px); }
+        .badge-dot { width: 8px; height: 8px; background: #22c55e; border-radius: 50%; animation: pulse 2s infinite; }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+        .hero-title { font-family: 'Playfair Display', serif; font-size: clamp(40px, 8vw, 80px); font-weight: 900; line-height: 1.1; margin-bottom: 20px; }
+        .highlight { color: var(--accent-red); font-style: italic; }
+        .title-dot { display: inline-block; width: 12px; height: 12px; background: var(--accent-red); border-radius: 50%; margin-left: 5px; vertical-align: super; }
+        .hero-subtitle { font-size: clamp(16px, 3vw, 22px); color: var(--text-secondary); margin-bottom: 15px; }
+        .hero-tagline { font-size: clamp(14px, 2.5vw, 18px); color: var(--accent-rose); font-style: italic; margin-bottom: 40px; }
+        .cta-container { margin-top: 30px; }
+        .cta-button { display: inline-flex; align-items: center; gap: 10px; background: var(--gradient-red); color: white; font-size: 18px; font-weight: 700; padding: 18px 40px; border: none; border-radius: 50px; cursor: pointer; transition: all 0.3s ease; text-decoration: none; box-shadow: var(--shadow-glow); }
+        .cta-button:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 15px 40px rgba(220, 38, 38, 0.5); }
+        .cta-subtext { margin-top: 15px; color: var(--text-secondary); font-size: 14px; }
+        .launch-offer { display: flex; flex-direction: column; align-items: center; gap: 15px; margin-top: 30px; }
+        .offer-badge { display: inline-flex; align-items: center; gap: 8px; background: var(--gradient-red); padding: 12px 30px; border-radius: 50px; font-weight: 700; font-size: 16px; box-shadow: var(--shadow-glow); }
+        .offer-date { font-size: 16px; color: var(--text-secondary); }
+        .date-value { font-family: 'Playfair Display', serif; font-size: 24px; color: var(--accent-gold); margin-left: 10px; }
+        .offer-urgency { display: flex; align-items: center; gap: 8px; font-size: 14px; color: var(--accent-red); }
+        .urgency-dot { width: 8px; height: 8px; background: var(--accent-red); border-radius: 50%; animation: pulse 1s infinite; }
+
+        .coming-soon-badge { display: inline-flex; align-items: center; gap: 10px; background: linear-gradient(135deg, rgba(212, 175, 55, 0.2), rgba(212, 175, 55, 0.05)); border: 2px solid var(--accent-gold); padding: 20px 40px; border-radius: 16px; margin-top: 30px; }
+        .coming-soon-badge .icon { font-size: 28px; }
+        .coming-soon-badge .text { font-size: 18px; font-weight: 700; color: var(--accent-gold); }
+        .coming-soon-badge .subtext { font-size: 13px; color: var(--text-secondary); margin-top: 4px; }
+
+        .section { padding: 100px 20px; position: relative; }
+        .section::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, var(--accent-gold), transparent); }
+        .section-title { font-family: 'Playfair Display', serif; font-size: clamp(32px, 6vw, 48px); text-align: center; margin-bottom: 60px; }
+
+        .why-section-hollywood { padding: 80px 20px; }
+        .why-header { text-align: center; margin-bottom: 60px; }
+        .why-main-title { font-family: 'Playfair Display', serif; font-size: clamp(28px, 5vw, 44px); margin-bottom: 15px; }
+        .why-subtitle { font-size: 18px; color: var(--accent-rose); font-style: italic; }
+        .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; max-width: 1000px; margin: 0 auto; }
+        .why-card { background: var(--bg-card); border: 1px solid rgba(255,255,255,0.08); border-radius: 20px; padding: 35px; transition: all 0.3s ease; }
+        .why-card:hover { transform: translateY(-5px); border-color: rgba(220, 38, 38, 0.3); box-shadow: var(--shadow-glow); }
+        .why-icon { font-size: 40px; display: block; margin-bottom: 20px; }
+        .why-title { font-size: 18px; font-weight: 700; margin-bottom: 12px; }
+        .why-text { color: var(--text-secondary); font-size: 15px; line-height: 1.7; }
+
+        .teaser-section { padding: 60px 20px; text-align: center; }
+        .teaser-badge { display: inline-flex; align-items: center; gap: 10px; background: rgba(26, 26, 26, 0.8); border: 1px solid var(--accent-gold); padding: 12px 24px; border-radius: 50px; font-size: 14px; color: var(--accent-gold); margin-bottom: 30px; backdrop-filter: blur(10px); cursor: pointer; transition: all 0.3s; font-family: 'Poppins', sans-serif; }
+        .teaser-badge:hover { background: rgba(212, 175, 55, 0.2); }
+        .teaser-badge.open .arrow { transform: rotate(180deg); }
+        .teaser-content { max-height: 0; overflow: hidden; transition: max-height 0.5s ease; }
+        .teaser-content.open { max-height: 1000px; }
+        .teaser-main-title { font-family: 'Playfair Display', serif; font-size: clamp(28px, 5vw, 42px); margin-bottom: 15px; }
+        .teaser-subtitle { color: var(--accent-rose); font-style: italic; font-size: 18px; margin-bottom: 40px; }
+        .teaser-quotes-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; max-width: 900px; margin: 0 auto 40px; }
+        .teaser-quote-card { background: var(--bg-card); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 25px; text-align: left; }
+        .teaser-quote-text { color: var(--text-secondary); font-size: 15px; line-height: 1.7; }
+        .teaser-footer-text { color: var(--text-secondary); font-size: 16px; margin-bottom: 25px; font-style: italic; }
+        .teaser-cta { display: inline-flex; align-items: center; gap: 10px; background: var(--gradient-red); color: white; padding: 16px 36px; border-radius: 50px; font-weight: 700; font-size: 16px; text-decoration: none; transition: all 0.3s; box-shadow: var(--shadow-glow); }
+
+        .reviews-hollywood { padding: 80px 20px; }
+        .reviews-header { text-align: center; margin-bottom: 50px; }
+        .reviews-star { font-size: 40px; display: block; margin-bottom: 15px; }
+        .reviews-main-title { font-family: 'Playfair Display', serif; font-size: clamp(24px, 4vw, 36px); }
+        .reviews-showcase { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 25px; max-width: 900px; margin: 0 auto; }
+        .review-hollywood-card { background: var(--bg-card); border: 1px solid rgba(255,255,255,0.08); border-radius: 20px; padding: 30px; transition: all 0.3s; }
+        .review-hollywood-card:hover { transform: translateY(-3px); border-color: var(--accent-gold); box-shadow: var(--shadow-gold); }
+        .review-rating { font-size: 20px; margin-bottom: 15px; }
+        .review-quote { font-style: italic; font-size: 16px; line-height: 1.6; margin-bottom: 15px; color: var(--text-primary); }
+        .review-author-line { color: var(--accent-gold); font-size: 14px; font-weight: 600; }
+        .evrit-review { border-color: rgba(212, 175, 55, 0.3); }
+        .review-platform { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; }
+        .evrit-logo { font-size: 20px; }
+        .evrit-text { font-size: 13px; color: var(--text-secondary); }
+        .evrit-badge { font-size: 11px; color: #22c55e; background: rgba(34, 197, 94, 0.15); padding: 3px 8px; border-radius: 10px; }
+
+        .about-section { padding: 80px 20px; }
+        .about-container { display: flex; align-items: center; gap: 60px; max-width: 900px; margin: 0 auto; flex-wrap: wrap; }
+        .about-image { flex-shrink: 0; }
+        .about-image img { width: 200px; height: 200px; border-radius: 50%; object-fit: cover; object-position: center top; border: 3px solid var(--accent-gold); box-shadow: var(--shadow-gold); }
+        .about-content { flex: 1; min-width: 280px; }
+        .about-badge { display: inline-block; background: rgba(212, 175, 55, 0.2); border: 1px solid var(--accent-gold); padding: 6px 16px; border-radius: 20px; font-size: 13px; color: var(--accent-gold); margin-bottom: 15px; }
+        .about-title { font-family: 'Playfair Display', serif; font-size: 36px; margin-bottom: 20px; }
+        .about-text { color: var(--text-secondary); font-size: 15px; line-height: 1.8; margin-bottom: 15px; }
+        .about-signature { color: var(--accent-rose); font-style: italic; font-size: 16px; border-left: 3px solid var(--accent-red); padding-left: 15px; margin-top: 20px; }
+
+        .social-section { padding: 60px 20px; text-align: center; }
+        .social-title { font-family: 'Playfair Display', serif; font-size: 28px; margin-bottom: 35px; }
+        .social-links { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+        .social-link { display: flex; align-items: center; gap: 12px; background: var(--bg-card); border: 1px solid rgba(255,255,255,0.1); padding: 16px 28px; border-radius: 16px; text-decoration: none; color: var(--text-primary); transition: all 0.3s; }
+        .social-link:hover { border-color: var(--accent-red); transform: translateY(-3px); box-shadow: var(--shadow-glow); }
+        .social-link .icon { font-size: 28px; }
+        .social-link .label { font-size: 12px; color: var(--text-secondary); }
+        .social-link .handle { font-weight: 700; font-size: 14px; }
+
+        .story-section { padding: 80px 20px; text-align: center; }
+        .story-title { font-family: 'Playfair Display', serif; font-size: clamp(24px, 4vw, 36px); margin-bottom: 15px; margin-top: 20px; }
+        .story-subtitle { color: var(--text-secondary); font-size: 16px; margin-bottom: 20px; }
+        .story-reward { display: inline-flex; align-items: center; gap: 8px; background: rgba(212, 175, 55, 0.15); border: 1px solid rgba(212, 175, 55, 0.3); padding: 10px 20px; border-radius: 50px; font-size: 14px; color: var(--accent-gold); margin-bottom: 30px; }
+        .story-form { max-width: 500px; margin: 0 auto; }
+        .form-group { margin-bottom: 20px; text-align: left; }
+        .form-label { display: block; font-size: 14px; color: var(--accent-gold); margin-bottom: 8px; font-weight: 600; }
+        .form-input { width: 100%; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.15); border-radius: 12px; padding: 14px 18px; color: var(--text-primary); font-family: 'Poppins', sans-serif; font-size: 14px; transition: border-color 0.3s; }
+        .form-input:focus { outline: none; border-color: var(--accent-red); }
+        .form-textarea { min-height: 120px; resize: vertical; }
+        .form-submit { width: 100%; background: var(--gradient-red); color: white; border: none; padding: 16px; border-radius: 50px; font-size: 16px; font-weight: 700; cursor: pointer; transition: all 0.3s; font-family: 'Poppins', sans-serif; box-shadow: var(--shadow-glow); }
+        .form-submit:hover { transform: translateY(-2px); box-shadow: 0 12px 35px rgba(220, 38, 38, 0.5); }
+        .form-note { font-size: 12px; color: var(--text-secondary); margin-top: 12px; }
+        .form-success { display: none; text-align: center; padding: 30px; }
+        .form-success h3 { font-size: 24px; color: var(--accent-gold); margin-bottom: 10px; }
+        .form-success p { color: var(--text-secondary); }
+
+        .buy-section { padding: 100px 20px; }
+        .buy-hook { text-align: center; margin-bottom: 60px; }
+        .buy-subtitle { text-align: center; color: var(--text-secondary); font-size: 16px; margin-bottom: 50px; margin-top: -40px; }
+        .buy-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 25px; max-width: 900px; margin: 0 auto; }
+        .buy-card { background: var(--bg-card); border: 2px solid rgba(255,255,255,0.1); border-radius: 24px; padding: 30px 25px; text-align: center; display: flex; flex-direction: column; position: relative; transition: all 0.3s; }
+        .buy-card:hover { transform: translateY(-5px); }
+        .buy-card.featured { border-color: var(--accent-red); background: linear-gradient(180deg, rgba(220,38,38,0.12) 0%, var(--bg-card) 100%); box-shadow: var(--shadow-glow); }
+        .buy-card.gold-card { border: 2px solid #d4af37; background: linear-gradient(180deg, rgba(212,175,55,0.1) 0%, var(--bg-card) 100%); box-shadow: 0 0 30px rgba(212,175,55,0.2); }
+        .buy-card-badge { position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: var(--gradient-red); color: white; padding: 5px 18px; border-radius: 20px; font-size: 12px; font-weight: 700; white-space: nowrap; z-index: 10; }
+        .buy-icon { font-size: 48px; margin-bottom: 15px; margin-top: 10px; }
+        .buy-title { font-size: 22px; font-weight: 700; margin-bottom: 8px; }
+        .buy-desc { color: var(--text-secondary); font-size: 14px; margin-bottom: 15px; }
+        .buy-price { font-size: 32px; font-weight: 900; color: var(--accent-gold); margin-bottom: 5px; }
+        .buy-note { font-size: 13px; color: var(--accent-rose); margin-bottom: 20px; }
+        .buy-button-wrapper { margin-top: auto; }
+        .buy-button { display: block; background: var(--gradient-red); color: white; padding: 14px 25px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 15px; transition: all 0.3s ease; margin-bottom: 12px; cursor: pointer; border: none; font-family: 'Poppins', sans-serif; width: 100%; text-align: center; }
+        .buy-button:hover { transform: scale(1.05); box-shadow: var(--shadow-glow); }
+        .buy-button.amazon { background: #ff9900; color: #000; }
+        .buy-button.coming-soon { background: rgba(255,255,255,0.08); color: var(--text-secondary); cursor: default; pointer-events: none; }
+        .buy-delivery { font-size: 12px; color: var(--text-secondary); }
+
+        /* Audiobook Coming Soon */
+        .audiobook-coming-section { padding: 80px 20px; position: relative; overflow: hidden; }
+        .audiobook-coming-section::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 50% 50%, rgba(220,38,38,0.06) 0%, transparent 70%); animation: pulseGlowCS 6s ease-in-out infinite; pointer-events: none; }
+        @keyframes pulseGlowCS { 0%, 100% { opacity: 0.5; } 50% { opacity: 1; } }
+        .audio-cs-container { max-width: 700px; margin: 0 auto; text-align: center; position: relative; z-index: 2; }
+        .audio-cs-card { background: rgba(26,26,26,0.9); border: 1px solid rgba(220,38,38,0.2); border-radius: 24px; padding: 50px 40px; position: relative; overflow: hidden; backdrop-filter: blur(10px); box-shadow: 0 20px 60px rgba(0,0,0,0.4), 0 0 60px rgba(220,38,38,0.08); }
+        .audio-cs-card::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: linear-gradient(45deg, transparent 40%, rgba(255,215,0,0.02) 50%, transparent 60%); animation: cardShineCS 10s ease-in-out infinite; }
+        @keyframes cardShineCS { 0% { transform: translateX(-100%) rotate(45deg); } 100% { transform: translateX(100%) rotate(45deg); } }
+        .audio-cs-icon { font-size: 64px; margin-bottom: 20px; display: block; animation: floatIcon 3s ease-in-out infinite; }
+        @keyframes floatIcon { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+        .audio-cs-label { display: inline-flex; align-items: center; gap: 8px; background: rgba(220,38,38,0.2); border: 1px solid rgba(220,38,38,0.4); padding: 6px 18px; border-radius: 20px; font-size: 11px; font-weight: 700; color: #f87171; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 20px; }
+        .audio-cs-label-dot { width: 6px; height: 6px; background: #ef4444; border-radius: 50%; animation: pulse 1.5s infinite; }
+        .audio-cs-title { font-family: 'Playfair Display', serif; font-size: clamp(26px, 4vw, 38px); font-weight: 900; color: #fff; margin-bottom: 12px; }
+        .audio-cs-title span { color: var(--accent-red); font-style: italic; }
+        .audio-cs-subtitle { font-size: 16px; color: rgba(255,255,255,0.6); margin-bottom: 35px; line-height: 1.6; }
+        .audio-cs-features { display: flex; justify-content: center; gap: 25px; flex-wrap: wrap; margin-bottom: 35px; }
+        .audio-cs-feat { display: flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); padding: 10px 18px; border-radius: 50px; font-size: 13px; color: rgba(255,255,255,0.7); }
+        .audio-cs-cta { display: inline-flex; align-items: center; gap: 10px; background: rgba(212,175,55,0.15); border: 2px solid var(--accent-gold); color: var(--accent-gold); font-size: 17px; font-weight: 700; padding: 16px 40px; border-radius: 50px; text-decoration: none; transition: all 0.3s ease; font-family: 'Poppins', sans-serif; animation: goldPulse 2.5s ease-in-out infinite; }
+        @keyframes goldPulse { 0%, 100% { box-shadow: 0 0 20px rgba(212,175,55,0.2); } 50% { box-shadow: 0 0 40px rgba(212,175,55,0.4); } }
+        .audio-cs-cta:hover { background: var(--accent-gold); color: #000; transform: translateY(-3px); }
+        .audio-cs-notify { margin-top: 20px; font-size: 13px; color: rgba(255,255,255,0.35); }
+
+        .footer { padding: 60px 20px 40px; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); }
+        .footer-links { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 30px; }
+        .footer-links a { color: var(--text-secondary); text-decoration: none; font-size: 14px; transition: color 0.3s; }
+        .footer-links a:hover { color: var(--accent-gold); }
+        .footer-divider { color: rgba(255,255,255,0.2); }
+        .noartgallery-link { display: inline-block; margin-bottom: 20px; }
+        .noartgallery-logo { height: 40px; opacity: 0.7; transition: opacity 0.3s; }
+        .noartgallery-logo:hover { opacity: 1; }
+        .footer-text { color: var(--text-secondary); font-size: 13px; margin-bottom: 8px; }
+        .footer-author { color: var(--accent-gold); font-size: 14px; font-weight: 600; margin-bottom: 8px; }
+        .footer-contact a { color: var(--text-secondary); text-decoration: none; }
+        .footer-contact a:hover { color: var(--accent-gold); }
+
+        .floating-hearts { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; overflow: hidden; }
+        .heart { position: absolute; font-size: 20px; animation: floatHeart 20s linear infinite; opacity: 0; }
+        .heart:nth-child(1){left:5%;animation-delay:0s} .heart:nth-child(2){left:15%;animation-delay:4s} .heart:nth-child(3){left:25%;animation-delay:8s} .heart:nth-child(4){left:35%;animation-delay:12s} .heart:nth-child(5){left:55%;animation-delay:2s} .heart:nth-child(6){left:65%;animation-delay:6s} .heart:nth-child(7){left:75%;animation-delay:10s} .heart:nth-child(8){left:85%;animation-delay:14s}
+        @keyframes floatHeart { 0%{transform:translateY(100vh) rotate(0deg);opacity:0} 10%{opacity:0.6} 90%{opacity:0.6} 100%{transform:translateY(-100px) rotate(360deg);opacity:0} }
+
+        #accessibility-widget { position: fixed; top: 90px; right: 20px; z-index: 9999; }
+        .accessibility-btn { width: 50px; height: 50px; border-radius: 50%; background: var(--accent-gold); border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; color: #000; box-shadow: 0 4px 15px rgba(212,175,55,0.4); transition: all 0.3s ease; }
+        .accessibility-btn:hover { transform: scale(1.1); }
+        .accessibility-menu { position: absolute; top: 60px; right: 0; background: #1a1a1a; border: 2px solid var(--accent-gold); border-radius: 12px; padding: 15px; min-width: 220px; display: none; flex-direction: column; gap: 8px; }
+        .accessibility-menu.active { display: flex; }
+        .accessibility-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; font-weight: 700; font-size: 14px; color: var(--accent-gold); }
+        .accessibility-header button { background: none; border: none; color: var(--text-secondary); cursor: pointer; font-size: 16px; }
+        .accessibility-menu button { display: block; width: 100%; text-align: left; background: none; border: 1px solid rgba(255,255,255,0.1); color: var(--text-primary); padding: 10px 12px; cursor: pointer; font-family: 'Poppins', sans-serif; font-size: 13px; border-radius: 8px; transition: all 0.2s; }
+        .accessibility-menu button:hover { background: rgba(212,175,55,0.15); border-color: var(--accent-gold); color: var(--accent-gold); }
+        body.high-contrast { filter: contrast(150%); }
+        body.grayscale { filter: grayscale(100%); }
+        body.underline-links a { text-decoration: underline !important; }
+
+        .floating-quotes { position: fixed; top: 80px; left: 20px; z-index: 500; max-width: 260px; pointer-events: none; }
+        .quote-bubble { background: rgba(26,26,26,0.92); border: 1px solid rgba(220,38,38,0.3); border-radius: 16px; padding: 16px 18px; font-size: 13px; color: rgba(255,255,255,0.85); line-height: 1.5; backdrop-filter: blur(10px); box-shadow: 0 4px 20px rgba(0,0,0,0.4); }
+
+        .price-ticker { position: fixed; bottom: 20px; left: 20px; z-index: 9998; background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 50%, #fde68a 100%); border-radius: 20px; padding: 20px; box-shadow: 0 0 0 1px rgba(0,0,0,0.05), 0 10px 40px rgba(251,191,36,0.4); text-align: center; max-width: 240px; cursor: grab; user-select: none; transition: transform 0.3s, box-shadow 0.3s; }
+        .price-ticker:hover { transform: scale(1.03); }
+        .price-ticker:active { cursor: grabbing; }
+        .price-ticker.hidden { display: none; }
+        .price-ticker-close { position: absolute; top: 8px; right: 8px; width: 22px; height: 22px; border-radius: 50%; border: none; background: rgba(0,0,0,0.2); color: rgba(0,0,0,0.5); cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 12px; transition: all 0.3s; z-index: 10; }
+        .price-ticker-close:hover { background: rgba(0,0,0,0.4); color: #fff; }
+        .price-ticker-header { display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 8px; }
+        .price-ticker-title { font-weight: 800; font-size: 14px; color: #1a1a1a; }
+        @media (max-width: 768px) { .price-ticker { bottom: 15px; left: 15px; transform: scale(0.9); transform-origin: bottom left; } }
+
+        .cosmic-ticker-container { position: fixed; bottom: 20px; right: 20px; z-index: 9997; transition: all 0.5s cubic-bezier(0.4,0,0.2,1); }
+        .cosmic-ticker-container.hidden { transform: translateX(400px); opacity: 0; pointer-events: none; }
+        .cosmic-ticker { position: relative; width: 320px; background: linear-gradient(145deg,#0a0a0a 0%,#1a0a0a 50%,#0a0a0a 100%); border-radius: 20px; overflow: hidden; box-shadow: 0 0 0 3px rgba(220,38,38,0.6),0 0 40px rgba(220,38,38,0.4),0 0 80px rgba(220,38,38,0.2); animation: cosmicFloat 6s ease-in-out infinite; }
+        @keyframes cosmicFloat { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+        .cosmic-ticker::before { content:''; position:absolute; top:0; left:0; right:0; bottom:0; border-radius:20px; padding:3px; background:linear-gradient(45deg,#dc2626,#ff6b6b,#dc2626,#991b1b,#dc2626); background-size:400% 400%; -webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0); mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0); -webkit-mask-composite:xor; mask-composite:exclude; animation:borderAnimation 4s ease infinite; }
+        @keyframes borderAnimation { 0%{background-position:0% 50%} 50%{background-position:100% 50%} 100%{background-position:0% 50%} }
+        .cosmic-close { position:absolute; top:10px; right:10px; background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.2); color:rgba(255,255,255,0.5); width:28px; height:28px; border-radius:50%; cursor:pointer; z-index:20; font-size:14px; display:flex; align-items:center; justify-content:center; transition:all 0.3s; }
+        .cosmic-close:hover { background:rgba(220,38,38,0.3); color:#fff; }
+        .cosmic-inner { position:relative; z-index:5; padding:25px; }
+        .cosmic-header { display:flex; align-items:center; gap:12px; margin-bottom:18px; }
+        .cosmic-live { display:flex; align-items:center; gap:6px; background:rgba(220,38,38,0.2); border:1px solid rgba(220,38,38,0.4); padding:4px 12px; border-radius:20px; font-size:10px; font-weight:700; color:#f87171; letter-spacing:1px; }
+        .cosmic-live-dot { width:6px; height:6px; background:#ef4444; border-radius:50%; animation:pulse 1.5s infinite; }
+        .cosmic-title { font-size:14px; font-weight:600; color:rgba(255,255,255,0.8); }
+        .cosmic-quote-area { min-height:100px; display:flex; align-items:center; }
+        .cosmic-emoji { font-size:28px; display:block; margin-bottom:10px; }
+        .cosmic-text { font-size:15px; color:rgba(255,255,255,0.9); line-height:1.5; font-style:italic; margin:0 0 8px 0; }
+        .cosmic-source { font-size:12px; color:var(--accent-gold); margin:0; }
+        .cosmic-dots { display:flex; justify-content:center; gap:6px; margin:15px 0; }
+        .ticker-dot { width:6px; height:6px; border-radius:50%; background:rgba(255,255,255,0.2); cursor:pointer; transition:all 0.3s; }
+        .ticker-dot.active { background:var(--accent-red); width:20px; border-radius:3px; }
+        .cosmic-nav { display:flex; justify-content:space-between; align-items:center; }
+        .cosmic-nav-btn { background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); color:rgba(255,255,255,0.5); width:36px; height:36px; border-radius:50%; cursor:pointer; font-size:18px; transition:all 0.3s; display:flex; align-items:center; justify-content:center; }
+        .cosmic-nav-btn:hover { background:rgba(220,38,38,0.2); color:#fff; border-color:rgba(220,38,38,0.3); }
+        .cosmic-cta { background:var(--gradient-red); color:white; padding:8px 24px; border-radius:25px; text-decoration:none; font-size:13px; font-weight:700; transition:all 0.3s; box-shadow:0 0 20px rgba(220,38,38,0.3); }
+        .cosmic-cta:hover { transform:scale(1.05); box-shadow:0 0 30px rgba(220,38,38,0.5); }
+        @media (max-width:768px) { .cosmic-ticker-container{bottom:15px;right:15px;left:15px;} .cosmic-ticker{width:100%;} }
+
+        .main-content { position: relative; z-index: 1; max-width: 1200px; margin: 0 auto; }
+
+        @media (max-width: 768px) {
+            .about-container { flex-direction: column; text-align: center; }
+            .about-signature { text-align: left; }
+            .lang-switch { top: 10px; right: 10px; }
+            .lang-switch a { padding: 8px 12px; font-size: 11px; }
+            .floating-quotes { display: none; }
+            #accessibility-widget { top: 80px; right: 10px; }
+        }
+    </style>
+
+    <script>
+        function closePriceTicker() { document.getElementById('priceTicker').classList.add('hidden'); }
+        (function() {
+            const ticker = document.getElementById('priceTicker');
+            if (!ticker) return;
+            let isDragging = false, startX, startY, initialX, initialY;
+            ticker.addEventListener('mousedown', function(e) { if (e.target.tagName==='BUTTON'||e.target.tagName==='A') return; isDragging=true; startX=e.clientX; startY=e.clientY; const rect=ticker.getBoundingClientRect(); initialX=rect.left; initialY=rect.top; e.preventDefault(); });
+            document.addEventListener('mousemove', function(e) { if (!isDragging) return; ticker.style.left=(initialX+e.clientX-startX)+'px'; ticker.style.top=(initialY+e.clientY-startY)+'px'; ticker.style.bottom='auto'; });
+            document.addEventListener('mouseup', function() { isDragging=false; });
+            ticker.addEventListener('touchstart', function(e) { if(e.target.tagName==='BUTTON'||e.target.tagName==='A') return; isDragging=true; startX=e.touches[0].clientX; startY=e.touches[0].clientY; const rect=ticker.getBoundingClientRect(); initialX=rect.left; initialY=rect.top; }, {passive:true});
+            document.addEventListener('touchmove', function(e) { if(!isDragging) return; ticker.style.left=(initialX+e.touches[0].clientX-startX)+'px'; ticker.style.top=(initialY+e.touches[0].clientY-startY)+'px'; ticker.style.bottom='auto'; }, {passive:true});
+            document.addEventListener('touchend', function() { isDragging=false; });
+        })();
+
+        // Cosmic ticker — Portuguese quotes
+        const tickerQuotes = [
+            { emoji: '🍷', text: '«Depois do sétimo copo, ela disse algo que mudou tudo.»', source: '— O que ela disse? No livro.' },
+            { emoji: '👀', text: '«Ela me olhou e disse uma frase. Eu devia ter prestado atenção.»', source: '— A frase? No livro.' },
+            { emoji: '⏱️', text: '«Com 10 minutos de encontro ela fez uma pergunta. Não estava preparado para a resposta.»', source: '— Qual pergunta? No livro.' },
+            { emoji: '🚗', text: '«Quando chegamos ao carro, ela disse uma coisa. Ainda penso nisso.»', source: '— O que ela disse? No livro.' },
+            { emoji: '⚡', text: '«O encontro durou 7 minutos. O motivo? Você não vai acreditar.»', source: '— O motivo real? No livro.' },
+            { emoji: '💳', text: '«O garçom trouxe a conta. O que aconteceu depois — eu não esperava.»', source: '— O que aconteceu? No livro.' },
+            { emoji: '🧺', text: '«Primeiro encontro. Ela chegou com três sacolas. Ninguém me preparou para isso.»', source: '— O que aconteceu? No livro.' }
+        ];
+        let currentQuoteIndex=0, tickerInterval;
+        function initTicker() { generateDots(); updateQuote(0); startAutoRotation(); }
+        function generateDots() { const d=document.getElementById('tickerDots'); d.innerHTML=''; tickerQuotes.forEach((_,i)=>{ const dot=document.createElement('div'); dot.className='ticker-dot'+(i===0?' active':''); dot.onclick=()=>goToQuote(i); d.appendChild(dot); }); }
+        function updateQuote(i) { const q=tickerQuotes[i]; const c=document.getElementById('tickerQuoteContainer'); c.style.opacity='0'; c.style.transform='translateX(-20px)'; setTimeout(()=>{ document.getElementById('tickerEmoji').textContent=q.emoji; document.getElementById('tickerQuoteText').textContent=q.text; document.getElementById('tickerQuoteSource').textContent=q.source; c.style.opacity='1'; c.style.transform='translateX(0)'; document.querySelectorAll('.ticker-dot').forEach((d,j)=>d.classList.toggle('active',j===i)); },300); currentQuoteIndex=i; }
+        function nextQuote() { updateQuote((currentQuoteIndex+1)%tickerQuotes.length); resetAuto(); }
+        function prevQuote() { updateQuote((currentQuoteIndex-1+tickerQuotes.length)%tickerQuotes.length); resetAuto(); }
+        function goToQuote(i) { updateQuote(i); resetAuto(); }
+        function startAutoRotation() { tickerInterval=setInterval(nextQuote,6000); }
+        function resetAuto() { clearInterval(tickerInterval); startAutoRotation(); }
+        function closeCosmicTicker() { document.getElementById('cosmicTicker').classList.add('hidden'); clearInterval(tickerInterval); }
+        document.addEventListener('DOMContentLoaded', initTicker);
+    </script>
+
+    <!-- 🌐 LANGUAGE SWITCHER -->
+    <div class="lang-switch">
+        <a href="https://funnydates101.com" title="English"><img src="https://flagcdn.com/w40/gb.png" alt="EN" class="flag-icon"><span>EN</span></a>
+        <a href="https://funnydates101.co.il" title="עברית"><img src="https://flagcdn.com/w40/il.png" alt="IL" class="flag-icon"><span>עברית</span></a>
+        <a href="/fr.html" title="Français"><img src="https://flagcdn.com/w40/fr.png" alt="FR" class="flag-icon"><span>FR</span></a>
+        <a href="/es.html" title="Español"><img src="https://flagcdn.com/w40/es.png" alt="ES" class="flag-icon"><span>ES</span></a>
+        <a href="#" class="active" title="Português"><img src="https://flagcdn.com/w40/br.png" alt="BR" class="flag-icon"><span>PT</span></a>
+    </div>
+
+    <div class="floating-hearts">
+        <span class="heart">💔</span><span class="heart">❤️</span><span class="heart">💕</span><span class="heart">💔</span><span class="heart">❤️</span>
+        <span class="heart">💕</span><span class="heart">💔</span><span class="heart">❤️</span><span class="heart">💕</span><span class="heart">💔</span>
+    </div>
+
+    <!-- ♿ ACESSIBILIDADE -->
+    <div id="accessibility-widget">
+        <button class="accessibility-btn" onclick="toggleAccessibilityMenu()" aria-label="Menu de Acessibilidade">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9H15V22H13V16H11V22H9V9H3V7H21V9Z"/></svg>
+        </button>
+        <div class="accessibility-menu" id="accessibility-menu">
+            <div class="accessibility-header"><span>Acessibilidade</span><button onclick="toggleAccessibilityMenu()">✕</button></div>
+            <button onclick="changeFontSize(1)">Aumentar Texto +</button>
+            <button onclick="changeFontSize(-1)">Diminuir Texto -</button>
+            <button onclick="toggleHighContrast()">Alto Contraste</button>
+            <button onclick="toggleGrayscale()">Escala de Cinza</button>
+            <button onclick="toggleUnderlineLinks()">Sublinhar Links</button>
+            <button onclick="resetAccessibility()">Redefinir</button>
+        </div>
+    </div>
+
+    <!-- 🔥 FLOATING QUOTE -->
+    <div class="floating-quotes">
+        <div class="quote-bubble">🍷 Dez minutos. Sete taças de vinho. Aí ela fala pro amigo dela: "A gente já tá junto há dois meses." Mano, eu TAVA DO LADO.</div>
+    </div>
+
+    <!-- 🚀 PRICE TICKER DRAGGABLE -->
+    <div class="price-ticker" id="priceTicker">
+        <button class="price-ticker-close" onclick="event.stopPropagation(); closePriceTicker()">✕</button>
+        <a href="#buy" style="text-decoration:none; color:inherit; display:block;">
+            <div class="price-ticker-header">
+                <span style="font-size:22px;">🇧🇷</span>
+                <span class="price-ticker-title">EDIÇÃO BRASILEIRA</span>
+                <span style="font-size:22px;">🔥</span>
+            </div>
+            <div style="font-size:13px; color:#333; margin-bottom:8px;">📱 eBook Kindle</div>
+            <div style="font-family:'Playfair Display',serif; font-size:22px; color:#dc2626; font-weight:900; margin:8px 0;">R$19,90</div>
+            <div style="font-size:12px; color:#555; margin-bottom:10px;">Disponível no Kindle Unlimited!</div>
+            <a href="https://www.amazon.com.br/dp/B0G528JZGS" target="_blank" style="display:inline-block; background:#1a1a1a; color:#fff; border:none; padding:10px 24px; border-radius:25px; font-size:14px; font-weight:700; cursor:pointer; text-decoration:none;">🛒 Comprar →</a>
+        </a>
+        <div style="font-size:10px; color:#666; margin-top:8px;">💡 Me arraste para onde quiser!</div>
+    </div>
+
+    <!-- 🎬 COSMIC TICKER - PORTUGUESE QUOTES -->
+    <div class="cosmic-ticker-container" id="cosmicTicker">
+        <div class="cosmic-ticker">
+            <button class="cosmic-close" onclick="closeCosmicTicker()">✕</button>
+            <div class="cosmic-inner">
+                <div class="cosmic-header">
+                    <div class="cosmic-live"><span class="cosmic-live-dot"></span>TRECHO</div>
+                    <div class="cosmic-title">📺 Histórias Reais</div>
+                </div>
+                <div class="cosmic-quote-area">
+                    <div id="tickerQuoteContainer" style="transition: all 0.3s ease;">
+                        <span class="cosmic-emoji" id="tickerEmoji">🍷</span>
+                        <p class="cosmic-text" id="tickerQuoteText">«Depois do sétimo copo, ela disse algo que mudou tudo.»</p>
+                        <p class="cosmic-source" id="tickerQuoteSource">— O que ela disse? No livro.</p>
+                    </div>
+                </div>
+                <div class="cosmic-dots" id="tickerDots"></div>
+                <div class="cosmic-nav">
+                    <button class="cosmic-nav-btn" onclick="prevQuote()">‹</button>
+                    <a href="#why" class="cosmic-cta">Descobrir →</a>
+                    <button class="cosmic-nav-btn" onclick="nextQuote()">›</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <!-- 🎬 HERO -->
+        <section class="hero">
+            <div class="hero-badge"><span class="badge-dot"></span>O Livro que Todo Mundo Está Comentando</div>
+            <h1 class="hero-title"><span class="highlight">Love Bites</span><br>101 Encontros Desastrosos<span class="title-dot"></span></h1>
+            <p class="hero-subtitle">Grandes expectativas. Muitas perguntas.<br>Muitas histórias.</p>
+            <p class="hero-tagline">Se você já saiu de um encontro dizendo "mas o que foi isso?" —<br>este livro é para você.</p>
+            <div class="cta-container">
+                <a href="#why" class="cta-button">👀 O Que Aconteceu Nesse Encontro?</a>
+                <p class="cta-subtext">📱 eBook | 📚 Livro Impresso em breve | 🎧 Audiobook em breve | 🇧🇷 Edição Brasileira</p>
+            </div>
+            <div class="coming-soon-badge">
+                <span class="icon">🚀</span>
+                <div>
+                    <div class="text">eBook Disponível no Brasil! 🇧🇷</div>
+                    <div class="subtext">Livro impresso · Audiobook — Em breve</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 🎭 WHY SECTION -->
+        <section class="why-section-hollywood" id="why">
+            <div class="why-header">
+                <h2 class="why-main-title">Todas as histórias são reais.</h2>
+                <p class="why-subtitle">E esse é exatamente o problema.</p>
+            </div>
+            <div class="why-grid">
+                <div class="why-card"><span class="why-icon">🎭</span><h3 class="why-title">Eu ri. Aí percebi que tinha acontecido comigo também.</h3><p class="why-text">Situações que se você visse numa série diria que são exageradas. Infelizmente, não era roteiro.</p></div>
+                <div class="why-card"><span class="why-icon">💔</span><h3 class="why-title">Eu tinha certeza que era ela. Ela tinha certeza que era só terça-feira.</h3><p class="why-text">Paixões passageiras, ilusões duradouras, e aquele momento em que você percebe que o outro já seguiu em frente.</p></div>
+                <div class="why-card"><span class="why-icon">🍷</span><h3 class="why-title">O que as pessoas fazem nos encontros — e rezam pra ninguém contar.</h3><p class="why-text">Histórias reais. Sem filtro. Os momentos que me fizeram pensar: "Por favor, que ninguém escreva um livro sobre isso."</p></div>
+            </div>
+        </section>
+
+        <!-- 🔥 TEASER -->
+        <section class="teaser-section">
+            <button class="teaser-badge" id="teaserToggle" onclick="toggleTeaser()"><span>🎬</span><span>Quer um Spoiler?</span><span class="arrow">👀</span></button>
+            <div class="teaser-content" id="teaserContent">
+                <h2 class="teaser-main-title">Até aqui eram encontros.</h2>
+                <p class="teaser-subtitle">A partir daqui — é sobre você.</p>
+                <div class="teaser-quotes-container">
+                    <div class="teaser-quote-card"><p class="teaser-quote-text">🔁 Este não é um livro sobre encontros. É um livro sobre o momento em que você percebe que algo em você continua se repetindo.</p></div>
+                    <div class="teaser-quote-card"><p class="teaser-quote-text">🎯 Cada história começa com "Uau, isso parece promissor" e termina com "Como vim parar aqui de novo?"</p></div>
+                    <div class="teaser-quote-card"><p class="teaser-quote-text">😂 Alguns capítulos vão fazer você rir. Outros vão te dar uma pausa. E em alguns você vai se reconhecer rápido demais — e vai preferir continuar lendo como se não fosse você.</p></div>
+                    <div class="teaser-quote-card"><p class="teaser-quote-text">⏱️ Alguns encontros duraram 8 minutos. Outros 9 horas. E tem um... depois do qual nada foi igual.</p></div>
+                    <div class="teaser-quote-card"><p class="teaser-quote-text">📓 Isso não é um guia. É um diário de documentação dos erros que todos cometemos — só que não admitimos em voz alta.</p></div>
+                </div>
+                <p class="teaser-footer-text">Se você leu até aqui — provavelmente já teve pelo menos um desses encontros. 🎯</p>
+                <a href="#buy" class="teaser-cta">🔓 Quer saber o que aconteceu?</a>
+            </div>
+        </section>
+
+        <!-- ⭐ REVIEWS -->
+        <section class="reviews-hollywood">
+            <div class="reviews-header"><span class="reviews-star">⭐</span><h2 class="reviews-main-title">Leitores que Não Conseguiram Parar</h2></div>
+            <div class="reviews-showcase">
+                <div class="review-hollywood-card evrit-review">
+                    <div class="review-platform">
+                        <span class="evrit-logo">📱</span>
+                        <span class="evrit-text">E-Vrit Livros Digitais</span>
+                        <span class="evrit-badge">✓ Compra verificada</span>
+                    </div>
+                    <div class="review-rating">⭐⭐⭐⭐⭐</div>
+                    <blockquote class="review-quote">«Hilário. Cheio de flashbacks. Obrigada.»</blockquote>
+                    <div class="review-author-line">— Ronit</div>
+                </div>
+                <div class="review-hollywood-card"><div class="review-rating">⭐⭐⭐⭐⭐</div><blockquote class="review-quote">«Alguém precisava escrever isso.<br>Ainda bem que ele fez antes de mim.»</blockquote><div class="review-author-line">— Josh</div></div>
+                <div class="review-hollywood-card"><div class="review-rating">⭐⭐⭐⭐⭐</div><blockquote class="review-quote">«Terminei o livro.<br>Aí mandei mensagem pro meu ex.»</blockquote><div class="review-author-line">— Michelle</div></div>
+            </div>
+        </section>
+
+        <!-- ✍️ ABOUT -->
+        <section class="about-section">
+            <div class="about-container">
+                <div class="about-image"><img src="N4829.png" alt="Nir Ram - Autor"></div>
+                <div class="about-content">
+                    <div class="about-badge">✍️ Sobre Mim</div>
+                    <h2 class="about-title">Nir Ram</h2>
+                    <p class="about-text">Um executivo de TI com uma trajetória profissional rica, cuja vida pessoal também o tornou um <strong>curioso pesquisador do mundo dos encontros</strong>.</p>
+                    <p class="about-text">Divorciado e pai de três filhos adultos — Alon, Don e Michaela — ele traz uma combinação única de <strong>pensamento afiado, curiosidade humana e uma rara capacidade de encontrar o lado engraçado</strong> até nos momentos mais constrangedores.</p>
+                    <p class="about-signature">«Em resumo: se eu já passei por isso — que pelo menos haja uma boa história pra contar.»</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 📱 SOCIAL -->
+        <section class="social-section">
+            <h2 class="social-title">📱 Mais Conteúdo Divertido nos Nossos Canais</h2>
+            <div class="social-links">
+                <a href="https://www.youtube.com/@funnydates101US" class="social-link" target="_blank"><span class="icon">▶️</span><div><div class="label">YouTube</div><div class="handle">@funnydates101US</div></div></a>
+                <a href="https://www.tiktok.com/@no_art_gallery" class="social-link" target="_blank"><span class="icon">🎵</span><div><div class="label">TikTok</div><div class="handle">@no_art_gallery</div></div></a>
+            </div>
+        </section>
+
+        <!-- 🎬 STORY SECTION -->
+        <section class="story-section" id="share">
+            <button id="storyToggle" onclick="toggleStory()" style="cursor:pointer; background:none; border:1px solid var(--accent-gold); padding:10px 20px; border-radius:50px; color:var(--accent-gold); font-family:'Poppins',sans-serif; font-size:14px; display:inline-flex; align-items:center; gap:8px;"><span>🎬</span><span>Tem uma História?</span><span id="storyArrow">👀</span></button>
+            <div id="storyContent" style="max-height:0; opacity:0; overflow:hidden; transition: max-height 0.5s ease, opacity 0.5s ease;">
+            <h2 class="story-title">Sua História Pode Virar um Vídeo!</h2>
+            <p class="story-subtitle">Teve um encontro maluco? Estranho? Incrivelmente ruim?<br>Manda pra gente e sua história pode aparecer no nosso canal!</p>
+            <div class="story-reward"><span>🌟</span><span>Sua história será publicada com créditos para você</span></div>
+            <form class="story-form" id="storyForm">
+                <input type="hidden" name="access_key" value="c3307ded-69c5-4654-9615-0be668c334d4">
+                <input type="hidden" name="subject" value="🇧🇷 Nova história PT — FunnyDates101">
+                <div class="form-group"><label class="form-label">Seu Nome (ou apelido)</label><input type="text" name="name" class="form-input" placeholder="Como te chamamos?" required></div>
+                <div class="form-group"><label class="form-label">Email</label><input type="email" name="email" class="form-input" placeholder="Para te manter informado" required></div>
+                <div class="form-group"><label class="form-label">Sua História</label><textarea name="story" class="form-input form-textarea" placeholder="Conta pra gente o que aconteceu..." required></textarea></div>
+                <button type="submit" class="form-submit">🚀 Enviar Minha História</button>
+                <p class="form-note">* Sua história será mantida em sigilo e publicada apenas com sua permissão</p>
+            </form>
+            <div class="form-success" id="formSuccess"><h3>✅ Muito Obrigado!</h3><p>Sua história foi recebida com sucesso.<br>Se for selecionada, entraremos em contato!</p></div>
+            </div>
+        </section>
+
+        <!-- 🛒 BUY SECTION -->
+        <section class="buy-section" id="buy">
+            <div class="buy-hook">
+                <p style="text-align:center; font-size:20px; color:var(--text-secondary); margin-bottom:15px;">Se você leu até aqui —<br>já sabe que isso não é qualquer livro.</p>
+                <p style="text-align:center; font-size:18px; color:var(--accent-rose); font-style:italic; margin-bottom:40px;">A única pergunta: você está pronto pra descobrir o que aconteceu no próximo encontro?</p>
+            </div>
+            <h2 class="section-title">Onde Comprar?</h2>
+            <p class="buy-subtitle">Edição brasileira — eBook disponível agora!</p>
+            <div class="buy-grid">
+                <!-- eBook -->
+                <div class="buy-card featured">
+                    <div class="buy-card-badge">🇧🇷 Brasil</div>
+                    <div class="buy-icon">📱</div>
+                    <h3 class="buy-title">eBook</h3>
+                    <p class="buy-desc">Edição Kindle em Português</p>
+                    <div class="buy-price">R$19,90</div>
+                    <div class="buy-note">⚡ Download Instantâneo!</div>
+                    <div class="buy-button-wrapper">
+                        <a href="https://www.amazon.com.br/dp/B0G528JZGS" class="buy-button amazon" target="_blank">Comprar no Kindle</a>
+                        <p class="buy-delivery">⚡ Entrega Instantânea</p>
+                    </div>
+                </div>
+                <!-- Livro Impresso -->
+                <div class="buy-card gold-card">
+                    <div class="buy-card-badge" style="background:var(--gradient-gold); color:#000;">🚀 Em Breve</div>
+                    <div class="buy-icon">📚</div>
+                    <h3 class="buy-title">Livro Impresso</h3>
+                    <p class="buy-desc">Edição impressa em Português</p>
+                    <div class="buy-price" style="color:var(--text-secondary);">—</div>
+                    <div class="buy-note">Em breve disponível!</div>
+                    <div class="buy-button-wrapper">
+                        <span class="buy-button coming-soon">Em Breve</span>
+                        <p class="buy-delivery">📦 Frete para todo o Brasil</p>
+                    </div>
+                </div>
+                <!-- Audiobook -->
+                <div class="buy-card gold-card">
+                    <div class="buy-card-badge" style="background:rgba(212,175,55,0.3); color:var(--accent-gold);">🚀 Em Breve</div>
+                    <div class="buy-icon">🎧</div>
+                    <h3 class="buy-title">Audiobook</h3>
+                    <p class="buy-desc">+4 horas de encontros desastrosos!</p>
+                    <div class="buy-price" style="color:var(--text-secondary);">—</div>
+                    <div class="buy-note">Em produção!</div>
+                    <div class="buy-button-wrapper">
+                        <span class="buy-button coming-soon">Em Breve</span>
+                        <p class="buy-delivery">📱 Ouça em qualquer lugar</p>
+                    </div>
+                </div>
+                <!-- Internacional -->
+                <div class="buy-card">
+                    <div class="buy-card-badge">🌍 Internacional</div>
+                    <div class="buy-icon">📖</div>
+                    <h3 class="buy-title">eBook em Inglês</h3>
+                    <p class="buy-desc">Edição original em inglês</p>
+                    <div class="buy-price">$4.99</div>
+                    <div class="buy-note">📚 Também no Kindle Unlimited!</div>
+                    <div class="buy-button-wrapper">
+                        <a href="https://www.amazon.com/dp/B0G528JZGS" class="buy-button" target="_blank">Comprar no Amazon</a>
+                        <p class="buy-delivery">🌐 Envio Internacional</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Newsletter / Notificação -->
+            <div style="text-align:center; margin-top:60px; padding:40px; background:rgba(26,26,26,0.7); border-radius:20px; border:1px solid rgba(212,175,55,0.2); max-width:600px; margin-left:auto; margin-right:auto;">
+                <h3 style="font-family:'Playfair Display',serif; font-size:24px; margin-bottom:10px;">📬 Seja o Primeiro a Saber</h3>
+                <p style="color:var(--text-secondary); font-size:15px; margin-bottom:25px;">Cadastre-se para receber uma notificação quando o livro impresso<br>e o audiobook estiverem disponíveis.</p>
+                <a href="#share" style="display:inline-flex; align-items:center; gap:10px; background:var(--gradient-gold); color:#000; font-weight:700; padding:14px 32px; border-radius:50px; text-decoration:none; font-size:15px; transition:all 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">🔔 Me Avise no Lançamento!</a>
+                <p style="font-size:12px; color:rgba(255,255,255,0.3); margin-top:15px;">📚 Livro impresso · 📱 Kindle · 🎧 Audiobook</p>
+            </div>
+        </section>
+
+        <!-- 🎧 AUDIOBOOK EM BREVE -->
+        <section class="audiobook-coming-section">
+            <div class="audio-cs-container">
+                <div class="audio-cs-card">
+                    <span class="audio-cs-icon">🎧</span>
+                    <div class="audio-cs-label"><span class="audio-cs-label-dot"></span>EM PRODUÇÃO</div>
+                    <h2 class="audio-cs-title"><span>Audiobook</span> em Português</h2>
+                    <p class="audio-cs-subtitle">101 encontros desastrosos narrados em voz alta.<br>Porque algumas histórias são melhores com os olhos fechados.</p>
+                    <div class="audio-cs-features">
+                        <div class="audio-cs-feat"><span>⏱️</span><span>+4 horas de caos</span></div>
+                        <div class="audio-cs-feat"><span>🎙️</span><span>Narração expressiva</span></div>
+                        <div class="audio-cs-feat"><span>📱</span><span>Ouça em qualquer lugar</span></div>
+                    </div>
+                    <a href="#share" class="audio-cs-cta">🔔 Me Avise quando Sair!</a>
+                    <p class="audio-cs-notify">Cadastre-se acima para receber uma notificação no lançamento</p>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div class="footer-links">
+                <a href="/terms.html">Termos &amp; Privacidade</a><span class="footer-divider">|</span>
+                <a href="/accessibility.html">Acessibilidade</a><span class="footer-divider">|</span>
+                <a href="#share">Contato</a>
+            </div>
+            
+            <a href="https://noartgallery.com" target="_blank" rel="noopener noreferrer" class="noartgallery-link">
+                <img src="noartgallery-logo.png" alt="No Art Gallery" class="noartgallery-logo">
+            </a>
+            
+            <p class="footer-text">© Todos os Direitos Reservados a Nir Ram 2025</p>
+            <p class="footer-author">📚 Love Bites: 101 Encontros Desastrosos</p>
+            <p class="footer-contact">📧 <a id="footer-email-link" href="#"></a></p>
+            <script>
+                (function(){
+                    var u='nir';var d='funnydates101.com';
+                    var e=u+'@'+d;
+                    var a=document.getElementById('footer-email-link');
+                    if(a){a.href='mai'+'lto:'+e;a.textContent=e;}
+                })();
+            </script>
+        </footer>
+    </div>
+
+    <script>
+        let fontSize = 100;
+        function toggleAccessibilityMenu() { document.getElementById('accessibility-menu').classList.toggle('active'); }
+        function changeFontSize(d) { fontSize += d*10; fontSize=Math.max(80,Math.min(150,fontSize)); document.body.style.fontSize=fontSize+'%'; }
+        function toggleHighContrast() { document.body.classList.toggle('high-contrast'); document.body.classList.remove('grayscale'); }
+        function toggleGrayscale() { document.body.classList.toggle('grayscale'); document.body.classList.remove('high-contrast'); }
+        function toggleUnderlineLinks() { document.body.classList.toggle('underline-links'); }
+        function resetAccessibility() { fontSize=100; document.body.style.fontSize='100%'; document.body.classList.remove('high-contrast','grayscale','underline-links'); }
+        function toggleTeaser() { document.getElementById('teaserToggle').classList.toggle('open'); document.getElementById('teaserContent').classList.toggle('open'); }
+        function toggleStory() {
+            var c=document.getElementById('storyContent');
+            var b=document.getElementById('storyToggle');
+            b.classList.toggle('open');
+            if(c.style.maxHeight==='0px'||c.style.maxHeight==='0'||c.style.maxHeight==='') { c.style.maxHeight='2000px'; c.style.opacity='1'; }
+            else { c.style.maxHeight='0'; c.style.opacity='0'; }
+        }
+        document.getElementById('storyForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const fd=new FormData(this);
+            try {
+                await fetch('https://api.web3forms.com/submit',{method:'POST',body:fd});
+                document.getElementById('storyForm').style.display='none';
+                document.getElementById('formSuccess').style.display='block';
+            } catch(err) { console.error('Error:',err); }
+        });
+    </script>
+</body>
+</html>
