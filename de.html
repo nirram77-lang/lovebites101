@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Love Bites: 101 Citas Desastrosas | El Libro de Citas Más Divertido</title>
-    <meta name="description" content="101 historias de citas que te harán reír hasta llorar. El libro que todos los que alguna vez han tenido una cita necesitan leer.">
+    <title>Love Bites: 101 Liebes-Desaster | Das Witzigste Dating-Buch aller Zeiten</title>
+    <meta name="description" content="101 urkomische Dating-Geschichten, die dich vor Lachen weinen lassen. Das Buch, das jeder lesen muss, der jemals ein Date hatte.">
     
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
@@ -17,17 +17,17 @@
     
     <!-- Open Graph / Social -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.funnydates101.com/es">
-    <meta property="og:title" content="💔 Citas Reales. Risas Reales.">
-    <meta property="og:description" content="Grandes expectativas. Demasiadas preguntas. Demasiadas historias. 🎬">
+    <meta property="og:url" content="https://www.funnydates101.com/de">
+    <meta property="og:title" content="💔 Echte Dates. Echtes Gelächter.">
+    <meta property="og:description" content="Hohe Erwartungen. Zu viele Fragen. Zu viele Geschichten. 🎬">
     <meta property="og:image" content="https://www.funnydates101.com/og-image.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="💔 Citas Reales. Risas Reales.">
-    <meta name="twitter:description" content="Grandes expectativas. Demasiadas preguntas. Demasiadas historias. 🎬">
+    <meta name="twitter:title" content="💔 Echte Dates. Echtes Gelächter.">
+    <meta name="twitter:description" content="Hohe Erwartungen. Zu viele Fragen. Zu viele Geschichten. 🎬">
     <meta name="twitter:image" content="https://www.funnydates101.com/og-image.png">
 
     <!-- Favicon -->
@@ -37,6 +37,7 @@
     <link rel="alternate" hreflang="he" href="https://funnydates101.co.il">
     <link rel="alternate" hreflang="fr" href="https://funnydates101.com/fr">
     <link rel="alternate" hreflang="es" href="https://funnydates101.com/es">
+    <link rel="alternate" hreflang="de" href="https://funnydates101.com/de">
     <link rel="alternate" hreflang="pt-BR" href="https://funnydates101.com/pt">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -83,7 +84,7 @@
         }
 
         /* Language Switcher */
-        .lang-switch { position: fixed; top: 20px; right: 20px; z-index: 1000; display: flex; gap: 8px; }
+        .lang-switch { position: fixed; top: 20px; right: 20px; z-index: 1000; display: flex; gap: 8px; flex-wrap: wrap; justify-content: flex-end; }
         .lang-switch a { display: flex; align-items: center; gap: 8px; background: rgba(26, 26, 26, 0.95); border: 1px solid var(--accent-gold); color: var(--text-primary); padding: 10px 18px; border-radius: 50px; text-decoration: none; font-size: 14px; font-weight: 500; transition: all 0.3s ease; backdrop-filter: blur(10px); }
         .lang-switch a:hover { background: var(--accent-gold); color: #000; }
         .lang-switch a.active { background: var(--accent-gold); color: #000; }
@@ -212,8 +213,6 @@
         .buy-card { background: var(--bg-card); border: 2px solid rgba(255,255,255,0.1); border-radius: 20px; padding: 30px 16px 22px; text-align: center; display: flex; flex-direction: column; position: relative; transition: all 0.3s; overflow: visible; }
         .buy-card:hover { transform: translateY(-5px); }
         .buy-card.featured { border-color: var(--accent-red); background: linear-gradient(180deg, rgba(220,38,38,0.12) 0%, var(--bg-card) 100%); box-shadow: var(--shadow-glow); }
-        .buy-card.gold-card { border: 2px solid #d4af37; background: linear-gradient(180deg, rgba(212,175,55,0.1) 0%, var(--bg-card) 100%); box-shadow: 0 0 30px rgba(212,175,55,0.2); }
-        .buy-card.gold-card:hover { border-color: #d4af37; box-shadow: 0 0 40px rgba(212,175,55,0.35); }
         .buy-card-badge { position: absolute; top: -15px; left: 50%; transform: translateX(-50%); padding: 5px 18px; border-radius: 20px; font-size: 12px; font-weight: 700; white-space: nowrap; z-index: 20; }
         .badge-red  { background: var(--gradient-red);  color: #fff; }
         .badge-gold { background: var(--gradient-gold); color: #000; }
@@ -346,15 +345,15 @@
             document.addEventListener('touchend', function() { isDragging = false; });
         })();
 
-        // Cosmic ticker quotes — Spanish
+        // Cosmic ticker quotes — German
         const tickerQuotes = [
-            { emoji: '🍷', text: '«Después del séptimo vaso, dijo algo que lo cambió todo.»', source: '— ¿Qué dijo? En el libro.' },
-            { emoji: '👀', text: '«Me miró y dijo una sola frase. Debería haberla recordado.»', source: '— ¿La frase? En el libro.' },
-            { emoji: '⏱️', text: '«A los 10 minutos hizo una pregunta. No estaba preparado para la respuesta.»', source: '— ¿La pregunta? En el libro.' },
-            { emoji: '🚗', text: '«Cuando llegamos al coche, dijo algo. Todavía lo pienso.»', source: '— ¿Qué dijo? En el libro.' },
-            { emoji: '⚡', text: '«La cita duró 7 minutos. ¿La razón? No te lo vas a creer.»', source: '— ¿La razón real? En el libro.' },
-            { emoji: '💳', text: '«El camarero trajo la cuenta. Lo que pasó después — no me lo esperaba.»', source: '— ¿Qué pasó? En el libro.' },
-            { emoji: '🧺', text: '«Primera cita. Llegó con tres bolsas. Nadie me había preparado para eso.»', source: '— ¿Qué pasó? En el libro.' }
+            { emoji: '🍷', text: '«Nach dem siebten Glas sagte sie etwas, das alles verändert hat.»', source: '— Was sie sagte? Im Buch.' },
+            { emoji: '👀', text: '«Sie schaute mich an und sagte einen einzigen Satz. Den hätte ich mir merken sollen.»', source: '— Der Satz? Im Buch.' },
+            { emoji: '⏱️', text: '«Nach 10 Minuten stellte sie eine Frage. Ich war nicht auf die Antwort vorbereitet.»', source: '— Die Frage? Im Buch.' },
+            { emoji: '🚗', text: '«Beim Auto sagte sie etwas. Ich denke immer noch daran.»', source: '— Was sie sagte? Im Buch.' },
+            { emoji: '⚡', text: '«Das Date dauerte 7 Minuten. Der Grund? Du wirst es nicht glauben.»', source: '— Der echte Grund? Im Buch.' },
+            { emoji: '💳', text: '«Der Kellner brachte die Rechnung. Was dann passierte — das hatte ich nicht erwartet.»', source: '— Was passierte? Im Buch.' },
+            { emoji: '🧺', text: '«Erstes Date. Sie kam mit drei Einkaufstüten. Darauf war niemand vorbereitet.»', source: '— Was passierte? Im Buch.' }
         ];
         let currentQuoteIndex = 0, tickerInterval;
         function initTicker() { generateDots(); updateQuote(0); startAutoRotation(); }
@@ -369,13 +368,13 @@
         document.addEventListener('DOMContentLoaded', initTicker);
     </script>
 
-    <!-- 🌐 LANGUAGE SWITCHER - ES / EN / FR / HE -->
+    <!-- 🌐 LANGUAGE SWITCHER -->
     <div class="lang-switch">
         <a href="https://funnydates101.com" title="English" translate="no"><img src="https://flagcdn.com/w40/gb.png" alt="EN" class="flag-icon"><span translate="no">EN</span></a>
         <a href="https://funnydates101.co.il" title="עברית" translate="no"><img src="https://flagcdn.com/w40/il.png" alt="IL" class="flag-icon"><span translate="no">עברית</span></a>
         <a href="https://funnydates101.com/fr" title="Français" translate="no"><img src="https://flagcdn.com/w40/fr.png" alt="FR" class="flag-icon"><span translate="no">FR</span></a>
-        <a href="#" class="active" title="Español" translate="no"><img src="https://flagcdn.com/w40/es.png" alt="ES" class="flag-icon"><span translate="no">ES</span></a>
-        <a href="https://funnydates101.com/de" title="Deutsch" translate="no"><img src="https://flagcdn.com/w40/de.png" alt="DE" class="flag-icon"><span translate="no">DE</span></a>
+        <a href="https://funnydates101.com/es" title="Español" translate="no"><img src="https://flagcdn.com/w40/es.png" alt="ES" class="flag-icon"><span translate="no">ES</span></a>
+        <a href="#" class="active" title="Deutsch" translate="no"><img src="https://flagcdn.com/w40/de.png" alt="DE" class="flag-icon"><span translate="no">DE</span></a>
         <a href="/pt.html" title="Português" translate="no"><img src="https://flagcdn.com/w40/br.png" alt="BR" class="flag-icon"><span translate="no">PT</span></a>
     </div>
 
@@ -386,23 +385,23 @@
 
     <!-- ♿ ACCESSIBILITY WIDGET -->
     <div id="accessibility-widget">
-        <button class="accessibility-btn" onclick="toggleAccessibilityMenu()" aria-label="Menú de accesibilidad">
+        <button class="accessibility-btn" onclick="toggleAccessibilityMenu()" aria-label="Barrierefreiheitsmenü">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9H15V22H13V16H11V22H9V9H3V7H21V9Z"/></svg>
         </button>
         <div class="accessibility-menu" id="accessibility-menu">
-            <div class="accessibility-header"><span>Accesibilidad</span><button onclick="toggleAccessibilityMenu()">✕</button></div>
-            <button onclick="changeFontSize(1)">Texto más grande +</button>
-            <button onclick="changeFontSize(-1)">Texto más pequeño -</button>
-            <button onclick="toggleHighContrast()">Alto contraste</button>
-            <button onclick="toggleGrayscale()">Escala de grises</button>
-            <button onclick="toggleUnderlineLinks()">Subrayar enlaces</button>
-            <button onclick="resetAccessibility()">Restablecer</button>
+            <div class="accessibility-header"><span>Barrierefreiheit</span><button onclick="toggleAccessibilityMenu()">✕</button></div>
+            <button onclick="changeFontSize(1)">Schrift vergrößern +</button>
+            <button onclick="changeFontSize(-1)">Schrift verkleinern -</button>
+            <button onclick="toggleHighContrast()">Hoher Kontrast</button>
+            <button onclick="toggleGrayscale()">Graustufen</button>
+            <button onclick="toggleUnderlineLinks()">Links unterstreichen</button>
+            <button onclick="resetAccessibility()">Zurücksetzen</button>
         </div>
     </div>
 
-    <!-- 🔥 FLOATING QUOTE - SPANISH -->
+    <!-- 🔥 FLOATING QUOTE - GERMAN -->
     <div class="floating-quotes">
-        <div class="quote-bubble">🍷 Diez minutos. Siete copas de vino. Y la escucho decirle a su amiga: «Llevamos dos meses juntos.» Tío, yo ESTABA AHÍ.</div>
+        <div class="quote-bubble">🍷 Zehn Minuten. Sieben Gläser Wein. Und dann höre ich sie zu ihrer Freundin sagen: „Wir sind seit zwei Monaten zusammen." Ich saß DANEBEN.</div>
     </div>
 
     <!-- 🚀 PRICE TICKER - DRAGGABLE -->
@@ -410,38 +409,39 @@
         <button class="price-ticker-close" onclick="event.stopPropagation(); closePriceTicker()">✕</button>
         <a href="#buy" class="price-ticker-link" style="text-decoration:none; color:inherit; display:block;">
             <div class="price-ticker-header">
-                <span class="price-ticker-icon">🇪🇸</span>
-                <span class="price-ticker-title">EDICIÓN ESPAÑOLA</span>
+                <span class="price-ticker-icon">🇩🇪</span>
+                <span class="price-ticker-title">DEUTSCHE AUSGABE</span>
                 <span class="price-ticker-icon">🔥</span>
             </div>
-            <div style="font-size:13px; color:#333; margin-bottom:8px;">📱 eBook Kindle</div>
+            <div style="font-size:13px; color:#333; margin-bottom:8px;">📱 Kindle eBook</div>
             <div style="font-family:'Playfair Display',serif; font-size:22px; color:#dc2626; font-weight:900; margin:8px 0;">€4,99</div>
-            <div style="font-size:12px; color:#555; margin-bottom:10px;">¡También en Kindle Unlimited!</div>
-            <a href="https://www.amazon.es/dp/B0GPN48NN4" target="_blank" style="display:inline-block; background:#1a1a1a; color:#fff; border:none; padding:10px 24px; border-radius:25px; font-size:14px; font-weight:700; cursor:pointer; text-decoration:none;">🛒 Comprar →</a>
+            <div style="font-size:12px; color:#555; margin-bottom:10px;">Auch in Kindle Unlimited!</div>
+            <!-- TODO: Replace B0GHSTZ5ZG with real German ASIN -->
+            <a href="https://www.amazon.de/dp/B0GHSTZ5ZG" target="_blank" style="display:inline-block; background:#1a1a1a; color:#fff; border:none; padding:10px 24px; border-radius:25px; font-size:14px; font-weight:700; cursor:pointer; text-decoration:none;">🛒 Kaufen →</a>
         </a>
-        <div style="font-size:10px; color:#666; margin-top:8px;">💡 ¡Arrástrame a cualquier lugar!</div>
+        <div style="font-size:10px; color:#666; margin-top:8px;">💡 Zieh mich wohin du möchtest!</div>
     </div>
 
-    <!-- 🎬 COSMIC TICKER - SPANISH QUOTES -->
+    <!-- 🎬 COSMIC TICKER - GERMAN QUOTES -->
     <div class="cosmic-ticker-container" id="cosmicTicker">
         <div class="cosmic-ticker">
             <button class="cosmic-close" onclick="closeCosmicTicker()">✕</button>
             <div class="cosmic-inner">
                 <div class="cosmic-header">
-                    <div class="cosmic-live"><span class="cosmic-live-dot"></span>EXTRACTO</div>
-                    <div class="cosmic-title">📺 Historias Reales</div>
+                    <div class="cosmic-live"><span class="cosmic-live-dot"></span>AUSZUG</div>
+                    <div class="cosmic-title">📺 Echte Geschichten</div>
                 </div>
                 <div class="cosmic-quote-area">
                     <div id="tickerQuoteContainer" style="transition: all 0.3s ease;">
                         <span class="cosmic-emoji" id="tickerEmoji">🍷</span>
-                        <p class="cosmic-text" id="tickerQuoteText">«Después del séptimo vaso, dijo algo que lo cambió todo.»</p>
-                        <p class="cosmic-source" id="tickerQuoteSource">— ¿Qué dijo? En el libro.</p>
+                        <p class="cosmic-text" id="tickerQuoteText">«Nach dem siebten Glas sagte sie etwas, das alles verändert hat.»</p>
+                        <p class="cosmic-source" id="tickerQuoteSource">— Was sie sagte? Im Buch.</p>
                     </div>
                 </div>
                 <div class="cosmic-dots" id="tickerDots"></div>
                 <div class="cosmic-nav">
                     <button class="cosmic-nav-btn" onclick="prevQuote()">‹</button>
-                    <a href="#why" class="cosmic-cta">Descubrir →</a>
+                    <a href="#why" class="cosmic-cta">Entdecken →</a>
                     <button class="cosmic-nav-btn" onclick="nextQuote()">›</button>
                 </div>
             </div>
@@ -451,19 +451,19 @@
     <div class="main-content">
         <!-- 🎬 HERO SECTION -->
         <section class="hero">
-            <div class="hero-badge"><span class="badge-dot"></span>El Libro del que Todo el Mundo Habla</div>
-            <h1 class="hero-title"><span class="highlight">Love Bites</span><br>101 Citas Desastrosas<span class="title-dot"></span></h1>
-            <p class="hero-subtitle">Grandes expectativas. Demasiadas preguntas.<br>Demasiadas historias.</p>
-            <p class="hero-tagline">Si alguna vez has salido de una cita diciendo «¿pero qué acaba de pasar?» —<br>este libro es para ti.</p>
+            <div class="hero-badge"><span class="badge-dot"></span>Das Buch, über das alle reden</div>
+            <h1 class="hero-title"><span class="highlight">Love Bites</span><br>101 Liebes-Desaster<span class="title-dot"></span></h1>
+            <p class="hero-subtitle">Hohe Erwartungen. Zu viele Fragen.<br>Zu viele Geschichten.</p>
+            <p class="hero-tagline">Wenn du schon mal nach einem Date dachtest „Was zur Hölle war das gerade?" —<br>dann ist dieses Buch für dich.</p>
             <div class="cta-container">
-                <a href="#why" class="cta-button">👀 ¿Qué Pasó en Esa Cita?</a>
-                <p class="cta-subtext">📚 Libro | 📱 eBook | 🎧 Audiolibro | 🇪🇸 Edición Española</p>
+                <a href="#why" class="cta-button">👀 Was passierte auf diesem Date?</a>
+                <p class="cta-subtext">📚 Taschenbuch | 📱 eBook | 🎧 Hörbuch | 🇩🇪 Deutsche Ausgabe</p>
             </div>
             <div class="coming-soon-badge">
                 <span class="icon">🚀</span>
                 <div>
-                    <div class="text">¡eBook Disponible en Español! 🇪🇸</div>
-                    <div class="subtext">Libro impreso · Audiolibro — Próximamente</div>
+                    <div class="text">eBook auf Deutsch verfügbar! 🇩🇪</div>
+                    <div class="subtext">Taschenbuch · Hörbuch — Demnächst</div>
                 </div>
             </div>
         </section>
@@ -471,50 +471,50 @@
         <!-- 🎭 WHY SECTION -->
         <section class="why-section-hollywood" id="why">
             <div class="why-header">
-                <h2 class="why-main-title">Todas las historias son reales.</h2>
-                <p class="why-subtitle">Y ese es exactamente el problema.</p>
+                <h2 class="why-main-title">Alle Geschichten sind wahr.</h2>
+                <p class="why-subtitle">Und genau das ist das Problem.</p>
             </div>
             <div class="why-grid">
-                <div class="why-card"><span class="why-icon">🎭</span><h3 class="why-title">Me reí. Luego me di cuenta de que me había pasado a mí también.</h3><p class="why-text">Situaciones que si las vieras en una serie dirías que están exageradas. Lamentablemente, no era un guión.</p></div>
-                <div class="why-card"><span class="why-icon">💔</span><h3 class="why-title">Yo estaba seguro de que era ella. Ella estaba segura de que era solo martes.</h3><p class="why-text">Crush cortos, ilusiones largas, y ese momento en que te das cuenta de que la otra persona ya pasó página.</p></div>
-                <div class="why-card"><span class="why-icon">🍷</span><h3 class="why-title">Lo que la gente hace en las citas — y luego reza para que nadie lo cuente.</h3><p class="why-text">Historias reales. Sin filtros. Los momentos que me hicieron pensar: «Por favor, que nadie escriba un libro sobre esto.»</p></div>
+                <div class="why-card"><span class="why-icon">🎭</span><h3 class="why-title">Ich musste lachen. Dann merkte ich, dass mir das auch passiert ist.</h3><p class="why-text">Situationen, die man in einer Serie für übertrieben halten würde. Leider war es kein Drehbuch.</p></div>
+                <div class="why-card"><span class="why-icon">💔</span><h3 class="why-title">Ich war sicher, sie ist es. Sie war sicher, es ist nur ein Dienstag.</h3><p class="why-text">Kurze Schwärmereien, lange Illusionen, und dieser Moment, wenn man merkt, dass die andere Person schon längst weitergezogen ist.</p></div>
+                <div class="why-card"><span class="why-icon">🍷</span><h3 class="why-title">Was Menschen auf Dates tun — und dann beten, dass niemand darüber schreibt.</h3><p class="why-text">Echte Geschichten. Ohne Filter. Die Momente, die mich denken ließen: „Bitte, schreib niemand ein Buch darüber."</p></div>
             </div>
         </section>
 
         <!-- 🔥 TEASER SECTION -->
         <section class="teaser-section">
-            <button class="teaser-badge" id="teaserToggle" onclick="toggleTeaser()"><span>🎬</span><span>¿Quieres un adelanto?</span><span class="arrow">👀</span></button>
+            <button class="teaser-badge" id="teaserToggle" onclick="toggleTeaser()"><span>🎬</span><span>Willst du einen Vorgeschmack?</span><span class="arrow">👀</span></button>
             <div class="teaser-content" id="teaserContent">
-                <h2 class="teaser-main-title">Hasta aquí eran citas.</h2>
-                <p class="teaser-subtitle">A partir de aquí — es sobre ti.</p>
+                <h2 class="teaser-main-title">Bis hierher waren es Dates.</h2>
+                <p class="teaser-subtitle">Ab jetzt — geht es um dich.</p>
                 <div class="teaser-quotes-container">
-                    <div class="teaser-quote-card"><p class="teaser-quote-text">🔁 Este no es un libro sobre citas. Es un libro sobre el momento en que te das cuenta de que algo en ti sigue repitiéndose.</p></div>
-                    <div class="teaser-quote-card"><p class="teaser-quote-text">🎯 Cada historia empieza con «Wow, esto pinta bien» y termina con «¿Cómo he acabado aquí otra vez?»</p></div>
-                    <div class="teaser-quote-card"><p class="teaser-quote-text">😂 Algunos capítulos te harán reír. Otros te harán pausar. Y en algunos te reconocerás demasiado rápido — y preferirás seguir leyendo como si no fueras tú.</p></div>
-                    <div class="teaser-quote-card"><p class="teaser-quote-text">⏱️ Algunas citas duraron 8 minutos. Otras 9 horas. Y hay una... después de la cual nada fue igual.</p></div>
-                    <div class="teaser-quote-card"><p class="teaser-quote-text">📓 Esto no es una guía. Es un diario de documentación de los errores que todos cometemos — solo que no los admitimos en voz alta.</p></div>
+                    <div class="teaser-quote-card"><p class="teaser-quote-text">🔁 Das ist kein Buch über Dates. Es ist ein Buch über den Moment, in dem du merkst, dass sich bei dir etwas immer wiederholt.</p></div>
+                    <div class="teaser-quote-card"><p class="teaser-quote-text">🎯 Jede Geschichte beginnt mit „Wow, das sieht gut aus" und endet mit „Wie bin ich schon wieder hier gelandet?"</p></div>
+                    <div class="teaser-quote-card"><p class="teaser-quote-text">😂 Manche Kapitel machen dich lachen. Andere lassen dich innehalten. Und in manchen erkennst du dich zu schnell wieder — und liest lieber weiter, als ob du es nicht wärst.</p></div>
+                    <div class="teaser-quote-card"><p class="teaser-quote-text">⏱️ Manche Dates dauerten 8 Minuten. Andere 9 Stunden. Und eines... danach war nichts mehr wie zuvor.</p></div>
+                    <div class="teaser-quote-card"><p class="teaser-quote-text">📓 Das ist kein Ratgeber. Es ist ein Tagebuch der Fehler, die wir alle machen — nur dass wir sie nicht laut zugeben.</p></div>
                 </div>
-                <p class="teaser-footer-text">Si has leído hasta aquí — probablemente has tenido al menos una de estas citas. 🎯</p>
-                <a href="#buy" class="teaser-cta">🔓 ¿Quieres saber qué pasó?</a>
+                <p class="teaser-footer-text">Wenn du bis hierher gelesen hast — hattest du wahrscheinlich mindestens eines dieser Dates. 🎯</p>
+                <a href="#buy" class="teaser-cta">🔓 Willst du wissen, was passierte?</a>
             </div>
         </section>
 
         <!-- ⭐ REVIEWS -->
         <section class="reviews-hollywood">
-            <div class="reviews-header"><span class="reviews-star">⭐</span><h2 class="reviews-main-title">Lectores que No Pudieron Parar</h2></div>
+            <div class="reviews-header"><span class="reviews-star">⭐</span><h2 class="reviews-main-title">Leser, die nicht aufhören konnten</h2></div>
             <div class="reviews-showcase">
                 <div class="review-hollywood-card evrit-review">
                     <div class="review-platform">
                         <span class="evrit-logo">📱</span>
-                        <span class="evrit-text">E-Vrit Libros Digitales</span>
-                        <span class="evrit-badge">✓ Compra verificada</span>
+                        <span class="evrit-text">E-Vrit Digitale Bücher</span>
+                        <span class="evrit-badge">✓ Verifizierter Kauf</span>
                     </div>
                     <div class="review-rating">⭐⭐⭐⭐⭐</div>
-                    <blockquote class="review-quote">«Hilarante. Lleno de flashbacks. Gracias.»</blockquote>
+                    <blockquote class="review-quote">„Zum Schreien komisch. Voller Flashbacks. Danke."</blockquote>
                     <div class="review-author-line">— Ronit</div>
                 </div>
-                <div class="review-hollywood-card"><div class="review-rating">⭐⭐⭐⭐⭐</div><blockquote class="review-quote">«Alguien tenía que escribir esto.<br>Menos mal que lo hizo antes que yo.»</blockquote><div class="review-author-line">— Josh</div></div>
-                <div class="review-hollywood-card"><div class="review-rating">⭐⭐⭐⭐⭐</div><blockquote class="review-quote">«Lo terminé.<br>Luego le escribí a mi ex.»</blockquote><div class="review-author-line">— Michelle</div></div>
+                <div class="review-hollywood-card"><div class="review-rating">⭐⭐⭐⭐⭐</div><blockquote class="review-quote">„Jemand musste das schreiben.<br>Gut, dass er es vor mir getan hat."</blockquote><div class="review-author-line">— Josh</div></div>
+                <div class="review-hollywood-card"><div class="review-rating">⭐⭐⭐⭐⭐</div><blockquote class="review-quote">„Fertig gelesen.<br>Dann habe ich meinem Ex geschrieben."</blockquote><div class="review-author-line">— Michelle</div></div>
             </div>
         </section>
 
@@ -523,102 +523,103 @@
             <div class="about-container">
                 <div class="about-image"><img src="N4829.png" alt="Nir Ram - Autor"></div>
                 <div class="about-content">
-                    <div class="about-badge">✍️ Sobre Mí</div>
+                    <div class="about-badge">✍️ Über mich</div>
                     <h2 class="about-title">Nir Ram</h2>
-                    <p class="about-text">Un director de IT con una trayectoria profesional rica, cuya vida personal también lo convirtió en un <strong>curioso investigador del mundo de las citas</strong>.</p>
-                    <p class="about-text">Divorciado y padre de tres hijos ya mayores — Alon, Don y Michaela — aporta una combinación única de <strong>pensamiento agudo, curiosidad humana, y una rara capacidad de encontrar el lado cómico</strong> incluso en los momentos más incómodos.</p>
-                    <p class="about-signature">«En resumen: si ya lo viví — que al menos haya una buena historia que contar.»</p>
+                    <p class="about-text">Ein IT-Manager mit einer reichen Berufslaufbahn, dessen Privatleben ihn auch zu einem <strong>neugierigen Beobachter der Dating-Welt</strong> gemacht hat.</p>
+                    <p class="about-text">Geschieden und Vater von drei erwachsenen Kindern — Alon, Don und Michaela — bringt er eine einzigartige Kombination aus <strong>scharfem Denken, menschlicher Neugier und einer seltenen Fähigkeit mit, selbst in den peinlichsten Momenten die komische Seite zu sehen</strong>.</p>
+                    <p class="about-signature">„Kurzgesagt: Wenn ich es schon erlebt habe — soll wenigstens eine gute Geschichte dabei rausspringen."</p>
                 </div>
             </div>
         </section>
 
         <!-- 📱 SOCIAL -->
         <section class="social-section">
-            <h2 class="social-title">📱 Más Contenido Divertido en Nuestros Canales</h2>
+            <h2 class="social-title">📱 Mehr witzige Inhalte auf unseren Kanälen</h2>
             <div class="social-links">
                 <a href="https://www.youtube.com/@funnydates101US" class="social-link" target="_blank"><span class="icon">▶️</span><div><div class="label">YouTube</div><div class="handle">@funnydates101US</div></div></a>
                 <a href="https://www.tiktok.com/@no_art_gallery" class="social-link" target="_blank"><span class="icon">🎵</span><div><div class="label">TikTok</div><div class="handle">@no_art_gallery</div></div></a>
             </div>
         </section>
 
-        <!-- 🎬 STORY SECTION - COLLAPSED BY DEFAULT -->
+        <!-- 🎬 STORY SECTION -->
         <section class="story-section" id="share">
-            <button class="story-badge" id="storyToggle" onclick="toggleStory()" style="cursor:pointer; background:none; border:1px solid var(--accent-gold); padding:10px 20px; border-radius:50px; color:var(--accent-gold); font-family:'Poppins',sans-serif; font-size:14px; display:inline-flex; align-items:center; gap:8px;"><span>🎬</span><span>¿Tienes una Historia?</span><span id="storyArrow">👀</span></button>
+            <button class="story-badge" id="storyToggle" onclick="toggleStory()" style="cursor:pointer; background:none; border:1px solid var(--accent-gold); padding:10px 20px; border-radius:50px; color:var(--accent-gold); font-family:'Poppins',sans-serif; font-size:14px; display:inline-flex; align-items:center; gap:8px;"><span>🎬</span><span>Hast du eine Geschichte?</span><span id="storyArrow">👀</span></button>
             <div id="storyContent" style="max-height:0; opacity:0; overflow:hidden; transition: max-height 0.5s ease, opacity 0.5s ease;">
-            <h2 class="story-title">¡Tu Historia Podría Convertirse en un Vídeo!</h2>
-            <p class="story-subtitle">¿Tuviste una cita loca? ¿Rara? ¿Hilarante?<br>¡Mándanosla y tu historia podría aparecer en nuestro canal!</p>
-            <div class="story-reward"><span>🌟</span><span>Tu historia será publicada con una mención tuya</span></div>
+            <h2 class="story-title">Deine Geschichte könnte ein Video werden!</h2>
+            <p class="story-subtitle">Hattest du ein verrücktes, seltsames oder urkomisches Date?<br>Schick es uns — deine Geschichte könnte auf unserem Kanal erscheinen!</p>
+            <div class="story-reward"><span>🌟</span><span>Deine Geschichte wird mit einer Erwähnung veröffentlicht</span></div>
             <form class="story-form" id="storyForm">
                 <input type="hidden" name="access_key" value="c3307ded-69c5-4654-9615-0be668c334d4">
-                <input type="hidden" name="subject" value="🇪🇸 Nueva historia ES - FunnyDates101">
-                <div class="form-group"><label class="form-label">Tu Nombre (o apodo)</label><input type="text" name="name" class="form-input" placeholder="¿Cómo te llamamos?" required></div>
-                <div class="form-group"><label class="form-label">Email</label><input type="email" name="email" class="form-input" placeholder="Para mantenerte al tanto" required></div>
-                <div class="form-group"><label class="form-label">Tu Historia</label><textarea name="story" class="form-input form-textarea" placeholder="Cuéntanos qué pasó..." required></textarea></div>
-                <button type="submit" class="form-submit">🚀 Enviar Mi Historia</button>
-                <p class="form-note">* Tu historia se guardará de forma confidencial y solo se publicará con tu permiso</p>
+                <input type="hidden" name="subject" value="🇩🇪 Neue Geschichte DE - FunnyDates101">
+                <div class="form-group"><label class="form-label">Dein Name (oder Spitzname)</label><input type="text" name="name" class="form-input" placeholder="Wie sollen wir dich nennen?" required></div>
+                <div class="form-group"><label class="form-label">E-Mail</label><input type="email" name="email" class="form-input" placeholder="Um dich auf dem Laufenden zu halten" required></div>
+                <div class="form-group"><label class="form-label">Deine Geschichte</label><textarea name="story" class="form-input form-textarea" placeholder="Erzähl uns, was passiert ist..." required></textarea></div>
+                <button type="submit" class="form-submit">🚀 Meine Geschichte einschicken</button>
+                <p class="form-note">* Deine Geschichte wird vertraulich behandelt und nur mit deiner Erlaubnis veröffentlicht</p>
             </form>
-            <div class="form-success" id="formSuccess"><h3>✅ ¡Muchas Gracias!</h3><p>Tu historia ha sido recibida correctamente.<br>Si es seleccionada, nos pondremos en contacto contigo.</p></div>
+            <div class="form-success" id="formSuccess"><h3>✅ Vielen herzlichen Dank!</h3><p>Deine Geschichte wurde erfolgreich empfangen.<br>Wenn sie ausgewählt wird, melden wir uns bei dir.</p></div>
             </div>
         </section>
 
         <!-- 🛒 BUY SECTION -->
         <section class="buy-section" id="buy">
             <div class="buy-hook">
-                <p style="text-align:center; font-size:20px; color:var(--text-secondary); margin-bottom:15px;">Si has leído hasta aquí —<br>ya sabes que esto no es un libro cualquiera.</p>
-                <p style="text-align:center; font-size:18px; color:var(--accent-rose); font-style:italic; margin-bottom:40px;">La única pregunta: ¿estás listo para descubrir qué pasó en la próxima cita?</p>
+                <p style="text-align:center; font-size:20px; color:var(--text-secondary); margin-bottom:15px;">Wenn du bis hier gelesen hast —<br>weißt du, dass das kein gewöhnliches Buch ist.</p>
+                <p style="text-align:center; font-size:18px; color:var(--accent-rose); font-style:italic; margin-bottom:40px;">Die einzige Frage: Bist du bereit zu erfahren, was beim nächsten Date passierte?</p>
             </div>
-            <h2 class="section-title">¿Dónde Comprar?</h2>
-            <p class="buy-subtitle">Edición española — ¡eBook disponible!</p>
+            <h2 class="section-title">Wo kaufen?</h2>
+            <p class="buy-subtitle">Deutsche Ausgabe — eBook erhältlich!</p>
             <div class="buy-grid">
                 <!-- Card 1: eBook — RED -->
                 <div class="buy-card card-red">
-                    <div class="buy-card-badge badge-red">🔥 Disponible Ahora</div>
+                    <div class="buy-card-badge badge-red">🔥 Jetzt verfügbar</div>
                     <div class="buy-icon">📱</div>
                     <h3 class="buy-title">eBook</h3>
-                    <p class="buy-desc">Edición digital en español</p>
+                    <p class="buy-desc">Digitale Ausgabe auf Deutsch</p>
                     <div class="buy-price">€4,99</div>
-                    <div class="buy-note">¡Amazon & Kindle Unlimited!</div>
+                    <div class="buy-note">Amazon & Kindle Unlimited!</div>
                     <div class="buy-button-wrapper">
-                        <a href="https://www.amazon.es/dp/B0GPN48NN4" class="buy-button amazon" target="_blank">Comprar en Amazon</a>
+                        <!-- TODO: Replace B0GHSTZ5ZG with real German ASIN -->
+                        <a href="https://www.amazon.de/dp/B0GHSTZ5ZG" class="buy-button amazon" target="_blank">Auf Amazon kaufen</a>
                         <p class="buy-delivery">📱 Kindle · 📖 Kindle Unlimited</p>
                     </div>
                 </div>
-                <!-- Card 2: Libro Impreso — GOLD -->
+                <!-- Card 2: Taschenbuch — GOLD -->
                 <div class="buy-card card-gold">
-                    <div class="buy-card-badge badge-gold">🚀 Próximamente</div>
+                    <div class="buy-card-badge badge-gold">🚀 Demnächst</div>
                     <div class="buy-icon">📚</div>
-                    <h3 class="buy-title">Libro Impreso</h3>
-                    <p class="buy-desc">Edición española en papel</p>
+                    <h3 class="buy-title">Taschenbuch</h3>
+                    <p class="buy-desc">Deutsche Ausgabe als Printbuch</p>
                     <div class="buy-price" style="color:var(--text-secondary);">—</div>
-                    <div class="buy-note">¡Próximamente disponible!</div>
+                    <div class="buy-note">Bald erhältlich!</div>
                     <div class="buy-button-wrapper">
-                        <span class="buy-button coming-soon">Próximamente</span>
-                        <p class="buy-delivery">📦 Envío a toda España</p>
+                        <span class="buy-button coming-soon">Demnächst</span>
+                        <p class="buy-delivery">📦 Versand nach Deutschland, Österreich & Schweiz</p>
                     </div>
                 </div>
-                <!-- Card 3: Audiolibro — RED -->
+                <!-- Card 3: Hörbuch — RED -->
                 <div class="buy-card card-red">
-                    <div class="buy-card-badge badge-red">🚀 Próximamente</div>
+                    <div class="buy-card-badge badge-red">🚀 Demnächst</div>
                     <div class="buy-icon">🎧</div>
-                    <h3 class="buy-title">Audiolibro</h3>
-                    <p class="buy-desc">+4 horas de desastres amorosos</p>
+                    <h3 class="buy-title">Hörbuch</h3>
+                    <p class="buy-desc">+4 Stunden Liebes-Desaster</p>
                     <div class="buy-price" style="color:var(--text-secondary);">—</div>
-                    <div class="buy-note">En producción...</div>
+                    <div class="buy-note">In Produktion...</div>
                     <div class="buy-button-wrapper">
-                        <span class="buy-button coming-soon">Próximamente</span>
-                        <p class="buy-delivery">📱 Escúchalo en cualquier lugar</p>
+                        <span class="buy-button coming-soon">Demnächst</span>
+                        <p class="buy-delivery">📱 Überall anhören</p>
                     </div>
                 </div>
-                <!-- Card 4: Versión Inglesa — GOLD -->
+                <!-- Card 4: Englische Version — GOLD -->
                 <div class="buy-card card-gold">
-                    <div class="buy-card-badge badge-gold">🌍 Internacional</div>
+                    <div class="buy-card-badge badge-gold">🌍 International</div>
                     <div class="buy-icon">🇬🇧</div>
-                    <h3 class="buy-title">Versión Inglesa</h3>
-                    <p class="buy-desc">Libro, eBook & Audio disponibles</p>
+                    <h3 class="buy-title">Englische Version</h3>
+                    <p class="buy-desc">Buch, eBook & Audio verfügbar</p>
                     <div class="buy-price">$4.99 – $12.99</div>
-                    <div class="buy-note">¡Todos los formatos!</div>
+                    <div class="buy-note">Alle Formate!</div>
                     <div class="buy-button-wrapper">
-                        <a href="https://www.amazon.com/dp/B0G46NS5VG" class="buy-button" target="_blank">Ver Versión Inglesa</a>
+                        <a href="https://www.amazon.com/dp/B0G46NS5VG" class="buy-button" target="_blank">Englische Version ansehen</a>
                         <p class="buy-delivery">📚 Paperback · 📱 Kindle · 🎧 Audio</p>
                     </div>
                 </div>
@@ -628,71 +629,44 @@
             <div style="max-width:550px; margin:50px auto 0; text-align:center; background:linear-gradient(135deg, var(--bg-card) 0%, #222 100%); border:2px solid var(--accent-gold); border-radius:24px; padding:40px 30px; position:relative; overflow:hidden;">
                 <div style="position:absolute; top:0; left:0; right:0; height:3px; background:var(--gradient-gold);"></div>
                 <div style="font-size:40px; margin-bottom:15px;">🔔</div>
-                <h3 style="font-family:'Playfair Display',serif; font-size:24px; margin-bottom:10px;">¡No Te Pierdas el Lanzamiento!</h3>
-                <p style="color:var(--text-secondary); font-size:15px; margin-bottom:25px;">Sé el primero en saber cuándo la edición en papel y el audiolibro estén disponibles.<br>Regístrate para recibir una notificación.</p>
+                <h3 style="font-family:'Playfair Display',serif; font-size:24px; margin-bottom:10px;">Verpasse nicht den Launch!</h3>
+                <p style="color:var(--text-secondary); font-size:15px; margin-bottom:25px;">Sei der Erste, der weiß, wann Taschenbuch und Hörbuch verfügbar sind.<br>Trag dich ein und erhalte eine Benachrichtigung.</p>
                 <form id="notifyForm" style="display:flex; gap:10px; flex-wrap:wrap; justify-content:center;">
                     <input type="hidden" name="access_key" value="c3307ded-69c5-4654-9615-0be668c334d4">
-                    <input type="hidden" name="subject" value="🇪🇸 Notify Me - Spanish Edition">
-                    <input type="email" name="email" placeholder="tu@email.com" required style="flex:1; min-width:220px; padding:14px 18px; background:rgba(0,0,0,0.3); border:1px solid rgba(255,255,255,0.15); border-radius:12px; color:white; font-size:15px; font-family:'Poppins',sans-serif;">
-                    <button type="submit" style="background:var(--gradient-gold); color:#000; border:none; padding:14px 28px; border-radius:12px; font-weight:700; font-size:15px; cursor:pointer; transition:all 0.3s; font-family:'Poppins',sans-serif; white-space:nowrap;">📩 Avisarme</button>
+                    <input type="hidden" name="subject" value="🇩🇪 Notify Me - German Edition">
+                    <input type="email" name="email" placeholder="deine@email.de" required style="flex:1; min-width:220px; padding:14px 18px; background:rgba(0,0,0,0.3); border:1px solid rgba(255,255,255,0.15); border-radius:12px; color:white; font-size:15px; font-family:'Poppins',sans-serif;">
+                    <button type="submit" style="background:var(--gradient-gold); color:#000; border:none; padding:14px 28px; border-radius:12px; font-weight:700; font-size:15px; cursor:pointer; transition:all 0.3s; font-family:'Poppins',sans-serif; white-space:nowrap;">📩 Benachrichtigen</button>
                 </form>
                 <div id="notifySuccess" style="display:none; padding:20px; text-align:center;">
                     <div style="font-size:32px; margin-bottom:10px;">✅</div>
-                    <h4 style="color:var(--accent-gold); margin-bottom:5px;">¡Gracias!</h4>
-                    <p style="color:var(--text-secondary); font-size:14px;">¡Te avisaremos en cuanto esté disponible la edición española!</p>
+                    <h4 style="color:var(--accent-gold); margin-bottom:5px;">Danke!</h4>
+                    <p style="color:var(--text-secondary); font-size:14px;">Wir benachrichtigen dich, sobald die deutsche Ausgabe verfügbar ist!</p>
                 </div>
-                <p style="font-size:11px; color:rgba(255,255,255,0.3); margin-top:15px;">🔒 Sin spam. Solo una notificación al lanzamiento.</p>
+                <p style="font-size:11px; color:rgba(255,255,255,0.3); margin-top:15px;">🔒 Kein Spam. Nur eine Benachrichtigung beim Launch.</p>
             </div>
         </section>
 
-        <!-- 🎧 AUDIOLIBRO - COMING SOON -->
+        <!-- 🎧 HÖRBUCH - DEMNÄCHST -->
         <style>
         .audiobook-coming-section { padding: 80px 20px; position: relative; overflow: hidden; }
         .audiobook-coming-section::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 50% 50%, rgba(220,38,38,0.06) 0%, transparent 70%); animation: pulseGlowCS 6s ease-in-out infinite; pointer-events: none; }
         @keyframes pulseGlowCS { 0%, 100% { opacity: 0.4; } 50% { opacity: 1; } }
-
         .audio-cs-container { max-width: 700px; margin: 0 auto; text-align: center; position: relative; z-index: 2; }
-
-        .audio-cs-card {
-            background: rgba(26,26,26,0.95);
-            border-radius: 28px;
-            padding: 50px 40px;
-            position: relative;
-            overflow: hidden;
-            backdrop-filter: blur(20px);
-        }
-        /* Animated border */
-        .audio-cs-card::before {
-            content: '';
-            position: absolute; top: 0; left: 0; right: 0; bottom: 0;
-            border-radius: 28px; padding: 2px;
-            background: linear-gradient(45deg, #dc2626, #d4af37, #f87171, #d4af37, #dc2626);
-            background-size: 400% 400%;
-            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            -webkit-mask-composite: xor; mask-composite: exclude;
-            animation: borderFlow 4s ease infinite;
-        }
+        .audio-cs-card { background: rgba(26,26,26,0.95); border-radius: 28px; padding: 50px 40px; position: relative; overflow: hidden; backdrop-filter: blur(20px); }
+        .audio-cs-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; border-radius: 28px; padding: 2px; background: linear-gradient(45deg, #dc2626, #d4af37, #f87171, #d4af37, #dc2626); background-size: 400% 400%; -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude; animation: borderFlow 4s ease infinite; }
         @keyframes borderFlow { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
-
         .audio-cs-icon { font-size: 64px; margin-bottom: 20px; display: block; animation: floatIcon 3s ease-in-out infinite; }
         @keyframes floatIcon { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
-
         .audio-cs-label { display: inline-flex; align-items: center; gap: 8px; background: rgba(220,38,38,0.2); border: 1px solid rgba(220,38,38,0.4); padding: 6px 18px; border-radius: 20px; font-size: 11px; font-weight: 700; color: #f87171; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 20px; }
         .audio-cs-label-dot { width: 6px; height: 6px; background: #ef4444; border-radius: 50%; animation: pulse 1.5s infinite; }
-
         .audio-cs-title { font-family: 'Playfair Display', serif; font-size: clamp(26px, 4vw, 38px); font-weight: 900; color: #fff; margin-bottom: 12px; }
         .audio-cs-title span { color: var(--accent-red); font-style: italic; }
-
         .audio-cs-subtitle { font-size: 16px; color: rgba(255,255,255,0.6); margin-bottom: 35px; line-height: 1.6; }
-
         .audio-cs-features { display: flex; justify-content: center; gap: 25px; flex-wrap: wrap; margin-bottom: 35px; }
         .audio-cs-feat { display: flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); padding: 10px 18px; border-radius: 50px; font-size: 13px; color: rgba(255,255,255,0.7); }
-
         .audio-cs-cta { display: inline-flex; align-items: center; gap: 10px; background: rgba(212,175,55,0.15); border: 2px solid var(--accent-gold); color: var(--accent-gold); font-size: 17px; font-weight: 700; padding: 16px 40px; border-radius: 50px; text-decoration: none; transition: all 0.3s ease; font-family: 'Poppins', sans-serif; animation: goldPulse 2.5s ease-in-out infinite; }
         @keyframes goldPulse { 0%, 100% { box-shadow: 0 0 20px rgba(212,175,55,0.2); } 50% { box-shadow: 0 0 40px rgba(212,175,55,0.5); } }
         .audio-cs-cta:hover { background: var(--accent-gold); color: #000; transform: translateY(-3px); }
-
         .audio-cs-notify { margin-top: 20px; font-size: 13px; color: rgba(255,255,255,0.35); }
         </style>
 
@@ -700,33 +674,33 @@
             <div class="audio-cs-container">
                 <div class="audio-cs-card">
                     <span class="audio-cs-icon">🎧</span>
-                    <div class="audio-cs-label"><span class="audio-cs-label-dot"></span>EN PRODUCCIÓN</div>
-                    <h2 class="audio-cs-title"><span>Audiolibro</span> en Español</h2>
-                    <p class="audio-cs-subtitle">101 citas desastrosas narradas en voz alta.<br>Porque algunas historias se viven mejor con los ojos cerrados.</p>
+                    <div class="audio-cs-label"><span class="audio-cs-label-dot"></span>IN PRODUKTION</div>
+                    <h2 class="audio-cs-title"><span>Hörbuch</span> auf Deutsch</h2>
+                    <p class="audio-cs-subtitle">101 Liebes-Desaster — vorgelesen.<br>Weil manche Geschichten sich mit geschlossenen Augen besser anhören.</p>
                     <div class="audio-cs-features">
-                        <div class="audio-cs-feat"><span>⏱️</span><span>+4 horas de caos</span></div>
-                        <div class="audio-cs-feat"><span>🎙️</span><span>Narración expresiva</span></div>
-                        <div class="audio-cs-feat"><span>📱</span><span>Escúchalo en cualquier lugar</span></div>
+                        <div class="audio-cs-feat"><span>⏱️</span><span>+4 Stunden Chaos</span></div>
+                        <div class="audio-cs-feat"><span>🎙️</span><span>Ausdrucksstarke Vertonung</span></div>
+                        <div class="audio-cs-feat"><span>📱</span><span>Überall anhören</span></div>
                     </div>
-                    <a href="#buy" class="audio-cs-cta">🔔 ¡Avísame cuando salga!</a>
-                    <p class="audio-cs-notify">Regístrate arriba para recibir una notificación al lanzamiento</p>
+                    <a href="#buy" class="audio-cs-cta">🔔 Benachrichtige mich beim Launch!</a>
+                    <p class="audio-cs-notify">Trag dich oben ein, um eine Benachrichtigung beim Launch zu erhalten</p>
                 </div>
             </div>
         </section>
 
         <footer class="footer">
             <div class="footer-links">
-                <a href="/terms.html">Términos & Privacidad</a><span class="footer-divider">|</span>
-                <a href="/accessibility.html">Accesibilidad</a><span class="footer-divider">|</span>
-                <a href="#share">Contacto</a>
+                <a href="/terms.html">AGB & Datenschutz</a><span class="footer-divider">|</span>
+                <a href="/accessibility.html">Barrierefreiheit</a><span class="footer-divider">|</span>
+                <a href="#share">Kontakt</a>
             </div>
             
             <a href="https://noartgallery.com" target="_blank" rel="noopener noreferrer" class="noartgallery-link">
                 <img src="noartgallery-logo.png" alt="No Art Gallery" class="noartgallery-logo">
             </a>
             
-            <p class="footer-text">© Todos los Derechos Reservados a Nir Ram 2025</p>
-            <p class="footer-author">📚 Love Bites: 101 Citas Desastrosas</p>
+            <p class="footer-text">© Alle Rechte vorbehalten bei Nir Ram 2025</p>
+            <p class="footer-author">📚 Love Bites: 101 Liebes-Desaster</p>
             <p class="footer-contact">📧 <a id="footer-email-link" href="#"></a></p>
             <script>
                 (function(){
@@ -773,7 +747,7 @@
                 await fetch('https://api.web3forms.com/submit', { method: 'POST', body: fd });
                 document.getElementById('storyForm').style.display = 'none';
                 document.getElementById('formSuccess').style.display = 'block';
-            } catch (err) { console.error('Error:', err); }
+            } catch (err) { console.error('Fehler:', err); }
         });
 
         // Notify form submit
@@ -784,27 +758,26 @@
                 await fetch('https://api.web3forms.com/submit', { method: 'POST', body: fd });
                 this.style.display = 'none';
                 document.getElementById('notifySuccess').style.display = 'block';
-            } catch (err) { console.error('Error:', err); }
+            } catch (err) { console.error('Fehler:', err); }
         });
 
-        // Rotating floating quote — Spanish
-        const esQuotes = [
-            "🍷 Diez minutos. Siete copas de vino. Y la escucho decirle a su amiga: «Llevamos dos meses juntos.» Tío, yo ESTABA AHÍ.",
-            "🚗 En plena autopista me suelta: «¿Es uno de esos tíos del tech con Tesla?» Di media vuelta. Y no era por el tráfico.",
-            "💬 Cita perfecta. Química. Risas. Chispas. Su mensaje al día siguiente: Dos palabras. Solo una era amable.",
-            "🔥 En el club era FUEGO. Pasión. Miradas intensas. Al día siguiente en su Harley: Fría como el hielo. La misma persona.",
-            "🧺 Primera cita. Llegó con tres bolsas de la compra. «Solo paso un momento por casa de la abuela.» Nadie me preparó para lo que pasó de vuelta."
+        // Rotating floating quotes — German
+        const deQuotes = [
+            "🍷 Zehn Minuten. Sieben Gläser Wein. Und dann höre ich sie zu ihrer Freundin sagen: „Wir sind seit zwei Monaten zusammen." Ich saß DANEBEN.",
+            "🚗 Auf der Autobahn sagt sie plötzlich: „Bist du so ein Tech-Typ mit Tesla?" Ich bin umgekehrt. Und nicht wegen des Verkehrs.",
+            "💬 Perfektes Date. Chemie. Lachen. Funken. Ihre Nachricht am nächsten Morgen? Zwei Wörter. Nur eines war nett.",
+            "🔥 Im Club war sie FEUER. Leidenschaft. Intensive Blicke. Am nächsten Tag auf ihrer Harley? Eiskalt. Dieselbe Person.",
+            "🧺 Erstes Date. Sie kam mit drei Einkaufstüten. „Ich gehe nur kurz zu meiner Oma." Niemand hatte mich auf das vorbereitet, was auf dem Rückweg passierte."
         ];
         let quoteIndex = 0;
         setInterval(() => {
-            quoteIndex = (quoteIndex + 1) % esQuotes.length;
+            quoteIndex = (quoteIndex + 1) % deQuotes.length;
             const bubble = document.querySelector('.quote-bubble');
             if (bubble) {
                 bubble.style.opacity = '0';
-                setTimeout(() => { bubble.textContent = esQuotes[quoteIndex]; bubble.style.opacity = '1'; }, 300);
+                setTimeout(() => { bubble.textContent = deQuotes[quoteIndex]; bubble.style.opacity = '1'; }, 300);
             }
         }, 8000);
-
     </script>
 </body>
 </html>
