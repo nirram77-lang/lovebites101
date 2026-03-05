@@ -83,11 +83,48 @@
         }
 
         /* Language Switcher */
-        .lang-switch { position: fixed; top: 20px; right: 20px; z-index: 1000; display: flex; gap: 8px; }
-        .lang-switch a { display: flex; align-items: center; gap: 8px; background: rgba(26, 26, 26, 0.95); border: 1px solid var(--accent-gold); color: var(--text-primary); padding: 10px 18px; border-radius: 50px; text-decoration: none; font-size: 14px; font-weight: 500; transition: all 0.3s ease; backdrop-filter: blur(10px); }
-        .lang-switch a:hover { background: var(--accent-gold); color: #000; }
-        .lang-switch a.active { background: var(--accent-gold); color: #000; }
-        .lang-switch .flag-icon { width: 20px; height: 15px; border-radius: 2px; object-fit: cover; }
+        /* ── LANGUAGE SELECTOR WIDGET ── */
+        .lang-widget-wrap { position: fixed; top: 20px; right: 20px; z-index: 1100; display: inline-block; direction: ltr; }
+        .lang-trigger { position: relative; display: inline-flex; align-items: center; gap: 10px; padding: 11px 22px; background: linear-gradient(135deg, rgba(255,255,255,0.10) 0%, rgba(255,255,255,0.04) 100%); border: 1.5px solid #c9a84c; border-radius: 40px; cursor: pointer; font-family: 'Poppins', sans-serif; font-size: 15px; font-weight: 600; color: #fff; letter-spacing: 0.04em; backdrop-filter: blur(14px); box-shadow: 0 0 18px rgba(201,168,76,0.35), inset 0 1px 0 rgba(255,255,255,0.12); transition: all 0.3s ease; overflow: hidden; user-select: none; }
+        .lang-trigger::before { content: ''; position: absolute; top: 0; left: -100%; width: 60%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.18), transparent); animation: ltShine 4s ease-in-out infinite; }
+        @keyframes ltShine { 0%,70%{left:-100%} 85%{left:130%} 100%{left:130%} }
+        .lang-trigger:hover { transform: translateY(-1px); box-shadow: 0 0 40px rgba(201,168,76,0.5), 0 4px 20px rgba(0,0,0,0.4); }
+        .lang-trigger .lw-chevron { font-size: 10px; opacity: 0.7; transition: transform 0.3s ease; }
+        .lang-trigger.open .lw-chevron { transform: rotate(180deg); }
+        .lw-trigger-flag { width: 26px; height: 26px; border-radius: 50%; overflow: hidden; border: 1.5px solid rgba(201,168,76,0.6); flex-shrink: 0; display: none; }
+        .lw-trigger-flag.visible { display: block; }
+        .lw-trigger-flag img { width: 100%; height: 100%; object-fit: cover; }
+        .lang-panel { position: absolute; top: calc(100% + 14px); right: 0; width: 330px; background: linear-gradient(145deg, rgba(30,18,8,0.97) 0%, rgba(18,9,3,0.98) 100%); border: 1px solid rgba(201,168,76,0.28); border-radius: 18px; backdrop-filter: blur(30px); box-shadow: 0 20px 60px rgba(0,0,0,0.7), inset 0 1px 0 rgba(255,255,255,0.05); overflow: hidden; transform-origin: top right; transform: scaleY(0) translateY(-10px); opacity: 0; pointer-events: none; transition: transform 0.38s cubic-bezier(0.34,1.56,0.64,1), opacity 0.25s ease; }
+        .lang-panel.open { transform: scaleY(1) translateY(0); opacity: 1; pointer-events: all; }
+        .lw-panel-header { padding: 15px 20px 11px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(201,168,76,0.10); }
+        .lw-panel-title { font-size: 11px; font-weight: 700; letter-spacing: 0.22em; color: #c9a84c; text-transform: uppercase; display: flex; align-items: center; gap: 8px; }
+        .lw-panel-title::before { content: ''; display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: #22c55e; box-shadow: 0 0 8px rgba(34,197,94,0.4); animation: lwBlink 2s ease-in-out infinite; }
+        @keyframes lwBlink { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.5;transform:scale(.75)} }
+        .lw-panel-count { font-size: 11px; color: rgba(255,255,255,0.3); }
+        .lw-flags-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; padding: 14px 14px 10px; }
+        .lw-flag-item { display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 12px 6px 10px; border-radius: 13px; border: 1.5px solid rgba(255,255,255,0.06); background: rgba(255,255,255,0.03); cursor: pointer; transition: all 0.25s cubic-bezier(0.34,1.56,0.64,1); position: relative; overflow: hidden; text-decoration: none; }
+        .lw-flag-item::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 50% 0%, rgba(201,168,76,0.09), transparent 70%); opacity: 0; transition: opacity 0.25s ease; }
+        .lw-flag-item:hover, .lw-flag-item.active { border-color: #c9a84c; box-shadow: 0 0 22px rgba(201,168,76,0.35); }
+        .lw-flag-item:hover { transform: translateY(-3px) scale(1.04); }
+        .lw-flag-item.active { background: rgba(201,168,76,0.07); }
+        .lw-flag-item:hover::before, .lw-flag-item.active::before { opacity: 1; }
+        .lw-flag-sphere { width: 52px; height: 52px; border-radius: 50%; position: relative; overflow: hidden; box-shadow: 0 5px 18px rgba(0,0,0,0.55), inset 0 1px 0 rgba(255,255,255,0.14); transition: transform 0.28s ease, box-shadow 0.28s ease; flex-shrink: 0; }
+        .lw-flag-item:hover .lw-flag-sphere { transform: scale(1.12); box-shadow: 0 8px 28px rgba(201,168,76,0.38); }
+        .lw-flag-item.active .lw-flag-sphere { box-shadow: 0 0 0 2.5px #c9a84c, 0 0 18px rgba(201,168,76,0.35); }
+        .lw-flag-sphere img { width: 100%; height: 100%; object-fit: cover; display: block; transform: scale(1.09); }
+        .lw-flag-sphere::after { content: ''; position: absolute; top: 5px; left: 9px; width: 34px; height: 18px; background: radial-gradient(ellipse at center, rgba(255,255,255,0.30) 0%, transparent 70%); border-radius: 50%; pointer-events: none; z-index: 2; }
+        .lw-flag-sphere::before { content: ''; position: absolute; bottom: 3px; left: 7px; width: 38px; height: 14px; background: radial-gradient(ellipse at center, rgba(0,0,0,0.28) 0%, transparent 70%); border-radius: 50%; pointer-events: none; z-index: 2; }
+        .lw-flag-label { font-size: 10.5px; font-weight: 700; color: rgba(255,255,255,0.78); letter-spacing: 0.07em; text-transform: uppercase; text-align: center; line-height: 1; }
+        .lw-flag-item.active .lw-flag-label { color: #fff; }
+        .lw-flag-badge { display: inline-block; padding: 2px 8px; border-radius: 20px; font-size: 9px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+        .lw-flag-badge.full { background: rgba(34,197,94,0.16); border: 1px solid rgba(34,197,94,0.5); color: #22c55e; box-shadow: 0 0 8px rgba(34,197,94,0.4); }
+        .lw-flag-badge.ebook { background: rgba(201,168,76,0.11); border: 1px solid rgba(201,168,76,0.35); color: #e8c96e; }
+        .lw-panel-footer { padding: 9px 20px 13px; border-top: 1px solid rgba(255,255,255,0.04); display: flex; align-items: center; justify-content: center; gap: 6px; font-size: 10px; color: rgba(255,255,255,0.22); letter-spacing: 0.1em; text-transform: uppercase; }
+        .lw-panel-footer::before, .lw-panel-footer::after { content: '+'; color: #c9a84c; opacity: 0.35; }
+        @keyframes lwFlagIn { from{opacity:0;transform:translateY(7px) scale(0.88)} to{opacity:1;transform:translateY(0) scale(1)} }
+        .lang-panel.open .lw-flag-item { animation: lwFlagIn 0.4s cubic-bezier(0.34,1.4,0.64,1) both; }
+        .lang-panel.open .lw-flag-item:nth-child(1){animation-delay:.04s}.lang-panel.open .lw-flag-item:nth-child(2){animation-delay:.09s}.lang-panel.open .lw-flag-item:nth-child(3){animation-delay:.14s}.lang-panel.open .lw-flag-item:nth-child(4){animation-delay:.19s}.lang-panel.open .lw-flag-item:nth-child(5){animation-delay:.24s}.lang-panel.open .lw-flag-item:nth-child(6){animation-delay:.29s}.lang-panel.open .lw-flag-item:nth-child(7){animation-delay:.34s}.lang-panel.open .lw-flag-item:nth-child(8){animation-delay:.39s}.lang-panel.open .lw-flag-item:nth-child(9){animation-delay:.44s}
+        @media (max-width:768px) { .lang-widget-wrap{top:10px;right:10px} .lang-trigger{padding:8px 16px;font-size:13px} .lang-panel{width:290px} }
 
         .hero { text-align: center; padding: 140px 20px 80px; position: relative; }
         .hero-badge { display: inline-flex; align-items: center; gap: 10px; background: rgba(26, 26, 26, 0.8); border: 1px solid var(--accent-gold); padding: 12px 24px; border-radius: 50px; font-size: 14px; color: var(--accent-gold); margin-bottom: 30px; backdrop-filter: blur(10px); }
@@ -261,10 +298,10 @@
         @keyframes floatHeart { 0% { transform: translateY(100vh) rotate(0deg); opacity: 0; } 10% { opacity: 0.6; } 90% { opacity: 0.6; } 100% { transform: translateY(-100px) rotate(360deg); opacity: 0; } }
 
         /* ACCESSIBILITY */
-        #accessibility-widget { position: fixed; top: 90px; right: 20px; z-index: 9999; }
+        #accessibility-widget { position: fixed; top: 20px; left: 20px; z-index: 9999; }
         .accessibility-btn { width: 50px; height: 50px; border-radius: 50%; background: var(--accent-gold); border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; color: #000; box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4); transition: all 0.3s ease; }
         .accessibility-btn:hover { transform: scale(1.1); }
-        .accessibility-menu { position: absolute; top: 60px; right: 0; background: #1a1a1a; border: 2px solid var(--accent-gold); border-radius: 12px; padding: 15px; min-width: 220px; display: none; flex-direction: column; gap: 8px; }
+        .accessibility-menu { position: absolute; top: 60px; left: 0; background: #1a1a1a; border: 2px solid var(--accent-gold); border-radius: 12px; padding: 15px; min-width: 220px; display: none; flex-direction: column; gap: 8px; }
         .accessibility-menu.active { display: flex; }
         .accessibility-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; font-weight: 700; font-size: 14px; color: var(--accent-gold); }
         .accessibility-header button { background: none; border: none; color: var(--text-secondary); cursor: pointer; font-size: 16px; }
@@ -324,10 +361,8 @@
         @media (max-width: 768px) {
             .about-container { flex-direction: column; text-align: center; }
             .about-signature { text-align: left; }
-            .lang-switch { top: 10px; right: 10px; }
-            .lang-switch a { padding: 8px 12px; font-size: 11px; }
             .floating-quotes { display: none; }
-            #accessibility-widget { top: 80px; right: 10px; }
+            #accessibility-widget { top: 10px; left: 10px; }
         }
     </style>
 
@@ -370,14 +405,77 @@
     </script>
 
     <!-- 🌐 LANGUAGE SWITCHER - ES / EN / FR / HE -->
-    <div class="lang-switch">
-        <a href="https://funnydates101.com" title="English" translate="no"><img src="https://flagcdn.com/w40/gb.png" alt="EN" class="flag-icon"><span translate="no">EN</span></a>
-        <a href="https://funnydates101.co.il" title="עברית" translate="no"><img src="https://flagcdn.com/w40/il.png" alt="IL" class="flag-icon"><span translate="no">עברית</span></a>
-        <a href="https://funnydates101.com/fr" title="Français" translate="no"><img src="https://flagcdn.com/w40/fr.png" alt="FR" class="flag-icon"><span translate="no">FR</span></a>
-        <a href="#" class="active" title="Español" translate="no"><img src="https://flagcdn.com/w40/es.png" alt="ES" class="flag-icon"><span translate="no">ES</span></a>
-        <a href="https://funnydates101.com/de" title="Deutsch" translate="no"><img src="https://flagcdn.com/w40/de.png" alt="DE" class="flag-icon"><span translate="no">DE</span></a>
-        <a href="/pt.html" title="Português" translate="no"><img src="https://flagcdn.com/w40/br.png" alt="BR" class="flag-icon"><span translate="no">PT</span></a>
+    <!-- 🌐 LANGUAGE SELECTOR WIDGET -->
+    <div class="lang-widget-wrap" id="langWidgetWrap">
+      <button class="lang-trigger" id="lwTriggerBtn" onclick="lwTogglePanel()">
+        <span>🌐</span>
+        <div class="lw-trigger-flag" id="lwTriggerFlag"><img id="lwTriggerFlagImg" src="" alt=""></div>
+        <span id="lwTriggerText">Languages</span>
+        <span class="lw-chevron">▲</span>
+      </button>
+      <div class="lang-panel" id="lwLangPanel">
+        <div class="lw-panel-header">
+          <div class="lw-panel-title">Choose Your Edition</div>
+          <div class="lw-panel-count">9 Languages</div>
+        </div>
+        <div class="lw-flags-grid">
+          <a class="lw-flag-item" href="https://funnydates101.com" target="_self">
+            <div class="lw-flag-sphere"><img src="https://flagcdn.com/w80/us.png" alt="EN"></div>
+            <div class="lw-flag-label">English</div><div class="lw-flag-badge full">Full</div>
+          </a>
+          <a class="lw-flag-item" href="https://funnydates101.co.il" target="_self">
+            <div class="lw-flag-sphere"><img src="https://flagcdn.com/w80/il.png" alt="HE"></div>
+            <div class="lw-flag-label">Hebrew</div><div class="lw-flag-badge full">Full</div>
+          </a>
+          <a class="lw-flag-item" href="https://funnydates101.com/fr.html" target="_self">
+            <div class="lw-flag-sphere"><img src="https://flagcdn.com/w80/fr.png" alt="FR"></div>
+            <div class="lw-flag-label">French</div><div class="lw-flag-badge ebook">eBook</div>
+          </a>
+          <a class="lw-flag-item" href="https://funnydates101.com/de" target="_self">
+            <div class="lw-flag-sphere"><img src="https://flagcdn.com/w80/de.png" alt="DE"></div>
+            <div class="lw-flag-label">German</div><div class="lw-flag-badge ebook">eBook</div>
+          </a>
+          <a class="lw-flag-item active" href="https://funnydates101.com/es.html" target="_self">
+            <div class="lw-flag-sphere"><img src="https://flagcdn.com/w80/es.png" alt="ES"></div>
+            <div class="lw-flag-label">Spanish</div><div class="lw-flag-badge ebook">eBook</div>
+          </a>
+          <a class="lw-flag-item" href="https://funnydates101.com/pt.html" target="_self">
+            <div class="lw-flag-sphere"><img src="https://flagcdn.com/w80/br.png" alt="PT"></div>
+            <div class="lw-flag-label">Portug.</div><div class="lw-flag-badge ebook">eBook</div>
+          </a>
+          <a class="lw-flag-item" href="https://www.amazon.com/dp/B0GPB6LC98?binding=kindle_edition&qid=1772684313&sr=8-1&ref=dbs_dp_rwt_sb_pc_tkin" target="_blank">
+            <div class="lw-flag-sphere"><img src="https://flagcdn.com/w80/nl.png" alt="NL"></div>
+            <div class="lw-flag-label">Dutch</div><div class="lw-flag-badge ebook">eBook</div>
+          </a>
+          <a class="lw-flag-item" href="https://www.amazon.com/dp/B0GPB6LC98?binding=kindle_edition&qid=1772684313&sr=8-1&ref=dbs_dp_rwt_sb_pc_tkin" target="_blank">
+            <div class="lw-flag-sphere"><img src="https://flagcdn.com/w80/jp.png" alt="JP"></div>
+            <div class="lw-flag-label">Japanese</div><div class="lw-flag-badge ebook">eBook</div>
+          </a>
+          <a class="lw-flag-item" href="https://www.amazon.com/dp/B0GPB6LC98?binding=kindle_edition&qid=1772684313&sr=8-1&ref=dbs_dp_rwt_sb_pc_tkin" target="_blank">
+            <div class="lw-flag-sphere"><img src="https://flagcdn.com/w80/in.png" alt="HI"></div>
+            <div class="lw-flag-label">Hindi</div><div class="lw-flag-badge ebook">eBook</div>
+          </a>
+        </div>
+        <div class="lw-panel-footer">Available Worldwide on Amazon</div>
+      </div>
     </div>
+    <script>
+      (function(){
+        var lwOpen = false;
+        window.lwTogglePanel = function() {
+          lwOpen = !lwOpen;
+          document.getElementById('lwLangPanel').classList.toggle('open', lwOpen);
+          document.getElementById('lwTriggerBtn').classList.toggle('open', lwOpen);
+        };
+        document.addEventListener('click', function(e) {
+          if (lwOpen && !document.getElementById('langWidgetWrap').contains(e.target)) {
+            lwOpen = false;
+            document.getElementById('lwLangPanel').classList.remove('open');
+            document.getElementById('lwTriggerBtn').classList.remove('open');
+          }
+        });
+      })();
+    </script>
 
     <div class="floating-hearts">
         <span class="heart">💔</span><span class="heart">❤️</span><span class="heart">💕</span><span class="heart">💔</span><span class="heart">❤️</span>
