@@ -7,12 +7,71 @@
     <meta name="description" content="101 hilarious dating stories that will make you laugh until you cry. The book everyone who's ever been on a date needs to read.">
     
     <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N4TQSTXTSM"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-XXXXXXXXXX');
+      gtag('config', 'G-N4TQSTXTSM', {
+        'send_page_view': true,
+        'cookie_flags': 'SameSite=None;Secure'
+      });
+
+      // --- Amazon Link Tracking ---
+      document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('a[href*="amazon.com"]').forEach(function(link) {
+          link.addEventListener('click', function() {
+            var url = this.getAttribute('href') || '';
+            var asin = (url.match(/\/dp\/([A-Z0-9]{10})/) || [])[1] || 'unknown';
+            var label = this.textContent.trim() || this.className || 'amazon_link';
+            gtag('event', 'link_click_amazon', {
+              'event_category': 'amazon',
+              'event_label': label,
+              'asin': asin,
+              'link_url': url
+            });
+          });
+        });
+
+        // --- Outbound Link Tracking ---
+        document.querySelectorAll('a[href^="http"]').forEach(function(link) {
+          if (link.hostname && link.hostname !== window.location.hostname && !link.href.includes('amazon.com')) {
+            link.addEventListener('click', function() {
+              gtag('event', 'outbound_click', {
+                'event_category': 'outbound',
+                'event_label': this.href
+              });
+            });
+          }
+        });
+
+        // --- Scroll Depth Tracking ---
+        var scrollMilestones = {25: false, 50: false, 75: false, 100: false};
+        window.addEventListener('scroll', function() {
+          var scrollPct = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
+          [25, 50, 75, 100].forEach(function(m) {
+            if (!scrollMilestones[m] && scrollPct >= m) {
+              scrollMilestones[m] = true;
+              gtag('event', 'scroll_depth', {
+                'event_category': 'engagement',
+                'event_label': m + '%',
+                'value': m
+              });
+            }
+          });
+        });
+
+        // --- Time on Page Tracking ---
+        [30, 60, 120, 300].forEach(function(sec) {
+          setTimeout(function() {
+            gtag('event', 'time_on_page', {
+              'event_category': 'engagement',
+              'event_label': sec + 's',
+              'value': sec
+            });
+          }, sec * 1000);
+        });
+      });
     </script>
     
     <!-- Open Graph / Social -->
