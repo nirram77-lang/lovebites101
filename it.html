@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Bites: 101 Disastri d'Amore | Il Libro degli Appuntamenti Più Divertente</title>
+    <meta name="description" content="101 storie di appuntamenti che ti faranno ridere fino alle lacrime. Il libro che chiunque abbia mai avuto un appuntamento deve leggere.">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N4TQSTXTSM"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-N4TQSTXTSM');
+    </script>
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.funnydates101.com/it">
+    <meta property="og:title" content="💔 Appuntamenti Veri. Risate Vere.">
+    <meta property="og:description" content="Grandi aspettative. Troppe domande. Troppe storie. 🎬">
+    <meta property="og:image" content="https://www.funnydates101.com/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="💔 Appuntamenti Veri. Risate Vere.">
+    <meta name="twitter:description" content="Grandi aspettative. Troppe domande. Troppe storie. 🎬">
+    <meta name="twitter:image" content="https://www.funnydates101.com/og-image.png">
+
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💔</text></svg>">
+    
+    <link rel="alternate" hreflang="en" href="https://funnydates101.com">
+    <link rel="alternate" hreflang="he" href="https://funnydates101.co.il">
+    <link rel="alternate" hreflang="fr" href="https://funnydates101.com/fr">
+    <link rel="alternate" hreflang="es" href="https://funnydates101.com/es">
+    <link rel="alternate" hreflang="it" href="https://funnydates101.com/it">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-primary: #0a0a0a;
+            --bg-secondary: #111111;
+            --bg-card: #1a1a1a;
+            --text-primary: #ffffff;
+            --text-secondary: #b0b0b0;
+            --accent-red: #dc2626;
+            --accent-rose: #f87171;
+            --accent-gold: #d4af37;
+            --gradient-red: linear-gradient(135deg, #b91c1c 0%, #dc2626 50%, #ef4444 100%);
+            --gradient-gold: linear-gradient(135deg, #d4af37 0%, #f4d03f 50%, #d4af37 100%);
+            --shadow-glow: 0 0 40px rgba(220, 38, 38, 0.3);
+            --shadow-gold: 0 0 30px rgba(212, 175, 55, 0.3);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: #1a1a1a; }
+        ::-webkit-scrollbar-thumb { background: linear-gradient(180deg, #dc2626 0%, #b91c1c 100%); border-radius: 5px; }
+        html { scrollbar-width: thin; scrollbar-color: #dc2626 #1a1a1a; }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--bg-primary);
+            background-image: url('bg-hollywood.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            color: var(--text-primary);
+            min-height: 100vh;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* ── LANGUAGE WIDGET (10 langs, 5×2 grid) ── */
+        .lang-widget-wrap { position: fixed; top: 20px; right: 20px; z-index: 1100; display: inline-block; direction: ltr; }
+        .lang-trigger { position: relative; display: inline-flex; align-items: center; gap: 10px; padding: 11px 22px; background: linear-gradient(135deg, rgba(255,255,255,0.10) 0%, rgba(255,255,255,0.04) 100%); border: 1.5px solid #c9a84c; border-radius: 40px; cursor: pointer; font-family: 'Poppins', sans-serif; font-size: 15px; font-weight: 600; color: #fff; letter-spacing: 0.04em; backdrop-filter: blur(14px); box-shadow: 0 0 18px rgba(201,168,76,0.35), inset 0 1px 0 rgba(255,255,255,0.12); transition: all 0.3s ease; overflow: hidden; user-select: none; }
+        .lang-trigger::before { content: ''; position: absolute; top: 0; left: -100%; width: 60%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.18), transparent); animation: ltShine 4s ease-in-out infinite; }
+        @keyframes ltShine { 0%,70%{left:-100%} 85%{left:130%} 100%{left:130%} }
+        .lang-trigger:hover { transform: translateY(-1px); box-shadow: 0 0 40px rgba(201,168,76,0.5), 0 4px 20px rgba(0,0,0,0.4); }
+        .lang-trigger .lw-chevron { font-size: 10px; opacity: 0.7; transition: transform 0.3s ease; }
+        .lang-trigger.open .lw-chevron { transform: rotate(180deg); }
+        /* Panel — wider for 5-col grid */
+        .lang-panel { position: absolute; top: calc(100% + 14px); right: 0; width: 400px; background: linear-gradient(145deg, rgba(30,18,8,0.97) 0%, rgba(18,9,3,0.98) 100%); border: 1px solid rgba(201,168,76,0.28); border-radius: 18px; backdrop-filter: blur(30px); box-shadow: 0 20px 60px rgba(0,0,0,0.7), inset 0 1px 0 rgba(255,255,255,0.05); overflow: hidden; transform-origin: top right; transform: scaleY(0) translateY(-10px); opacity: 0; pointer-events: none; transition: transform 0.38s cubic-bezier(0.34,1.56,0.64,1), opacity 0.25s ease; }
+        .lang-panel.open { transform: scaleY(1) translateY(0); opacity: 1; pointer-events: all; }
+        .lw-panel-header { padding: 15px 20px 11px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(201,168,76,0.10); }
+        .lw-panel-title { font-size: 11px; font-weight: 700; letter-spacing: 0.22em; color: #c9a84c; text-transform: uppercase; display: flex; align-items: center; gap: 8px; }
+        .lw-panel-title::before { content: ''; display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: #22c55e; box-shadow: 0 0 8px rgba(34,197,94,0.4); animation: lwBlink 2s ease-in-out infinite; }
+        @keyframes lwBlink { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.5;transform:scale(.75)} }
+        .lw-panel-count { font-size: 11px; color: rgba(255,255,255,0.3); }
+        /* 5-column grid */
+        .lw-flags-grid { display: grid; grid-template-columns: repeat(5,1fr); gap: 8px; padding: 14px 12px 10px; }
+        .lw-flag-item { display: flex; flex-direction: column; align-items: center; gap: 5px; padding: 10px 4px 8px; border-radius: 13px; border: 1.5px solid rgba(255,255,255,0.06); background: rgba(255,255,255,0.03); cursor: pointer; transition: all 0.25s cubic-bezier(0.34,1.56,0.64,1); position: relative; overflow: hidden; text-decoration: none; }
+        .lw-flag-item::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 50% 0%, rgba(201,168,76,0.09), transparent 70%); opacity: 0; transition: opacity 0.25s ease; }
+        .lw-flag-item:hover, .lw-flag-item.active { border-color: #c9a84c; box-shadow: 0 0 22px rgba(201,168,76,0.35); }
+        .lw-flag-item:hover { transform: translateY(-3px) scale(1.04); }
+        .lw-flag-item.active { background: rgba(201,168,76,0.07); }
+        .lw-flag-item:hover::before, .lw-flag-item.active::before { opacity: 1; }
+        .lw-flag-sphere { width: 42px; height: 42px; border-radius: 50%; position: relative; overflow: hidden; box-shadow: 0 5px 18px rgba(0,0,0,0.55), inset 0 1px 0 rgba(255,255,255,0.14); transition: transform 0.28s ease, box-shadow 0.28s ease; flex-shrink: 0; }
+        .lw-flag-item:hover .lw-flag-sphere { transform: scale(1.12); box-shadow: 0 8px 28px rgba(201,168,76,0.38); }
+        .lw-flag-item.active .lw-flag-sphere { box-shadow: 0 0 0 2.5px #c9a84c, 0 0 18px rgba(201,168,76,0.35); }
+        .lw-flag-sphere img { width: 100%; height: 100%; object-fit: cover; display: block; transform: scale(1.09); }
+        .lw-flag-sphere::after { content: ''; position: absolute; top: 4px; left: 7px; width: 28px; height: 14px; background: radial-gradient(ellipse at center, rgba(255,255,255,0.30) 0%, transparent 70%); border-radius: 50%; pointer-events: none; z-index: 2; }
+        .lw-flag-label { font-size: 9.5px; font-weight: 700; color: rgba(255,255,255,0.78); letter-spacing: 0.06em; text-transform: uppercase; text-align: center; line-height: 1; }
+        .lw-flag-item.active .lw-flag-label { color: #fff; }
+        .lw-flag-badge { display: inline-block; padding: 2px 6px; border-radius: 20px; font-size: 8px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+        .lw-flag-badge.full { background: rgba(34,197,94,0.16); border: 1px solid rgba(34,197,94,0.5); color: #22c55e; box-shadow: 0 0 8px rgba(34,197,94,0.4); }
+        .lw-flag-badge.ebook { background: rgba(201,168,76,0.11); border: 1px solid rgba(201,168,76,0.35); color: #e8c96e; }
+        .lw-panel-footer { padding: 9px 20px 13px; border-top: 1px solid rgba(255,255,255,0.04); display: flex; align-items: center; justify-content: center; gap: 6px; font-size: 10px; color: rgba(255,255,255,0.22); letter-spacing: 0.1em; text-transform: uppercase; }
+        .lw-panel-footer::before, .lw-panel-footer::after { content: '+'; color: #c9a84c; opacity: 0.35; }
+        @keyframes lwFlagIn { from{opacity:0;transform:translateY(7px) scale(0.88)} to{opacity:1;transform:translateY(0) scale(1)} }
+        .lang-panel.open .lw-flag-item { animation: lwFlagIn 0.4s cubic-bezier(0.34,1.4,0.64,1) both; }
+        .lang-panel.open .lw-flag-item:nth-child(1){animation-delay:.03s}.lang-panel.open .lw-flag-item:nth-child(2){animation-delay:.07s}.lang-panel.open .lw-flag-item:nth-child(3){animation-delay:.11s}.lang-panel.open .lw-flag-item:nth-child(4){animation-delay:.15s}.lang-panel.open .lw-flag-item:nth-child(5){animation-delay:.19s}.lang-panel.open .lw-flag-item:nth-child(6){animation-delay:.23s}.lang-panel.open .lw-flag-item:nth-child(7){animation-delay:.27s}.lang-panel.open .lw-flag-item:nth-child(8){animation-delay:.31s}.lang-panel.open .lw-flag-item:nth-child(9){animation-delay:.35s}.lang-panel.open .lw-flag-item:nth-child(10){animation-delay:.39s}
+        @media (max-width:768px) { .lang-widget-wrap{top:10px;right:10px} .lang-trigger{padding:8px 16px;font-size:13px} .lang-panel{width:320px} .lw-flags-grid{grid-template-columns:repeat(5,1fr);gap:6px} .lw-flag-sphere{width:36px;height:36px} }
+
+        .hero { text-align: center; padding: 140px 20px 80px; position: relative; }
+        .hero-badge { display: inline-flex; align-items: center; gap: 10px; background: rgba(26,26,26,0.8); border: 1px solid var(--accent-gold); padding: 12px 24px; border-radius: 50px; font-size: 14px; color: var(--accent-gold); margin-bottom: 30px; backdrop-filter: blur(10px); }
+        .badge-dot { width: 8px; height: 8px; background: #22c55e; border-radius: 50%; animation: pulse 2s infinite; }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+        .hero-title { font-family: 'Playfair Display', serif; font-size: clamp(40px, 8vw, 80px); font-weight: 900; line-height: 1.1; margin-bottom: 20px; }
+        .highlight { color: var(--accent-red); font-style: italic; }
+        .title-dot { display: inline-block; width: 12px; height: 12px; background: var(--accent-red); border-radius: 50%; margin-left: 5px; vertical-align: super; }
+        .hero-subtitle { font-size: clamp(16px, 3vw, 22px); color: var(--text-secondary); margin-bottom: 15px; }
+        .hero-tagline { font-size: clamp(14px, 2.5vw, 18px); color: var(--accent-rose); font-style: italic; margin-bottom: 40px; }
+        .cta-button { display: inline-flex; align-items: center; gap: 10px; background: var(--gradient-red); color: white; font-size: 18px; font-weight: 700; padding: 18px 40px; border: none; border-radius: 50px; cursor: pointer; transition: all 0.3s ease; text-decoration: none; box-shadow: var(--shadow-glow); }
+        .cta-button:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 15px 40px rgba(220,38,38,0.5); }
+        .cta-subtext { margin-top: 15px; color: var(--text-secondary); font-size: 14px; }
+        .coming-soon-badge { display: inline-flex; align-items: center; gap: 10px; background: linear-gradient(135deg, rgba(212,175,55,0.2), rgba(212,175,55,0.05)); border: 2px solid var(--accent-gold); padding: 20px 40px; border-radius: 16px; margin-top: 30px; }
+        .coming-soon-badge .icon { font-size: 28px; }
+        .coming-soon-badge .text { font-size: 18px; font-weight: 700; color: var(--accent-gold); }
+        .coming-soon-badge .subtext { font-size: 13px; color: var(--text-secondary); margin-top: 4px; }
+
+        .section { padding: 100px 20px; position: relative; }
+        .section::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, var(--accent-gold), transparent); }
+        .section-title { font-family: 'Playfair Display', serif; font-size: clamp(32px, 6vw, 48px); text-align: center; margin-bottom: 60px; }
+
+        .why-section-hollywood { padding: 80px 20px; }
+        .why-header { text-align: center; margin-bottom: 60px; }
+        .why-main-title { font-family: 'Playfair Display', serif; font-size: clamp(28px, 5vw, 44px); margin-bottom: 15px; }
+        .why-subtitle { font-size: 18px; color: var(--accent-rose); font-style: italic; }
+        .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; max-width: 1000px; margin: 0 auto; }
+        .why-card { background: var(--bg-card); border: 1px solid rgba(255,255,255,0.08); border-radius: 20px; padding: 35px; transition: all 0.3s ease; }
+        .why-card:hover { transform: translateY(-5px); border-color: rgba(220,38,38,0.3); box-shadow: var(--shadow-glow); }
+        .why-icon { font-size: 40px; display: block; margin-bottom: 20px; }
+        .why-title { font-size: 18px; font-weight: 700; margin-bottom: 12px; }
+        .why-text { color: var(--text-secondary); font-size: 15px; line-height: 1.7; }
+
+        .teaser-section { padding: 60px 20px; text-align: center; }
+        .teaser-badge { display: inline-flex; align-items: center; gap: 10px; background: rgba(26,26,26,0.8); border: 1px solid var(--accent-gold); padding: 12px 24px; border-radius: 50px; font-size: 14px; color: var(--accent-gold); margin-bottom: 30px; backdrop-filter: blur(10px); cursor: pointer; transition: all 0.3s; }
+        .teaser-badge:hover { background: rgba(212,175,55,0.2); }
+        .teaser-content { max-height: 0; overflow: hidden; transition: max-height 0.5s ease; }
+        .teaser-content.open { max-height: 1000px; }
+        .teaser-main-title { font-family: 'Playfair Display', serif; font-size: clamp(28px, 5vw, 42px); margin-bottom: 15px; }
+        .teaser-subtitle { color: var(--accent-rose); font-style: italic; font-size: 18px; margin-bottom: 40px; }
+        .teaser-quotes-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; max-width: 900px; margin: 0 auto 40px; }
+        .teaser-quote-card { background: var(--bg-card); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 25px; text-align: left; }
+        .teaser-quote-text { color: var(--text-secondary); font-size: 15px; line-height: 1.7; }
+        .teaser-footer-text { color: var(--text-secondary); font-size: 16px; margin-bottom: 25px; font-style: italic; }
+        .teaser-cta { display: inline-flex; align-items: center; gap: 10px; background: var(--gradient-red); color: white; padding: 16px 36px; border-radius: 50px; font-weight: 700; font-size: 16px; text-decoration: none; transition: all 0.3s; box-shadow: var(--shadow-glow); }
+
+        .reviews-hollywood { padding: 80px 20px; }
+        .reviews-header { text-align: center; margin-bottom: 50px; }
+        .reviews-star { font-size: 40px; display: block; margin-bottom: 15px; }
+        .reviews-main-title { font-family: 'Playfair Display', serif; font-size: clamp(24px, 4vw, 36px); }
+        .reviews-showcase { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 25px; max-width: 900px; margin: 0 auto; }
+        .review-hollywood-card { background: var(--bg-card); border: 1px solid rgba(255,255,255,0.08); border-radius: 20px; padding: 30px; transition: all 0.3s; }
+        .review-hollywood-card:hover { transform: translateY(-3px); border-color: var(--accent-gold); box-shadow: var(--shadow-gold); }
+        .review-rating { font-size: 20px; margin-bottom: 15px; }
+        .review-quote { font-style: italic; font-size: 16px; line-height: 1.6; margin-bottom: 15px; color: var(--text-primary); }
+        .review-author-line { color: var(--accent-gold); font-size: 14px; font-weight: 600; }
+
+        .about-section { padding: 80px 20px; }
+        .about-container { display: flex; align-items: center; gap: 60px; max-width: 900px; margin: 0 auto; flex-wrap: wrap; }
+        .about-image img { width: 200px; height: 200px; border-radius: 50%; object-fit: cover; object-position: center top; border: 3px solid var(--accent-gold); box-shadow: var(--shadow-gold); }
+        .about-content { flex: 1; min-width: 280px; }
+        .about-badge { display: inline-block; background: rgba(212,175,55,0.2); border: 1px solid var(--accent-gold); padding: 6px 16px; border-radius: 20px; font-size: 13px; color: var(--accent-gold); margin-bottom: 15px; }
+        .about-title { font-family: 'Playfair Display', serif; font-size: 36px; margin-bottom: 20px; }
+        .about-text { color: var(--text-secondary); font-size: 15px; line-height: 1.8; margin-bottom: 15px; }
+        .about-signature { color: var(--accent-rose); font-style: italic; font-size: 16px; border-left: 3px solid var(--accent-red); padding-left: 15px; margin-top: 20px; }
+
+        .social-section { padding: 60px 20px; text-align: center; }
+        .social-title { font-family: 'Playfair Display', serif; font-size: 28px; margin-bottom: 35px; }
+        .social-links { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+        .social-link { display: flex; align-items: center; gap: 12px; background: var(--bg-card); border: 1px solid rgba(255,255,255,0.1); padding: 16px 28px; border-radius: 16px; text-decoration: none; color: var(--text-primary); transition: all 0.3s; }
+        .social-link:hover { border-color: var(--accent-red); transform: translateY(-3px); box-shadow: var(--shadow-glow); }
+        .social-link .icon { font-size: 28px; }
+        .social-link .label { font-size: 12px; color: var(--text-secondary); }
+        .social-link .handle { font-weight: 700; font-size: 14px; }
+
+        .story-section { padding: 80px 20px; text-align: center; }
+        .story-title { font-family: 'Playfair Display', serif; font-size: clamp(24px, 4vw, 36px); margin-bottom: 15px; margin-top: 20px; }
+        .story-subtitle { color: var(--text-secondary); font-size: 16px; margin-bottom: 20px; }
+        .story-reward { display: inline-flex; align-items: center; gap: 8px; background: rgba(212,175,55,0.15); border: 1px solid rgba(212,175,55,0.3); padding: 10px 20px; border-radius: 50px; font-size: 14px; color: var(--accent-gold); margin-bottom: 30px; }
+        .story-form { max-width: 500px; margin: 0 auto; }
+        .form-group { margin-bottom: 20px; text-align: left; }
+        .form-label { display: block; font-size: 14px; color: var(--accent-gold); margin-bottom: 8px; font-weight: 600; }
+        .form-input { width: 100%; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.15); border-radius: 12px; padding: 14px 18px; color: var(--text-primary); font-family: 'Poppins', sans-serif; font-size: 14px; transition: border-color 0.3s; }
+        .form-input:focus { outline: none; border-color: var(--accent-red); }
+        .form-textarea { min-height: 120px; resize: vertical; }
+        .form-submit { width: 100%; background: var(--gradient-red); color: white; border: none; padding: 16px; border-radius: 50px; font-size: 16px; font-weight: 700; cursor: pointer; transition: all 0.3s; font-family: 'Poppins', sans-serif; box-shadow: var(--shadow-glow); }
+        .form-submit:hover { transform: translateY(-2px); box-shadow: 0 12px 35px rgba(220,38,38,0.5); }
+        .form-note { font-size: 12px; color: var(--text-secondary); margin-top: 12px; }
+        .form-success { display: none; text-align: center; padding: 30px; }
+        .form-success h3 { font-size: 24px; color: var(--accent-gold); margin-bottom: 10px; }
+
+        .buy-section { padding: 100px 20px; }
+        .buy-subtitle { text-align: center; color: var(--text-secondary); font-size: 16px; margin-bottom: 50px; margin-top: -40px; }
+        .buy-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; max-width: 1100px; margin: 0 auto; }
+        @media (max-width: 900px) { .buy-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 500px) { .buy-grid { grid-template-columns: 1fr; } }
+        .buy-card { background: var(--bg-card); border: 2px solid rgba(255,255,255,0.1); border-radius: 20px; padding: 30px 16px 22px; text-align: center; display: flex; flex-direction: column; position: relative; transition: all 0.3s; overflow: visible; }
+        .buy-card:hover { transform: translateY(-5px); }
+        .buy-card-badge { position: absolute; top: -15px; left: 50%; transform: translateX(-50%); padding: 5px 18px; border-radius: 20px; font-size: 12px; font-weight: 700; white-space: nowrap; z-index: 20; }
+        .badge-red { background: var(--gradient-red); color: #fff; }
+        .badge-gold { background: var(--gradient-gold); color: #000; }
+        .buy-card.card-red { border: 2px solid var(--accent-red); background: linear-gradient(180deg, rgba(220,38,38,0.12) 0%, var(--bg-card) 100%); box-shadow: 0 0 25px rgba(220,38,38,0.25); }
+        .buy-card.card-red:hover { box-shadow: var(--shadow-glow); }
+        .buy-card.card-gold { border: 2px solid var(--accent-gold); background: linear-gradient(180deg, rgba(212,175,55,0.1) 0%, var(--bg-card) 100%); box-shadow: 0 0 25px rgba(212,175,55,0.2); }
+        .buy-card.card-gold:hover { box-shadow: var(--shadow-gold); }
+        .buy-icon { font-size: 48px; margin-bottom: 15px; margin-top: 10px; }
+        .buy-title { font-size: 22px; font-weight: 700; margin-bottom: 8px; }
+        .buy-desc { color: var(--text-secondary); font-size: 14px; margin-bottom: 15px; }
+        .buy-price { font-size: 32px; font-weight: 900; color: var(--accent-gold); margin-bottom: 5px; }
+        .buy-note { font-size: 13px; color: var(--accent-rose); margin-bottom: 20px; }
+        .buy-button-wrapper { margin-top: auto; }
+        .buy-button { display: block; background: var(--gradient-red); color: white; padding: 14px 25px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 15px; transition: all 0.3s ease; margin-bottom: 12px; cursor: pointer; border: none; font-family: 'Poppins', sans-serif; width: 100%; }
+        .buy-button:hover { transform: scale(1.05); box-shadow: var(--shadow-glow); }
+        .buy-button.coming-soon { background: rgba(255,255,255,0.08); color: var(--text-secondary); cursor: default; }
+        .buy-button.coming-soon:hover { transform: none; box-shadow: none; }
+        .buy-delivery { font-size: 12px; color: var(--text-secondary); }
+
+        /* Audiobook coming soon */
+        .audiobook-coming-section { padding: 80px 20px; position: relative; overflow: hidden; }
+        .audiobook-coming-section::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 50% 50%, rgba(220,38,38,0.06) 0%, transparent 70%); animation: pulseGlowCS 6s ease-in-out infinite; pointer-events: none; }
+        @keyframes pulseGlowCS { 0%, 100% { opacity: 0.4; } 50% { opacity: 1; } }
+        .audio-cs-container { max-width: 700px; margin: 0 auto; text-align: center; position: relative; z-index: 2; }
+        .audio-cs-card { background: rgba(26,26,26,0.95); border-radius: 28px; padding: 50px 40px; position: relative; overflow: hidden; backdrop-filter: blur(20px); }
+        .audio-cs-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; border-radius: 28px; padding: 2px; background: linear-gradient(45deg, #dc2626, #d4af37, #f87171, #d4af37, #dc2626); background-size: 400% 400%; -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude; animation: borderFlow 4s ease infinite; }
+        @keyframes borderFlow { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+        .audio-cs-icon { font-size: 64px; margin-bottom: 20px; display: block; animation: floatIcon 3s ease-in-out infinite; }
+        @keyframes floatIcon { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+        .audio-cs-label { display: inline-flex; align-items: center; gap: 8px; background: rgba(220,38,38,0.2); border: 1px solid rgba(220,38,38,0.4); padding: 6px 18px; border-radius: 20px; font-size: 11px; font-weight: 700; color: #f87171; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 20px; }
+        .audio-cs-label-dot { width: 6px; height: 6px; background: #ef4444; border-radius: 50%; animation: pulse 1.5s infinite; }
+        .audio-cs-title { font-family: 'Playfair Display', serif; font-size: clamp(26px, 4vw, 38px); font-weight: 900; color: #fff; margin-bottom: 12px; }
+        .audio-cs-title span { color: var(--accent-red); font-style: italic; }
+        .audio-cs-subtitle { font-size: 16px; color: rgba(255,255,255,0.6); margin-bottom: 35px; line-height: 1.6; }
+        .audio-cs-features { display: flex; justify-content: center; gap: 25px; flex-wrap: wrap; margin-bottom: 35px; }
+        .audio-cs-feat { display: flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); padding: 10px 18px; border-radius: 50px; font-size: 13px; color: rgba(255,255,255,0.7); }
+        .audio-cs-cta { display: inline-flex; align-items: center; gap: 10px; background: rgba(212,175,55,0.15); border: 2px solid var(--accent-gold); color: var(--accent-gold); font-size: 17px; font-weight: 700; padding: 16px 40px; border-radius: 50px; text-decoration: none; transition: all 0.3s ease; font-family: 'Poppins', sans-serif; animation: goldPulse 2.5s ease-in-out infinite; }
+        @keyframes goldPulse { 0%, 100% { box-shadow: 0 0 20px rgba(212,175,55,0.2); } 50% { box-shadow: 0 0 40px rgba(212,175,55,0.5); } }
+        .audio-cs-cta:hover { background: var(--accent-gold); color: #000; transform: translateY(-3px); }
+        .audio-cs-notify { margin-top: 20px; font-size: 13px; color: rgba(255,255,255,0.35); }
+
+        .footer { padding: 60px 20px 40px; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); }
+        .footer-links { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 30px; }
+        .footer-links a { color: var(--text-secondary); text-decoration: none; font-size: 14px; transition: color 0.3s; }
+        .footer-links a:hover { color: var(--accent-gold); }
+        .footer-divider { color: rgba(255,255,255,0.2); }
+        .noartgallery-link { display: inline-block; margin-bottom: 20px; }
+        .noartgallery-logo { height: 40px; opacity: 0.7; transition: opacity 0.3s; }
+        .noartgallery-logo:hover { opacity: 1; }
+        .footer-text { color: var(--text-secondary); font-size: 13px; margin-bottom: 8px; }
+        .footer-author { color: var(--accent-gold); font-size: 14px; font-weight: 600; margin-bottom: 8px; }
+        .footer-contact a { color: var(--text-secondary); text-decoration: none; }
+        .footer-contact a:hover { color: var(--accent-gold); }
+
+        .floating-hearts { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; overflow: hidden; }
+        .heart { position: absolute; font-size: 20px; animation: floatHeart 20s linear infinite; opacity: 0; }
+        .heart:nth-child(1){left:5%;animation-delay:0s}.heart:nth-child(2){left:15%;animation-delay:4s}.heart:nth-child(3){left:25%;animation-delay:8s}.heart:nth-child(4){left:35%;animation-delay:12s}.heart:nth-child(5){left:55%;animation-delay:2s}.heart:nth-child(6){left:65%;animation-delay:6s}.heart:nth-child(7){left:75%;animation-delay:10s}.heart:nth-child(8){left:85%;animation-delay:14s}
+        @keyframes floatHeart { 0%{transform:translateY(100vh) rotate(0deg);opacity:0} 10%{opacity:0.6} 90%{opacity:0.6} 100%{transform:translateY(-100px) rotate(360deg);opacity:0} }
+
+        #accessibility-widget { position: fixed; top: 20px; left: 20px; z-index: 9999; }
+        .accessibility-btn { width: 50px; height: 50px; border-radius: 50%; background: var(--accent-gold); border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; color: #000; box-shadow: 0 4px 15px rgba(212,175,55,0.4); transition: all 0.3s ease; }
+        .accessibility-btn:hover { transform: scale(1.1); }
+        .accessibility-menu { position: absolute; top: 60px; left: 0; background: #1a1a1a; border: 2px solid var(--accent-gold); border-radius: 12px; padding: 15px; min-width: 220px; display: none; flex-direction: column; gap: 8px; }
+        .accessibility-menu.active { display: flex; }
+        .accessibility-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; font-weight: 700; font-size: 14px; color: var(--accent-gold); }
+        .accessibility-header button { background: none; border: none; color: var(--text-secondary); cursor: pointer; font-size: 16px; }
+        .accessibility-menu button { display: block; width: 100%; text-align: left; background: none; border: 1px solid rgba(255,255,255,0.1); color: var(--text-primary); padding: 10px 12px; cursor: pointer; font-family: 'Poppins', sans-serif; font-size: 13px; border-radius: 8px; transition: all 0.2s; }
+        .accessibility-menu button:hover { background: rgba(212,175,55,0.15); border-color: var(--accent-gold); color: var(--accent-gold); }
+
+        .floating-quotes { position: fixed; top: 80px; left: 20px; z-index: 500; max-width: 260px; pointer-events: none; }
+        .quote-bubble { background: rgba(26,26,26,0.92); border: 1px solid rgba(220,38,38,0.3); border-radius: 16px; padding: 16px 18px; font-size: 13px; color: rgba(255,255,255,0.85); line-height: 1.5; backdrop-filter: blur(10px); transition: opacity 0.3s ease; box-shadow: 0 4px 20px rgba(0,0,0,0.4); }
+
+        /* Price ticker */
+        .price-ticker { position: fixed; bottom: 20px; left: 20px; z-index: 9998; background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 50%, #fde68a 100%); border-radius: 20px; padding: 20px; box-shadow: 0 0 0 1px rgba(0,0,0,0.05), 0 10px 40px rgba(251,191,36,0.4); text-align: center; max-width: 240px; cursor: grab; user-select: none; transition: transform 0.3s, box-shadow 0.3s; }
+        .price-ticker:hover { transform: scale(1.03); }
+        .price-ticker.hidden { display: none; }
+        .price-ticker-close { position: absolute; top: 8px; right: 8px; width: 22px; height: 22px; border-radius: 50%; border: none; background: rgba(0,0,0,0.2); color: rgba(0,0,0,0.5); cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 12px; transition: all 0.3s; z-index: 10; }
+        .price-ticker-close:hover { background: rgba(0,0,0,0.4); color: #fff; }
+        .price-ticker-header { display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 8px; }
+        .price-ticker-title { font-weight: 800; font-size: 14px; color: #1a1a1a; }
+
+        /* Cosmic ticker */
+        .cosmic-ticker-container { position: fixed; bottom: 20px; right: 20px; z-index: 9997; transition: all 0.5s cubic-bezier(0.4,0,0.2,1); }
+        .cosmic-ticker-container.hidden { transform: translateX(400px); opacity: 0; pointer-events: none; }
+        .cosmic-ticker { position: relative; width: 320px; background: linear-gradient(145deg, #0a0a0a 0%, #1a0a0a 50%, #0a0a0a 100%); border-radius: 20px; overflow: hidden; box-shadow: 0 0 0 3px rgba(220,38,38,0.6), 0 0 40px rgba(220,38,38,0.4); animation: cosmicFloat 6s ease-in-out infinite; }
+        @keyframes cosmicFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+        .cosmic-ticker::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; border-radius: 20px; padding: 3px; background: linear-gradient(45deg, #dc2626, #ff6b6b, #dc2626, #991b1b, #dc2626); background-size: 400% 400%; -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude; animation: borderAnimation 4s ease infinite; }
+        @keyframes borderAnimation { 0%{background-position:0% 50%} 50%{background-position:100% 50%} 100%{background-position:0% 50%} }
+        .cosmic-close { position: absolute; top: 10px; right: 10px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: rgba(255,255,255,0.5); width: 28px; height: 28px; border-radius: 50%; cursor: pointer; z-index: 20; font-size: 14px; display: flex; align-items: center; justify-content: center; transition: all 0.3s; }
+        .cosmic-close:hover { background: rgba(220,38,38,0.3); color: #fff; }
+        .cosmic-inner { position: relative; z-index: 5; padding: 25px; }
+        .cosmic-header { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
+        .cosmic-live { display: flex; align-items: center; gap: 6px; background: rgba(220,38,38,0.2); border: 1px solid rgba(220,38,38,0.4); padding: 4px 12px; border-radius: 20px; font-size: 10px; font-weight: 700; color: #f87171; letter-spacing: 1px; }
+        .cosmic-live-dot { width: 6px; height: 6px; background: #ef4444; border-radius: 50%; animation: pulse 1.5s infinite; }
+        .cosmic-title { font-size: 14px; font-weight: 600; color: rgba(255,255,255,0.8); }
+        .cosmic-quote-area { min-height: 100px; display: flex; align-items: center; }
+        .cosmic-emoji { font-size: 28px; display: block; margin-bottom: 10px; }
+        .cosmic-text { font-size: 15px; color: rgba(255,255,255,0.9); line-height: 1.5; font-style: italic; margin: 0 0 8px 0; }
+        .cosmic-source { font-size: 12px; color: var(--accent-gold); margin: 0; }
+        .cosmic-dots { display: flex; justify-content: center; gap: 6px; margin: 15px 0; }
+        .ticker-dot { width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,0.2); cursor: pointer; transition: all 0.3s; }
+        .ticker-dot.active { background: var(--accent-red); width: 20px; border-radius: 3px; }
+        .cosmic-nav { display: flex; justify-content: space-between; align-items: center; }
+        .cosmic-nav-btn { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: rgba(255,255,255,0.5); width: 36px; height: 36px; border-radius: 50%; cursor: pointer; font-size: 18px; transition: all 0.3s; display: flex; align-items: center; justify-content: center; }
+        .cosmic-nav-btn:hover { background: rgba(220,38,38,0.2); color: #fff; }
+        .cosmic-cta { background: var(--gradient-red); color: white; padding: 8px 24px; border-radius: 25px; text-decoration: none; font-size: 13px; font-weight: 700; transition: all 0.3s; }
+        .cosmic-cta:hover { transform: scale(1.05); }
+        @media (max-width: 768px) { .cosmic-ticker-container { bottom: 15px; right: 15px; left: 15px; } .cosmic-ticker { width: 100%; } }
+
+        .main-content { position: relative; z-index: 1; max-width: 1200px; margin: 0 auto; }
+        @media (max-width: 768px) { .about-container { flex-direction: column; text-align: center; } .about-signature { text-align: left; } .floating-quotes { display: none; } #accessibility-widget { top: 10px; left: 10px; } }
+    </style>
+
+    <script>
+        function closePriceTicker() { document.getElementById('priceTicker').classList.add('hidden'); }
+        // Cosmic ticker — Italian quotes
+        const tickerQuotes = [
+            { emoji: '🍷', text: '«Dopo il settimo bicchiere ha detto qualcosa che ha cambiato tutto.»', source: '— Cosa ha detto? Nel libro.' },
+            { emoji: '👀', text: '«Mi ha guardato e ha pronunciato una sola frase. Avrei dovuto ricordarla.»', source: '— La frase? Nel libro.' },
+            { emoji: '⏱️', text: '«Dopo 10 minuti ha fatto una domanda. Non ero pronto per la risposta.»', source: '— La domanda? Nel libro.' },
+            { emoji: '🚗', text: '«Arrivati alla macchina ha detto una cosa. Ci penso ancora.»', source: '— Cosa ha detto? Nel libro.' },
+            { emoji: '⚡', text: '«L\'appuntamento è durato 7 minuti. Il motivo? Non ci crederai.»', source: '— Il motivo vero? Nel libro.' },
+            { emoji: '💳', text: '«Il cameriere ha portato il conto. Quello che è successo dopo — non me l\'aspettavo.»', source: '— Cosa è successo? Nel libro.' },
+            { emoji: '🧺', text: '«Primo appuntamento. È arrivata con tre borse. Nessuno mi aveva preparato.»', source: '— Cosa è successo? Nel libro.' }
+        ];
+        let currentQuoteIndex = 0, tickerInterval;
+        function initTicker() { generateDots(); updateQuote(0); startAutoRotation(); }
+        function generateDots() { const d = document.getElementById('tickerDots'); d.innerHTML = ''; tickerQuotes.forEach((_, i) => { const dot = document.createElement('div'); dot.className = 'ticker-dot' + (i === 0 ? ' active' : ''); dot.onclick = () => goToQuote(i); d.appendChild(dot); }); }
+        function updateQuote(i) { const q = tickerQuotes[i]; const c = document.getElementById('tickerQuoteContainer'); c.style.opacity = '0'; c.style.transform = 'translateX(-20px)'; setTimeout(() => { document.getElementById('tickerEmoji').textContent = q.emoji; document.getElementById('tickerQuoteText').textContent = q.text; document.getElementById('tickerQuoteSource').textContent = q.source; c.style.opacity = '1'; c.style.transform = 'translateX(0)'; document.querySelectorAll('.ticker-dot').forEach((d, j) => d.classList.toggle('active', j === i)); }, 300); currentQuoteIndex = i; }
+        function nextQuote() { updateQuote((currentQuoteIndex + 1) % tickerQuotes.length); resetAuto(); }
+        function prevQuote() { updateQuote((currentQuoteIndex - 1 + tickerQuotes.length) % tickerQuotes.length); resetAuto(); }
+        function goToQuote(i) { updateQuote(i); resetAuto(); }
+        function startAutoRotation() { tickerInterval = setInterval(nextQuote, 6000); }
+        function resetAuto() { clearInterval(tickerInterval); startAutoRotation(); }
+        function closeCosmicTicker() { document.getElementById('cosmicTicker').classList.add('hidden'); clearInterval(tickerInterval); }
+        document.addEventListener('DOMContentLoaded', initTicker);
+    </script>
+</head>
+<body>
+
+<!-- ── LANGUAGE WIDGET — 10 languages, 5×2 ── -->
+<div class="lang-widget-wrap" id="langWidgetWrap">
+  <button class="lang-trigger" id="lwTriggerBtn" onclick="lwTogglePanel()">
+    <span>🌐</span>
+    <span id="lwTriggerText">Languages</span>
+    <span class="lw-chevron">▲</span>
+  </button>
+  <div class="lang-panel" id="lwLangPanel">
+    <div class="lw-panel-header">
+      <div class="lw-panel-title">Choose Your Edition</div>
+      <div class="lw-panel-count">10 Languages</div>
+    </div>
+    <div class="lw-flags-grid">
+      <a class="lw-flag-item" href="https://funnydates101.com" target="_self">
+        <div class="lw-flag-sphere"><img src="https://flagcdn.com/w80/us.png" alt="EN"></div>
+        <div class="lw-flag-label">English</div><div class="lw-flag-badge full">Full</div>
+      </a>
+      <a class="lw-flag-item" href="https://funnydates101.co.il" target="_self">
+        <div class="lw-flag-sphere"><img src="https://flagcdn.com/w80/il.png" alt="HE"></div>
+        <div class="lw-flag-label">Hebrew</div><div class="lw-flag-badge full">Full</div>
+      </a>
+      <a class="lw-flag-item" href="https://funnydates101.com/fr" target="_self">
+        <div class="lw-flag-sphere"><img src="https://flagcdn.com/w80/fr.png" alt="FR"></div>
+        <div class="lw-flag-label">French</div><div class="lw-flag-badge ebook">eBook</div>
+      </a>
+      <a class="lw-flag-item" href="https://funnydates101.com/de" target="_self">
+        <div class="lw-flag-sphere"><img src="https://flagcdn.com/w80/de.png" alt="DE"></div>
+        <div class="lw-flag-label">German</div><div class="lw-flag-badge ebook">eBook</div>
+      </a>
+      <a class="lw-flag-item" href="https://funnydates101.com/es" target="_self">
+        <div class="lw-flag-sphere"><img src="https://flagcdn.com/w80/es.png" alt="ES"></div>
+        <div class="lw-flag-label">Spanish</div><div class="lw-flag-badge ebook">eBook</div>
+      </a>
+      <a class="lw-flag-item" href="https://funnydates101.com/pt" target="_self">
+        <div class="lw-flag-sphere"><img src="https://flagcdn.com/w80/br.png" alt="PT"></div>
+        <div class="lw-flag-label">Portug.</div><div class="lw-flag-badge ebook">eBook</div>
+      </a>
+      <a class="lw-flag-item" href="https://www.amazon.com/dp/B0GPB6LC98" target="_blank">
+        <div class="lw-flag-sphere"><img src="https://flagcdn.com/w80/nl.png" alt="NL"></div>
+        <div class="lw-flag-label">Dutch</div><div class="lw-flag-badge ebook">eBook</div>
+      </a>
+      <a class="lw-flag-item" href="https://www.amazon.com/dp/B0GPB6LC98" target="_blank">
+        <div class="lw-flag-sphere"><img src="https://flagcdn.com/w80/jp.png" alt="JP"></div>
+        <div class="lw-flag-label">Japanese</div><div class="lw-flag-badge ebook">eBook</div>
+      </a>
+      <a class="lw-flag-item" href="https://www.amazon.com/dp/B0GPB6LC98" target="_blank">
+        <div class="lw-flag-sphere"><img src="https://flagcdn.com/w80/in.png" alt="HI"></div>
+        <div class="lw-flag-label">Hindi</div><div class="lw-flag-badge ebook">eBook</div>
+      </a>
+      <a class="lw-flag-item active" href="https://funnydates101.com/it" target="_self">
+        <div class="lw-flag-sphere"><img src="https://flagcdn.com/w80/it.png" alt="IT"></div>
+        <div class="lw-flag-label">Italian</div><div class="lw-flag-badge ebook">eBook</div>
+      </a>
+    </div>
+    <div class="lw-panel-footer">Available Worldwide on Amazon</div>
+  </div>
+</div>
+<script>
+  (function(){
+    var lwOpen = false;
+    window.lwTogglePanel = function() {
+      lwOpen = !lwOpen;
+      document.getElementById('lwLangPanel').classList.toggle('open', lwOpen);
+      document.getElementById('lwTriggerBtn').classList.toggle('open', lwOpen);
+    };
+    document.addEventListener('click', function(e) {
+      if (lwOpen && !document.getElementById('langWidgetWrap').contains(e.target)) {
+        lwOpen = false;
+        document.getElementById('lwLangPanel').classList.remove('open');
+        document.getElementById('lwTriggerBtn').classList.remove('open');
+      }
+    });
+  })();
+</script>
+
+<div class="floating-hearts">
+    <span class="heart">💔</span><span class="heart">❤️</span><span class="heart">💕</span><span class="heart">💔</span>
+    <span class="heart">❤️</span><span class="heart">💕</span><span class="heart">💔</span><span class="heart">❤️</span>
+</div>
+
+<!-- ♿ ACCESSIBILITY -->
+<div id="accessibility-widget">
+    <button class="accessibility-btn" onclick="toggleAccessibilityMenu()" aria-label="Menu accessibilità">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9H15V22H13V16H11V22H9V9H3V7H21V9Z"/></svg>
+    </button>
+    <div class="accessibility-menu" id="accessibility-menu">
+        <div class="accessibility-header"><span>Accessibilità</span><button onclick="toggleAccessibilityMenu()">✕</button></div>
+        <button onclick="changeFontSize(1)">Testo più grande +</button>
+        <button onclick="changeFontSize(-1)">Testo più piccolo -</button>
+        <button onclick="toggleHighContrast()">Alto contrasto</button>
+        <button onclick="toggleGrayscale()">Scala di grigi</button>
+        <button onclick="toggleUnderlineLinks()">Sottolinea link</button>
+        <button onclick="resetAccessibility()">Ripristina</button>
+    </div>
+</div>
+
+<!-- 🔥 FLOATING QUOTE -->
+<div class="floating-quotes">
+    <div class="quote-bubble">🍷 Dieci minuti. Sette bicchieri di vino. E la sento dire all'amica: «Stiamo insieme da due mesi.» Tesoro, ero LÌ.</div>
+</div>
+
+<!-- 🚀 PRICE TICKER -->
+<div class="price-ticker" id="priceTicker">
+    <button class="price-ticker-close" onclick="event.stopPropagation(); closePriceTicker()">✕</button>
+    <a href="#buy" style="text-decoration:none; color:inherit; display:block;">
+        <div class="price-ticker-header">
+            <span style="font-size:22px">🇮🇹</span>
+            <span class="price-ticker-title">EDIZIONE ITALIANA</span>
+            <span style="font-size:22px">🔥</span>
+        </div>
+        <div style="font-size:13px; color:#333; margin-bottom:8px;">📱 eBook Kindle</div>
+        <div style="font-family:'Playfair Display',serif; font-size:22px; color:#dc2626; font-weight:900; margin:8px 0;">€4,99</div>
+        <div style="font-size:12px; color:#555; margin-bottom:10px;">Disponibile su Kindle Unlimited!</div>
+        <a href="https://www.amazon.it/dp/B0G46NS5VG" target="_blank" style="display:inline-block; background:#1a1a1a; color:#fff; border:none; padding:10px 24px; border-radius:25px; font-size:14px; font-weight:700; cursor:pointer; text-decoration:none;">🛒 Acquista →</a>
+    </a>
+    <div style="font-size:10px; color:#666; margin-top:8px;">💡 Trascinami dove vuoi!</div>
+</div>
+
+<!-- 🎬 COSMIC TICKER -->
+<div class="cosmic-ticker-container" id="cosmicTicker">
+    <div class="cosmic-ticker">
+        <button class="cosmic-close" onclick="closeCosmicTicker()">✕</button>
+        <div class="cosmic-inner">
+            <div class="cosmic-header">
+                <div class="cosmic-live"><span class="cosmic-live-dot"></span>ESTRATTO</div>
+                <div class="cosmic-title">📺 Storie Vere</div>
+            </div>
+            <div class="cosmic-quote-area">
+                <div id="tickerQuoteContainer" style="transition: all 0.3s ease;">
+                    <span class="cosmic-emoji" id="tickerEmoji">🍷</span>
+                    <p class="cosmic-text" id="tickerQuoteText">«Dopo il settimo bicchiere ha detto qualcosa che ha cambiato tutto.»</p>
+                    <p class="cosmic-source" id="tickerQuoteSource">— Cosa ha detto? Nel libro.</p>
+                </div>
+            </div>
+            <div class="cosmic-dots" id="tickerDots"></div>
+            <div class="cosmic-nav">
+                <button class="cosmic-nav-btn" onclick="prevQuote()">‹</button>
+                <a href="#why" class="cosmic-cta">Scopri →</a>
+                <button class="cosmic-nav-btn" onclick="nextQuote()">›</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="main-content">
+    <!-- 🎬 HERO -->
+    <section class="hero">
+        <div class="hero-badge"><span class="badge-dot"></span>Il Libro di cui Tutti Parlano</div>
+        <h1 class="hero-title"><span class="highlight">Love Bites</span><br>101 Disastri d'Amore<span class="title-dot"></span></h1>
+        <p class="hero-subtitle">Grandi aspettative. Troppe domande.<br>Troppe storie.</p>
+        <p class="hero-tagline">Se sei mai uscito da un appuntamento pensando «ma cosa è appena successo?» —<br>questo libro è per te.</p>
+        <div style="margin-top:30px;">
+            <a href="#why" class="cta-button">👀 Cosa È Successo in Quel Appuntamento?</a>
+            <p class="cta-subtext">📚 Libro | 📱 eBook | 🎧 Audiolibro | 🇮🇹 Edizione Italiana</p>
+        </div>
+        <div class="coming-soon-badge">
+            <span class="icon">🚀</span>
+            <div>
+                <div class="text">eBook Disponibile in Italiano! 🇮🇹</div>
+                <div class="subtext">Libro stampato · Audiolibro — Prossimamente</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🎭 WHY -->
+    <section class="why-section-hollywood" id="why">
+        <div class="why-header">
+            <h2 class="why-main-title">Tutte le storie sono vere.</h2>
+            <p class="why-subtitle">Ed è esattamente questo il problema.</p>
+        </div>
+        <div class="why-grid">
+            <div class="why-card"><span class="why-icon">🎭</span><h3 class="why-title">Ho riso. Poi ho capito che mi era successo pure a me.</h3><p class="why-text">Situazioni che in una serie tv diresti che sono esagerate. Purtroppo non era un copione.</p></div>
+            <div class="why-card"><span class="why-icon">💔</span><h3 class="why-title">Ero convinto che fosse lei. Lei era convinta che fosse solo martedì.</h3><p class="why-text">Crush brevi, illusioni lunghe, e quel momento in cui capisci che l'altra persona ha già voltato pagina.</p></div>
+            <div class="why-card"><span class="why-icon">🍷</span><h3 class="why-title">Quello che la gente fa agli appuntamenti — e poi prega che nessuno lo racconti.</h3><p class="why-text">Storie vere. Senza filtri. I momenti che mi hanno fatto pensare: «Per favore, che nessuno scriva un libro su questo.»</p></div>
+        </div>
+    </section>
+
+    <!-- 🔥 TEASER -->
+    <section class="teaser-section">
+        <button class="teaser-badge" id="teaserToggle" onclick="toggleTeaser()"><span>🎬</span><span>Vuoi un'anticipazione?</span><span>👀</span></button>
+        <div class="teaser-content" id="teaserContent">
+            <h2 class="teaser-main-title">Fino a qui erano appuntamenti.</h2>
+            <p class="teaser-subtitle">Da qui in poi — riguarda te.</p>
+            <div class="teaser-quotes-container">
+                <div class="teaser-quote-card"><p class="teaser-quote-text">🔁 Questo non è un libro sugli appuntamenti. È un libro sul momento in cui capisci che qualcosa in te continua a ripetersi.</p></div>
+                <div class="teaser-quote-card"><p class="teaser-quote-text">🎯 Ogni storia inizia con «Wow, si mette bene» e finisce con «Come ci sono finito di nuovo qui?»</p></div>
+                <div class="teaser-quote-card"><p class="teaser-quote-text">😂 Alcuni capitoli ti faranno ridere. Altri ti faranno fermare. E in alcuni ti riconoscerai troppo in fretta — e preferirai continuare a leggere come se non fossi tu.</p></div>
+                <div class="teaser-quote-card"><p class="teaser-quote-text">⏱️ Alcuni appuntamenti sono durati 8 minuti. Altri 9 ore. E uno... dopo il quale niente è stato più uguale.</p></div>
+                <div class="teaser-quote-card"><p class="teaser-quote-text">📓 Questo non è una guida. È un diario di documentazione degli errori che facciamo tutti — solo che non li ammettiamo ad alta voce.</p></div>
+            </div>
+            <p class="teaser-footer-text">Se hai letto fino a qui — probabilmente hai avuto almeno uno di questi appuntamenti. 🎯</p>
+            <a href="#buy" class="teaser-cta">🔓 Vuoi sapere cos'è successo?</a>
+        </div>
+    </section>
+
+    <!-- ⭐ REVIEWS -->
+    <section class="reviews-hollywood">
+        <div class="reviews-header"><span class="reviews-star">⭐</span><h2 class="reviews-main-title">Lettori che Non Hanno Potuto Smettere</h2></div>
+        <div class="reviews-showcase">
+            <div class="review-hollywood-card" style="border-color:rgba(212,175,55,0.3);">
+                <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;flex-wrap:wrap;">
+                    <span style="font-size:20px">📱</span>
+                    <span style="font-size:13px;color:var(--text-secondary)">Amazon Kindle</span>
+                    <span style="font-size:11px;color:#22c55e;background:rgba(34,197,94,0.15);padding:3px 8px;border-radius:10px;">✓ Acquisto verificato</span>
+                </div>
+                <div class="review-rating">⭐⭐⭐⭐⭐</div>
+                <blockquote class="review-quote">«Esilarante. Pieno di flashback. Grazie.»</blockquote>
+                <div class="review-author-line">— Ronit</div>
+            </div>
+            <div class="review-hollywood-card"><div class="review-rating">⭐⭐⭐⭐⭐</div><blockquote class="review-quote">«Qualcuno doveva scriverlo.<br>Meno male che l'ha fatto prima di me.»</blockquote><div class="review-author-line">— Josh</div></div>
+            <div class="review-hollywood-card"><div class="review-rating">⭐⭐⭐⭐⭐</div><blockquote class="review-quote">«L'ho finito.<br>Poi ho scritto al mio ex.»</blockquote><div class="review-author-line">— Michelle</div></div>
+        </div>
+    </section>
+
+    <!-- ✍️ ABOUT -->
+    <section class="about-section">
+        <div class="about-container">
+            <div class="about-image"><img src="N4829.png" alt="Nir Ram - Autore"></div>
+            <div class="about-content">
+                <div class="about-badge">✍️ Chi Sono</div>
+                <h2 class="about-title">Nir Ram</h2>
+                <p class="about-text">Un direttore IT con una ricca carriera professionale, la cui vita personale lo ha reso anche un <strong>curioso ricercatore del mondo degli appuntamenti</strong>.</p>
+                <p class="about-text">Divorziato e padre di tre figli ormai adulti — Alon, Don e Michaela — porta una combinazione unica di <strong>pensiero acuto, curiosità umana e una rara capacità di trovare il lato comico</strong> anche nei momenti più imbarazzanti.</p>
+                <p class="about-signature">«In sintesi: se l'ho già vissuto — che almeno ci sia una buona storia da raccontare.»</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 📱 SOCIAL -->
+    <section class="social-section">
+        <h2 class="social-title">📱 Altri Contenuti Divertenti sui Nostri Canali</h2>
+        <div class="social-links">
+            <a href="https://www.youtube.com/@funnydates101US" class="social-link" target="_blank"><span class="icon">▶️</span><div><div class="label">YouTube</div><div class="handle">@funnydates101US</div></div></a>
+            <a href="https://www.tiktok.com/@no_art_gallery" class="social-link" target="_blank"><span class="icon">🎵</span><div><div class="label">TikTok</div><div class="handle">@no_art_gallery</div></div></a>
+        </div>
+    </section>
+
+    <!-- 🎬 STORY SECTION -->
+    <section class="story-section" id="share">
+        <button id="storyToggle" onclick="toggleStory()" style="cursor:pointer;background:none;border:1px solid var(--accent-gold);padding:10px 20px;border-radius:50px;color:var(--accent-gold);font-family:'Poppins',sans-serif;font-size:14px;display:inline-flex;align-items:center;gap:8px;"><span>🎬</span><span>Hai una Storia?</span><span id="storyArrow">👀</span></button>
+        <div id="storyContent" style="max-height:0;opacity:0;overflow:hidden;transition:max-height 0.5s ease,opacity 0.5s ease;">
+        <h2 class="story-title">La Tua Storia Potrebbe Diventare un Video!</h2>
+        <p class="story-subtitle">Hai avuto un appuntamento folle? Strano? Esilarante?<br>Mandacela e la tua storia potrebbe apparire sul nostro canale!</p>
+        <div class="story-reward"><span>🌟</span><span>La tua storia sarà pubblicata con una menzione</span></div>
+        <form class="story-form" id="storyForm">
+            <input type="hidden" name="access_key" value="c3307ded-69c5-4654-9615-0be668c334d4">
+            <input type="hidden" name="subject" value="🇮🇹 Nuova storia IT - FunnyDates101">
+            <div class="form-group"><label class="form-label">Il Tuo Nome (o soprannome)</label><input type="text" name="name" class="form-input" placeholder="Come ti chiamiamo?" required></div>
+            <div class="form-group"><label class="form-label">Email</label><input type="email" name="email" class="form-input" placeholder="Per tenerti aggiornato" required></div>
+            <div class="form-group"><label class="form-label">La Tua Storia</label><textarea name="story" class="form-input form-textarea" placeholder="Raccontaci cosa è successo..." required></textarea></div>
+            <button type="submit" class="form-submit">🚀 Invia la Mia Storia</button>
+            <p class="form-note">* La tua storia sarà conservata in modo riservato e pubblicata solo con il tuo consenso</p>
+        </form>
+        <div class="form-success" id="formSuccess"><h3>✅ Grazie Mille!</h3><p>La tua storia è stata ricevuta.<br>Se selezionata, ti contatteremo.</p></div>
+        </div>
+    </section>
+
+    <!-- 🛒 BUY SECTION -->
+    <section class="buy-section" id="buy">
+        <div style="text-align:center;margin-bottom:60px;">
+            <p style="font-size:20px;color:var(--text-secondary);margin-bottom:15px;">Se hai letto fin qui —<br>sai già che questo non è un libro qualsiasi.</p>
+            <p style="font-size:18px;color:var(--accent-rose);font-style:italic;margin-bottom:40px;">L'unica domanda: sei pronto a scoprire cosa è successo al prossimo appuntamento?</p>
+        </div>
+        <h2 class="section-title">Dove Acquistare?</h2>
+        <p class="buy-subtitle">Edizione italiana — eBook disponibile!</p>
+        <div class="buy-grid">
+            <div class="buy-card card-red">
+                <div class="buy-card-badge badge-red">🔥 Disponibile Ora</div>
+                <div class="buy-icon">📱</div>
+                <h3 class="buy-title">eBook</h3>
+                <p class="buy-desc">Edizione digitale in italiano</p>
+                <div class="buy-price">€4,99</div>
+                <div class="buy-note">Amazon & Kindle Unlimited!</div>
+                <div class="buy-button-wrapper">
+                    <a href="https://www.amazon.it/dp/B0G46NS5VG" class="buy-button" target="_blank">Acquista su Amazon</a>
+                    <p class="buy-delivery">📱 Kindle · 📖 Kindle Unlimited</p>
+                </div>
+            </div>
+            <div class="buy-card card-gold">
+                <div class="buy-card-badge badge-gold">🚀 Prossimamente</div>
+                <div class="buy-icon">📚</div>
+                <h3 class="buy-title">Libro Stampato</h3>
+                <p class="buy-desc">Edizione italiana in carta</p>
+                <div class="buy-price" style="color:var(--text-secondary);">—</div>
+                <div class="buy-note">Prossimamente disponibile!</div>
+                <div class="buy-button-wrapper">
+                    <span class="buy-button coming-soon">Prossimamente</span>
+                    <p class="buy-delivery">📦 Spedizione in tutta Italia</p>
+                </div>
+            </div>
+            <div class="buy-card card-red">
+                <div class="buy-card-badge badge-red">🚀 Prossimamente</div>
+                <div class="buy-icon">🎧</div>
+                <h3 class="buy-title">Audiolibro</h3>
+                <p class="buy-desc">+4 ore di disastri amorosi</p>
+                <div class="buy-price" style="color:var(--text-secondary);">—</div>
+                <div class="buy-note">In produzione...</div>
+                <div class="buy-button-wrapper">
+                    <span class="buy-button coming-soon">Prossimamente</span>
+                    <p class="buy-delivery">📱 Ascoltalo ovunque</p>
+                </div>
+            </div>
+            <div class="buy-card card-gold">
+                <div class="buy-card-badge badge-gold">🌍 Internazionale</div>
+                <div class="buy-icon">🇬🇧</div>
+                <h3 class="buy-title">Versione Inglese</h3>
+                <p class="buy-desc">Libro, eBook & Audio disponibili</p>
+                <div class="buy-price">$4.99 – $12.99</div>
+                <div class="buy-note">Tutti i formati!</div>
+                <div class="buy-button-wrapper">
+                    <a href="https://www.amazon.com/dp/B0G46NS5VG" class="buy-button" target="_blank">Vedi Versione Inglese</a>
+                    <p class="buy-delivery">📚 Paperback · 📱 Kindle · 🎧 Audio</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- NOTIFY ME -->
+        <div style="max-width:550px;margin:50px auto 0;text-align:center;background:linear-gradient(135deg,var(--bg-card) 0%,#222 100%);border:2px solid var(--accent-gold);border-radius:24px;padding:40px 30px;position:relative;overflow:hidden;">
+            <div style="position:absolute;top:0;left:0;right:0;height:3px;background:var(--gradient-gold);"></div>
+            <div style="font-size:40px;margin-bottom:15px;">🔔</div>
+            <h3 style="font-family:'Playfair Display',serif;font-size:24px;margin-bottom:10px;">Non Perdere il Lancio!</h3>
+            <p style="color:var(--text-secondary);font-size:15px;margin-bottom:25px;">Sii il primo a sapere quando il libro stampato e l'audiolibro saranno disponibili.<br>Iscriviti per ricevere una notifica.</p>
+            <form id="notifyForm" style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;">
+                <input type="hidden" name="access_key" value="c3307ded-69c5-4654-9615-0be668c334d4">
+                <input type="hidden" name="subject" value="🇮🇹 Notify Me - Italian Edition">
+                <input type="email" name="email" placeholder="tua@email.com" required style="flex:1;min-width:220px;padding:14px 18px;background:rgba(0,0,0,0.3);border:1px solid rgba(255,255,255,0.15);border-radius:12px;color:white;font-size:15px;font-family:'Poppins',sans-serif;">
+                <button type="submit" style="background:var(--gradient-gold);color:#000;border:none;padding:14px 28px;border-radius:12px;font-weight:700;font-size:15px;cursor:pointer;font-family:'Poppins',sans-serif;white-space:nowrap;">📩 Avvisami</button>
+            </form>
+            <div id="notifySuccess" style="display:none;padding:20px;">
+                <div style="font-size:32px;margin-bottom:10px;">✅</div>
+                <h4 style="color:var(--accent-gold);margin-bottom:5px;">Grazie!</h4>
+                <p style="color:var(--text-secondary);font-size:14px;">Ti avviseremo appena sarà disponibile l'edizione italiana!</p>
+            </div>
+            <p style="font-size:11px;color:rgba(255,255,255,0.3);margin-top:15px;">🔒 Niente spam. Solo una notifica al lancio.</p>
+        </div>
+    </section>
+
+    <!-- 🎧 AUDIOLIBRO COMING SOON -->
+    <section class="audiobook-coming-section">
+        <div class="audio-cs-container">
+            <div class="audio-cs-card">
+                <span class="audio-cs-icon">🎧</span>
+                <div class="audio-cs-label"><span class="audio-cs-label-dot"></span>IN PRODUZIONE</div>
+                <h2 class="audio-cs-title"><span>Audiolibro</span> in Italiano</h2>
+                <p class="audio-cs-subtitle">101 disastri amorosi narrati ad alta voce.<br>Perché certe storie si vivono meglio con gli occhi chiusi.</p>
+                <div class="audio-cs-features">
+                    <div class="audio-cs-feat"><span>⏱️</span><span>+4 ore di caos</span></div>
+                    <div class="audio-cs-feat"><span>🎙️</span><span>Narrazione espressiva</span></div>
+                    <div class="audio-cs-feat"><span>📱</span><span>Ascoltalo ovunque</span></div>
+                </div>
+                <a href="#buy" class="audio-cs-cta">🔔 Avvisami quando esce!</a>
+                <p class="audio-cs-notify">Iscriviti sopra per ricevere una notifica al lancio</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="/terms.html">Termini & Privacy</a><span class="footer-divider">|</span>
+            <a href="/accessibility.html">Accessibilità</a><span class="footer-divider">|</span>
+            <a href="#share">Contatti</a>
+        </div>
+        <a href="https://noartgallery.com" target="_blank" rel="noopener noreferrer" class="noartgallery-link">
+            <img src="noartgallery-logo.png" alt="No Art Gallery" class="noartgallery-logo">
+        </a>
+        <p class="footer-text">© Tutti i Diritti Riservati a Nir Ram 2025</p>
+        <p class="footer-author">📚 Love Bites: 101 Disastri d'Amore</p>
+        <p class="footer-contact">📧 <a id="footer-email-link" href="#"></a></p>
+        <script>
+            (function(){
+                var u='nir';var d='funnydates101.com';
+                var e=u+'@'+d;
+                var a=document.getElementById('footer-email-link');
+                if(a){a.href='mai'+'lto:'+e;a.textContent=e;}
+            })();
+        </script>
+    </footer>
+</div>
+
+<script>
+    let fontSize = 100;
+    function toggleAccessibilityMenu() { document.getElementById('accessibility-menu').classList.toggle('active'); }
+    function changeFontSize(d) { fontSize += d * 10; fontSize = Math.max(80, Math.min(150, fontSize)); document.body.style.fontSize = fontSize + '%'; }
+    function toggleHighContrast() { document.body.classList.toggle('high-contrast'); document.body.classList.remove('grayscale'); }
+    function toggleGrayscale() { document.body.classList.toggle('grayscale'); document.body.classList.remove('high-contrast'); }
+    function toggleUnderlineLinks() { document.body.classList.toggle('underline-links'); }
+    function resetAccessibility() { fontSize = 100; document.body.style.fontSize = '100%'; document.body.classList.remove('high-contrast','grayscale','underline-links'); }
+    function toggleTeaser() { document.getElementById('teaserToggle').classList.toggle('open'); document.getElementById('teaserContent').classList.toggle('open'); }
+    function toggleStory() {
+        var c = document.getElementById('storyContent');
+        var arrow = document.getElementById('storyArrow');
+        if (c.style.maxHeight === '0px' || c.style.maxHeight === '0' || c.style.maxHeight === '') {
+            c.style.maxHeight = '2000px'; c.style.opacity = '1';
+            if (arrow) arrow.textContent = '🔼';
+        } else {
+            c.style.maxHeight = '0'; c.style.opacity = '0';
+            if (arrow) arrow.textContent = '👀';
+        }
+    }
+    document.getElementById('storyForm').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        try { await fetch('https://api.web3forms.com/submit', { method: 'POST', body: new FormData(this) }); document.getElementById('storyForm').style.display = 'none'; document.getElementById('formSuccess').style.display = 'block'; } catch(err) {}
+    });
+    document.getElementById('notifyForm').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        try { await fetch('https://api.web3forms.com/submit', { method: 'POST', body: new FormData(this) }); this.style.display = 'none'; document.getElementById('notifySuccess').style.display = 'block'; } catch(err) {}
+    });
+    // Rotating floating quote — Italian
+    const itQuotes = [
+        "🍷 Dieci minuti. Sette bicchieri di vino. E la sento dire all'amica: «Stiamo insieme da due mesi.» Tesoro, ero LÌ.",
+        "🚗 In autostrada mi dice: «Sei uno di quei tipi del tech con la Tesla?» Ho girato. E non era per il traffico.",
+        "💬 Appuntamento perfetto. Chimica. Risate. Scintille. Il suo messaggio il giorno dopo: Due parole. Solo una era gentile.",
+        "🔥 Al club era FUOCO. Passione. Sguardi intensi. Il giorno dopo sulla sua Harley: Fredda come il ghiaccio. Stessa persona.",
+        "🧺 Primo appuntamento. È arrivata con tre borse. «Passo solo un attimo dalla nonna.» Nessuno mi aveva preparato a quello che è successo al ritorno."
+    ];
+    let quoteIndex = 0;
+    setInterval(() => {
+        quoteIndex = (quoteIndex + 1) % itQuotes.length;
+        const bubble = document.querySelector('.quote-bubble');
+        if (bubble) { bubble.style.opacity = '0'; setTimeout(() => { bubble.textContent = itQuotes[quoteIndex]; bubble.style.opacity = '1'; }, 300); }
+    }, 8000);
+</script>
+</body>
+</html>

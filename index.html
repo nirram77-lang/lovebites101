@@ -186,7 +186,7 @@
         .lw-trigger-flag.visible { display: block; }
         .lw-trigger-flag img { width: 100%; height: 100%; object-fit: cover; }
         .lang-panel {
-          position: absolute; top: calc(100% + 14px); right: 0; width: 330px;
+          position: absolute; top: calc(100% + 14px); right: 0; width: 400px;
           background: linear-gradient(145deg, rgba(30,18,8,0.97) 0%, rgba(18,9,3,0.98) 100%);
           border: 1px solid rgba(201,168,76,0.28); border-radius: 18px;
           backdrop-filter: blur(30px);
@@ -201,14 +201,14 @@
         .lw-panel-title::before { content: ''; display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--green); box-shadow: 0 0 8px var(--green-glow); animation: lwBlink 2s ease-in-out infinite; }
         @keyframes lwBlink { 0%,100% { opacity:1; transform:scale(1); } 50% { opacity:.5; transform:scale(.75); } }
         .lw-panel-count { font-size: 11px; color: rgba(255,255,255,0.3); letter-spacing: 0.05em; }
-        .lw-flags-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; padding: 14px 14px 10px; }
-        .lw-flag-item { display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 12px 6px 10px; border-radius: 13px; border: 1.5px solid rgba(255,255,255,0.06); background: rgba(255,255,255,0.03); cursor: pointer; transition: all 0.25s cubic-bezier(0.34,1.56,0.64,1); position: relative; overflow: hidden; text-decoration: none; }
+        .lw-flags-grid { display: grid; grid-template-columns: repeat(5,1fr); gap: 8px; padding: 14px 12px 10px; }
+        .lw-flag-item { display: flex; flex-direction: column; align-items: center; gap: 5px; padding: 10px 4px 8px; border-radius: 13px; border: 1.5px solid rgba(255,255,255,0.06); background: rgba(255,255,255,0.03); cursor: pointer; transition: all 0.25s cubic-bezier(0.34,1.56,0.64,1); position: relative; overflow: hidden; text-decoration: none; }
         .lw-flag-item::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 50% 0%, rgba(201,168,76,0.09), transparent 70%); opacity: 0; transition: opacity 0.25s ease; }
         .lw-flag-item:hover { transform: translateY(-3px) scale(1.04); border-color: var(--gold); box-shadow: 0 0 22px var(--gold-glow), 0 6px 18px rgba(0,0,0,0.4); }
         .lw-flag-item:hover::before { opacity: 1; }
         .lw-flag-item.active { border-color: var(--gold); background: rgba(201,168,76,0.07); box-shadow: 0 0 22px var(--gold-glow); }
         .lw-flag-item.active::before { opacity: 1; }
-        .lw-flag-sphere { width: 52px; height: 52px; border-radius: 50%; position: relative; overflow: hidden; box-shadow: 0 5px 18px rgba(0,0,0,0.55), inset 0 1px 0 rgba(255,255,255,0.14), inset 0 -2px 6px rgba(0,0,0,0.4); transition: transform 0.28s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.28s ease; flex-shrink: 0; }
+        .lw-flag-sphere { width: 42px; height: 42px; border-radius: 50%; position: relative; overflow: hidden; box-shadow: 0 5px 18px rgba(0,0,0,0.55), inset 0 1px 0 rgba(255,255,255,0.14); transition: transform 0.28s ease, box-shadow 0.28s ease; flex-shrink: 0; }
         .lw-flag-item:hover .lw-flag-sphere { transform: scale(1.12); box-shadow: 0 8px 28px rgba(201,168,76,0.38), inset 0 1px 0 rgba(255,255,255,0.2), inset 0 -2px 6px rgba(0,0,0,0.4); }
         .lw-flag-item.active .lw-flag-sphere { box-shadow: 0 0 0 2.5px var(--gold), 0 0 18px var(--gold-glow), 0 6px 22px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.16); }
         .lw-flag-sphere img { width: 100%; height: 100%; object-fit: cover; display: block; transform: scale(1.09); }
@@ -223,8 +223,8 @@
         .lw-panel-footer::before, .lw-panel-footer::after { content: '+'; color: var(--gold); opacity: 0.35; }
         @keyframes lwFlagIn { from { opacity:0; transform:translateY(7px) scale(0.88); } to { opacity:1; transform:translateY(0) scale(1); } }
         .lang-panel.open .lw-flag-item { animation: lwFlagIn 0.4s cubic-bezier(0.34,1.4,0.64,1) both; }
-        .lang-panel.open .lw-flag-item:nth-child(1){animation-delay:.04s}.lang-panel.open .lw-flag-item:nth-child(2){animation-delay:.09s}.lang-panel.open .lw-flag-item:nth-child(3){animation-delay:.14s}.lang-panel.open .lw-flag-item:nth-child(4){animation-delay:.19s}.lang-panel.open .lw-flag-item:nth-child(5){animation-delay:.24s}.lang-panel.open .lw-flag-item:nth-child(6){animation-delay:.29s}.lang-panel.open .lw-flag-item:nth-child(7){animation-delay:.34s}.lang-panel.open .lw-flag-item:nth-child(8){animation-delay:.39s}.lang-panel.open .lw-flag-item:nth-child(9){animation-delay:.44s}
-        @media (max-width: 768px) { .lang-widget-wrap { top: 10px; right: 10px; } .lang-trigger { padding: 8px 16px; font-size: 13px; } .lang-panel { width: 290px; } }
+        .lang-panel.open .lw-flag-item:nth-child(1){animation-delay:.03s}.lang-panel.open .lw-flag-item:nth-child(2){animation-delay:.07s}.lang-panel.open .lw-flag-item:nth-child(3){animation-delay:.11s}.lang-panel.open .lw-flag-item:nth-child(4){animation-delay:.15s}.lang-panel.open .lw-flag-item:nth-child(5){animation-delay:.19s}.lang-panel.open .lw-flag-item:nth-child(6){animation-delay:.23s}.lang-panel.open .lw-flag-item:nth-child(7){animation-delay:.27s}.lang-panel.open .lw-flag-item:nth-child(8){animation-delay:.31s}.lang-panel.open .lw-flag-item:nth-child(9){animation-delay:.35s}.lang-panel.open .lw-flag-item:nth-child(10){animation-delay:.39s}
+        @media (max-width: 768px) { .lang-widget-wrap { top: 10px; right: 10px; } .lang-trigger { padding: 8px 16px; font-size: 13px; } .lang-panel { width: 320px; } .lw-flags-grid{grid-template-columns:repeat(5,1fr);gap:6px} .lw-flag-sphere{width:36px;height:36px} }
 
         .floating-hearts { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; overflow: hidden; }
         .heart { position: absolute; font-size: 20px; animation: floatHeart 20s linear infinite; opacity: 0; }
@@ -720,18 +720,17 @@
 
 
 
-    <!-- 🌐 LANGUAGE SELECTOR WIDGET -->
+    <!-- 🌐 LANGUAGE SELECTOR WIDGET — 10 languages, 5×2 -->
     <div class="lang-widget-wrap" id="langWidgetWrap">
       <button class="lang-trigger" id="lwTriggerBtn" onclick="lwTogglePanel()">
         <span>🌐</span>
-        <div class="lw-trigger-flag" id="lwTriggerFlag"><img id="lwTriggerFlagImg" src="" alt=""></div>
         <span id="lwTriggerText">Languages</span>
         <span class="lw-chevron">▲</span>
       </button>
       <div class="lang-panel" id="lwLangPanel">
         <div class="lw-panel-header">
           <div class="lw-panel-title">Choose Your Edition</div>
-          <div class="lw-panel-count">9 Languages</div>
+          <div class="lw-panel-count">10 Languages</div>
         </div>
         <div class="lw-flags-grid">
           <a class="lw-flag-item active" href="https://funnydates101.com" target="_self">
@@ -742,7 +741,7 @@
             <div class="lw-flag-sphere"><img src="https://flagcdn.com/w80/il.png" alt="HE"></div>
             <div class="lw-flag-label">Hebrew</div><div class="lw-flag-badge full">Full</div>
           </a>
-          <a class="lw-flag-item" href="/fr.html" target="_self">
+          <a class="lw-flag-item" href="https://funnydates101.com/fr" target="_self">
             <div class="lw-flag-sphere"><img src="https://flagcdn.com/w80/fr.png" alt="FR"></div>
             <div class="lw-flag-label">French</div><div class="lw-flag-badge ebook">eBook</div>
           </a>
@@ -750,25 +749,29 @@
             <div class="lw-flag-sphere"><img src="https://flagcdn.com/w80/de.png" alt="DE"></div>
             <div class="lw-flag-label">German</div><div class="lw-flag-badge ebook">eBook</div>
           </a>
-          <a class="lw-flag-item" href="/es.html" target="_self">
+          <a class="lw-flag-item" href="https://funnydates101.com/es" target="_self">
             <div class="lw-flag-sphere"><img src="https://flagcdn.com/w80/es.png" alt="ES"></div>
             <div class="lw-flag-label">Spanish</div><div class="lw-flag-badge ebook">eBook</div>
           </a>
-          <a class="lw-flag-item" href="/pt.html" target="_self">
+          <a class="lw-flag-item" href="https://funnydates101.com/pt" target="_self">
             <div class="lw-flag-sphere"><img src="https://flagcdn.com/w80/br.png" alt="PT"></div>
             <div class="lw-flag-label">Portug.</div><div class="lw-flag-badge ebook">eBook</div>
           </a>
-          <a class="lw-flag-item" href="https://www.amazon.com/dp/B0GPB6LC98?binding=kindle_edition&qid=1772684313&sr=8-1&ref=dbs_dp_rwt_sb_pc_tkin" target="_blank">
+          <a class="lw-flag-item" href="https://www.amazon.com/dp/B0GPB6LC98" target="_blank">
             <div class="lw-flag-sphere"><img src="https://flagcdn.com/w80/nl.png" alt="NL"></div>
             <div class="lw-flag-label">Dutch</div><div class="lw-flag-badge ebook">eBook</div>
           </a>
-          <a class="lw-flag-item" href="https://www.amazon.com/dp/B0GPB6LC98?binding=kindle_edition&qid=1772684313&sr=8-1&ref=dbs_dp_rwt_sb_pc_tkin" target="_blank">
+          <a class="lw-flag-item" href="https://www.amazon.com/dp/B0GPB6LC98" target="_blank">
             <div class="lw-flag-sphere"><img src="https://flagcdn.com/w80/jp.png" alt="JP"></div>
             <div class="lw-flag-label">Japanese</div><div class="lw-flag-badge ebook">eBook</div>
           </a>
-          <a class="lw-flag-item" href="https://www.amazon.com/dp/B0GPB6LC98?binding=kindle_edition&qid=1772684313&sr=8-1&ref=dbs_dp_rwt_sb_pc_tkin" target="_blank">
+          <a class="lw-flag-item" href="https://www.amazon.com/dp/B0GPB6LC98" target="_blank">
             <div class="lw-flag-sphere"><img src="https://flagcdn.com/w80/in.png" alt="HI"></div>
             <div class="lw-flag-label">Hindi</div><div class="lw-flag-badge ebook">eBook</div>
+          </a>
+          <a class="lw-flag-item" href="https://funnydates101.com/it" target="_self">
+            <div class="lw-flag-sphere"><img src="https://flagcdn.com/w80/it.png" alt="IT"></div>
+            <div class="lw-flag-label">Italian</div><div class="lw-flag-badge ebook">eBook</div>
           </a>
         </div>
         <div class="lw-panel-footer">Available Worldwide on Amazon</div>
