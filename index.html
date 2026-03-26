@@ -730,63 +730,272 @@
         <div class="bw-badge">🌍 14 Languages Worldwide</div>
     </div>
 
-    <!-- 🌐 LANGUAGE SELECTOR WIDGET — 14 languages -->
+    <!-- 🌐 LANGUAGE SELECTOR — TECH EDITION -->
+    <style>
+    /* ── Trigger ── */
+    .lang-widget-wrap { position: fixed; top: 18px; right: 18px; z-index: 1100; font-family: 'Poppins', sans-serif; }
+
+    .lang-trigger {
+        display: inline-flex; align-items: center; gap: 8px;
+        padding: 9px 18px 9px 14px;
+        background: rgba(12,10,20,0.85);
+        border: 1px solid rgba(255,255,255,0.12);
+        border-radius: 40px; cursor: pointer;
+        font-size: 13px; font-weight: 600; color: #fff;
+        backdrop-filter: blur(20px);
+        box-shadow: 0 0 0 1px rgba(255,255,255,0.04), 0 8px 32px rgba(0,0,0,0.5);
+        transition: all 0.25s ease; user-select: none;
+    }
+    .lang-trigger:hover {
+        border-color: rgba(212,175,55,0.5);
+        box-shadow: 0 0 20px rgba(212,175,55,0.15), 0 8px 32px rgba(0,0,0,0.5);
+    }
+    .lt-globe { font-size: 15px; }
+    .lt-badge {
+        background: linear-gradient(135deg,#6366f1,#8b5cf6);
+        color: #fff; font-size: 10px; font-weight: 800;
+        padding: 1px 7px; border-radius: 20px; letter-spacing: 0.03em;
+    }
+    .lt-arrow { font-size: 9px; opacity: 0.5; margin-left: 2px; transition: transform 0.3s; }
+    .lang-trigger.open .lt-arrow { transform: rotate(180deg); }
+
+    /* ── Panel ── */
+    .lang-panel {
+        position: absolute; top: calc(100% + 10px); right: 0;
+        width: 340px;
+        background: linear-gradient(160deg, rgba(10,8,20,0.97) 0%, rgba(15,12,30,0.98) 100%);
+        border: 1px solid rgba(255,255,255,0.08);
+        border-radius: 20px; overflow: hidden;
+        backdrop-filter: blur(40px);
+        box-shadow: 0 30px 80px rgba(0,0,0,0.85), 0 0 0 1px rgba(255,255,255,0.04);
+        transform-origin: top right;
+        transform: scaleY(0.92) translateY(-8px); opacity: 0; pointer-events: none;
+        transition: transform 0.3s cubic-bezier(0.34,1.4,0.64,1), opacity 0.2s ease;
+    }
+    .lang-panel.open {
+        transform: scaleY(1) translateY(0); opacity: 1; pointer-events: all;
+    }
+
+    /* Header with rainbow counter */
+    .lp-header {
+        padding: 16px 18px 12px;
+        border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .lp-counter-row {
+        display: flex; align-items: center; gap: 10px; margin-bottom: 8px;
+    }
+    .lp-number {
+        font-size: 28px; font-weight: 900; color: #fff;
+        letter-spacing: -0.02em; line-height: 1;
+    }
+    .lp-bar-wrap { flex: 1; }
+    .lp-bar {
+        height: 5px; border-radius: 10px;
+        background: linear-gradient(90deg,
+            #ef4444 0%, #f97316 14%, #eab308 28%,
+            #22c55e 42%, #06b6d4 56%, #3b82f6 70%,
+            #8b5cf6 84%, #ec4899 100%);
+        box-shadow: 0 0 10px rgba(139,92,246,0.4);
+    }
+    .lp-bar-label {
+        font-size: 10px; color: rgba(255,255,255,0.35);
+        margin-top: 4px; letter-spacing: 0.12em; text-transform: uppercase;
+    }
+    .lp-icon-btn {
+        width: 28px; height: 28px; border-radius: 8px;
+        background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.08);
+        display: flex; align-items: center; justify-content: center;
+        font-size: 13px; cursor: pointer; color: rgba(255,255,255,0.5);
+        transition: all 0.2s;
+    }
+    .lp-icon-btn:hover { background: rgba(255,255,255,0.12); color: #fff; }
+    .lp-sub {
+        font-size: 10px; color: rgba(255,255,255,0.2);
+        letter-spacing: 0.1em; text-transform: uppercase;
+    }
+
+    /* Grid */
+    .lp-grid {
+        display: grid; grid-template-columns: repeat(4,1fr);
+        gap: 6px; padding: 12px 12px 8px;
+    }
+    .lp-card {
+        display: flex; flex-direction: column; align-items: center; gap: 5px;
+        padding: 10px 4px 8px;
+        border-radius: 12px;
+        border: 1px solid rgba(255,255,255,0.07);
+        background: rgba(255,255,255,0.04);
+        cursor: pointer; text-decoration: none;
+        transition: all 0.2s cubic-bezier(0.34,1.4,0.64,1);
+        position: relative; overflow: hidden;
+    }
+    .lp-card:hover {
+        background: rgba(255,255,255,0.09);
+        border-color: rgba(255,255,255,0.18);
+        transform: translateY(-2px) scale(1.04);
+        box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+    }
+    .lp-card.active {
+        background: rgba(99,102,241,0.18);
+        border-color: rgba(99,102,241,0.55);
+        box-shadow: 0 0 16px rgba(99,102,241,0.25);
+    }
+    /* Shine sweep on hover */
+    .lp-card::after {
+        content: ''; position: absolute; inset: 0;
+        background: linear-gradient(135deg, transparent 40%, rgba(255,255,255,0.06) 50%, transparent 60%);
+        transform: translateX(-100%);
+        transition: transform 0.4s ease;
+    }
+    .lp-card:hover::after { transform: translateX(100%); }
+
+    /* Flag */
+    .lp-flag {
+        width: 36px; height: 36px; border-radius: 8px; overflow: hidden;
+        display: flex; align-items: center; justify-content: center;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+        flex-shrink: 0;
+    }
+    .lp-flag img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+    .lp-name {
+        font-size: 10px; font-weight: 700; color: rgba(255,255,255,0.8);
+        letter-spacing: 0.03em; text-align: center; line-height: 1.1;
+    }
+    .lp-fmt {
+        font-size: 7.5px; font-weight: 700; padding: 2px 6px;
+        border-radius: 8px; text-transform: uppercase; letter-spacing: 0.06em;
+    }
+    .lp-fmt.full  { background: rgba(34,197,94,0.2);  color: #4ade80; border:1px solid rgba(34,197,94,0.3); }
+    .lp-fmt.ebook { background: rgba(212,175,55,0.15); color: #d4af37; border:1px solid rgba(212,175,55,0.25); }
+    .lp-fmt.new   { background: rgba(239,68,68,0.2);  color: #f87171; border:1px solid rgba(239,68,68,0.3); }
+
+    /* Footer */
+    .lp-footer {
+        margin: 0 12px 12px;
+        padding: 9px 0;
+        border-radius: 10px;
+        background: rgba(255,255,255,0.03);
+        border: 1px solid rgba(255,255,255,0.06);
+        display: flex; align-items: center; justify-content: center; gap: 8px;
+        font-size: 10px; font-weight: 600; color: rgba(255,255,255,0.3);
+        letter-spacing: 0.12em; text-transform: uppercase;
+    }
+    .lp-footer-dot {
+        width: 6px; height: 6px; border-radius: 50%;
+        background: #22c55e; box-shadow: 0 0 6px #22c55e;
+        animation: ldBlink 2s ease-in-out infinite;
+    }
+    @keyframes ldBlink { 0%,100%{opacity:1;} 50%{opacity:0.3;} }
+
+    @media (max-width: 500px) {
+        .lang-panel { width: calc(100vw - 16px); right: -8px; }
+        .lp-grid { grid-template-columns: repeat(3,1fr); }
+    }
+    </style>
+
     <div class="lang-widget-wrap" id="langWidgetWrap">
       <button class="lang-trigger" id="lwTriggerBtn" onclick="lwTogglePanel()">
-        <span>🌐</span>
-        <span id="lwTriggerText">Languages</span>
-        <span class="lw-chevron">▲</span>
+        <span class="lt-globe">🌍</span>
+        <span>Languages</span>
+        <span class="lt-badge">14</span>
+        <span class="lt-arrow">▼</span>
       </button>
+
       <div class="lang-panel" id="lwLangPanel">
-        <div class="lw-panel-header">
-          <div class="lw-panel-title">Choose Your Edition</div>
-          <div class="lw-panel-count">14 Languages</div>
+        <div class="lp-header">
+          <div class="lp-counter-row">
+            <div class="lp-number">14</div>
+            <div class="lp-bar-wrap">
+              <div class="lp-bar"></div>
+              <div class="lp-bar-label">Languages</div>
+            </div>
+            <div class="lp-icon-btn">⊞</div>
+          </div>
+          <div class="lp-sub">Choose your edition worldwide</div>
         </div>
-        <div class="lw-flags-grid">
-          <a class="lw-flag-item active" href="https://funnydates101.com" target="_self">
-            <div class="lw-flag-sphere"><img src="https://flagcdn.com/w80/us.png" alt="EN"></div>
-            <div class="lw-flag-label">English</div><div class="lw-flag-badge full">Full</div>
+
+        <div class="lp-grid">
+          <a class="lp-card active" href="https://funnydates101.com" target="_self">
+            <div class="lp-flag"><img src="https://flagcdn.com/w80/us.png" alt="EN"></div>
+            <div class="lp-name">English</div>
+            <div class="lp-fmt full">Full Site</div>
           </a>
-          <a class="lw-flag-item" href="https://funnydates101.co.il" target="_self">
-            <div class="lw-flag-sphere"><img src="https://flagcdn.com/w80/il.png" alt="HE"></div>
-            <div class="lw-flag-label">Hebrew</div><div class="lw-flag-badge full">Full</div>
+          <a class="lp-card" href="https://funnydates101.co.il" target="_self">
+            <div class="lp-flag"><img src="https://flagcdn.com/w80/il.png" alt="HE"></div>
+            <div class="lp-name">Hebrew</div>
+            <div class="lp-fmt full">Full Site</div>
           </a>
-          <a class="lw-flag-item" href="https://funnydates101.com/fr" target="_self">
-            <div class="lw-flag-sphere"><img src="https://flagcdn.com/w80/fr.png" alt="FR"></div>
-            <div class="lw-flag-label">French</div><div class="lw-flag-badge ebook">eBook</div>
+          <a class="lp-card" href="https://funnydates101.com/fr" target="_self">
+            <div class="lp-flag"><img src="https://flagcdn.com/w80/fr.png" alt="FR"></div>
+            <div class="lp-name">Français</div>
+            <div class="lp-fmt ebook">eBook</div>
           </a>
-          <a class="lw-flag-item" href="https://funnydates101.com/de" target="_self">
-            <div class="lw-flag-sphere"><img src="https://flagcdn.com/w80/de.png" alt="DE"></div>
-            <div class="lw-flag-label">German</div><div class="lw-flag-badge ebook">eBook</div>
+          <a class="lp-card" href="https://funnydates101.com/de" target="_self">
+            <div class="lp-flag"><img src="https://flagcdn.com/w80/de.png" alt="DE"></div>
+            <div class="lp-name">Deutsch</div>
+            <div class="lp-fmt ebook">eBook</div>
           </a>
-          <a class="lw-flag-item" href="https://funnydates101.com/es" target="_self">
-            <div class="lw-flag-sphere"><img src="https://flagcdn.com/w80/es.png" alt="ES"></div>
-            <div class="lw-flag-label">Spanish</div><div class="lw-flag-badge ebook">eBook</div>
+          <a class="lp-card" href="https://funnydates101.com/es" target="_self">
+            <div class="lp-flag"><img src="https://flagcdn.com/w80/es.png" alt="ES"></div>
+            <div class="lp-name">Español</div>
+            <div class="lp-fmt ebook">eBook</div>
           </a>
-          <a class="lw-flag-item" href="https://funnydates101.com/pt" target="_self">
-            <div class="lw-flag-sphere"><img src="https://flagcdn.com/w80/br.png" alt="PT"></div>
-            <div class="lw-flag-label">Portug.</div><div class="lw-flag-badge ebook">eBook</div>
+          <a class="lp-card" href="https://funnydates101.com/it" target="_self">
+            <div class="lp-flag"><img src="https://flagcdn.com/w80/it.png" alt="IT"></div>
+            <div class="lp-name">Italiano</div>
+            <div class="lp-fmt ebook">eBook</div>
           </a>
-          <a class="lw-flag-item" href="https://funnydates101.com/nl" target="_self">
-            <div class="lw-flag-sphere"><img src="https://flagcdn.com/w80/nl.png" alt="NL"></div>
-            <div class="lw-flag-label">Dutch</div><div class="lw-flag-badge ebook">eBook</div>
+          <a class="lp-card" href="https://funnydates101.com/pt" target="_self">
+            <div class="lp-flag"><img src="https://flagcdn.com/w80/br.png" alt="PT"></div>
+            <div class="lp-name">Português</div>
+            <div class="lp-fmt ebook">eBook</div>
           </a>
-          <a class="lw-flag-item" href="https://www.amazon.com/dp/B0GPB6LC98" target="_blank">
-            <div class="lw-flag-sphere"><img src="https://flagcdn.com/w80/jp.png" alt="JP"></div>
-            <div class="lw-flag-label">Japanese</div><div class="lw-flag-badge ebook">eBook</div>
+          <a class="lp-card" href="https://funnydates101.com/nl" target="_self">
+            <div class="lp-flag"><img src="https://flagcdn.com/w80/nl.png" alt="NL"></div>
+            <div class="lp-name">Nederlands</div>
+            <div class="lp-fmt ebook">eBook</div>
           </a>
-          <a class="lw-flag-item" href="https://www.amazon.com/dp/B0GPB6LC98" target="_blank">
-            <div class="lw-flag-sphere"><img src="https://flagcdn.com/w80/in.png" alt="HI"></div>
-            <div class="lw-flag-label">Hindi</div><div class="lw-flag-badge ebook">eBook</div>
+          <a class="lp-card" href="https://www.amazon.co.jp/dp/B0GPB6LC98" target="_blank">
+            <div class="lp-flag"><img src="https://flagcdn.com/w80/jp.png" alt="JP"></div>
+            <div class="lp-name">日本語</div>
+            <div class="lp-fmt new">New</div>
           </a>
-          <a class="lw-flag-item" href="https://funnydates101.com/it" target="_self">
-            <div class="lw-flag-sphere"><img src="https://flagcdn.com/w80/it.png" alt="IT"></div>
-            <div class="lw-flag-label">Italian</div><div class="lw-flag-badge ebook">eBook</div>
+          <a class="lp-card" href="https://www.amazon.in/dp/B0GQX9HDS6" target="_blank">
+            <div class="lp-flag"><img src="https://flagcdn.com/w80/in.png" alt="HI"></div>
+            <div class="lp-name">हिन्दी</div>
+            <div class="lp-fmt new">New</div>
+          </a>
+          <a class="lp-card" href="https://www.amazon.com/dp/B0GTJPPCQ5" target="_blank">
+            <div class="lp-flag"><img src="https://flagcdn.com/w80/sa.png" alt="AR"></div>
+            <div class="lp-name">العربية</div>
+            <div class="lp-fmt new">New</div>
+          </a>
+          <a class="lp-card" href="https://www.amazon.com/s?k=Love+Bites+Nir+Ram+Romanian" target="_blank">
+            <div class="lp-flag"><img src="https://flagcdn.com/w80/ro.png" alt="RO"></div>
+            <div class="lp-name">Română</div>
+            <div class="lp-fmt new">New</div>
+          </a>
+          <a class="lp-card" href="https://www.amazon.com/s?k=Love+Bites+Nir+Ram+Turkish" target="_blank">
+            <div class="lp-flag"><img src="https://flagcdn.com/w80/tr.png" alt="TR"></div>
+            <div class="lp-name">Türkçe</div>
+            <div class="lp-fmt new">New</div>
+          </a>
+          <a class="lp-card" href="https://www.amazon.com/s?k=Love+Bites+Nir+Ram+Russian" target="_blank">
+            <div class="lp-flag"><img src="https://flagcdn.com/w80/ru.png" alt="RU"></div>
+            <div class="lp-name">Русский</div>
+            <div class="lp-fmt new">New</div>
           </a>
         </div>
-        <div class="lw-panel-footer">Available Worldwide on Amazon</div>
+
+        <div class="lp-footer">
+          <span class="lp-footer-dot"></span>
+          Available Worldwide
+          <span class="lp-footer-dot"></span>
+        </div>
       </div>
     </div>
+
     <script>
       (function(){
         var lwOpen = false;
@@ -804,6 +1013,7 @@
         });
       })();
     </script>
+
 
     <div class="floating-hearts">
         <span class="heart">💔</span><span class="heart">❤️</span><span class="heart">💕</span><span class="heart">💔</span><span class="heart">❤️</span>
