@@ -1,0 +1,1791 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>רכישת אודיובוק | 101 דייטים ואף נשיכה</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore-compat.js"></script>
+    
+    <style>
+        :root {
+            --bg-dark: #0a0a0a;
+            --bg-card: #1a1a1a;
+            --accent-red: #dc2626;
+            --accent-rose: #f43f5e;
+            --accent-gold: #d4af37;
+            --text-white: #ffffff;
+            --text-muted: #9ca3af;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Heebo', sans-serif;
+            background: var(--bg-dark);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Animated Background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(ellipse at 20% 20%, rgba(220, 38, 38, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 80%, rgba(244, 63, 94, 0.1) 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 50%, rgba(212, 175, 55, 0.05) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* Floating particles */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: var(--accent-gold);
+            border-radius: 50%;
+            opacity: 0;
+            animation: floatParticle 15s infinite;
+        }
+
+        .particle:nth-child(1) { left: 10%; animation-delay: 0s; }
+        .particle:nth-child(2) { left: 20%; animation-delay: 2s; }
+        .particle:nth-child(3) { left: 30%; animation-delay: 4s; }
+        .particle:nth-child(4) { left: 40%; animation-delay: 6s; }
+        .particle:nth-child(5) { left: 50%; animation-delay: 8s; }
+        .particle:nth-child(6) { left: 60%; animation-delay: 10s; }
+        .particle:nth-child(7) { left: 70%; animation-delay: 12s; }
+        .particle:nth-child(8) { left: 80%; animation-delay: 14s; }
+        .particle:nth-child(9) { left: 90%; animation-delay: 1s; }
+        .particle:nth-child(10) { left: 95%; animation-delay: 3s; }
+
+        @keyframes floatParticle {
+            0% { transform: translateY(100vh) scale(0); opacity: 0; }
+            10% { opacity: 0.6; }
+            90% { opacity: 0.2; }
+            100% { transform: translateY(-100px) scale(1); opacity: 0; }
+        }
+
+        /* Main Container */
+        .order-container {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            max-width: 520px;
+            background: linear-gradient(145deg, rgba(26, 26, 26, 0.95), rgba(10, 10, 10, 0.98));
+            border-radius: 24px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            box-shadow: 
+                0 25px 80px rgba(0, 0, 0, 0.5),
+                0 0 60px rgba(220, 38, 38, 0.1),
+                inset 0 1px 0 rgba(255, 255, 255, 0.05);
+            overflow: hidden;
+        }
+
+        /* Close Button */
+        .close-order-btn {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+        }
+
+        .close-order-btn:hover {
+            background: rgba(220, 38, 38, 0.3);
+            border-color: rgba(220, 38, 38, 0.5);
+            transform: scale(1.1);
+        }
+
+        /* Back Link */
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 15px;
+            padding: 8px 16px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            color: rgba(255, 255, 255, 0.6);
+            text-decoration: none;
+            font-size: 13px;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+
+        /* Header */
+        .order-header {
+            background: linear-gradient(135deg, var(--bg-dark), #111);
+            padding: 30px 30px 25px;
+            text-align: center;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            position: relative;
+        }
+
+        .order-header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
+            pointer-events: none;
+        }
+
+        /* NO-ART GALLERY Badge */
+        .brand-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            padding: 6px 16px;
+            border-radius: 50px;
+            margin-bottom: 20px;
+        }
+
+        .brand-badge .brand-icon {
+            font-size: 20px;
+        }
+
+        .brand-badge .brand-name {
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--accent-gold);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .product-icon {
+            font-size: 50px;
+            margin-bottom: 15px;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .product-title {
+            font-size: 26px;
+            font-weight: 900;
+            color: var(--text-white);
+            margin-bottom: 5px;
+        }
+
+        .product-subtitle {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+
+        .product-subtitle span {
+            color: var(--accent-gold);
+        }
+
+        /* Price Display */
+        .price-display {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            background: linear-gradient(135deg, rgba(220, 38, 38, 0.2), rgba(244, 63, 94, 0.1));
+            border: 1px solid rgba(220, 38, 38, 0.3);
+            padding: 15px 40px;
+            border-radius: 16px;
+        }
+
+        .price-amount {
+            font-size: 42px;
+            font-weight: 900;
+            color: var(--accent-red);
+            line-height: 1;
+        }
+
+        .price-note {
+            font-size: 12px;
+            color: var(--accent-rose);
+            margin-top: 5px;
+        }
+
+        /* Form */
+        .order-form {
+            padding: 30px;
+        }
+
+        .form-section {
+            margin-bottom: 25px;
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--accent-gold);
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .section-title .icon {
+            font-size: 18px;
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text-white);
+            margin-bottom: 8px;
+        }
+
+        .form-group label .required {
+            color: var(--accent-red);
+        }
+
+        .form-group input {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 14px 16px;
+            font-size: 15px;
+            font-family: 'Heebo', sans-serif;
+            color: var(--text-white);
+            transition: all 0.3s ease;
+        }
+
+        .form-group input::placeholder {
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--accent-gold);
+            background: rgba(255, 255, 255, 0.08);
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+        }
+
+        .form-group input[dir="ltr"] {
+            text-align: left;
+        }
+
+        .field-hint {
+            font-size: 11px;
+            color: var(--text-muted);
+            margin-top: 6px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .field-hint .hint-icon {
+            font-size: 12px;
+        }
+
+        .error-msg {
+            font-size: 13px;
+            color: #ff4444;
+            margin-top: 8px;
+            padding: 8px 12px;
+            background: rgba(255, 68, 68, 0.1);
+            border-radius: 8px;
+            border-right: 3px solid #ff4444;
+            display: none;
+        }
+
+        .error-msg.show {
+            display: block;
+            animation: shakeError 0.4s ease;
+        }
+
+        @keyframes shakeError {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            75% { transform: translateX(5px); }
+        }
+
+        /* Input validation states */
+        .form-group input.input-error {
+            border-color: #ff4444 !important;
+            box-shadow: 0 0 0 3px rgba(255, 68, 68, 0.2) !important;
+            background: rgba(255, 68, 68, 0.05) !important;
+        }
+
+        .form-group input.input-valid {
+            border-color: #22c55e !important;
+            box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.2) !important;
+        }
+
+        /* Two columns row */
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        /* Coupon Section */
+        .coupon-section {
+            background: rgba(212, 175, 55, 0.05);
+            border: 1px dashed rgba(212, 175, 55, 0.3);
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 20px;
+        }
+
+        .coupon-row {
+            display: flex;
+            gap: 10px;
+        }
+
+        .coupon-row input {
+            flex: 1;
+            text-transform: uppercase;
+        }
+
+        .coupon-btn {
+            background: linear-gradient(135deg, var(--accent-gold), #b8963d);
+            border: none;
+            padding: 14px 24px;
+            border-radius: 12px;
+            font-size: 14px;
+            font-weight: 700;
+            font-family: 'Heebo', sans-serif;
+            color: var(--bg-dark);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .coupon-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(212, 175, 55, 0.3);
+        }
+
+        .coupon-msg {
+            font-size: 13px;
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        .coupon-msg.success {
+            color: #22c55e;
+        }
+
+        .coupon-msg.error {
+            color: var(--accent-red);
+        }
+
+        /* Price Summary */
+        .price-summary {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .price-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        .price-row:not(:last-child) {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .price-row.discount {
+            color: #22c55e;
+            display: none;
+        }
+
+        .price-row.discount.show {
+            display: flex;
+        }
+
+        .price-row.total {
+            padding-top: 15px;
+            margin-top: 5px;
+            border-top: 2px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .price-row.total span:first-child {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-white);
+        }
+
+        .price-row.total span:last-child {
+            font-size: 24px;
+            font-weight: 900;
+            color: var(--accent-red);
+        }
+
+        /* Submit Button */
+        .submit-btn {
+            width: 100%;
+            background: linear-gradient(135deg, var(--accent-red), var(--accent-rose));
+            border: none;
+            padding: 18px;
+            border-radius: 16px;
+            font-size: 18px;
+            font-weight: 700;
+            font-family: 'Heebo', sans-serif;
+            color: var(--text-white);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 40px rgba(220, 38, 38, 0.4);
+        }
+
+        .submit-btn:active {
+            transform: translateY(-1px);
+        }
+
+        .submit-btn .btn-icon {
+            font-size: 20px;
+        }
+
+        /* Secure Note */
+        .secure-note {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 12px;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .secure-note .lock-icon {
+            color: #22c55e;
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           💜 BIT PAYMENT SECTION
+           ═══════════════════════════════════════════════════════════════ */
+        
+        .bit-payment-section {
+            background: linear-gradient(135deg, rgba(124, 58, 237, 0.15), rgba(139, 92, 246, 0.1));
+            border: 2px solid rgba(124, 58, 237, 0.4);
+            border-radius: 20px;
+            padding: 25px;
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        /* Removed animated ::before - was causing click blocking issues */
+
+        .bit-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .bit-logo {
+            height: 32px;
+            width: auto;
+        }
+
+        .bit-logo-fallback {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #7C3AED, #8B5CF6);
+            padding: 6px 16px;
+            border-radius: 8px;
+        }
+
+        .bit-title {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 500;
+        }
+
+        .bit-instructions {
+        }
+
+        .bit-step {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 0;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 14px;
+        }
+
+        .step-number {
+            width: 28px;
+            height: 28px;
+            background: linear-gradient(135deg, #7C3AED, #8B5CF6);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 14px;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .bit-phone-display {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(124, 58, 237, 0.5);
+            border-radius: 12px;
+            padding: 15px 20px;
+            margin: 15px 0;
+        }
+
+        .phone-number {
+            font-size: 26px;
+            font-weight: 900;
+            color: #A78BFA;
+            letter-spacing: 2px;
+            direction: ltr;
+        }
+
+        .copy-phone-btn {
+            background: linear-gradient(135deg, #7C3AED, #8B5CF6);
+            border: none;
+            padding: 10px 18px;
+            border-radius: 10px;
+            font-size: 13px;
+            font-weight: 600;
+            font-family: 'Heebo', sans-serif;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .copy-phone-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(124, 58, 237, 0.4);
+        }
+
+        .bit-confirmation {
+            margin-top: 20px;
+        }
+
+        .bit-checkbox-label {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 12px;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .bit-checkbox-label:hover {
+            background: rgba(124, 58, 237, 0.1);
+            border-color: rgba(124, 58, 237, 0.3);
+        }
+
+        .bit-checkbox-label input[type="checkbox"] {
+            display: none;
+        }
+
+        .checkmark {
+            width: 26px;
+            height: 26px;
+            border: 2px solid rgba(124, 58, 237, 0.5);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .bit-checkbox-label input:checked + .checkmark {
+            background: linear-gradient(135deg, #7C3AED, #8B5CF6);
+            border-color: #7C3AED;
+        }
+
+        .bit-checkbox-label input:checked + .checkmark::after {
+            content: '✓';
+            color: white;
+            font-weight: 700;
+            font-size: 16px;
+        }
+
+        .checkbox-text {
+            font-size: 16px;
+            font-weight: 600;
+            color: white;
+        }
+
+        .bit-phone-confirm {
+            margin-top: 15px;
+            padding: 15px;
+            background: rgba(124, 58, 237, 0.1);
+            border-radius: 12px;
+            border: 1px solid rgba(124, 58, 237, 0.3);
+            animation: slideDown 0.3s ease;
+        }
+
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .bit-phone-confirm label {
+            display: block;
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 10px;
+        }
+
+        .bit-phone-confirm input {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(124, 58, 237, 0.4);
+            border-radius: 10px;
+            padding: 12px 16px;
+            font-size: 18px;
+            font-family: 'Heebo', sans-serif;
+            color: white;
+            text-align: center;
+            letter-spacing: 1px;
+        }
+
+        .bit-phone-confirm input:focus {
+            outline: none;
+            border-color: #7C3AED;
+            box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.2);
+        }
+
+        .bit-phone-confirm input::placeholder {
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        /* Footer */
+        .order-footer {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 20px 30px;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .footer-brand {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 8px;
+        }
+
+        .footer-brand .logo {
+            font-size: 24px;
+        }
+
+        .footer-brand .name {
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--accent-gold);
+            letter-spacing: 2px;
+        }
+
+        .footer-info {
+            font-size: 11px;
+            color: var(--text-muted);
+        }
+
+        /* Success Screen */
+        .success-screen {
+            display: none;
+            padding: 50px 30px;
+            text-align: center;
+        }
+
+        .success-screen.show {
+            display: block;
+        }
+
+        .success-confetti {
+            font-size: 40px;
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: confettiFloat 2s ease-in-out infinite;
+        }
+
+        @keyframes confettiFloat {
+            0%, 100% { transform: translateX(-50%) translateY(0) rotate(0deg); }
+            50% { transform: translateX(-50%) translateY(-10px) rotate(10deg); }
+        }
+
+        .success-icon {
+            font-size: 80px;
+            margin-bottom: 25px;
+            animation: bounceIn 0.6s ease;
+            filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.5));
+        }
+
+        @keyframes bounceIn {
+            0% { transform: scale(0); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+
+        .success-title {
+            font-size: 32px;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--accent-gold), #ffd700);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+        }
+
+        .success-subtitle {
+            font-size: 18px;
+            color: var(--text-white);
+            margin-bottom: 30px;
+        }
+
+        .success-details {
+            background: linear-gradient(135deg, rgba(34, 197, 94, 0.15), rgba(34, 197, 94, 0.05));
+            border: 2px solid rgba(34, 197, 94, 0.4);
+            border-radius: 20px;
+            padding: 25px;
+            margin-bottom: 25px;
+            text-align: right;
+        }
+
+        .success-step {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 12px 0;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .success-step:last-child {
+            border-bottom: none;
+        }
+
+        .success-step .step-icon {
+            font-size: 22px;
+            min-width: 30px;
+            text-align: center;
+        }
+
+        .success-delivery {
+            background: rgba(124, 58, 237, 0.1);
+            border: 1px solid rgba(124, 58, 237, 0.3);
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .success-delivery p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 14px;
+            margin: 8px 0;
+        }
+
+        .success-order-id {
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px dashed rgba(212, 175, 55, 0.5);
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 20px;
+            font-family: monospace;
+            font-size: 14px;
+            color: var(--accent-gold);
+            direction: ltr;
+        }
+
+        .success-contact {
+            color: var(--accent-gold);
+            font-size: 14px;
+            margin-bottom: 25px;
+        }
+
+        .close-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, var(--accent-red), var(--accent-rose));
+            border: none;
+            padding: 16px 40px;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 600;
+            font-family: 'Heebo', sans-serif;
+            color: var(--text-white);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .close-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(220, 38, 38, 0.3);
+        }
+
+        /* Loading Overlay */
+        .loading-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .loading-overlay.show {
+            display: flex;
+        }
+
+        .loading-spinner {
+            width: 60px;
+            height: 60px;
+            border: 4px solid rgba(212, 175, 55, 0.2);
+            border-top-color: var(--accent-gold);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-bottom: 20px;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .loading-text {
+            color: var(--accent-gold);
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        /* Coming Soon Screen */
+        .coming-soon {
+            display: none;
+            padding: 50px 30px;
+            text-align: center;
+        }
+
+        .coming-soon.show {
+            display: block;
+        }
+
+        .coming-soon-icon {
+            font-size: 70px;
+            margin-bottom: 20px;
+        }
+
+        .coming-soon h3 {
+            font-size: 28px;
+            font-weight: 900;
+            color: var(--accent-gold);
+            margin-bottom: 15px;
+        }
+
+        .coming-soon p {
+            color: var(--text-muted);
+            margin: 10px 0;
+            font-size: 15px;
+        }
+
+        .coming-soon .close-btn {
+            margin-top: 25px;
+        }
+
+        /* Responsive */
+        @media (max-width: 540px) {
+            body {
+                padding: 10px;
+                align-items: flex-start;
+            }
+
+            .order-container {
+                border-radius: 20px;
+                margin-top: 10px;
+                margin-bottom: 20px;
+            }
+
+            .close-order-btn {
+                top: 10px;
+                left: 10px;
+                width: 36px;
+                height: 36px;
+                font-size: 18px;
+            }
+
+            .order-header {
+                padding: 25px 20px 20px;
+            }
+
+            .product-title {
+                font-size: 22px;
+            }
+
+            .price-amount {
+                font-size: 36px;
+            }
+
+            .back-link {
+                font-size: 12px;
+                padding: 6px 12px;
+            }
+
+            .order-form {
+                padding: 20px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .submit-btn {
+                font-size: 16px;
+                padding: 16px;
+            }
+
+            .bit-phone-display {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .phone-number {
+                font-size: 22px;
+            }
+
+            .success-screen {
+                padding: 30px 20px;
+            }
+
+            .success-title {
+                font-size: 26px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating Particles -->
+    <div class="particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+
+    <!-- Main Order Form -->
+    <div class="order-container">
+        <!-- Close Button -->
+        <button class="close-order-btn" onclick="goBack()" title="חזרה לאתר">
+            <span>✕</span>
+        </button>
+        
+        <!-- Header -->
+        <div class="order-header">
+            <div class="brand-badge">
+                <span class="brand-icon">🦎</span>
+                <span class="brand-name">NO-ART GALLERY</span>
+            </div>
+            
+            <div class="product-icon">🎧</div>
+            <h1 class="product-title">101 דייטים ואף נשיכה</h1>
+            <p class="product-subtitle">אודיובוק עם <span>הקדשה אישית</span></p>
+            
+            <div class="price-display">
+                <span class="price-amount" id="headerPrice">₪69</span>
+                <span class="price-note">מחיר השקה מיוחד!</span>
+            </div>
+            
+            <!-- Back link -->
+            <a href="https://funnydates101.com/he" class="back-link">
+                <span>←</span>
+                <span>חזרה לאתר</span>
+            </a>
+        </div>
+
+        <!-- Form -->
+        <form id="orderForm" class="order-form" onsubmit="return submitOrder(event)">
+            <!-- Personal Details -->
+            <div class="form-section">
+                <div class="section-title">
+                    <span class="icon">👤</span>
+                    <span>פרטים אישיים</span>
+                </div>
+                
+                <div class="form-group">
+                    <label>שם מלא <span class="required">*</span></label>
+                    <input type="text" id="customerName" placeholder="ישראל ישראלי" required minlength="2" autocomplete="name">
+                    <div class="field-hint">
+                        <span class="hint-icon">✨</span>
+                        <span>השם יופיע בהקדשה האישית באודיובוק</span>
+                    </div>
+                    <div class="error-msg" id="nameError"></div>
+                </div>
+
+                <div class="form-group">
+                    <label>כתובת אימייל <span class="required">*</span></label>
+                    <input type="email" id="customerEmail" placeholder="your@email.com" required autocomplete="email" dir="ltr">
+                    <div class="field-hint">
+                        <span class="hint-icon">📧</span>
+                        <span>קישור להורדה + חשבונית יישלחו לכאן</span>
+                    </div>
+                    <div class="error-msg" id="emailError"></div>
+                </div>
+
+                <div class="form-group">
+                    <label>טלפון נייד <span class="required">*</span></label>
+                    <input type="tel" id="customerPhone" placeholder="052-123-4567" required autocomplete="tel" dir="ltr" maxlength="12">
+                    <div class="field-hint">
+                        <span class="hint-icon">📱</span>
+                        <span>פורמט: 05X-XXX-XXXX (10 ספרות) - לעדכון בוואטסאפ</span>
+                    </div>
+                    <div class="error-msg" id="phoneError"></div>
+                </div>
+            </div>
+
+            <!-- Address -->
+            <div class="form-section">
+                <div class="section-title">
+                    <span class="icon">📍</span>
+                    <span>כתובת למשלוח</span>
+                </div>
+
+                <div class="form-group">
+                    <label>רחוב ומספר <span class="required">*</span></label>
+                    <input type="text" id="customerAddress" placeholder="רחוב הירקון 123" required autocomplete="street-address">
+                    <div class="error-msg" id="addressError"></div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>עיר <span class="required">*</span></label>
+                        <input type="text" id="customerCity" placeholder="תל אביב" required autocomplete="address-level2">
+                        <div class="error-msg" id="cityError"></div>
+                    </div>
+                    <div class="form-group">
+                        <label>מיקוד <span class="required">*</span></label>
+                        <input type="text" id="customerZipcode" placeholder="7546800" required autocomplete="postal-code" dir="ltr" maxlength="7" inputmode="numeric">
+                        <div class="error-msg" id="zipcodeError"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Discount Code -->
+            <div class="coupon-section">
+                <label style="font-size: 13px; color: var(--text-muted); margin-bottom: 10px; display: block;">
+                    🏷️ קוד הנחה (אופציונלי)
+                </label>
+                <div class="coupon-row">
+                    <input type="text" id="discountCode" placeholder="הכנס קוד הנחה" dir="rtl">
+                    <button type="button" class="coupon-btn" onclick="applyDiscount()">החל</button>
+                </div>
+                <div class="coupon-msg" id="couponMsg"></div>
+            </div>
+
+            <!-- Price Summary -->
+            <div class="price-summary">
+                <div class="price-row">
+                    <span>מחיר אודיובוק:</span>
+                    <span>₪69</span>
+                </div>
+                <div class="price-row discount" id="discountRow">
+                    <span id="discountLabel">הנחה (10%):</span>
+                    <span id="discountAmount">-₪6.90</span>
+                </div>
+                <div class="price-row total">
+                    <span>סה"כ לתשלום:</span>
+                    <span id="totalPrice">₪69</span>
+                </div>
+            </div>
+
+            <!-- Bit Payment Section -->
+            <div class="bit-payment-section">
+                <div class="bit-header">
+                    <img src="https://www.bitpay.co.il/wp-content/uploads/2021/01/bit-logo.png" alt="Bit" class="bit-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="bit-logo-fallback" style="display:none;">
+                        <span style="color:#7C3AED; font-weight:900; font-size:24px;">Bit</span>
+                    </div>
+                    <span class="bit-title">תשלום מהיר ומאובטח</span>
+                </div>
+
+                <div class="bit-instructions">
+                    <div class="bit-step">
+                        <span class="step-number">1</span>
+                        <span>פתח את אפליקציית <strong>Bit</strong> בטלפון</span>
+                    </div>
+                    <div class="bit-step">
+                        <span class="step-number">2</span>
+                        <span>שלח <strong id="bitAmount">₪69</strong> למספר:</span>
+                    </div>
+                    <div class="bit-phone-display">
+                        <span class="phone-number">052-265-3170</span>
+                        <button type="button" class="copy-phone-btn" onclick="copyBitPhone()">
+                            <span id="copyIcon">📋</span>
+                            <span id="copyText">העתק</span>
+                        </button>
+                    </div>
+                    <div class="bit-step">
+                        <span class="step-number">3</span>
+                        <span>סמן למטה שביצעת את התשלום</span>
+                    </div>
+                </div>
+
+                <div class="bit-confirmation">
+                    <label class="bit-checkbox-label">
+                        <input type="checkbox" id="bitPaidCheckbox" onchange="toggleBitConfirmation()">
+                        <span class="checkmark"></span>
+                        <span class="checkbox-text">שילמתי עם Bit 💜</span>
+                    </label>
+                </div>
+
+                <div class="bit-phone-confirm" id="bitPhoneConfirm" style="display: none;">
+                    <label>מספר הטלפון ששילמת ממנו:</label>
+                    <input type="tel" id="bitPayerPhone" placeholder="052-123-4567" dir="ltr" maxlength="12">
+                    <span class="field-hint">
+                        <span class="hint-icon">🔍</span>
+                        <span>פורמט: 05X-XXX-XXXX - לאימות התשלום</span>
+                    </span>
+                </div>
+            </div>
+
+            <!-- Submit -->
+            <button type="submit" class="submit-btn" id="submitBtn">
+                <span class="btn-icon">✨</span>
+                <span id="submitText">שלח הזמנה</span>
+            </button>
+
+            <div class="secure-note">
+                <span class="lock-icon">🔒</span>
+                <span>התשלום מאובטח באמצעות Bit</span>
+            </div>
+        </form>
+
+        <!-- Success Screen - Hollywood Edition -->
+        <div class="success-screen" id="successScreen">
+            <div class="success-confetti">🎊</div>
+            <div class="success-icon">🎧</div>
+            <h2 class="success-title">מזל טוב! 🌟</h2>
+            <p class="success-subtitle">ההזמנה שלך התקבלה בהצלחה</p>
+            
+            <div class="success-details">
+                <div class="success-step">
+                    <span class="step-icon">✨</span>
+                    <span>האודיובוק שלך בהכנה אישית!</span>
+                </div>
+                <div class="success-step">
+                    <span class="step-icon">🎤</span>
+                    <span>הקלטה מקצועית עם הקדשה בשמך</span>
+                </div>
+                <div class="success-step">
+                    <span class="step-icon">⏱️</span>
+                    <span>יישלח אליך תוך מספר שעות</span>
+                </div>
+            </div>
+
+            <div class="success-delivery">
+                <p>📱 קישור להורדה יגיע ל-WhatsApp</p>
+                <p>📧 חשבונית תישלח למייל</p>
+            </div>
+            
+            <div class="success-order-id" id="orderIdDisplay"></div>
+
+            <p class="success-contact">שאלות? אנחנו כאן! 📞 052-265-3170</p>
+
+            <button class="close-btn" onclick="closeSuccess()">
+                <span>🏠</span>
+                <span>חזרה לאתר</span>
+            </button>
+        </div>
+
+        <!-- Coming Soon -->
+        <div class="coming-soon" id="comingSoon">
+            <div class="coming-soon-icon">🚀</div>
+            <h3>בקרוב!</h3>
+            <p>האודיובוק יהיה זמין לרכישה בקרוב מאוד.</p>
+            <p>פרטייך נשמרו ונעדכן אותך כשיעלה לאוויר!</p>
+            <button class="close-btn" onclick="closeComingSoon()">סגור</button>
+        </div>
+
+        <!-- Footer -->
+        <div class="order-footer">
+            <div class="footer-brand">
+                <span class="logo">🦎</span>
+                <span class="name">NO-ART GALLERY</span>
+            </div>
+            <p class="footer-info">ע.מ 038680278 | שד׳ ירושלים 147, אשקלון</p>
+        </div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner"></div>
+        <div class="loading-text">שומר את ההזמנה... ✨</div>
+    </div>
+
+    <script>
+        // ═══════════════════════════════════════════════════════════════
+        // 🎧 AUDIOBOOK ORDER - NO-ART GALLERY
+        // ═══════════════════════════════════════════════════════════════
+
+        console.log('🚀 Script starting...');
+
+        // 🔥 Firebase Configuration - FunnyDates Website
+        let db = null;
+        try {
+            const firebaseConfig = {
+                apiKey: "AIzaSyBz2LTwMA8VyP-mKiJVPMVo3UifQd2t_pY",
+                authDomain: "i4iguana-89ed1.firebaseapp.com",
+                projectId: "i4iguana-89ed1",
+                storageBucket: "i4iguana-89ed1.firebasestorage.app",
+                messagingSenderId: "143460198551",
+                appId: "1:143460198551:web:7fbe1a8f01b052454661d2",
+                measurementId: "G-6NTKSRY21W"
+            };
+
+            // Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
+            db = firebase.firestore();
+            console.log('✅ Firebase initialized successfully!');
+        } catch (error) {
+            console.error('❌ Firebase init error:', error);
+        }
+
+        // Generate Order ID
+        function generateOrderId() {
+            const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+            let result = 'AB-';
+            for (let i = 0; i < 6; i++) {
+                result += chars.charAt(Math.floor(Math.random() * chars.length));
+            }
+            return result;
+        }
+
+        const BASE_PRICE = 69;
+        
+        // 🏷️ קודי הנחה פעילים
+        const DISCOUNT_CODES = {
+            'TIKTOK10': 10,
+            'YOUTUBE10': 10,
+            'INSTAGRAM10': 10,
+            'LAUNCH15': 15,
+            'VIP20': 20,
+            'FRIENDS25': 25,
+            '10110': 10
+        };
+
+        let currentDiscount = 0;
+        let appliedCode = '';
+
+        // ═══════════════════════════════════════════════════════════════
+        // 🔒 VALIDATION FUNCTIONS
+        // ═══════════════════════════════════════════════════════════════
+        
+        function isValidEmail(email) {
+            return /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email.trim());
+        }
+
+        // Israeli phone: 05X-XXXXXXX (10 digits starting with 05)
+        function isValidPhone(phone) {
+            const cleaned = phone.replace(/\D/g, '');
+            // Must be exactly 10 digits and start with 05
+            if (cleaned.length === 10 && cleaned.startsWith('05')) {
+                return true;
+            }
+            // Or landline 9-10 digits starting with 0[2-9]
+            if (cleaned.length >= 9 && cleaned.length <= 10 && /^0[2-9]/.test(cleaned)) {
+                return true;
+            }
+            return false;
+        }
+
+        // Israeli zipcode: exactly 7 digits
+        function isValidZipcode(zip) {
+            return zip.replace(/\D/g, '').length === 7;
+        }
+
+        // Format phone as user types
+        function formatPhone(input) {
+            let val = input.value.replace(/\D/g, '');
+            if (val.length > 10) val = val.slice(0, 10);
+            if (val.length > 3) val = val.slice(0, 3) + '-' + val.slice(3);
+            if (val.length > 7) val = val.slice(0, 7) + '-' + val.slice(7);
+            input.value = val;
+        }
+
+        function clearErrors() {
+            document.querySelectorAll('.error-msg').forEach(el => {
+                el.textContent = '';
+                el.classList.remove('show');
+            });
+            document.querySelectorAll('input').forEach(el => {
+                el.classList.remove('input-error', 'input-valid');
+            });
+        }
+
+        function showError(id, message) {
+            const el = document.getElementById(id);
+            if (el) {
+                el.textContent = message;
+                el.classList.add('show');
+            }
+            // Find related input and mark as error
+            const inputId = id.replace('Error', '').replace('customer', 'customer');
+            const input = document.getElementById(inputId) || document.getElementById('customer' + inputId.charAt(0).toUpperCase() + inputId.slice(1));
+            if (input) {
+                input.classList.add('input-error');
+            }
+        }
+
+        function showValid(inputId) {
+            const input = document.getElementById(inputId);
+            if (input) {
+                input.classList.remove('input-error');
+                input.classList.add('input-valid');
+            }
+        }
+
+        // Real-time validation setup
+        document.addEventListener('DOMContentLoaded', function() {
+            // Auto-format phone inputs
+            document.querySelectorAll('input[type="tel"]').forEach(input => {
+                input.addEventListener('input', function() { formatPhone(this); });
+            });
+            
+            // Validate on blur with visual feedback
+            const fields = [
+                { id: 'customerName', errorId: 'nameError', validate: v => v.trim().length >= 2, msg: '⚠️ הזן שם מלא (לפחות 2 תווים)' },
+                { id: 'customerEmail', errorId: 'emailError', validate: isValidEmail, msg: '⚠️ פורמט לא תקין (לדוגמה: name@email.com)' },
+                { id: 'customerPhone', errorId: 'phoneError', validate: isValidPhone, msg: '⚠️ הזן מספר ישראלי: 05X-XXX-XXXX' },
+                { id: 'customerAddress', errorId: 'addressError', validate: v => v.trim().length >= 5, msg: '⚠️ הזן רחוב ומספר בית' },
+                { id: 'customerCity', errorId: 'cityError', validate: v => v.trim().length >= 2, msg: '⚠️ הזן שם עיר' },
+                { id: 'customerZipcode', errorId: 'zipcodeError', validate: isValidZipcode, msg: '⚠️ הזן 7 ספרות (לדוגמה: 7546800)' }
+            ];
+            
+            fields.forEach(field => {
+                const input = document.getElementById(field.id);
+                if (input) {
+                    input.addEventListener('blur', function() {
+                        const val = this.value;
+                        const errorEl = document.getElementById(field.errorId);
+                        if (!val.trim()) {
+                            this.classList.remove('input-valid');
+                            this.classList.add('input-error');
+                            if (errorEl) { errorEl.textContent = '⚠️ שדה חובה'; errorEl.classList.add('show'); }
+                        } else if (!field.validate(val)) {
+                            this.classList.remove('input-valid');
+                            this.classList.add('input-error');
+                            if (errorEl) { errorEl.textContent = field.msg; errorEl.classList.add('show'); }
+                        } else {
+                            this.classList.remove('input-error');
+                            this.classList.add('input-valid');
+                            if (errorEl) { errorEl.textContent = ''; errorEl.classList.remove('show'); }
+                        }
+                    });
+                }
+            });
+        });
+
+        // Apply discount code
+        function applyDiscount() {
+            const codeInput = document.getElementById('discountCode');
+            const couponMsg = document.getElementById('couponMsg');
+            const discountRow = document.getElementById('discountRow');
+            const discountLabel = document.getElementById('discountLabel');
+            const discountAmount = document.getElementById('discountAmount');
+            const totalPrice = document.getElementById('totalPrice');
+            const headerPrice = document.getElementById('headerPrice');
+            
+            const code = codeInput.value.trim().toUpperCase();
+
+            if (!code) {
+                couponMsg.textContent = 'הכנס קוד הנחה';
+                couponMsg.className = 'coupon-msg error';
+                return;
+            }
+
+            if (DISCOUNT_CODES[code]) {
+                currentDiscount = DISCOUNT_CODES[code];
+                appliedCode = code;
+                
+                const discountValue = (BASE_PRICE * currentDiscount / 100);
+                const finalPrice = Math.round(BASE_PRICE - discountValue);
+                
+                couponMsg.textContent = '✓ קוד הנחה הוחל! ' + currentDiscount + '% הנחה';
+                couponMsg.className = 'coupon-msg success';
+                
+                discountLabel.textContent = 'הנחה (' + currentDiscount + '%):';
+                discountAmount.textContent = '-₪' + discountValue.toFixed(0);
+                discountRow.classList.add('show');
+                
+                totalPrice.textContent = '₪' + finalPrice;
+                headerPrice.textContent = '₪' + finalPrice;
+            } else {
+                currentDiscount = 0;
+                appliedCode = '';
+                
+                couponMsg.textContent = '✗ קוד הנחה לא תקף';
+                couponMsg.className = 'coupon-msg error';
+                discountRow.classList.remove('show');
+                
+                totalPrice.textContent = '₪' + BASE_PRICE;
+                headerPrice.textContent = '₪' + BASE_PRICE;
+            }
+            
+            // Update Bit amount display
+            updateBitAmount();
+        }
+
+        // 💜 BIT PAYMENT FUNCTIONS
+        
+        function updateBitAmount() {
+            const bitAmount = document.getElementById('bitAmount');
+            const finalPrice = currentDiscount > 0 
+                ? Math.round(BASE_PRICE * (1 - currentDiscount/100))
+                : BASE_PRICE;
+            bitAmount.textContent = '₪' + finalPrice;
+        }
+
+        function copyBitPhone() {
+            const phone = '0522653170';
+            navigator.clipboard.writeText(phone).then(() => {
+                const copyIcon = document.getElementById('copyIcon');
+                const copyText = document.getElementById('copyText');
+                copyIcon.textContent = '✓';
+                copyText.textContent = 'הועתק!';
+                setTimeout(() => {
+                    copyIcon.textContent = '📋';
+                    copyText.textContent = 'העתק';
+                }, 2000);
+            });
+        }
+
+        function toggleBitConfirmation() {
+            const checkbox = document.getElementById('bitPaidCheckbox');
+            const phoneConfirm = document.getElementById('bitPhoneConfirm');
+            const submitBtn = document.getElementById('submitBtn');
+            const submitText = document.getElementById('submitText');
+            
+            if (checkbox.checked) {
+                phoneConfirm.style.display = 'block';
+                submitText.textContent = 'שלח הזמנה ✨';
+            } else {
+                phoneConfirm.style.display = 'none';
+                submitText.textContent = 'שלח הזמנה';
+            }
+        }
+
+        // Submit order
+        function submitOrder(event) {
+            console.log('📝 submitOrder called!');
+            event.preventDefault();
+            clearErrors();
+
+            // Get values
+            const name = document.getElementById('customerName').value.trim();
+            const email = document.getElementById('customerEmail').value.trim();
+            const phone = document.getElementById('customerPhone').value.trim();
+            const address = document.getElementById('customerAddress').value.trim();
+            const city = document.getElementById('customerCity').value.trim();
+            const zipcode = document.getElementById('customerZipcode').value.trim();
+            
+            // Bit payment
+            const bitPaid = document.getElementById('bitPaidCheckbox').checked;
+            const bitPayerPhone = document.getElementById('bitPayerPhone')?.value.trim() || '';
+
+            console.log('📋 Form values:', { name, email, phone, address, city, zipcode, bitPaid, bitPayerPhone });
+
+            let isValid = true;
+            let firstErrorInput = null;
+
+            // 1. שם מלא
+            if (!name || name.length < 2) {
+                showError('nameError', '⚠️ הזן שם מלא (לפחות 2 תווים)');
+                document.getElementById('customerName').classList.add('input-error');
+                if (!firstErrorInput) firstErrorInput = document.getElementById('customerName');
+                isValid = false;
+            }
+            
+            // 2. אימייל
+            if (!email) {
+                showError('emailError', '⚠️ שדה חובה');
+                document.getElementById('customerEmail').classList.add('input-error');
+                if (!firstErrorInput) firstErrorInput = document.getElementById('customerEmail');
+                isValid = false;
+            } else if (!isValidEmail(email)) {
+                showError('emailError', '⚠️ פורמט לא תקין (לדוגמה: name@email.com)');
+                document.getElementById('customerEmail').classList.add('input-error');
+                if (!firstErrorInput) firstErrorInput = document.getElementById('customerEmail');
+                isValid = false;
+            }
+            
+            // 3. טלפון - חייב להיות ישראלי תקין
+            if (!phone) {
+                showError('phoneError', '⚠️ שדה חובה');
+                document.getElementById('customerPhone').classList.add('input-error');
+                if (!firstErrorInput) firstErrorInput = document.getElementById('customerPhone');
+                isValid = false;
+            } else if (!isValidPhone(phone)) {
+                showError('phoneError', '⚠️ הזן מספר ישראלי: 05X-XXX-XXXX (10 ספרות)');
+                document.getElementById('customerPhone').classList.add('input-error');
+                if (!firstErrorInput) firstErrorInput = document.getElementById('customerPhone');
+                isValid = false;
+            }
+            
+            // 4. כתובת
+            if (!address || address.length < 5) {
+                showError('addressError', '⚠️ הזן רחוב ומספר בית');
+                document.getElementById('customerAddress').classList.add('input-error');
+                if (!firstErrorInput) firstErrorInput = document.getElementById('customerAddress');
+                isValid = false;
+            }
+            
+            // 5. עיר
+            if (!city || city.length < 2) {
+                showError('cityError', '⚠️ הזן שם עיר');
+                document.getElementById('customerCity').classList.add('input-error');
+                if (!firstErrorInput) firstErrorInput = document.getElementById('customerCity');
+                isValid = false;
+            }
+            
+            // 6. מיקוד - 7 ספרות
+            if (!zipcode) {
+                showError('zipcodeError', '⚠️ שדה חובה');
+                document.getElementById('customerZipcode').classList.add('input-error');
+                if (!firstErrorInput) firstErrorInput = document.getElementById('customerZipcode');
+                isValid = false;
+            } else if (!isValidZipcode(zipcode)) {
+                showError('zipcodeError', '⚠️ הזן 7 ספרות (לדוגמה: 7546800)');
+                document.getElementById('customerZipcode').classList.add('input-error');
+                if (!firstErrorInput) firstErrorInput = document.getElementById('customerZipcode');
+                isValid = false;
+            }
+            
+            // 7. אישור תשלום Bit
+            if (!bitPaid) {
+                alert('⚠️ נא לסמן שביצעת תשלום ב-Bit');
+                isValid = false;
+            }
+            
+            // 8. טלפון Bit
+            if (bitPaid && !bitPayerPhone) {
+                alert('⚠️ נא להזין את מספר הטלפון ששילמת ממנו');
+                isValid = false;
+            } else if (bitPaid && !isValidPhone(bitPayerPhone)) {
+                alert('⚠️ מספר טלפון Bit לא תקין - הזן: 05X-XXX-XXXX');
+                isValid = false;
+            }
+
+            // Scroll to first error
+            if (!isValid && firstErrorInput) {
+                firstErrorInput.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                firstErrorInput.focus();
+                return false;
+            }
+
+            // If not valid, stop here
+            if (!isValid) {
+                return false;
+            }
+
+            // ═══════════════════════════════════════════════════════════════
+            // ✅ ALL VALID - PROCESS ORDER
+            // ═══════════════════════════════════════════════════════════════
+            
+            console.log('✅ Validation passed! Processing order...');
+            
+            const finalPrice = currentDiscount > 0 
+                ? Math.round(BASE_PRICE * (1 - currentDiscount/100))
+                : BASE_PRICE;
+
+            // Generate unique order ID
+            const orderId = generateOrderId();
+            console.log('🎫 Generated order ID:', orderId);
+
+                // Order data - using regular date instead of serverTimestamp
+                const orderData = {
+                    orderId: orderId,
+                    customerName: name,
+                    customerEmail: email,
+                    customerPhone: phone,
+                    customerAddress: address,
+                    customerCity: city,
+                    customerZipcode: zipcode,
+                    basePrice: BASE_PRICE,
+                    discountCode: appliedCode || null,
+                    discountPercent: currentDiscount || 0,
+                    finalPrice: finalPrice,
+                    product: 'audiobook-he',
+                    productName: 'אודיובוק 101 דייטים ואף נשיכה',
+                    paymentMethod: 'bit',
+                    bitPayerPhone: bitPayerPhone,
+                    status: 'pending',
+                    createdAt: firebase.firestore.Timestamp.fromDate(new Date()),
+                    source: 'funnydates101.com/he'
+                };
+
+                // Show loading
+                document.getElementById('loadingOverlay').classList.add('show');
+
+                console.log('🔥 Attempting to save order:', orderId);
+                console.log('📦 Order data:', JSON.stringify(orderData, null, 2));
+
+                // Check if Firebase is ready
+                if (!db) {
+                    console.error('❌ Firebase db not initialized!');
+                    document.getElementById('loadingOverlay').classList.remove('show');
+                    alert('שגיאה במערכת. נא לרענן את הדף ולנסות שוב.');
+                    return false;
+                }
+
+                // Timeout after 10 seconds - show ERROR, not success!
+                const timeoutId = setTimeout(() => {
+                    console.error('⏱️ Firebase timeout after 10 seconds');
+                    document.getElementById('loadingOverlay').classList.remove('show');
+                    alert('⚠️ שגיאה בשליחת ההזמנה!\n\nנא לצלם מסך ולשלוח בוואטסאפ:\n052-265-3170\n\nמספר הזמנה: ' + orderId);
+                    // DO NOT show success screen on timeout!
+                }, 10000);
+
+                // Save to Firebase
+                db.collection('audiobook_orders').doc(orderId).set(orderData)
+                    .then(() => {
+                        clearTimeout(timeoutId);
+                        console.log('✅ Order saved successfully:', orderId);
+                        
+                        // Hide loading
+                        document.getElementById('loadingOverlay').classList.remove('show');
+                        
+                        // Show order ID
+                        document.getElementById('orderIdDisplay').textContent = '🎫 מספר הזמנה: ' + orderId;
+                        
+                        // Show success screen
+                        document.getElementById('orderForm').style.display = 'none';
+                        document.getElementById('successScreen').classList.add('show');
+                    })
+                    .catch((error) => {
+                        clearTimeout(timeoutId);
+                        console.error('❌ Error saving order:', error);
+                        console.error('Error details:', error.code, error.message);
+                        
+                        // Hide loading
+                        document.getElementById('loadingOverlay').classList.remove('show');
+                        
+                        // Show error
+                        alert('שגיאה בשמירת ההזמנה: ' + error.message + '\nאנא צור קשר: 052-265-3170');
+                    });
+
+            return false;
+        }
+
+        function closeSuccess() {
+            window.location.href = 'https://funnydates101.com/he';
+        }
+
+        function closeComingSoon() {
+            document.getElementById('comingSoon').classList.remove('show');
+            document.getElementById('orderForm').style.display = 'block';
+            document.getElementById('orderForm').reset();
+            document.getElementById('discountRow').classList.remove('show');
+            document.getElementById('totalPrice').textContent = '₪' + BASE_PRICE;
+            document.getElementById('headerPrice').textContent = '₪' + BASE_PRICE;
+            document.getElementById('couponMsg').textContent = '';
+            currentDiscount = 0;
+            appliedCode = '';
+        }
+
+        // Go back to main site
+        function goBack() {
+            window.location.href = 'https://funnydates101.com/he';
+        }
+
+        console.log('📜 Script fully loaded!');
+    </script>
+</body>
+</html>
